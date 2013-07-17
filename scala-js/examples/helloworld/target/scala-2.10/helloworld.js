@@ -78,8 +78,8 @@
       return 1
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33490 = arg$x$1;
-      switch (x1$jsid$33490) {
+      var x1$jsid$33518 = arg$x$1;
+      switch (x1$jsid$33518) {
         case 0:
           {
             return this["_pouches$1()Lscala.collection.Seq;"]();
@@ -106,19 +106,19 @@
         return true
       } else {
         {
-          var x1$jsid$33495 = arg$x$1;
-          var result$$jslabel$matchEnd4$33498;
-          $jslabel$matchEnd4$33498: do {
-            if ($.isInstance(x1$jsid$33495, "helloworld.Graph")) {
-              result$$jslabel$matchEnd4$33498 = true;
-              break $jslabel$matchEnd4$33498
+          var x1$jsid$33523 = arg$x$1;
+          var result$$jslabel$matchEnd4$33526;
+          $jslabel$matchEnd4$33526: do {
+            if ($.isInstance(x1$jsid$33523, "helloworld.Graph")) {
+              result$$jslabel$matchEnd4$33526 = true;
+              break $jslabel$matchEnd4$33526
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33498 = false;
-            break $jslabel$matchEnd4$33498
+            result$$jslabel$matchEnd4$33526 = false;
+            break $jslabel$matchEnd4$33526
           } while (false);
-          var jsx$31 = result$$jslabel$matchEnd4$33498
+          var jsx$31 = result$$jslabel$matchEnd4$33526
         };
         if (jsx$31) {
           var Graph$1$jsid$26351 = $.asInstance(arg$x$1, "helloworld.Graph");
@@ -456,8 +456,8 @@
       return this["apply$mcZII$sp(II)Z"](arg$x, arg$y)
     });
     Class.prototype["apply$mcZII$sp(II)Z"] = (function(arg$x, arg$y) {
-      var x1$jsid$33479 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
-      switch (x1$jsid$33479) {
+      var x1$jsid$33507 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
+      switch (x1$jsid$33507) {
         case 1:
           {
             return true;
@@ -1111,7 +1111,8 @@
       this.$jsfield$myscore = null;
       this.$jsfield$yourscore = null;
       this.$jsfield$myprev = null;
-      this.$jsfield$yourprev = null
+      this.$jsfield$yourprev = null;
+      this.$jsfield$finished = false
     };
     Class.prototype = Object.create($.c["java.lang.Object"].prototype);
     Class.prototype.constructor = Class;
@@ -1142,20 +1143,11 @@
     Class.prototype["graph()Lhelloworld.Graph;"] = (function() {
       return this.$jsfield$graph
     });
-    Class.prototype["graph_=(Lhelloworld.Graph;)V"] = (function(arg$x$1) {
-      this.$jsfield$graph = arg$x$1
-    });
     Class.prototype["myscore()Lhelloworld.Score;"] = (function() {
       return this.$jsfield$myscore
     });
-    Class.prototype["myscore_=(Lhelloworld.Score;)V"] = (function(arg$x$1) {
-      this.$jsfield$myscore = arg$x$1
-    });
     Class.prototype["yourscore()Lhelloworld.Score;"] = (function() {
       return this.$jsfield$yourscore
-    });
-    Class.prototype["yourscore_=(Lhelloworld.Score;)V"] = (function(arg$x$1) {
-      this.$jsfield$yourscore = arg$x$1
     });
     Class.prototype["myprev()Lscala.Option;"] = (function() {
       return this.$jsfield$myprev
@@ -1169,26 +1161,32 @@
     Class.prototype["yourprev_=(Lscala.Option;)V"] = (function(arg$x$1) {
       this.$jsfield$yourprev = arg$x$1
     });
+    Class.prototype["finished()Z"] = (function() {
+      return this.$jsfield$finished
+    });
+    Class.prototype["finished_=(Z)V"] = (function(arg$x$1) {
+      this.$jsfield$finished = arg$x$1
+    });
     Class.prototype["drawPouch(Lhelloworld.Pouch;)V"] = (function(arg$pouch) {
-      var x1$jsid$33503 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$pouch["id()I"](), this["R()I"]());
-      var result$$jslabel$matchEnd3$33505;
-      $jslabel$matchEnd3$33505: do {
-        if ((x1$jsid$33503 !== null)) {
-          var x$jsid$27514 = x1$jsid$33503["_1$mcI$sp()I"]();
-          var y$jsid$27515 = x1$jsid$33503["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33505 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$27514, y$jsid$27515);
-          break $jslabel$matchEnd3$33505
+      var x1$jsid$33531 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$pouch["id()I"](), this["R()I"]());
+      var result$$jslabel$matchEnd3$33533;
+      $jslabel$matchEnd3$33533: do {
+        if ((x1$jsid$33531 !== null)) {
+          var x$jsid$27512 = x1$jsid$33531["_1$mcI$sp()I"]();
+          var y$jsid$27513 = x1$jsid$33531["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33533 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$27512, y$jsid$27513);
+          break $jslabel$matchEnd3$33533
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33503);
-        break $jslabel$matchEnd3$33505
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33531);
+        break $jslabel$matchEnd3$33533
       } while (false);
-      var x$3$jsid$27508 = result$$jslabel$matchEnd3$33505;
-      var x$jsid$27509 = x$3$jsid$27508["_1$mcI$sp()I"]();
-      var y$jsid$27510 = x$3$jsid$27508["_2$mcI$sp()I"]();
-      this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](x$jsid$27509, y$jsid$27510, this["r()I"](), this["clearCircle$default$4()T"]());
-      this["drawText(Lscala.js.Number;Lscala.js.Number;TT)V"]((x$jsid$27509 - this["r()I"]()), (y$jsid$27510 + ((this["r()I"]() / 2) | 0)), arg$pouch["toString()T"](), this["drawText$default$4()T"]())
+      var x$3$jsid$27506 = result$$jslabel$matchEnd3$33533;
+      var x$jsid$27507 = x$3$jsid$27506["_1$mcI$sp()I"]();
+      var y$jsid$27508 = x$3$jsid$27506["_2$mcI$sp()I"]();
+      this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](x$jsid$27507, y$jsid$27508, this["r()I"](), this["clearCircle$default$4()T"]());
+      this["drawText(Lscala.js.Number;Lscala.js.Number;TT)V"]((x$jsid$27507 - this["r()I"]()), (y$jsid$27508 + ((this["r()I"]() / 2) | 0)), arg$pouch["toString()T"](), this["drawText$default$4()T"]())
     });
     Class.prototype["drawScores()V"] = (function() {
       this["ctx()Lhelloworld.Canvas2D;"]().beginPath();
@@ -1209,24 +1207,24 @@
       jsx$1["foreach(Lscala.Function1;)V"](jsx$2)
     });
     Class.prototype["blank(Lhelloworld.Pouch;T)V"] = (function(arg$pouch, arg$fillStyle) {
-      var x1$jsid$33509 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$pouch["id()I"](), this["R()I"]());
-      var result$$jslabel$matchEnd3$33511;
-      $jslabel$matchEnd3$33511: do {
-        if ((x1$jsid$33509 !== null)) {
-          var x$jsid$27606 = x1$jsid$33509["_1$mcI$sp()I"]();
-          var y$jsid$27607 = x1$jsid$33509["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33511 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$27606, y$jsid$27607);
-          break $jslabel$matchEnd3$33511
+      var x1$jsid$33537 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$pouch["id()I"](), this["R()I"]());
+      var result$$jslabel$matchEnd3$33539;
+      $jslabel$matchEnd3$33539: do {
+        if ((x1$jsid$33537 !== null)) {
+          var x$jsid$27602 = x1$jsid$33537["_1$mcI$sp()I"]();
+          var y$jsid$27603 = x1$jsid$33537["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33539 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$27602, y$jsid$27603);
+          break $jslabel$matchEnd3$33539
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33509);
-        break $jslabel$matchEnd3$33511
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33537);
+        break $jslabel$matchEnd3$33539
       } while (false);
-      var x$4$jsid$27600 = result$$jslabel$matchEnd3$33511;
-      var x$jsid$27601 = x$4$jsid$27600["_1$mcI$sp()I"]();
-      var y$jsid$27602 = x$4$jsid$27600["_2$mcI$sp()I"]();
-      this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](x$jsid$27601, y$jsid$27602, this["r()I"](), arg$fillStyle)
+      var x$4$jsid$27596 = result$$jslabel$matchEnd3$33539;
+      var x$jsid$27597 = x$4$jsid$27596["_1$mcI$sp()I"]();
+      var y$jsid$27598 = x$4$jsid$27596["_2$mcI$sp()I"]();
+      this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](x$jsid$27597, y$jsid$27598, this["r()I"](), arg$fillStyle)
     });
     Class.prototype["blank$default$2()T"] = (function() {
       return "#F00"
@@ -1243,89 +1241,149 @@
     });
     Class.prototype["mouse2Pouch(II)Lscala.Option;"] = (function(arg$x, arg$y) {
       if (this["yourprev()Lscala.Option;"]()["isDefined()Z"]()) {
-        var searchlist$jsid$32929 = this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))
+        var searchlist$jsid$32967 = this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))
       } else {
-        var searchlist$jsid$32929 = this["graph()Lhelloworld.Graph;"]()["pouches()Lscala.collection.Seq;"]()
+        var searchlist$jsid$32967 = this["graph()Lhelloworld.Graph;"]()["pouches()Lscala.collection.Seq;"]()
       };
       var jsx$4 = $;
-      var jsx$6 = searchlist$jsid$32929;
+      var jsx$6 = searchlist$jsid$32967;
       var jsx$7 = new $.c["helloworld.Knapsack$$anonfun$mouse2Pouch$1"]()["<init>(II)"](arg$x, arg$y);
       var jsx$5 = jsx$6["filter(Lscala.Function1;)O"](jsx$7);
       var jsx$3 = jsx$4.asInstance(jsx$5, "scala.collection.TraversableLike");
       return jsx$3["headOption()Lscala.Option;"]()
     });
-    Class.prototype["playGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"] = (function(arg$pouch, arg$score) {
+    Class.prototype["updateGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"] = (function(arg$pouch, arg$score) {
       arg$score["update(Lhelloworld.Pouch;)V"](arg$pouch);
       this["graph()Lhelloworld.Graph;"]()["usePouch(Lhelloworld.Pouch;)V"](arg$pouch);
       var jsx$8 = arg$pouch;
       if ($.anyRefEqEq(arg$score, this["myscore()Lhelloworld.Score;"]())) {
-        var jsx$9 = "#F00"
+        var jsx$9 = "#ffa500"
       } else {
-        var jsx$9 = "#0F0"
+        var jsx$9 = "#006400"
       };
       this["blank(Lhelloworld.Pouch;T)V"](jsx$8, jsx$9);
       this["drawScores()V"]()
     });
-    Class.prototype["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"] = (function(arg$fromp, arg$top, arg$color) {
-      var x1$jsid$33515 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$fromp["id()I"](), this["R()I"]());
-      var result$$jslabel$matchEnd3$33517;
-      $jslabel$matchEnd3$33517: do {
-        if ((x1$jsid$33515 !== null)) {
-          var x$jsid$31126 = x1$jsid$33515["_1$mcI$sp()I"]();
-          var y$jsid$31127 = x1$jsid$33515["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33517 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31126, y$jsid$31127);
-          break $jslabel$matchEnd3$33517
+    Class.prototype["playGame(Lhelloworld.Pouch;)V"] = (function(arg$pouch) {
+      if ((!this["finished()Z"]())) {
+        if (this["yourprev()Lscala.Option;"]()["isDefined()Z"]()) {
+          this["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), arg$pouch, "#006400")
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33515);
-        break $jslabel$matchEnd3$33517
+        this["yourprev_=(Lscala.Option;)V"](new $.c["scala.Some"]()["<init>(O)"](arg$pouch));
+        this["updateGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), this["yourscore()Lhelloworld.Score;"]());
+        if (this["myprev()Lscala.Option;"]()["isDefined()Z"]()) {
+          var jsx$10 = $;
+          var jsx$13 = $;
+          var jsx$18 = $;
+          var jsx$20 = this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"));
+          var jsx$21 = new $.c["helloworld.Knapsack$$anonfun$2"]()["<init>()"]();
+          var jsx$22 = $.m["scala.collection.Seq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]();
+          var jsx$19 = jsx$20["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$21, jsx$22);
+          var jsx$15 = jsx$18.asInstance(jsx$19, "scala.collection.TraversableOnce");
+          var jsx$16 = new $.c["helloworld.Knapsack$$anonfun$3"]()["<init>()"]();
+          var jsx$17 = $.m["scala.math.Ordering$Int"];
+          var jsx$14 = jsx$15["maxBy(Lscala.Function1;Lscala.math.Ordering;)O"](jsx$16, jsx$17);
+          var jsx$12 = jsx$13.asInstance(jsx$14, "scala.Tuple2");
+          var jsx$11 = jsx$12["_1()O"]();
+          var best$jsid$31154 = jsx$10.asInstance(jsx$11, "helloworld.Pouch");
+          var pouchOpt2$jsid$31113 = new $.c["scala.Some"]()["<init>(O)"](best$jsid$31154)
+        } else {
+          var pouchOpt2$jsid$31113 = new $.c["scala.Some"]()["<init>(O)"](this["graph()Lhelloworld.Graph;"]()["getAvailablePouch()Lhelloworld.Pouch;"]())
+        };
+        if (pouchOpt2$jsid$31113["isDefined()Z"]()) {
+          if (this["myprev()Lscala.Option;"]()["isDefined()Z"]()) {
+            this["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"]($.asInstance(this["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), $.asInstance(pouchOpt2$jsid$31113["get()O"](), "helloworld.Pouch"), "#ffa500")
+          } else {
+            /*<skip>*/
+          };
+          this["myprev_=(Lscala.Option;)V"](pouchOpt2$jsid$31113);
+          this["updateGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"]($.asInstance(this["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), this["myscore()Lhelloworld.Score;"]())
+        } else {
+          /*<skip>*/
+        };
+        this["declareWinner()V"]()
+      } else {
+        /*<skip>*/
+      }
+    });
+    Class.prototype["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"] = (function(arg$fromp, arg$top, arg$color) {
+      var x1$jsid$33543 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$fromp["id()I"](), this["R()I"]());
+      var result$$jslabel$matchEnd3$33545;
+      $jslabel$matchEnd3$33545: do {
+        if ((x1$jsid$33543 !== null)) {
+          var x$jsid$31126 = x1$jsid$33543["_1$mcI$sp()I"]();
+          var y$jsid$31127 = x1$jsid$33543["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33545 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31126, y$jsid$31127);
+          break $jslabel$matchEnd3$33545
+        } else {
+          /*<skip>*/
+        };
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33543);
+        break $jslabel$matchEnd3$33545
       } while (false);
-      var x$5$jsid$31117 = result$$jslabel$matchEnd3$33517;
+      var x$5$jsid$31117 = result$$jslabel$matchEnd3$33545;
       var x$jsid$31118 = x$5$jsid$31117["_1$mcI$sp()I"]();
       var y$jsid$31119 = x$5$jsid$31117["_2$mcI$sp()I"]();
-      var x1$jsid$33521 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$top["id()I"](), this["R()I"]());
-      var result$$jslabel$matchEnd3$33523;
-      $jslabel$matchEnd3$33523: do {
-        if ((x1$jsid$33521 !== null)) {
-          var xx$jsid$31137 = x1$jsid$33521["_1$mcI$sp()I"]();
-          var yy$jsid$31138 = x1$jsid$33521["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33523 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$31137, yy$jsid$31138);
-          break $jslabel$matchEnd3$33523
+      var x1$jsid$33549 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$top["id()I"](), this["R()I"]());
+      var result$$jslabel$matchEnd3$33551;
+      $jslabel$matchEnd3$33551: do {
+        if ((x1$jsid$33549 !== null)) {
+          var xx$jsid$31137 = x1$jsid$33549["_1$mcI$sp()I"]();
+          var yy$jsid$31138 = x1$jsid$33549["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33551 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$31137, yy$jsid$31138);
+          break $jslabel$matchEnd3$33551
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33521);
-        break $jslabel$matchEnd3$33523
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33549);
+        break $jslabel$matchEnd3$33551
       } while (false);
-      var x$6$jsid$31120 = result$$jslabel$matchEnd3$33523;
+      var x$6$jsid$31120 = result$$jslabel$matchEnd3$33551;
       var xx$jsid$31121 = x$6$jsid$31120["_1$mcI$sp()I"]();
       var yy$jsid$31122 = x$6$jsid$31120["_2$mcI$sp()I"]();
-      this["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](x$jsid$31118, y$jsid$31119, xx$jsid$31121, yy$jsid$31122, arg$color)
+      this["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;TI)V"](x$jsid$31118, y$jsid$31119, xx$jsid$31121, yy$jsid$31122, arg$color, 15);
+      this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](xx$jsid$31121, yy$jsid$31122, 2, arg$color)
     });
     Class.prototype["onMouseDown()Lscala.Function1;"] = (function() {
       return new $.c["helloworld.Knapsack$$anonfun$onMouseDown$1"]()["<init>()"]()
     });
-    Class.prototype["declareWinner()O"] = (function() {
-      var x1$jsid$33533 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))["size()I"](), this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))["size()I"]());
-      var result$$jslabel$matchEnd9$33545;
-      $jslabel$matchEnd9$33545: do {
-        if ((x1$jsid$33533 !== null)) {
-          var p2$jsid$33534 = x1$jsid$33533["_1$mcI$sp()I"]();
-          if ((0 === p2$jsid$33534)) {
-            result$$jslabel$matchEnd9$33545 = this["alert(T)Lscala.js.Dynamic;"]("I can play no more! You win :(");
-            break $jslabel$matchEnd9$33545
+    Class.prototype["declareWinner()V"] = (function() {
+      var x1$jsid$33561 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))["size()I"](), this["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance(this["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"))["size()I"]());
+      $jslabel$matchEnd9$33573: do {
+        if ((x1$jsid$33561 !== null)) {
+          var p2$jsid$33562 = x1$jsid$33561["_1$mcI$sp()I"]();
+          if ((0 === p2$jsid$33562)) {
+            this["alert(T)Lscala.js.Dynamic;"]("I can play no more!!! ");
+            if (((this["myscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())) > (this["yourscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())))) {
+              var jsx$23 = "But I still beat you!"
+            } else {
+              var jsx$23 = "Okay buster, you win :("
+            };
+            this["alert(T)Lscala.js.Dynamic;"](jsx$23);
+            this["finished_=(Z)V"](true);
+            $.m["scala.runtime.BoxedUnit"]["UNIT()Lscala.runtime.BoxedUnit;"]();
+            break $jslabel$matchEnd9$33573
           } else {
             /*<skip>*/
           }
         } else {
           /*<skip>*/
         };
-        if ((x1$jsid$33533 !== null)) {
-          var p5$jsid$33539 = x1$jsid$33533["_2$mcI$sp()I"]();
-          if ((0 === p5$jsid$33539)) {
-            result$$jslabel$matchEnd9$33545 = this["alert(T)Lscala.js.Dynamic;"]("You can play no more! I win !!!");
-            break $jslabel$matchEnd9$33545
+        if ((x1$jsid$33561 !== null)) {
+          var p5$jsid$33567 = x1$jsid$33561["_2$mcI$sp()I"]();
+          if ((0 === p5$jsid$33567)) {
+            this["alert(T)Lscala.js.Dynamic;"]("You can play no more!");
+            if (((this["myscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())) > (this["yourscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())))) {
+              var jsx$24 = "I win fair & square!"
+            } else {
+              var jsx$24 = "But you know what ? You actually won this round!"
+            };
+            this["alert(T)Lscala.js.Dynamic;"](jsx$24);
+            this["finished_=(Z)V"](true);
+            $.m["scala.runtime.BoxedUnit"]["UNIT()Lscala.runtime.BoxedUnit;"]();
+            break $jslabel$matchEnd9$33573
           } else {
             /*<skip>*/
           }
@@ -1334,34 +1392,39 @@
         };
         if (((this["myscore()Lhelloworld.Score;"]()["weight()I"]() >= 100) && (this["yourscore()Lhelloworld.Score;"]()["weight()I"]() >= 100))) {
           if (((this["myscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())) > (this["yourscore()Lhelloworld.Score;"]()["value()I"]() + (0.0 / this["myscore()Lhelloworld.Score;"]()["weight()I"]())))) {
-            var jsx$10 = "I win!"
+            var jsx$25 = "I win!"
           } else {
-            var jsx$10 = "You win :("
+            var jsx$25 = "You win :("
           };
-          result$$jslabel$matchEnd9$33545 = this["alert(T)Lscala.js.Dynamic;"](jsx$10)
+          this["alert(T)Lscala.js.Dynamic;"](jsx$25);
+          this["finished_=(Z)V"](true);
+          $.m["scala.runtime.BoxedUnit"]["UNIT()Lscala.runtime.BoxedUnit;"]()
         } else {
-          result$$jslabel$matchEnd9$33545 = $.m["scala.runtime.BoxedUnit"]["UNIT()Lscala.runtime.BoxedUnit;"]()
+          $.m["scala.runtime.BoxedUnit"]["UNIT()Lscala.runtime.BoxedUnit;"]()
         };
-        break $jslabel$matchEnd9$33545
-      } while (false);
-      return result$$jslabel$matchEnd9$33545
+        break $jslabel$matchEnd9$33573
+      } while (false)
     });
     Class.prototype["drawEdges()V"] = (function() {
-      var adj$jsid$27741 = this["graph()Lhelloworld.Graph;"]()["adj()[[Z"]();
-      var jsx$11 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), 64);
-      var jsx$12 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1"]()["<init>([[Z)"](adj$jsid$27741);
-      jsx$11["foreach$mVc$sp(Lscala.Function1;)V"](jsx$12)
+      var adj$jsid$27737 = this["graph()Lhelloworld.Graph;"]()["adj()[[Z"]();
+      var jsx$26 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), 64);
+      var jsx$27 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1"]()["<init>([[Z)"](adj$jsid$27737);
+      jsx$26["foreach$mVc$sp(Lscala.Function1;)V"](jsx$27)
     });
-    Class.prototype["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"] = (function(arg$x, arg$y, arg$xx, arg$yy, arg$strokeStyle) {
+    Class.prototype["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;TI)V"] = (function(arg$x, arg$y, arg$xx, arg$yy, arg$strokeStyle, arg$lineWidth) {
       this["ctx()Lhelloworld.Canvas2D;"]().beginPath();
       this["ctx()Lhelloworld.Canvas2D;"]().moveTo(arg$x, arg$y);
       this["ctx()Lhelloworld.Canvas2D;"]().lineTo(arg$xx, arg$yy);
       this["ctx()Lhelloworld.Canvas2D;"]().strokeStyle = arg$strokeStyle;
+      this["ctx()Lhelloworld.Canvas2D;"]().lineWidth = arg$lineWidth;
       this["ctx()Lhelloworld.Canvas2D;"]().stroke();
       this["ctx()Lhelloworld.Canvas2D;"]().closePath()
     });
     Class.prototype["drawLine$default$5()T"] = (function() {
       return "#00C"
+    });
+    Class.prototype["drawLine$default$6()I"] = (function() {
+      return 1
     });
     Class.prototype["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"] = (function(arg$x, arg$y, arg$r, arg$fillStyle) {
       this["ctx()Lhelloworld.Canvas2D;"]().beginPath();
@@ -1390,9 +1453,9 @@
     });
     Class.prototype["drawGrid()V"] = (function() {
       this["ctx()Lhelloworld.Canvas2D;"]().beginPath();
-      var jsx$13 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), this["w()I"]())["by(I)Lscala.collection.immutable.Range;"](10);
-      var jsx$14 = new $.c["helloworld.Knapsack$$anonfun$drawGrid$1"]()["<init>()"]();
-      jsx$13["foreach$mVc$sp(Lscala.Function1;)V"](jsx$14);
+      var jsx$28 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), this["w()I"]())["by(I)Lscala.collection.immutable.Range;"](10);
+      var jsx$29 = new $.c["helloworld.Knapsack$$anonfun$drawGrid$1"]()["<init>()"]();
+      jsx$28["foreach$mVc$sp(Lscala.Function1;)V"](jsx$29);
       this["ctx()Lhelloworld.Canvas2D;"]().strokeStyle = "#eee";
       this["ctx()Lhelloworld.Canvas2D;"]().stroke();
       this["ctx()Lhelloworld.Canvas2D;"]().closePath();
@@ -1405,11 +1468,6 @@
       this["ctx()Lhelloworld.Canvas2D;"]().strokeStyle = "#000";
       this["ctx()Lhelloworld.Canvas2D;"]().stroke();
       this["ctx()Lhelloworld.Canvas2D;"]().closePath()
-    });
-    Class.prototype["location(Lhelloworld.MouseEvent;)Lscala.Tuple2;"] = (function(arg$event) {
-      var x$jsid$32936 = arg$event.layerX;
-      var y$jsid$32937 = arg$event.layerY;
-      return new $.c["scala.Tuple2"]()["<init>(OO)"](x$jsid$32936, y$jsid$32937)
     });
     Class.prototype["alert(T)Lscala.js.Dynamic;"] = (function(arg$str) {
       return $.g.window.alert(arg$str)
@@ -1424,18 +1482,19 @@
       this.$jsfield$canvasElem = this["canvasOrig()Lscala.js.Dynamic;"]();
       this.$jsfield$ctx = this["canvasElem()Lhelloworld.HTMLCanvasElement;"]().getContext("2d");
       this.$jsfield$w = 900;
-      var jsx$16 = $;
-      var jsx$18 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), 64);
-      var jsx$19 = new $.c["helloworld.Knapsack$$anonfun$1"]()["<init>()"]();
-      var jsx$20 = $.m["scala.collection.immutable.IndexedSeq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]();
-      var jsx$17 = jsx$18["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$19, jsx$20);
-      var jsx$15 = jsx$16.asInstance(jsx$17, "scala.collection.immutable.IndexedSeq");
-      this.$jsfield$pouches = jsx$15;
+      var jsx$31 = $;
+      var jsx$33 = $.m["scala.runtime.RichInt"]["until$extension0(II)Lscala.collection.immutable.Range;"]($.m["scala.Predef"]["intWrapper(I)I"](0), 64);
+      var jsx$34 = new $.c["helloworld.Knapsack$$anonfun$1"]()["<init>()"]();
+      var jsx$35 = $.m["scala.collection.immutable.IndexedSeq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]();
+      var jsx$32 = jsx$33["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$34, jsx$35);
+      var jsx$30 = jsx$31.asInstance(jsx$32, "scala.collection.immutable.IndexedSeq");
+      this.$jsfield$pouches = jsx$30;
       this.$jsfield$graph = new $.c["helloworld.Graph"]()["<init>(Lscala.collection.Seq;)"](this["pouches()Lscala.collection.immutable.IndexedSeq;"]());
       this.$jsfield$myscore = new $.c["helloworld.Score"]()["<init>(II)"](0, 0);
       this.$jsfield$yourscore = new $.c["helloworld.Score"]()["<init>(II)"](0, 0);
       this.$jsfield$myprev = $.m["scala.None"];
       this.$jsfield$yourprev = $.m["scala.None"];
+      this.$jsfield$finished = false;
       return this
     });
     Class.prototype.R = (function() {
@@ -1465,20 +1524,11 @@
     Class.prototype.graph = (function() {
       return this["graph()Lhelloworld.Graph;"]()
     });
-    Class.prototype["graph_="] = (function(arg$1) {
-      return this["graph_=(Lhelloworld.Graph;)V"](arg$1)
-    });
     Class.prototype.myscore = (function() {
       return this["myscore()Lhelloworld.Score;"]()
     });
-    Class.prototype["myscore_="] = (function(arg$1) {
-      return this["myscore_=(Lhelloworld.Score;)V"](arg$1)
-    });
     Class.prototype.yourscore = (function() {
       return this["yourscore()Lhelloworld.Score;"]()
-    });
-    Class.prototype["yourscore_="] = (function(arg$1) {
-      return this["yourscore_=(Lhelloworld.Score;)V"](arg$1)
     });
     Class.prototype.myprev = (function() {
       return this["myprev()Lscala.Option;"]()
@@ -1491,6 +1541,12 @@
     });
     Class.prototype["yourprev_="] = (function(arg$1) {
       return this["yourprev_=(Lscala.Option;)V"](arg$1)
+    });
+    Class.prototype.finished = (function() {
+      return this["finished()Z"]()
+    });
+    Class.prototype["finished_="] = (function(arg$1) {
+      return this["finished_=(Z)V"](arg$1)
     });
     Class.prototype.drawPouch = (function(arg$1) {
       return this["drawPouch(Lhelloworld.Pouch;)V"](arg$1)
@@ -1510,8 +1566,11 @@
     Class.prototype.mouse2Pouch = (function(arg$1, arg$2) {
       return this["mouse2Pouch(II)Lscala.Option;"](arg$1, arg$2)
     });
-    Class.prototype.playGame = (function(arg$1, arg$2) {
-      return this["playGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"](arg$1, arg$2)
+    Class.prototype.updateGame = (function(arg$1, arg$2) {
+      return this["updateGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"](arg$1, arg$2)
+    });
+    Class.prototype.playGame = (function(arg$1) {
+      return this["playGame(Lhelloworld.Pouch;)V"](arg$1)
     });
     Class.prototype.drawPath = (function(arg$1, arg$2, arg$3) {
       return this["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"](arg$1, arg$2, arg$3)
@@ -1520,13 +1579,13 @@
       return this["onMouseDown()Lscala.Function1;"]()
     });
     Class.prototype.declareWinner = (function() {
-      return this["declareWinner()O"]()
+      return this["declareWinner()V"]()
     });
     Class.prototype.drawEdges = (function() {
       return this["drawEdges()V"]()
     });
-    Class.prototype.drawLine = (function(arg$1, arg$2, arg$3, arg$4, arg$5) {
-      return this["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](arg$1, arg$2, arg$3, arg$4, arg$5)
+    Class.prototype.drawLine = (function(arg$1, arg$2, arg$3, arg$4, arg$5, arg$6) {
+      return this["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;TI)V"](arg$1, arg$2, arg$3, arg$4, arg$5, arg$6)
     });
     Class.prototype.clearCircle = (function(arg$1, arg$2, arg$3, arg$4) {
       return this["clearCircle(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](arg$1, arg$2, arg$3, arg$4)
@@ -1539,9 +1598,6 @@
     });
     Class.prototype.drawGrid = (function() {
       return this["drawGrid()V"]()
-    });
-    Class.prototype.location = (function(arg$1) {
-      return this["location(Lhelloworld.MouseEvent;)Lscala.Tuple2;"](arg$1)
     });
     Class.prototype.alert = (function(arg$1) {
       return this["alert(T)Lscala.js.Dynamic;"](arg$1)
@@ -1560,6 +1616,9 @@
     });
     Class.prototype.drawLine$default$5 = (function() {
       return this["drawLine$default$5()T"]()
+    });
+    Class.prototype.drawLine$default$6 = (function() {
+      return this["drawLine$default$6()I"]()
     });
     function JSClass() {
       Class.call(this);
@@ -1700,7 +1759,7 @@
       "java.lang.Object": true
     })
   }));
-  $.registerClass("helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$2", (function($) {
+  $.registerClass("helloworld.Knapsack$$anonfun$2", (function($) {
     function Class() {
       $.c["scala.runtime.AbstractFunction1"].prototype.constructor.call(this)
     };
@@ -1712,7 +1771,7 @@
     Class.prototype["apply(O)O"] = (function(arg$v1) {
       return this["apply(Lhelloworld.Pouch;)Lscala.Tuple2;"]($.asInstance(arg$v1, "helloworld.Pouch"))
     });
-    Class.prototype["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"] = (function(arg$$outer) {
+    Class.prototype["<init>()"] = (function() {
       $.c["scala.runtime.AbstractFunction1"].prototype["<init>()"].call(this);
       return this
     });
@@ -1727,13 +1786,13 @@
         }
       }
     });
-    function JSClass(arg$1) {
+    function JSClass() {
       Class.call(this);
-      return this["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"](arg$1)
+      return this["<init>()"]()
     };
     JSClass.prototype = Class.prototype;
-    $.createClass("helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$2", Class, JSClass, "scala.runtime.AbstractFunction1", {
-      "helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$2": true,
+    $.createClass("helloworld.Knapsack$$anonfun$2", Class, JSClass, "scala.runtime.AbstractFunction1", {
+      "helloworld.Knapsack$$anonfun$2": true,
       "scala.Serializable": true,
       "java.io.Serializable": true,
       "scala.runtime.AbstractFunction1": true,
@@ -1741,7 +1800,7 @@
       "java.lang.Object": true
     })
   }));
-  $.registerClass("helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$3", (function($) {
+  $.registerClass("helloworld.Knapsack$$anonfun$3", (function($) {
     function Class() {
       $.c["scala.runtime.AbstractFunction1"].prototype.constructor.call(this)
     };
@@ -1753,7 +1812,7 @@
     Class.prototype["apply(O)O"] = (function(arg$v1) {
       return $.bI(this["apply(Lscala.Tuple2;)I"]($.asInstance(arg$v1, "scala.Tuple2")))
     });
-    Class.prototype["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"] = (function(arg$$outer) {
+    Class.prototype["<init>()"] = (function() {
       $.c["scala.runtime.AbstractFunction1"].prototype["<init>()"].call(this);
       return this
     });
@@ -1768,13 +1827,13 @@
         }
       }
     });
-    function JSClass(arg$1) {
+    function JSClass() {
       Class.call(this);
-      return this["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"](arg$1)
+      return this["<init>()"]()
     };
     JSClass.prototype = Class.prototype;
-    $.createClass("helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$3", Class, JSClass, "scala.runtime.AbstractFunction1", {
-      "helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$3": true,
+    $.createClass("helloworld.Knapsack$$anonfun$3", Class, JSClass, "scala.runtime.AbstractFunction1", {
+      "helloworld.Knapsack$$anonfun$3": true,
       "scala.Serializable": true,
       "java.io.Serializable": true,
       "scala.runtime.AbstractFunction1": true,
@@ -1789,66 +1848,29 @@
     Class.prototype = Object.create($.c["scala.runtime.AbstractFunction1"].prototype);
     Class.prototype.constructor = Class;
     Class.prototype["apply(Lhelloworld.MouseEvent;)V"] = (function(arg$event) {
-      var x1$jsid$33527 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]((arg$event.layerX | 0), (arg$event.layerY | 0));
-      var result$$jslabel$matchEnd3$33529;
-      $jslabel$matchEnd3$33529: do {
-        if ((x1$jsid$33527 !== null)) {
-          var x$jsid$31103 = x1$jsid$33527["_1$mcI$sp()I"]();
-          var y$jsid$31104 = x1$jsid$33527["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33529 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31103, y$jsid$31104);
-          break $jslabel$matchEnd3$33529
+      var x1$jsid$33555 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]((arg$event.layerX | 0), (arg$event.layerY | 0));
+      var result$$jslabel$matchEnd3$33557;
+      $jslabel$matchEnd3$33557: do {
+        if ((x1$jsid$33555 !== null)) {
+          var x$jsid$31102 = x1$jsid$33555["_1$mcI$sp()I"]();
+          var y$jsid$31103 = x1$jsid$33555["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33557 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31102, y$jsid$31103);
+          break $jslabel$matchEnd3$33557
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33527);
-        break $jslabel$matchEnd3$33529
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33555);
+        break $jslabel$matchEnd3$33557
       } while (false);
-      var x$7$jsid$31084 = result$$jslabel$matchEnd3$33529;
-      var x$jsid$31085 = x$7$jsid$31084["_1$mcI$sp()I"]();
-      var y$jsid$31086 = x$7$jsid$31084["_2$mcI$sp()I"]();
-      var pouchOpt$jsid$31087 = $.m["helloworld.Knapsack"]["mouse2Pouch(II)Lscala.Option;"](x$jsid$31085, y$jsid$31086);
-      if (pouchOpt$jsid$31087["isDefined()Z"]()) {
-        if ($.m["helloworld.Knapsack"]["yourprev()Lscala.Option;"]()["isDefined()Z"]()) {
-          $.m["helloworld.Knapsack"]["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"]($.asInstance($.m["helloworld.Knapsack"]["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), $.asInstance(pouchOpt$jsid$31087["get()O"](), "helloworld.Pouch"), "#0F0")
-        } else {
-          /*<skip>*/
-        };
-        $.m["helloworld.Knapsack"]["yourprev_=(Lscala.Option;)V"](pouchOpt$jsid$31087);
-        $.m["helloworld.Knapsack"]["playGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"]($.asInstance($.m["helloworld.Knapsack"]["yourprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), $.m["helloworld.Knapsack"]["yourscore()Lhelloworld.Score;"]());
-        if ($.m["helloworld.Knapsack"]["myprev()Lscala.Option;"]()["isDefined()Z"]()) {
-          var jsx$21 = $;
-          var jsx$24 = $;
-          var jsx$29 = $;
-          var jsx$31 = $.m["helloworld.Knapsack"]["graph()Lhelloworld.Graph;"]()["getAvailablePouches(Lhelloworld.Pouch;)Lscala.collection.Seq;"]($.asInstance($.m["helloworld.Knapsack"]["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"));
-          var jsx$32 = new $.c["helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$2"]()["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"](this);
-          var jsx$33 = $.m["scala.collection.Seq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]();
-          var jsx$30 = jsx$31["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$32, jsx$33);
-          var jsx$26 = jsx$29.asInstance(jsx$30, "scala.collection.TraversableOnce");
-          var jsx$27 = new $.c["helloworld.Knapsack$$anonfun$onMouseDown$1$$anonfun$3"]()["<init>(Lhelloworld.Knapsack$$anonfun$onMouseDown$1;)"](this);
-          var jsx$28 = $.m["scala.math.Ordering$Int"];
-          var jsx$25 = jsx$26["maxBy(Lscala.Function1;Lscala.math.Ordering;)O"](jsx$27, jsx$28);
-          var jsx$23 = jsx$24.asInstance(jsx$25, "scala.Tuple2");
-          var jsx$22 = jsx$23["_1()O"]();
-          var best$jsid$31151 = jsx$21.asInstance(jsx$22, "helloworld.Pouch");
-          var pouchOpt2$jsid$31113 = new $.c["scala.Some"]()["<init>(O)"](best$jsid$31151)
-        } else {
-          var pouchOpt2$jsid$31113 = new $.c["scala.Some"]()["<init>(O)"]($.m["helloworld.Knapsack"]["graph()Lhelloworld.Graph;"]()["getAvailablePouch()Lhelloworld.Pouch;"]())
-        };
-        if (pouchOpt2$jsid$31113["isDefined()Z"]()) {
-          if ($.m["helloworld.Knapsack"]["myprev()Lscala.Option;"]()["isDefined()Z"]()) {
-            $.m["helloworld.Knapsack"]["drawPath(Lhelloworld.Pouch;Lhelloworld.Pouch;T)V"]($.asInstance($.m["helloworld.Knapsack"]["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), $.asInstance(pouchOpt2$jsid$31113["get()O"](), "helloworld.Pouch"), "#F00")
-          } else {
-            /*<skip>*/
-          };
-          $.m["helloworld.Knapsack"]["myprev_=(Lscala.Option;)V"](pouchOpt2$jsid$31113);
-          $.m["helloworld.Knapsack"]["playGame(Lhelloworld.Pouch;Lhelloworld.Score;)V"]($.asInstance($.m["helloworld.Knapsack"]["myprev()Lscala.Option;"]()["get()O"](), "helloworld.Pouch"), $.m["helloworld.Knapsack"]["myscore()Lhelloworld.Score;"]())
-        } else {
-          /*<skip>*/
-        }
+      var x$7$jsid$31083 = result$$jslabel$matchEnd3$33557;
+      var x$jsid$31084 = x$7$jsid$31083["_1$mcI$sp()I"]();
+      var y$jsid$31085 = x$7$jsid$31083["_2$mcI$sp()I"]();
+      var pouchOpt$jsid$31086 = $.m["helloworld.Knapsack"]["mouse2Pouch(II)Lscala.Option;"](x$jsid$31084, y$jsid$31085);
+      if (pouchOpt$jsid$31086["isDefined()Z"]()) {
+        $.m["helloworld.Knapsack"]["playGame(Lhelloworld.Pouch;)V"]($.asInstance(pouchOpt$jsid$31086["get()O"](), "helloworld.Pouch"))
       } else {
         /*<skip>*/
       };
-      $.m["helloworld.Knapsack"]["declareWinner()O"]();
       arg$event.preventDefault()
     });
     Class.prototype["apply(O)O"] = (function(arg$v1) {
@@ -2012,24 +2034,24 @@
     Class.prototype = Object.create($.c["scala.runtime.AbstractFunction1"].prototype);
     Class.prototype.constructor = Class;
     Class.prototype["apply(Lscala.Tuple2;)V"] = (function(arg$t) {
-      var x1$jsid$33563 = arg$t;
-      var result$$jslabel$matchEnd3$33565;
-      $jslabel$matchEnd3$33565: do {
-        if ((x1$jsid$33563 !== null)) {
-          var x$jsid$31053 = x1$jsid$33563["_1$mcI$sp()I"]();
-          var y$jsid$31054 = x1$jsid$33563["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33565 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31053, y$jsid$31054);
-          break $jslabel$matchEnd3$33565
+      var x1$jsid$33591 = arg$t;
+      var result$$jslabel$matchEnd3$33593;
+      $jslabel$matchEnd3$33593: do {
+        if ((x1$jsid$33591 !== null)) {
+          var x$jsid$31049 = x1$jsid$33591["_1$mcI$sp()I"]();
+          var y$jsid$31050 = x1$jsid$33591["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33593 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](x$jsid$31049, y$jsid$31050);
+          break $jslabel$matchEnd3$33593
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33563);
-        break $jslabel$matchEnd3$33565
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33591);
+        break $jslabel$matchEnd3$33593
       } while (false);
-      var x$9$jsid$31047 = result$$jslabel$matchEnd3$33565;
-      var x$jsid$31048 = x$9$jsid$31047["_1$mcI$sp()I"]();
-      var y$jsid$31049 = x$9$jsid$31047["_2$mcI$sp()I"]();
-      $.m["helloworld.Knapsack"]["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;T)V"](this.$jsfield$xx$1, this.$jsfield$yy$1, x$jsid$31048, y$jsid$31049, $.m["helloworld.Knapsack"]["drawLine$default$5()T"]())
+      var x$9$jsid$31043 = result$$jslabel$matchEnd3$33593;
+      var x$jsid$31044 = x$9$jsid$31043["_1$mcI$sp()I"]();
+      var y$jsid$31045 = x$9$jsid$31043["_2$mcI$sp()I"]();
+      $.m["helloworld.Knapsack"]["drawLine(Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;Lscala.js.Number;TI)V"](this.$jsfield$xx$1, this.$jsfield$yy$1, x$jsid$31044, y$jsid$31045, "#2f4f4f", 4)
     });
     Class.prototype["apply(O)O"] = (function(arg$v1) {
       this["apply(Lscala.Tuple2;)V"]($.asInstance(arg$v1, "scala.Tuple2"));
@@ -2077,47 +2099,47 @@
       this["apply$mcVI$sp(I)V"](arg$id)
     });
     Class.prototype["apply$mcVI$sp(I)V"] = (function(arg$id) {
-      var x1$jsid$33557 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$id, $.m["helloworld.Knapsack"]["R()I"]());
-      var result$$jslabel$matchEnd3$33559;
-      $jslabel$matchEnd3$33559: do {
-        if ((x1$jsid$33557 !== null)) {
-          var xx$jsid$27870 = x1$jsid$33557["_1$mcI$sp()I"]();
-          var yy$jsid$27871 = x1$jsid$33557["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33559 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$27870, yy$jsid$27871);
-          break $jslabel$matchEnd3$33559
+      var x1$jsid$33585 = $.m["helloworld.Pouch"]["getCoords(II)Lscala.Tuple2;"](arg$id, $.m["helloworld.Knapsack"]["R()I"]());
+      var result$$jslabel$matchEnd3$33587;
+      $jslabel$matchEnd3$33587: do {
+        if ((x1$jsid$33585 !== null)) {
+          var xx$jsid$27866 = x1$jsid$33585["_1$mcI$sp()I"]();
+          var yy$jsid$27867 = x1$jsid$33585["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33587 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$27866, yy$jsid$27867);
+          break $jslabel$matchEnd3$33587
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33557);
-        break $jslabel$matchEnd3$33559
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33585);
+        break $jslabel$matchEnd3$33587
       } while (false);
-      var x$8$jsid$27864 = result$$jslabel$matchEnd3$33559;
-      var xx$jsid$27865 = x$8$jsid$27864["_1$mcI$sp()I"]();
-      var yy$jsid$27866 = x$8$jsid$27864["_2$mcI$sp()I"]();
-      var jsx$37 = $.m["scala.Predef"];
-      var jsx$39 = $;
-      var jsx$44 = $.m["scala.Predef"];
-      var jsx$46 = $;
-      var jsx$51 = $.m["scala.Predef"];
-      var jsx$53 = $;
-      var jsx$55 = $.m["scala.Predef"]["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"]($.asInstance($.m["scala.Predef"]["booleanArrayOps([Z)Lscala.collection.mutable.ArrayOps;"](this.$jsfield$adj$1.underlying[arg$id])["zipWithIndex(Lscala.collection.generic.CanBuildFrom;)O"]($.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["apply(Ljava.lang.Class;)Lscala.reflect.ClassTag;"]($.classes["scala.Tuple2"].cls))), "java.lang.Object[]"));
-      var jsx$56 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$1"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
-      var jsx$54 = jsx$55["filter(Lscala.Function1;)O"](jsx$56);
-      var jsx$52 = jsx$53.asInstance(jsx$54, "java.lang.Object[]");
-      var jsx$48 = jsx$51["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"](jsx$52);
-      var jsx$49 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$2"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
-      var jsx$50 = $.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["Int()Lscala.reflect.ClassTag;"]());
-      var jsx$47 = jsx$48["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$49, jsx$50);
-      var jsx$45 = jsx$46.asInstance(jsx$47, "scala.Int[]");
-      var jsx$41 = jsx$44["intArrayOps([I)Lscala.collection.mutable.ArrayOps;"](jsx$45);
-      var jsx$42 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$3"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
-      var jsx$43 = $.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["apply(Ljava.lang.Class;)Lscala.reflect.ClassTag;"]($.classes["scala.Tuple2"].cls));
-      var jsx$40 = jsx$41["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$42, jsx$43);
-      var jsx$38 = jsx$39.asInstance(jsx$40, "java.lang.Object[]");
-      var jsx$36 = jsx$37["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"](jsx$38);
-      var jsx$34 = jsx$36["toSeq()Lscala.collection.Seq;"]();
-      var jsx$35 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$4"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;II)"](this, xx$jsid$27865, yy$jsid$27866);
-      jsx$34["foreach(Lscala.Function1;)V"](jsx$35)
+      var x$8$jsid$27860 = result$$jslabel$matchEnd3$33587;
+      var xx$jsid$27861 = x$8$jsid$27860["_1$mcI$sp()I"]();
+      var yy$jsid$27862 = x$8$jsid$27860["_2$mcI$sp()I"]();
+      var jsx$39 = $.m["scala.Predef"];
+      var jsx$41 = $;
+      var jsx$46 = $.m["scala.Predef"];
+      var jsx$48 = $;
+      var jsx$53 = $.m["scala.Predef"];
+      var jsx$55 = $;
+      var jsx$57 = $.m["scala.Predef"]["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"]($.asInstance($.m["scala.Predef"]["booleanArrayOps([Z)Lscala.collection.mutable.ArrayOps;"](this.$jsfield$adj$1.underlying[arg$id])["zipWithIndex(Lscala.collection.generic.CanBuildFrom;)O"]($.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["apply(Ljava.lang.Class;)Lscala.reflect.ClassTag;"]($.classes["scala.Tuple2"].cls))), "java.lang.Object[]"));
+      var jsx$58 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$1"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
+      var jsx$56 = jsx$57["filter(Lscala.Function1;)O"](jsx$58);
+      var jsx$54 = jsx$55.asInstance(jsx$56, "java.lang.Object[]");
+      var jsx$50 = jsx$53["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"](jsx$54);
+      var jsx$51 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$2"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
+      var jsx$52 = $.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["Int()Lscala.reflect.ClassTag;"]());
+      var jsx$49 = jsx$50["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$51, jsx$52);
+      var jsx$47 = jsx$48.asInstance(jsx$49, "scala.Int[]");
+      var jsx$43 = jsx$46["intArrayOps([I)Lscala.collection.mutable.ArrayOps;"](jsx$47);
+      var jsx$44 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$3"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;)"](this);
+      var jsx$45 = $.m["scala.Array"]["canBuildFrom(Lscala.reflect.ClassTag;)Lscala.collection.generic.CanBuildFrom;"]($.m["scala.reflect.ClassTag"]["apply(Ljava.lang.Class;)Lscala.reflect.ClassTag;"]($.classes["scala.Tuple2"].cls));
+      var jsx$42 = jsx$43["map(Lscala.Function1;Lscala.collection.generic.CanBuildFrom;)O"](jsx$44, jsx$45);
+      var jsx$40 = jsx$41.asInstance(jsx$42, "java.lang.Object[]");
+      var jsx$38 = jsx$39["refArrayOps([O)Lscala.collection.mutable.ArrayOps;"](jsx$40);
+      var jsx$36 = jsx$38["toSeq()Lscala.collection.Seq;"]();
+      var jsx$37 = new $.c["helloworld.Knapsack$$anonfun$drawEdges$1$$anonfun$apply$mcVI$sp$4"]()["<init>(Lhelloworld.Knapsack$$anonfun$drawEdges$1;II)"](this, xx$jsid$27861, yy$jsid$27862);
+      jsx$36["foreach(Lscala.Function1;)V"](jsx$37)
     });
     Class.prototype["apply(O)O"] = (function(arg$v1) {
       this["apply(I)V"]($.uI(arg$v1));
@@ -2205,21 +2227,21 @@
       var m$jsid$12410 = (arg$id - q$jsid$12409);
       var r$jsid$12411 = ((1 + q$jsid$12409) * arg$R);
       var theta$jsid$12412 = (((m$jsid$12410 * $.m["scala.math.package"]["Pi()D"]()) / 4) + ($.m["scala.math.package"]["Pi()D"]() / 11));
-      var x1$jsid$33416 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]($.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["cos(D)D"](theta$jsid$12412))), $.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["sin(D)D"](theta$jsid$12412))));
-      var result$$jslabel$matchEnd3$33419;
-      $jslabel$matchEnd3$33419: do {
-        if ((x1$jsid$33416 !== null)) {
-          var xx$jsid$14251 = x1$jsid$33416["_1$mcI$sp()I"]();
-          var yy$jsid$14252 = x1$jsid$33416["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33419 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$14251, yy$jsid$14252);
-          break $jslabel$matchEnd3$33419
+      var x1$jsid$33444 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]($.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["cos(D)D"](theta$jsid$12412))), $.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["sin(D)D"](theta$jsid$12412))));
+      var result$$jslabel$matchEnd3$33447;
+      $jslabel$matchEnd3$33447: do {
+        if ((x1$jsid$33444 !== null)) {
+          var xx$jsid$14251 = x1$jsid$33444["_1$mcI$sp()I"]();
+          var yy$jsid$14252 = x1$jsid$33444["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33447 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$14251, yy$jsid$14252);
+          break $jslabel$matchEnd3$33447
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33416);
-        break $jslabel$matchEnd3$33419
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33444);
+        break $jslabel$matchEnd3$33447
       } while (false);
-      var x$1$jsid$12413 = result$$jslabel$matchEnd3$33419;
+      var x$1$jsid$12413 = result$$jslabel$matchEnd3$33447;
       var xx$jsid$12414 = x$1$jsid$12413["_1$mcI$sp()I"]();
       var yy$jsid$12415 = x$1$jsid$12413["_2$mcI$sp()I"]();
       return new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](((xx$jsid$12414 + (8 * arg$R)) + 10), ((yy$jsid$12415 + (8 * arg$R)) + 10))
@@ -2311,40 +2333,40 @@
       return new $.c["helloworld.Pouch"]()["<init>(IIIZ)"](this["id()I"](), this["value()I"](), this["weight()I"](), false)
     });
     Class.prototype["equals(O)Z"] = (function(arg$p) {
-      var x1$jsid$33445 = arg$p;
-      var result$$jslabel$matchEnd4$33448;
-      $jslabel$matchEnd4$33448: do {
-        if ($.isInstance(x1$jsid$33445, "helloworld.Pouch")) {
-          var x2$jsid$33446 = $.asInstance(x1$jsid$33445, "helloworld.Pouch");
-          result$$jslabel$matchEnd4$33448 = (x2$jsid$33446["id()I"]() === this["id()I"]());
-          break $jslabel$matchEnd4$33448
+      var x1$jsid$33473 = arg$p;
+      var result$$jslabel$matchEnd4$33476;
+      $jslabel$matchEnd4$33476: do {
+        if ($.isInstance(x1$jsid$33473, "helloworld.Pouch")) {
+          var x2$jsid$33474 = $.asInstance(x1$jsid$33473, "helloworld.Pouch");
+          result$$jslabel$matchEnd4$33476 = (x2$jsid$33474["id()I"]() === this["id()I"]());
+          break $jslabel$matchEnd4$33476
         } else {
           /*<skip>*/
         };
-        result$$jslabel$matchEnd4$33448 = false;
-        break $jslabel$matchEnd4$33448
+        result$$jslabel$matchEnd4$33476 = false;
+        break $jslabel$matchEnd4$33476
       } while (false);
-      return result$$jslabel$matchEnd4$33448
+      return result$$jslabel$matchEnd4$33476
     });
     Class.prototype["toString()T"] = (function() {
       return (((("$" + $.bI(this["value()I"]())) + ",") + $.bI(this["weight()I"]())) + "lb")
     });
     Class.prototype["contains(II)Z"] = (function(arg$x, arg$y) {
-      var x1$jsid$33453 = this["coords()Lscala.Tuple2;"]();
-      var result$$jslabel$matchEnd3$33455;
-      $jslabel$matchEnd3$33455: do {
-        if ((x1$jsid$33453 !== null)) {
-          var myx$jsid$21620 = x1$jsid$33453["_1$mcI$sp()I"]();
-          var myy$jsid$21621 = x1$jsid$33453["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33455 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](myx$jsid$21620, myy$jsid$21621);
-          break $jslabel$matchEnd3$33455
+      var x1$jsid$33481 = this["coords()Lscala.Tuple2;"]();
+      var result$$jslabel$matchEnd3$33483;
+      $jslabel$matchEnd3$33483: do {
+        if ((x1$jsid$33481 !== null)) {
+          var myx$jsid$21620 = x1$jsid$33481["_1$mcI$sp()I"]();
+          var myy$jsid$21621 = x1$jsid$33481["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$33483 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](myx$jsid$21620, myy$jsid$21621);
+          break $jslabel$matchEnd3$33483
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33453);
-        break $jslabel$matchEnd3$33455
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33481);
+        break $jslabel$matchEnd3$33483
       } while (false);
-      var x$2$jsid$21614 = result$$jslabel$matchEnd3$33455;
+      var x$2$jsid$21614 = result$$jslabel$matchEnd3$33483;
       var myx$jsid$21615 = x$2$jsid$21614["_1$mcI$sp()I"]();
       var myy$jsid$21616 = x$2$jsid$21614["_2$mcI$sp()I"]();
       return (((arg$x >= (myx$jsid$21615 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$x <= (myx$jsid$21615 + $.m["helloworld.Pouch"]["r()I"]()))) && ((arg$y >= (myy$jsid$21616 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$y <= (myy$jsid$21616 + $.m["helloworld.Pouch"]["r()I"]()))))
@@ -2374,8 +2396,8 @@
       return 4
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33459 = arg$x$1;
-      switch (x1$jsid$33459) {
+      var x1$jsid$33487 = arg$x$1;
+      switch (x1$jsid$33487) {
         case 0:
           {
             return $.bI(this["id()I"]());
@@ -2539,8 +2561,8 @@
       return 2
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33429 = arg$x$1;
-      switch (x1$jsid$33429) {
+      var x1$jsid$33457 = arg$x$1;
+      switch (x1$jsid$33457) {
         case 0:
           {
             return $.bI(this["_value$1()I"]());
@@ -2572,19 +2594,19 @@
         return true
       } else {
         {
-          var x1$jsid$33437 = arg$x$1;
-          var result$$jslabel$matchEnd4$33440;
-          $jslabel$matchEnd4$33440: do {
-            if ($.isInstance(x1$jsid$33437, "helloworld.Score")) {
-              result$$jslabel$matchEnd4$33440 = true;
-              break $jslabel$matchEnd4$33440
+          var x1$jsid$33465 = arg$x$1;
+          var result$$jslabel$matchEnd4$33468;
+          $jslabel$matchEnd4$33468: do {
+            if ($.isInstance(x1$jsid$33465, "helloworld.Score")) {
+              result$$jslabel$matchEnd4$33468 = true;
+              break $jslabel$matchEnd4$33468
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33440 = false;
-            break $jslabel$matchEnd4$33440
+            result$$jslabel$matchEnd4$33468 = false;
+            break $jslabel$matchEnd4$33468
           } while (false);
-          var jsx$1 = result$$jslabel$matchEnd4$33440
+          var jsx$1 = result$$jslabel$matchEnd4$33468
         };
         if (jsx$1) {
           var Score$1$jsid$21579 = $.asInstance(arg$x$1, "helloworld.Score");

@@ -78,8 +78,8 @@
       return 1
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33490 = arg$x$1;
-      switch (x1$jsid$33490) {
+      var x1$jsid$33518 = arg$x$1;
+      switch (x1$jsid$33518) {
         case 0:
           {
             return this["_pouches$1()Lscala.collection.Seq;"]();
@@ -106,19 +106,19 @@
         return true
       } else {
         {
-          var x1$jsid$33495 = arg$x$1;
-          var result$$jslabel$matchEnd4$33498;
-          $jslabel$matchEnd4$33498: do {
-            if ($.isInstance(x1$jsid$33495, "helloworld.Graph")) {
-              result$$jslabel$matchEnd4$33498 = true;
-              break $jslabel$matchEnd4$33498
+          var x1$jsid$33523 = arg$x$1;
+          var result$$jslabel$matchEnd4$33526;
+          $jslabel$matchEnd4$33526: do {
+            if ($.isInstance(x1$jsid$33523, "helloworld.Graph")) {
+              result$$jslabel$matchEnd4$33526 = true;
+              break $jslabel$matchEnd4$33526
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33498 = false;
-            break $jslabel$matchEnd4$33498
+            result$$jslabel$matchEnd4$33526 = false;
+            break $jslabel$matchEnd4$33526
           } while (false);
-          var jsx$31 = result$$jslabel$matchEnd4$33498
+          var jsx$31 = result$$jslabel$matchEnd4$33526
         };
         if (jsx$31) {
           var Graph$1$jsid$26351 = $.asInstance(arg$x$1, "helloworld.Graph");
@@ -456,8 +456,8 @@
       return this["apply$mcZII$sp(II)Z"](arg$x, arg$y)
     });
     Class.prototype["apply$mcZII$sp(II)Z"] = (function(arg$x, arg$y) {
-      var x1$jsid$33479 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
-      switch (x1$jsid$33479) {
+      var x1$jsid$33507 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
+      switch (x1$jsid$33507) {
         case 1:
           {
             return true;

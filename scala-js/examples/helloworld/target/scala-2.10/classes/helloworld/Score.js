@@ -54,8 +54,8 @@
       return 2
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33429 = arg$x$1;
-      switch (x1$jsid$33429) {
+      var x1$jsid$33457 = arg$x$1;
+      switch (x1$jsid$33457) {
         case 0:
           {
             return $.bI(this["_value$1()I"]());
@@ -87,19 +87,19 @@
         return true
       } else {
         {
-          var x1$jsid$33437 = arg$x$1;
-          var result$$jslabel$matchEnd4$33440;
-          $jslabel$matchEnd4$33440: do {
-            if ($.isInstance(x1$jsid$33437, "helloworld.Score")) {
-              result$$jslabel$matchEnd4$33440 = true;
-              break $jslabel$matchEnd4$33440
+          var x1$jsid$33465 = arg$x$1;
+          var result$$jslabel$matchEnd4$33468;
+          $jslabel$matchEnd4$33468: do {
+            if ($.isInstance(x1$jsid$33465, "helloworld.Score")) {
+              result$$jslabel$matchEnd4$33468 = true;
+              break $jslabel$matchEnd4$33468
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33440 = false;
-            break $jslabel$matchEnd4$33440
+            result$$jslabel$matchEnd4$33468 = false;
+            break $jslabel$matchEnd4$33468
           } while (false);
-          var jsx$1 = result$$jslabel$matchEnd4$33440
+          var jsx$1 = result$$jslabel$matchEnd4$33468
         };
         if (jsx$1) {
           var Score$1$jsid$21579 = $.asInstance(arg$x$1, "helloworld.Score");

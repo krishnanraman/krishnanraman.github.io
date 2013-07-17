@@ -92,6 +92,7 @@ object Knapsack {
   val yourscore:Score = Score(0,0)
   var myprev:Option[Pouch] = None
   var yourprev:Option[Pouch] = None
+  var finished = false
 
   def drawPouch(pouch: Pouch) = {
     val (x,y) = Pouch.getCoords(pouch.id,R)
@@ -132,60 +133,75 @@ object Knapsack {
     searchlist.filter { pouch => pouch.contains(x,y) }.headOption
   }
 
-  def playGame(pouch:Pouch, score:Score) = {
-      score.update(pouch)
-      graph.usePouch(pouch)
-      blank(pouch, if( score==myscore) "#F00" else "#0F0")
-      drawScores
+  def updateGame(pouch:Pouch, score:Score) = {
+    score.update(pouch)
+    graph.usePouch(pouch)
+    blank(pouch, if( score==myscore) "#ffa500" else "#006400")
+    drawScores
   }
 
-  def drawPath(fromp:Pouch, top:Pouch, color:String) = {
-    val (x,y) = Pouch.getCoords(fromp.id,R)
-    val (xx,yy) = Pouch.getCoords(top.id,R)
-    drawLine(x,y,xx,yy, color)
-  }
+  def playGame(pouch:Pouch) = {
+    if (!finished) {
 
-  def onMouseDown = (event: MouseEvent) => {
-    val (x,y) = (event.layerX.toInt, event.layerY.toInt)
-    val pouchOpt = mouse2Pouch(x,y)
-    if (pouchOpt.isDefined) {
-
-      if(yourprev.isDefined) drawPath(yourprev.get, pouchOpt.get, "#0F0")
-
-      yourprev = pouchOpt
-      playGame( yourprev.get, yourscore )
+      if(yourprev.isDefined) drawPath(yourprev.get, pouch, "#006400")
+      yourprev = Some(pouch)
+      updateGame( yourprev.get, yourscore )
 
       val pouchOpt2 = if( myprev.isDefined) {
+
+        // pick the best pouch to move to
         val best = graph
           .getAvailablePouches(myprev.get)
           .map( pouch => (pouch, pouch.value/pouch.weight))
           .maxBy(x => x._2)
           ._1
         Some(best)
+
       } else Some(graph.getAvailablePouch)
 
       if( pouchOpt2.isDefined) {
 
-        if(myprev.isDefined) drawPath(myprev.get, pouchOpt2.get, "#F00")
+        if(myprev.isDefined) drawPath(myprev.get, pouchOpt2.get, "#ffa500")
 
         myprev = pouchOpt2
-        playGame( myprev.get, myscore )
+        updateGame( myprev.get, myscore )
       }
+
+      declareWinner
+
     }
+  }
 
-    declareWinner
+  def drawPath(fromp:Pouch, top:Pouch, color:String) = {
+    val (x,y) = Pouch.getCoords(fromp.id,R)
+    val (xx,yy) = Pouch.getCoords(top.id,R)
+    drawLine(x,y,xx,yy, color, 15)
+    clearCircle(xx,yy,2,color)
+  }
 
+  def onMouseDown = (event: MouseEvent) => {
+    val (x,y) = (event.layerX.toInt, event.layerY.toInt)
+    val pouchOpt = mouse2Pouch(x,y)
+    if (pouchOpt.isDefined) playGame(pouchOpt.get)
     event.preventDefault()
   }
 
   def declareWinner = {
-      (graph.getAvailablePouches(myprev.get).size , graph.getAvailablePouches(yourprev.get).size) match {
-        case (0,_) => alert("I can play no more! You win :(")
-        case (_,0) => alert("You can play no more! I win !!!")
-        case _ =>
-          if (myscore.weight >=100 && yourscore.weight >= 100) {
-            alert( if (myscore.value+0.0d/myscore.weight > yourscore.value+0.0d/myscore.weight) "I win!" else "You win :(" )
-          }
+    (graph.getAvailablePouches(myprev.get).size , graph.getAvailablePouches(yourprev.get).size) match {
+      case (0,_) =>
+        alert("I can play no more!!! ")
+        alert( if (myscore.value+0.0d/myscore.weight > yourscore.value+0.0d/myscore.weight) "But I still beat you!" else "Okay buster, you win :(" )
+        finished = true
+
+      case (_,0) => alert("You can play no more!")
+        alert( if (myscore.value+0.0d/myscore.weight > yourscore.value+0.0d/myscore.weight) "I win fair & square!" else "But you know what ? You actually won this round!" )
+        finished = true
+
+      case _ =>
+        if (myscore.weight >=100 && yourscore.weight >= 100) {
+          alert( if (myscore.value+0.0d/myscore.weight > yourscore.value+0.0d/myscore.weight) "I win!" else "You win :(" )
+          finished = true
+        }
     }
   }
 
@@ -202,16 +218,17 @@ object Knapsack {
         .toSeq
         .foreach { t =>
           val (x,y) = t
-          drawLine(xx,yy,x,y)
+          drawLine(xx,yy,x,y,"#2f4f4f", 4)
       }
     }
   }
 
-  def drawLine(x:js.Number, y:js.Number, xx:js.Number, yy:js.Number, strokeStyle:String = "#00C") = {
+  def drawLine(x:js.Number, y:js.Number, xx:js.Number, yy:js.Number, strokeStyle:String = "#00C", lineWidth:Int = 1) = {
     ctx.beginPath()
     ctx.moveTo(x,y)
     ctx.lineTo(xx,yy)
     ctx.strokeStyle = strokeStyle
+    ctx.lineWidth = lineWidth
     ctx.stroke()
     ctx.closePath()
   }
@@ -265,8 +282,9 @@ object Knapsack {
   }
 
   def alert(str:String) = g.window.alert(str)
-
 }
+
+// JS API below - IGNORE
 
 trait Window extends js.Object {
   val document: DOMDocument

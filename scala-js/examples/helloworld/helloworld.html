@@ -6,12 +6,14 @@
 </head>
 <body>
 <p>
-  <h3>Knapsack on a radial graph</h3>
+  <h3>2 player adversarial knapsack on a radial graph</h3>
   <h4>Rules of the game</h4>
-  <li>You are playing against the computer. You = Green, Computer = Red.
-  <li>To begin, pick any pouch. From then on, you can only pick a pouch the previous pouch is connected to.
-  <li>Whoever makes the most money once both of you reach 100 lb wins!
-  <li>If you get stuck, the computer wins! If computer gets stuck, you win!
+  <li>You are playing against the computer. You = Green, Computer = Orange.
+  <li>You see 64 pouches. Each pouch has a price and a weight. So $2,3lb means the pouch costs $2 and weighs 3lbs.
+  <li>To begin, click on any pouch. From then on, you can only click on a pouch the previous pouch is connected to.
+  <li>Once you & the computer cross 100lbs, whoever makes the most money per pound wins!
+  <li>Getting Stuck: If all the pouches you are connected to have already been clicked, you are stuck.
+  <li>If you or the computer gets stuck, whoever makes the most money per pound wins!
 </p>
 
 <div id="playground">
@@ -33,6 +35,20 @@ $(function() {
 });
 //]]>
 </script>
+<p>
+  <h4>Advice:</h4>
+  <li>It is hard to beat the computer. But keep trying!
+  <li>Beating the computer by making the computer get stuck is a nice strategy :)
+</p>
+<p>
+  <h4>Notes:</h4>
+  <li><a href="https://github.com/krishnanraman/krishnanraman.github.io/blob/master/scala-js/examples/helloworld/Knapsack.scala">Source Code in Scala</a>
+  <li>This is my first scala.js program, inspired by <a href="http://shadaj.me/">Shadaj</a>
+  <li>As of July 2013, you can't use any Java built-in libraries in Scala.js, so I rely on JS for random numbers, not scala.util.Random
+  <li>Thanks to Sébastien Doeraene for helping out with Scala.js
+  <li>Krishnan Raman, Data Scientist, Twitter (kraman@twitter.com)
+</p>
+<p>
 
 </body>
 </html>
