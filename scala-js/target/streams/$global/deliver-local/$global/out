@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m:: delivering :: ch.epfl.lamp#scalajs_2.10;0.1-SNAPSHOT :: 0.1-SNAPSHOT :: integration :: Fri Jun 28 15:47:00 PDT 2013[0m
+[0m[[0mdebug[0m] [0m	options = status=integration pubdate=Fri Jun 28 15:47:00 PDT 2013 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0minfo[0m] [0m	delivering ivy file to /Users/kraman/workspace/scala-js/target/scala-2.10/ivy-0.1-SNAPSHOT.xml[0m
+[0m[[0mdebug[0m] [0m	deliver done (51ms)[0m

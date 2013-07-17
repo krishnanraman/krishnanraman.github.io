@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knapsack on a graph - Scala.js example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>
+  <h3>Knapsack on a radial graph</h3>
+  <h4>Rules of the game</h4>
+  <li>You are playing against the computer. You = Green, Computer = Red.
+  <li>To begin, pick any pouch. From then on, you can only pick a pouch the previous pouch is connected to.
+  <li>Whoever makes the most money once both of you reach 100 lb wins!
+  <li>If you get stuck, the computer wins! If computer gets stuck, you win!
+</p>
+
+<div id="playground">
+</div>
+<canvas id="canvas" width="900" height="900" style="position: relative"></canvas>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript" src="../../target/scalajs-runtime.js"></script>
+<script type="text/javascript" src="./target/scala-2.10/helloworld.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var mainInstance = $ScalaJSEnvironment.m["helloworld.Knapsack"];
+  var mainArgs = $ScalaJSEnvironment.makeNativeArrayWrapper(
+    $ScalaJSEnvironment.classes["java.lang.String"].array, []);
+  mainInstance.main(mainArgs);
+});
+//]]>
+</script>
+
+</body>
+</html>
