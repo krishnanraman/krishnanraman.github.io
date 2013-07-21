@@ -20,8 +20,8 @@
       return this.$jsfield$adj
     });
     Class.prototype["usePouch(Lhelloworld.Pouch;)V"] = (function(arg$pouch) {
-      var idx$jsid$21928 = this["helloworld$Graph$$_pouches()Lscala.collection.Seq;"]()["indexOf(O)I"](arg$pouch);
-      this["helloworld$Graph$$_pouches_=(Lscala.collection.Seq;)V"]($.asInstance(this["pouches()Lscala.collection.Seq;"]()["updated(IOLscala.collection.generic.CanBuildFrom;)O"](idx$jsid$21928, arg$pouch["mkUsed()Lhelloworld.Pouch;"](), $.m["scala.collection.Seq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]()), "scala.collection.Seq"))
+      var idx$jsid$21940 = this["helloworld$Graph$$_pouches()Lscala.collection.Seq;"]()["indexOf(O)I"](arg$pouch);
+      this["helloworld$Graph$$_pouches_=(Lscala.collection.Seq;)V"]($.asInstance(this["pouches()Lscala.collection.Seq;"]()["updated(IOLscala.collection.generic.CanBuildFrom;)O"](idx$jsid$21940, arg$pouch["mkUsed()Lhelloworld.Pouch;"](), $.m["scala.collection.Seq"]["canBuildFrom()Lscala.collection.generic.CanBuildFrom;"]()), "scala.collection.Seq"))
     });
     Class.prototype["pouches()Lscala.collection.Seq;"] = (function() {
       return this["helloworld$Graph$$_pouches()Lscala.collection.Seq;"]()
@@ -78,8 +78,8 @@
       return 1
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33518 = arg$x$1;
-      switch (x1$jsid$33518) {
+      var x1$jsid$34179 = arg$x$1;
+      switch (x1$jsid$34179) {
         case 0:
           {
             return this["_pouches$1()Lscala.collection.Seq;"]();
@@ -106,23 +106,23 @@
         return true
       } else {
         {
-          var x1$jsid$33523 = arg$x$1;
-          var result$$jslabel$matchEnd4$33526;
-          $jslabel$matchEnd4$33526: do {
-            if ($.isInstance(x1$jsid$33523, "helloworld.Graph")) {
-              result$$jslabel$matchEnd4$33526 = true;
-              break $jslabel$matchEnd4$33526
+          var x1$jsid$34184 = arg$x$1;
+          var result$$jslabel$matchEnd4$34187;
+          $jslabel$matchEnd4$34187: do {
+            if ($.isInstance(x1$jsid$34184, "helloworld.Graph")) {
+              result$$jslabel$matchEnd4$34187 = true;
+              break $jslabel$matchEnd4$34187
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33526 = false;
-            break $jslabel$matchEnd4$33526
+            result$$jslabel$matchEnd4$34187 = false;
+            break $jslabel$matchEnd4$34187
           } while (false);
-          var jsx$31 = result$$jslabel$matchEnd4$33526
+          var jsx$31 = result$$jslabel$matchEnd4$34187
         };
         if (jsx$31) {
-          var Graph$1$jsid$26351 = $.asInstance(arg$x$1, "helloworld.Graph");
-          return ($.anyRefEqEq(this["_pouches$1()Lscala.collection.Seq;"](), Graph$1$jsid$26351["_pouches$1()Lscala.collection.Seq;"]()) && Graph$1$jsid$26351["canEqual(O)Z"](this))
+          var Graph$1$jsid$26363 = $.asInstance(arg$x$1, "helloworld.Graph");
+          return ($.anyRefEqEq(this["_pouches$1()Lscala.collection.Seq;"](), Graph$1$jsid$26363["_pouches$1()Lscala.collection.Seq;"]()) && Graph$1$jsid$26363["canEqual(O)Z"](this))
         } else {
           return false
         }
@@ -456,8 +456,8 @@
       return this["apply$mcZII$sp(II)Z"](arg$x, arg$y)
     });
     Class.prototype["apply$mcZII$sp(II)Z"] = (function(arg$x, arg$y) {
-      var x1$jsid$33507 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
-      switch (x1$jsid$33507) {
+      var x1$jsid$34168 = $.m["scala.math.package"]["abs(I)I"]((arg$x - arg$y));
+      switch (x1$jsid$34168) {
         case 1:
           {
             return true;

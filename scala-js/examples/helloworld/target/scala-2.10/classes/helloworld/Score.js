@@ -29,6 +29,9 @@
       this["helloworld$Score$$_value_=(I)V"]((this["helloworld$Score$$_value()I"]() + arg$pouch["value()I"]()));
       this["helloworld$Score$$_weight_=(I)V"]((this["helloworld$Score$$_weight()I"]() + arg$pouch["weight()I"]()))
     });
+    Class.prototype["ratio()D"] = (function() {
+      return (this["helloworld$Score$$_value()I"]() + (0.0 / this["helloworld$Score$$_weight()I"]()))
+    });
     Class.prototype["value()I"] = (function() {
       return this["helloworld$Score$$_value()I"]()
     });
@@ -36,7 +39,7 @@
       return this["helloworld$Score$$_weight()I"]()
     });
     Class.prototype["toString()T"] = (function() {
-      return (((("$" + $.bI(this["helloworld$Score$$_value()I"]())) + ",") + $.bI(this["helloworld$Score$$_weight()I"]())) + "lb")
+      return (((("$" + $.bI(this["helloworld$Score$$_value()I"]())) + " / ") + $.bI(this["helloworld$Score$$_weight()I"]())) + " lb")
     });
     Class.prototype["copy(II)Lhelloworld.Score;"] = (function(arg$_value, arg$_weight) {
       return new $.c["helloworld.Score"]()["<init>(II)"](arg$_value, arg$_weight)
@@ -54,8 +57,8 @@
       return 2
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33457 = arg$x$1;
-      switch (x1$jsid$33457) {
+      var x1$jsid$34118 = arg$x$1;
+      switch (x1$jsid$34118) {
         case 0:
           {
             return $.bI(this["_value$1()I"]());
@@ -77,33 +80,33 @@
       return $.isInstance(arg$x$1, "helloworld.Score")
     });
     Class.prototype["hashCode()I"] = (function() {
-      var acc$jsid$21556 = -889275714;
-      acc$jsid$21556 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21556, this["_value$1()I"]());
-      acc$jsid$21556 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21556, this["_weight$1()I"]());
-      return $.m["scala.runtime.Statics"]["finalizeHash(II)I"](acc$jsid$21556, 2)
+      var acc$jsid$21568 = -889275714;
+      acc$jsid$21568 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21568, this["_value$1()I"]());
+      acc$jsid$21568 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21568, this["_weight$1()I"]());
+      return $.m["scala.runtime.Statics"]["finalizeHash(II)I"](acc$jsid$21568, 2)
     });
     Class.prototype["equals(O)Z"] = (function(arg$x$1) {
       if ((this === arg$x$1)) {
         return true
       } else {
         {
-          var x1$jsid$33465 = arg$x$1;
-          var result$$jslabel$matchEnd4$33468;
-          $jslabel$matchEnd4$33468: do {
-            if ($.isInstance(x1$jsid$33465, "helloworld.Score")) {
-              result$$jslabel$matchEnd4$33468 = true;
-              break $jslabel$matchEnd4$33468
+          var x1$jsid$34126 = arg$x$1;
+          var result$$jslabel$matchEnd4$34129;
+          $jslabel$matchEnd4$34129: do {
+            if ($.isInstance(x1$jsid$34126, "helloworld.Score")) {
+              result$$jslabel$matchEnd4$34129 = true;
+              break $jslabel$matchEnd4$34129
             } else {
               /*<skip>*/
             };
-            result$$jslabel$matchEnd4$33468 = false;
-            break $jslabel$matchEnd4$33468
+            result$$jslabel$matchEnd4$34129 = false;
+            break $jslabel$matchEnd4$34129
           } while (false);
-          var jsx$1 = result$$jslabel$matchEnd4$33468
+          var jsx$1 = result$$jslabel$matchEnd4$34129
         };
         if (jsx$1) {
-          var Score$1$jsid$21579 = $.asInstance(arg$x$1, "helloworld.Score");
-          return (((this["_value$1()I"]() === Score$1$jsid$21579["_value$1()I"]()) && (this["_weight$1()I"]() === Score$1$jsid$21579["_weight$1()I"]())) && Score$1$jsid$21579["canEqual(O)Z"](this))
+          var Score$1$jsid$21591 = $.asInstance(arg$x$1, "helloworld.Score");
+          return (((this["_value$1()I"]() === Score$1$jsid$21591["_value$1()I"]()) && (this["_weight$1()I"]() === Score$1$jsid$21591["_weight$1()I"]())) && Score$1$jsid$21591["canEqual(O)Z"](this))
         } else {
           return false
         }
@@ -124,6 +127,9 @@
     });
     Class.prototype.update = (function(arg$1) {
       return this["update(Lhelloworld.Pouch;)V"](arg$1)
+    });
+    Class.prototype.ratio = (function() {
+      return this["ratio()D"]()
     });
     Class.prototype.value = (function() {
       return this["value()I"]()

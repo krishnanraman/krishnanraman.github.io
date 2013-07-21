@@ -18,24 +18,24 @@
       var m$jsid$12410 = (arg$id - q$jsid$12409);
       var r$jsid$12411 = ((1 + q$jsid$12409) * arg$R);
       var theta$jsid$12412 = (((m$jsid$12410 * $.m["scala.math.package"]["Pi()D"]()) / 4) + ($.m["scala.math.package"]["Pi()D"]() / 11));
-      var x1$jsid$33444 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]($.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["cos(D)D"](theta$jsid$12412))), $.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["sin(D)D"](theta$jsid$12412))));
-      var result$$jslabel$matchEnd3$33447;
-      $jslabel$matchEnd3$33447: do {
-        if ((x1$jsid$33444 !== null)) {
-          var xx$jsid$14251 = x1$jsid$33444["_1$mcI$sp()I"]();
-          var yy$jsid$14252 = x1$jsid$33444["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33447 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$14251, yy$jsid$14252);
-          break $jslabel$matchEnd3$33447
+      var x1$jsid$34105 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"]($.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["cos(D)D"](theta$jsid$12412))), $.m["scala.math.package"]["round(D)J"]((r$jsid$12411 * $.m["scala.math.package"]["sin(D)D"](theta$jsid$12412))));
+      var result$$jslabel$matchEnd3$34108;
+      $jslabel$matchEnd3$34108: do {
+        if ((x1$jsid$34105 !== null)) {
+          var xx$jsid$14251 = x1$jsid$34105["_1$mcI$sp()I"]();
+          var yy$jsid$14252 = x1$jsid$34105["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$34108 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](xx$jsid$14251, yy$jsid$14252);
+          break $jslabel$matchEnd3$34108
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33444);
-        break $jslabel$matchEnd3$33447
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$34105);
+        break $jslabel$matchEnd3$34108
       } while (false);
-      var x$1$jsid$12413 = result$$jslabel$matchEnd3$33447;
+      var x$1$jsid$12413 = result$$jslabel$matchEnd3$34108;
       var xx$jsid$12414 = x$1$jsid$12413["_1$mcI$sp()I"]();
       var yy$jsid$12415 = x$1$jsid$12413["_2$mcI$sp()I"]();
-      return new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](((xx$jsid$12414 + (8 * arg$R)) + 10), ((yy$jsid$12415 + (8 * arg$R)) + 10))
+      return new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](((xx$jsid$12414 + (8 * arg$R)) + 5), ((yy$jsid$12415 + (8 * arg$R)) + 5))
     });
     Class.prototype["apply(IIIZ)Lhelloworld.Pouch;"] = (function(arg$id, arg$value, arg$weight, arg$isAvailable) {
       return new $.c["helloworld.Pouch"]()["<init>(IIIZ)"](arg$id, arg$value, arg$weight, arg$isAvailable)
@@ -124,43 +124,43 @@
       return new $.c["helloworld.Pouch"]()["<init>(IIIZ)"](this["id()I"](), this["value()I"](), this["weight()I"](), false)
     });
     Class.prototype["equals(O)Z"] = (function(arg$p) {
-      var x1$jsid$33473 = arg$p;
-      var result$$jslabel$matchEnd4$33476;
-      $jslabel$matchEnd4$33476: do {
-        if ($.isInstance(x1$jsid$33473, "helloworld.Pouch")) {
-          var x2$jsid$33474 = $.asInstance(x1$jsid$33473, "helloworld.Pouch");
-          result$$jslabel$matchEnd4$33476 = (x2$jsid$33474["id()I"]() === this["id()I"]());
-          break $jslabel$matchEnd4$33476
+      var x1$jsid$34134 = arg$p;
+      var result$$jslabel$matchEnd4$34137;
+      $jslabel$matchEnd4$34137: do {
+        if ($.isInstance(x1$jsid$34134, "helloworld.Pouch")) {
+          var x2$jsid$34135 = $.asInstance(x1$jsid$34134, "helloworld.Pouch");
+          result$$jslabel$matchEnd4$34137 = (x2$jsid$34135["id()I"]() === this["id()I"]());
+          break $jslabel$matchEnd4$34137
         } else {
           /*<skip>*/
         };
-        result$$jslabel$matchEnd4$33476 = false;
-        break $jslabel$matchEnd4$33476
+        result$$jslabel$matchEnd4$34137 = false;
+        break $jslabel$matchEnd4$34137
       } while (false);
-      return result$$jslabel$matchEnd4$33476
+      return result$$jslabel$matchEnd4$34137
     });
     Class.prototype["toString()T"] = (function() {
-      return (((("$" + $.bI(this["value()I"]())) + ",") + $.bI(this["weight()I"]())) + "lb")
+      return ((("$" + $.bI(this["value()I"]())) + " /") + $.bI(this["weight()I"]()))
     });
     Class.prototype["contains(II)Z"] = (function(arg$x, arg$y) {
-      var x1$jsid$33481 = this["coords()Lscala.Tuple2;"]();
-      var result$$jslabel$matchEnd3$33483;
-      $jslabel$matchEnd3$33483: do {
-        if ((x1$jsid$33481 !== null)) {
-          var myx$jsid$21620 = x1$jsid$33481["_1$mcI$sp()I"]();
-          var myy$jsid$21621 = x1$jsid$33481["_2$mcI$sp()I"]();
-          result$$jslabel$matchEnd3$33483 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](myx$jsid$21620, myy$jsid$21621);
-          break $jslabel$matchEnd3$33483
+      var x1$jsid$34142 = this["coords()Lscala.Tuple2;"]();
+      var result$$jslabel$matchEnd3$34144;
+      $jslabel$matchEnd3$34144: do {
+        if ((x1$jsid$34142 !== null)) {
+          var myx$jsid$21632 = x1$jsid$34142["_1$mcI$sp()I"]();
+          var myy$jsid$21633 = x1$jsid$34142["_2$mcI$sp()I"]();
+          result$$jslabel$matchEnd3$34144 = new $.c["scala.Tuple2$mcII$sp"]()["<init>(II)"](myx$jsid$21632, myy$jsid$21633);
+          break $jslabel$matchEnd3$34144
         } else {
           /*<skip>*/
         };
-        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$33481);
-        break $jslabel$matchEnd3$33483
+        throw new $.c["scala.MatchError"]()["<init>(O)"](x1$jsid$34142);
+        break $jslabel$matchEnd3$34144
       } while (false);
-      var x$2$jsid$21614 = result$$jslabel$matchEnd3$33483;
-      var myx$jsid$21615 = x$2$jsid$21614["_1$mcI$sp()I"]();
-      var myy$jsid$21616 = x$2$jsid$21614["_2$mcI$sp()I"]();
-      return (((arg$x >= (myx$jsid$21615 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$x <= (myx$jsid$21615 + $.m["helloworld.Pouch"]["r()I"]()))) && ((arg$y >= (myy$jsid$21616 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$y <= (myy$jsid$21616 + $.m["helloworld.Pouch"]["r()I"]()))))
+      var x$2$jsid$21626 = result$$jslabel$matchEnd3$34144;
+      var myx$jsid$21627 = x$2$jsid$21626["_1$mcI$sp()I"]();
+      var myy$jsid$21628 = x$2$jsid$21626["_2$mcI$sp()I"]();
+      return (((arg$x >= (myx$jsid$21627 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$x <= (myx$jsid$21627 + $.m["helloworld.Pouch"]["r()I"]()))) && ((arg$y >= (myy$jsid$21628 - $.m["helloworld.Pouch"]["r()I"]())) && (arg$y <= (myy$jsid$21628 + $.m["helloworld.Pouch"]["r()I"]()))))
     });
     Class.prototype["coords()Lscala.Tuple2;"] = (function() {
       return this.$jsfield$coords
@@ -187,8 +187,8 @@
       return 4
     });
     Class.prototype["productElement(I)O"] = (function(arg$x$1) {
-      var x1$jsid$33487 = arg$x$1;
-      switch (x1$jsid$33487) {
+      var x1$jsid$34148 = arg$x$1;
+      switch (x1$jsid$34148) {
         case 0:
           {
             return $.bI(this["id()I"]());
@@ -220,19 +220,19 @@
       return $.isInstance(arg$x$1, "helloworld.Pouch")
     });
     Class.prototype["hashCode()I"] = (function() {
-      var acc$jsid$21692 = -889275714;
-      acc$jsid$21692 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21692, this["id()I"]());
-      acc$jsid$21692 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21692, this["value()I"]());
-      acc$jsid$21692 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21692, this["weight()I"]());
+      var acc$jsid$21704 = -889275714;
+      acc$jsid$21704 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21704, this["id()I"]());
+      acc$jsid$21704 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21704, this["value()I"]());
+      acc$jsid$21704 = $.m["scala.runtime.Statics"]["mix(II)I"](acc$jsid$21704, this["weight()I"]());
       var jsx$1 = $.m["scala.runtime.Statics"];
-      var jsx$2 = acc$jsid$21692;
+      var jsx$2 = acc$jsid$21704;
       if (this["isAvailable()Z"]()) {
         var jsx$3 = 1231
       } else {
         var jsx$3 = 1237
       };
-      acc$jsid$21692 = jsx$1["mix(II)I"](jsx$2, jsx$3);
-      return $.m["scala.runtime.Statics"]["finalizeHash(II)I"](acc$jsid$21692, 4)
+      acc$jsid$21704 = jsx$1["mix(II)I"](jsx$2, jsx$3);
+      return $.m["scala.runtime.Statics"]["finalizeHash(II)I"](acc$jsid$21704, 4)
     });
     Class.prototype["<init>(IIIZ)"] = (function(arg$id, arg$value, arg$weight, arg$isAvailable) {
       this.$jsfield$id = arg$id;

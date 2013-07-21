@@ -9,16 +9,16 @@
   <h3>2 player adversarial knapsack on a radial graph</h3>
   <h4>Rules of the game</h4>
   <li>You are playing against the computer. You = Green, Computer = Orange.
-  <li>You see 64 pouches. Each pouch has a price and a weight. So $2,3lb means the pouch costs $2 and weighs 3lbs.
+  <li>You see 64 pouches. Each pouch has a price and a weight. So $2 /3 means the pouch costs $2 and weighs 3 lbs.
   <li>To begin, click on any pouch. From then on, you can only click on a pouch the previous pouch is connected to.
-  <li>Once you & the computer cross 100lbs, whoever makes the most money per pound wins!
+  <li>When BOTH you and the computer cross 100 lbs, whoever makes the most money per pound wins!
   <li>Getting Stuck: If all the pouches you are connected to have already been clicked, you are stuck.
   <li>If you or the computer gets stuck, whoever makes the most money per pound wins!
 </p>
 
 <div id="playground">
 </div>
-<canvas id="canvas" width="900" height="900" style="position: relative"></canvas>
+<canvas id="canvas" width="800" height="800" style="position: relative"></canvas>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
@@ -37,6 +37,8 @@ $(function() {
 </script>
 <p>
   <h4>Advice:</h4>
+  <li>Beware of pouches with negative dollar amount!
+  <li>If you start in thev innermost circle or the outermost, your chances of winning are remote.
   <li>It is hard to beat the computer. But keep trying!
   <li>Beating the computer by making the computer get stuck is a nice strategy :)
 </p>
