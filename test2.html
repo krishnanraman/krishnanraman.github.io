@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>test2.html</title>
+<!-- Created by Maple 2015.1, Linux -->
+</head>
+<a href="test2.html#MapleAutoBookmark1">test2.mw</a>
+<ul>
+</ul>
+<hr>
+<a name="MapleAutoBookmark1" />
+
+<body bgcolor="FFFFFF">
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_1.gif" width="351" height="39" alt="cpc := proc (a, b, c, bid) options operator, arrow; `+`(`/`(`*`(a), `*`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))))), `-`(`*`(`/`(1, 2), `*`(a)))) end proc" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_2.gif" width="334" height="42" alt="proc (a, b, c, bid) options operator, arrow; `+`(`/`(`*`(a), `*`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))))), `-`(`*`(`/`(1, 2), `*`(a)))) end proc" align="center" border="0"></td>
+<td width='5%' align='center'>(1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_3.gif" width="291" height="20" alt="plot(cpc(1000, 0.1e-1, 20, bid), bid = 0 .. 600)" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="mapleimages2/test2_4.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_5.gif" width="239" height="38" alt="simplify(diff(cpc(a, b, c, bid), a))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_6.gif" width="166" height="44" alt="`+`(`-`(`/`(`*`(`/`(1, 2), `*`(`+`(`-`(1), exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))))), `*`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c))))))))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_7.gif" width="239" height="38" alt="simplify(diff(cpc(a, b, c, bid), b))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_8.gif" width="179" height="47" alt="`/`(`*`(a, `*`(`+`(bid, `-`(c)), `*`(exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))))), `*`(`^`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))), 2)))" align="center" border="0"></td>
+<td width='5%' align='center'>(3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_9.gif" width="238" height="38" alt="simplify(diff(cpc(a, b, c, bid), c))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_10.gif" width="159" height="47" alt="`+`(`-`(`/`(`*`(a, `*`(b, `*`(exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))))), `*`(`^`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(bid, `-`(c)))))))), 2)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_11.gif" width="330" height="38" alt="clicks := proc (a, b, c, cpc) options operator, arrow; `/`(`*`(a), `*`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(cpc, `-`(c)))))))))) end proc" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_12.gif" width="299" height="42" alt="proc (a, b, c, cpc) options operator, arrow; `/`(`*`(a), `*`(`+`(1, exp(`+`(`-`(`*`(b, `*`(`+`(cpc, `-`(c)))))))))) end proc" align="center" border="0"></td>
+<td width='5%' align='center'>(5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_13.gif" width="256" height="38" alt="simplify(diff(clicks(a, b, c, cpc), a))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_14.gif" width="124" height="42" alt="`/`(1, `*`(`+`(1, exp(`*`(b, `*`(`+`(`-`(cpc), c)))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_15.gif" width="256" height="38" alt="simplify(diff(clicks(a, b, c, cpc), b))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_16.gif" width="203" height="47" alt="`+`(`-`(`/`(`*`(a, `*`(`+`(`-`(cpc), c), `*`(exp(`*`(b, `*`(`+`(`-`(cpc), c))))))), `*`(`^`(`+`(1, exp(`*`(b, `*`(`+`(`-`(cpc), c))))), 2)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_17.gif" width="255" height="38" alt="simplify(diff(clicks(a, b, c, cpc), c))" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="mapleimages2/test2_18.gif" width="159" height="47" alt="`+`(`-`(`/`(`*`(a, `*`(b, `*`(exp(`*`(b, `*`(`+`(`-`(cpc), c))))))), `*`(`^`(`+`(1, exp(`*`(b, `*`(`+`(`-`(cpc), c))))), 2)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="mapleimages2/test2_19.gif" width="316" height="20" alt="plot(clicks(1000, 0.5e-1, 100, cpc), cpc = 0 .. 600)" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="mapleimages2/test2_20.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#78000e" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+</body>
+</html>
