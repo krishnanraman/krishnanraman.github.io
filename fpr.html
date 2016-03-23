@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Statistics</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h3> Disease Stats</h3>
+<form>
+<br>  Number of people in a sample of 1000, who have a disease: <input type="number" value = "1" id="prevalence" min="1" max="1000" onclick="compute()">
+<br> False positive rate: <input type="number" value = "5" id="fpr" min="1" max="100" onclick="compute()"> %
+</form>
+<p id="result" />
+<!--<canvas id="canvas" width="2400" height="1200" style="position: relative"></canvas>-->
+<script type="text/javascript">
+function compute() {
+	var total = 1000;
+	var hasDisease = parseFloat(document.getElementById("prevalence").value);
+	var noDisease = total - hasDisease;
+
+    var fpr = parseFloat(document.getElementById("fpr").value);
+
+    var truePositive = hasDisease
+    var falsePositive = 10 * fpr // fpr is x ppl out of 100, so 10x out of 1000
+    var trueNegative = 1000 - (truePositive + falsePositive)
+    var falseNegative  = 0
+
+    var chanceOfDiseaseGivenPositive = parseFloat(truePositive)/(truePositive + falsePositive)
+
+    document.getElementById("result").innerHTML = 
+    "True Positive: " + truePositive + "<br>" + 
+    "False Positive: " + falsePositive + "<br>" + 
+    "True Negative: " + trueNegative + "<br>" + 
+    "False Negative: " + falseNegative + "<br>" + 
+    "Chance Of Disease if Flagged Positive: " + truePositive + "/" + "(" + truePositive +"+"+falsePositive+") = " + Math.ceil(chanceOfDiseaseGivenPositive * 10000)/100 + " %";  
+};
+</script>
+
+</body>
+</html>
