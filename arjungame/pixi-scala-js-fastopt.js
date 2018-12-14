@@ -2536,7 +2536,7 @@ $c_Lexample_asteroid_SpriteGameObject.prototype.update__J__V = (function(deltaTi
 });
 $c_Lexample_asteroid_SpriteGameObject.prototype.init___T__D__D__D = (function(image, x, y, scale) {
   $c_Lexample_asteroid_GameObject.prototype.init___D__D.call(this, x, y);
-  this.sprite$2 = $g.PIXI.Sprite.fromImage((("https://krishnanraman.github.io" + new $c_jl_Character().init___C(47)) + image));
+  this.sprite$2 = $g.PIXI.Sprite.fromImage((("" + new $c_jl_Character().init___C(47)) + image));
   this.sprite$2.anchor = $m_Lpixiscalajs_PIXI_Point$().apply__D__D__Lpixiscalajs_PIXI_Point(0.5, 0.5);
   this.sprite$2.scale = $m_Lpixiscalajs_PIXI_Point$().apply__D__D__Lpixiscalajs_PIXI_Point(scale, scale);
   this.sprite$2.name = this.toString__T();
