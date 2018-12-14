@@ -1165,7 +1165,7 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
     var jsx$1 = this$10.self$1.nextInt__I__I(1600);
     var this$11 = $m_s_util_Random$();
     jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$11.self$1.nextInt__I__I(1080), 1.0));
-    if ((i === 21)) {
+    if ((i === 31)) {
       break
     };
     i = ((1 + i) | 0)
@@ -1208,7 +1208,7 @@ $c_Lexample_asteroid_GameObject.prototype.init___D__D = (function(x, y) {
   this.acceleration$1 = $m_Lpixiscalajs_extensions_Vector2$().Zero$1;
   this.position$1 = new $c_Lpixiscalajs_extensions_Vector2().init___D__D(x, y);
   this.speed$1 = $m_Lpixiscalajs_extensions_Vector2$().Zero$1;
-  this.maxSpeed$1 = 10;
+  this.maxSpeed$1 = 6;
   this.world$1 = null;
   return this
 });
@@ -4924,7 +4924,7 @@ $c_Lexample_asteroid_Asteroid.prototype.toString__T = (function() {
 });
 $c_Lexample_asteroid_Asteroid.prototype.update__J__V = (function(deltaTime) {
   $c_Lexample_asteroid_SpriteGameObject.prototype.update__J__V.call(this, deltaTime);
-  this.sprite$2.rotation = ($uD(this.sprite$2.rotation) + ((0.005 * this.rotationSpeed$3) * (this.clockwise$3 ? 1 : (-1))))
+  this.sprite$2.rotation = ($uD(this.sprite$2.rotation) + ((0.002 * this.rotationSpeed$3) * (this.clockwise$3 ? 1 : (-1))))
 });
 $c_Lexample_asteroid_Asteroid.prototype.hashCode__I = (function() {
   var acc = (-889275714);
@@ -4950,7 +4950,7 @@ $c_Lexample_asteroid_Asteroid.prototype.init___D__D__D = (function(x, y, scale) 
 });
 $c_Lexample_asteroid_Asteroid.prototype.$break__V = (function() {
   if ((this.scale$3 > 0.25)) {
-    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2)))
+    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 3))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 3)))
   };
   this.destroy__V()
 });
