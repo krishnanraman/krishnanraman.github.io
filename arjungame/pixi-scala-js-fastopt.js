@@ -1150,22 +1150,24 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
   var this$2 = $m_s_Console$();
   var this$3 = $as_Ljava_io_PrintStream(this$2.outVar$2.v$1);
   this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Loading renderer\n");
-  var renderer = new $g.PIXI.CanvasRenderer(1600.0, 1080.0, $m_Lpixiscalajs_PIXI_RendererOptions$().apply__Lorg_scalajs_dom_raw_HTMLCanvasElement__Lpixiscalajs_PIXI_RendererOptions(canvas));
+  var renderer = new $g.PIXI.CanvasRenderer(800.0, 600.0, $m_Lpixiscalajs_PIXI_RendererOptions$().apply__Lorg_scalajs_dom_raw_HTMLCanvasElement__Lpixiscalajs_PIXI_RendererOptions(canvas));
   var this$5 = $m_s_Console$();
   var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
   this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Creating world\n");
   var ship = new $c_Lexample_asteroid_Ship().init___D__D(800.0, 600.0);
+  var sun = new $c_Lexample_asteroid_Sun().init___D__D__D(700.0, 100.0, 1.0);
   this.world$1 = new $c_Lexample_asteroid_World().init___Lpixiscalajs_PIXI_SystemRenderer__Lexample_asteroid_Ship(renderer, ship);
   this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(ship);
+  this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(sun);
   var i = 1;
   while (true) {
     var arg1 = i;
     var jsx$2 = this.world$1;
     var this$10 = $m_s_util_Random$();
-    var jsx$1 = this$10.self$1.nextInt__I__I(1600);
+    var jsx$1 = this$10.self$1.nextInt__I__I(800);
     var this$11 = $m_s_util_Random$();
-    jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$11.self$1.nextInt__I__I(1080), 1.0));
-    if ((i === 31)) {
+    jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$11.self$1.nextInt__I__I(600), 1.0));
+    if ((i === 40)) {
       break
     };
     i = ((1 + i) | 0)
@@ -1208,7 +1210,7 @@ $c_Lexample_asteroid_GameObject.prototype.init___D__D = (function(x, y) {
   this.acceleration$1 = $m_Lpixiscalajs_extensions_Vector2$().Zero$1;
   this.position$1 = new $c_Lpixiscalajs_extensions_Vector2().init___D__D(x, y);
   this.speed$1 = $m_Lpixiscalajs_extensions_Vector2$().Zero$1;
-  this.maxSpeed$1 = 6;
+  this.maxSpeed$1 = 4;
   this.world$1 = null;
   return this
 });
@@ -4950,7 +4952,7 @@ $c_Lexample_asteroid_Asteroid.prototype.init___D__D__D = (function(x, y, scale) 
 });
 $c_Lexample_asteroid_Asteroid.prototype.$break__V = (function() {
   if ((this.scale$3 > 0.25)) {
-    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 3))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 3)))
+    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2)))
   };
   this.destroy__V()
 });
@@ -5164,7 +5166,7 @@ $c_Lexample_asteroid_Ship.prototype.init___D__D = (function(x, y) {
   this.x$3 = x;
   this.y$3 = y;
   $c_Lexample_asteroid_SpriteGameObject.prototype.init___T__D__D__D.call(this, "playerShip1_blue.png", x, y, 1.0);
-  this.maxSpeed$1 = 3;
+  this.maxSpeed$1 = 2;
   this.lastShotTime$3 = $m_jl_System$().currentTimeMillis__J();
   return this
 });
@@ -5218,6 +5220,100 @@ var $d_Lexample_asteroid_Ship = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lexample_asteroid_Ship.prototype.$classData = $d_Lexample_asteroid_Ship;
+/** @constructor */
+function $c_Lexample_asteroid_Sun() {
+  $c_Lexample_asteroid_SpriteGameObject.call(this);
+  this.x$3 = 0.0;
+  this.y$3 = 0.0;
+  this.scale$3 = 0.0
+}
+$c_Lexample_asteroid_Sun.prototype = new $h_Lexample_asteroid_SpriteGameObject();
+$c_Lexample_asteroid_Sun.prototype.constructor = $c_Lexample_asteroid_Sun;
+/** @constructor */
+function $h_Lexample_asteroid_Sun() {
+  /*<skip>*/
+}
+$h_Lexample_asteroid_Sun.prototype = $c_Lexample_asteroid_Sun.prototype;
+$c_Lexample_asteroid_Sun.prototype.productPrefix__T = (function() {
+  return "Sun"
+});
+$c_Lexample_asteroid_Sun.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lexample_asteroid_Sun.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lexample_asteroid_Sun(x$1)) {
+    var Sun$1 = $as_Lexample_asteroid_Sun(x$1);
+    return (((this.x$3 === Sun$1.x$3) && (this.y$3 === Sun$1.y$3)) && (this.scale$3 === Sun$1.scale$3))
+  } else {
+    return false
+  }
+});
+$c_Lexample_asteroid_Sun.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.x$3;
+      break
+    }
+    case 1: {
+      return this.y$3;
+      break
+    }
+    case 2: {
+      return this.scale$3;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lexample_asteroid_Sun.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lexample_asteroid_Sun.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x$3));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.y$3));
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.scale$3));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
+});
+$c_Lexample_asteroid_Sun.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+$c_Lexample_asteroid_Sun.prototype.init___D__D__D = (function(x, y, scale) {
+  this.x$3 = x;
+  this.y$3 = y;
+  this.scale$3 = scale;
+  $c_Lexample_asteroid_SpriteGameObject.prototype.init___T__D__D__D.call(this, "sun.png", x, y, scale);
+  return this
+});
+function $is_Lexample_asteroid_Sun(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lexample_asteroid_Sun)))
+}
+function $as_Lexample_asteroid_Sun(obj) {
+  return (($is_Lexample_asteroid_Sun(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "example.asteroid.Sun"))
+}
+function $isArrayOf_Lexample_asteroid_Sun(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lexample_asteroid_Sun)))
+}
+function $asArrayOf_Lexample_asteroid_Sun(obj, depth) {
+  return (($isArrayOf_Lexample_asteroid_Sun(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lexample.asteroid.Sun;", depth))
+}
+var $d_Lexample_asteroid_Sun = new $TypeData().initClass({
+  Lexample_asteroid_Sun: 0
+}, false, "example.asteroid.Sun", {
+  Lexample_asteroid_Sun: 1,
+  Lexample_asteroid_SpriteGameObject: 1,
+  Lexample_asteroid_GameObject: 1,
+  O: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lexample_asteroid_Sun.prototype.$classData = $d_Lexample_asteroid_Sun;
 /** @constructor */
 function $c_Ljava_io_PrintStream() {
   $c_Ljava_io_FilterOutputStream.call(this);
