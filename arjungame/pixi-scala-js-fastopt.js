@@ -1176,17 +1176,7 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
       i = ((1 + i) | 0)
     }
   };
-  this.world$1.loop$1.run__V();
-  var textrenderer = canvas.getContext("2d");
-  canvas.width = $uI(canvas.parentElement.clientWidth);
-  canvas.height = $uI(canvas.parentElement.clientHeight);
-  textrenderer.fillStyle = "#f8f8f8";
-  textrenderer.fillRect(0.0, 0.0, $uI(canvas.width), $uI(canvas.height));
-  textrenderer.textAlign = "center";
-  textrenderer.textBaseline = "middle";
-  textrenderer.clearRect(0.0, 0.0, $uI(canvas.width), $uI(canvas.height));
-  textrenderer.font = "75px sans-serif";
-  textrenderer.fillText("All Done!", (($uI(canvas.width) / 2) | 0), (($uI(canvas.height) / 2) | 0))
+  this.world$1.loop$1.run__V()
 });
 $c_Lexample_asteroid_AsteroidGame.prototype.$$js$exported$meth$main__Lorg_scalajs_dom_raw_HTMLCanvasElement__O = (function(canvas) {
   this.main__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas)
@@ -1274,7 +1264,7 @@ function $h_Lexample_asteroid_MyGlobals$() {
 }
 $h_Lexample_asteroid_MyGlobals$.prototype = $c_Lexample_asteroid_MyGlobals$.prototype;
 $c_Lexample_asteroid_MyGlobals$.prototype.init___ = (function() {
-  this.asteroids$1 = 10;
+  this.asteroids$1 = 5;
   this.chances$1 = 20;
   return this
 });
