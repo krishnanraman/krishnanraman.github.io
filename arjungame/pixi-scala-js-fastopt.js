@@ -1169,7 +1169,7 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
       var this$12 = $m_s_util_Random$();
       var jsx$1 = this$12.self$1.nextInt__I__I(800);
       var this$13 = $m_s_util_Random$();
-      jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$13.self$1.nextInt__I__I(600), 1.0));
+      jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$13.self$1.nextInt__I__I(600), 0.5));
       if ((i === end)) {
         break
       };
@@ -1422,12 +1422,6 @@ $c_Lexample_asteroid_World.prototype.init___Lpixiscalajs_PIXI_SystemRenderer__Le
       };
       if (this$2.left$1.isDown$1) {
         this$2.ship$1.sprite$2.rotation = ($uD(this$2.ship$1.sprite$2.rotation) - (3 * $m_Lpixiscalajs_extensions_Vector2$().DEG$undTO$undRADS$1))
-      };
-      if (this$2.up$1.isDown$1) {
-        this$2.ship$1.acceleration$1 = this$2.ship$1.heading__Lpixiscalajs_extensions_Vector2()
-      };
-      if (this$2.down$1.isDown$1) {
-        this$2.ship$1.acceleration$1 = $m_Lpixiscalajs_extensions_Vector2$().Zero$1
       };
       if (this$2.space$1.isDown$1) {
         this$2.ship$1.fire__Lexample_asteroid_World__V(this$2)
@@ -4305,11 +4299,6 @@ $c_Lpixiscalajs_extensions_Vector2.prototype.magnitude__D = (function() {
   var a = ((this.x$1 * this.x$1) + (this.y$1 * this.y$1));
   return $uD($g.Math.sqrt(a))
 });
-$c_Lpixiscalajs_extensions_Vector2.prototype.rotateRadians__D__Lpixiscalajs_extensions_Vector2 = (function(radians) {
-  var ca = $uD($g.Math.cos(radians));
-  var sa = $uD($g.Math.sin(radians));
-  return new $c_Lpixiscalajs_extensions_Vector2().init___D__D(((ca * this.x$1) - (sa * this.y$1)), ((sa * this.x$1) + (ca * this.y$1)))
-});
 $c_Lpixiscalajs_extensions_Vector2.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().doubleHash__D__I(this.x$1));
@@ -5187,9 +5176,6 @@ $c_Lexample_asteroid_Ship.prototype.productPrefix__T = (function() {
 });
 $c_Lexample_asteroid_Ship.prototype.productArity__I = (function() {
   return 2
-});
-$c_Lexample_asteroid_Ship.prototype.heading__Lpixiscalajs_extensions_Vector2 = (function() {
-  return $m_Lpixiscalajs_extensions_Vector2$().Up$1.rotateRadians__D__Lpixiscalajs_extensions_Vector2($uD(this.sprite$2.rotation))
 });
 $c_Lexample_asteroid_Ship.prototype.checkCollision__Lexample_asteroid_GameObject__Lpixiscalajs_extensions_Vector2__Z = (function(origin, point) {
   return false
