@@ -1159,20 +1159,34 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
   this.world$1 = new $c_Lexample_asteroid_World().init___Lpixiscalajs_PIXI_SystemRenderer__Lexample_asteroid_Ship(renderer, ship);
   this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(ship);
   this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(sun);
-  var i = 1;
-  while (true) {
-    var arg1 = i;
-    var jsx$2 = this.world$1;
-    var this$10 = $m_s_util_Random$();
-    var jsx$1 = this$10.self$1.nextInt__I__I(800);
-    var this$11 = $m_s_util_Random$();
-    jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$11.self$1.nextInt__I__I(600), 1.0));
-    if ((i === 40)) {
-      break
-    };
-    i = ((1 + i) | 0)
+  var end = $m_Lexample_asteroid_MyGlobals$().asteroids$1;
+  var isEmpty$4 = (end < 1);
+  if ((!isEmpty$4)) {
+    var i = 1;
+    while (true) {
+      var arg1 = i;
+      var jsx$2 = this.world$1;
+      var this$12 = $m_s_util_Random$();
+      var jsx$1 = this$12.self$1.nextInt__I__I(800);
+      var this$13 = $m_s_util_Random$();
+      jsx$2.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(jsx$1, this$13.self$1.nextInt__I__I(600), 1.0));
+      if ((i === end)) {
+        break
+      };
+      i = ((1 + i) | 0)
+    }
   };
-  this.world$1.loop$1.run__V()
+  this.world$1.loop$1.run__V();
+  var textrenderer = canvas.getContext("2d");
+  canvas.width = $uI(canvas.parentElement.clientWidth);
+  canvas.height = $uI(canvas.parentElement.clientHeight);
+  textrenderer.fillStyle = "#f8f8f8";
+  textrenderer.fillRect(0.0, 0.0, $uI(canvas.width), $uI(canvas.height));
+  textrenderer.textAlign = "center";
+  textrenderer.textBaseline = "middle";
+  textrenderer.clearRect(0.0, 0.0, $uI(canvas.width), $uI(canvas.height));
+  textrenderer.font = "75px sans-serif";
+  textrenderer.fillText("All Done!", (($uI(canvas.width) / 2) | 0), (($uI(canvas.height) / 2) | 0))
 });
 $c_Lexample_asteroid_AsteroidGame.prototype.$$js$exported$meth$main__Lorg_scalajs_dom_raw_HTMLCanvasElement__O = (function(canvas) {
   this.main__Lorg_scalajs_dom_raw_HTMLCanvasElement__V(canvas)
@@ -1245,6 +1259,38 @@ function $isArrayOf_Lexample_asteroid_GameObject(obj, depth) {
 }
 function $asArrayOf_Lexample_asteroid_GameObject(obj, depth) {
   return (($isArrayOf_Lexample_asteroid_GameObject(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lexample.asteroid.GameObject;", depth))
+}
+/** @constructor */
+function $c_Lexample_asteroid_MyGlobals$() {
+  $c_O.call(this);
+  this.asteroids$1 = 0;
+  this.chances$1 = 0
+}
+$c_Lexample_asteroid_MyGlobals$.prototype = new $h_O();
+$c_Lexample_asteroid_MyGlobals$.prototype.constructor = $c_Lexample_asteroid_MyGlobals$;
+/** @constructor */
+function $h_Lexample_asteroid_MyGlobals$() {
+  /*<skip>*/
+}
+$h_Lexample_asteroid_MyGlobals$.prototype = $c_Lexample_asteroid_MyGlobals$.prototype;
+$c_Lexample_asteroid_MyGlobals$.prototype.init___ = (function() {
+  this.asteroids$1 = 10;
+  this.chances$1 = 20;
+  return this
+});
+var $d_Lexample_asteroid_MyGlobals$ = new $TypeData().initClass({
+  Lexample_asteroid_MyGlobals$: 0
+}, false, "example.asteroid.MyGlobals$", {
+  Lexample_asteroid_MyGlobals$: 1,
+  O: 1
+});
+$c_Lexample_asteroid_MyGlobals$.prototype.$classData = $d_Lexample_asteroid_MyGlobals$;
+var $n_Lexample_asteroid_MyGlobals$ = (void 0);
+function $m_Lexample_asteroid_MyGlobals$() {
+  if ((!$n_Lexample_asteroid_MyGlobals$)) {
+    $n_Lexample_asteroid_MyGlobals$ = new $c_Lexample_asteroid_MyGlobals$().init___()
+  };
+  return $n_Lexample_asteroid_MyGlobals$
 }
 /** @constructor */
 function $c_Lexample_asteroid_World() {
@@ -1328,6 +1374,29 @@ $c_Lexample_asteroid_World.prototype.updateAllChildren__V = (function() {
     var arg1$1 = this$4.array$6.get(i$1);
     var x$2 = $as_Lexample_asteroid_GameObject(arg1$1);
     x$2.update__J__V(new $c_sjsr_RuntimeLong().init___I__I(lo$1, hi$1));
+    i$1 = ((1 + i$1) | 0)
+  }
+});
+$c_Lexample_asteroid_World.prototype.destroy__V = (function() {
+  var this$1 = this.objects$1;
+  $m_scm_ArrayBuffer$();
+  var b = new $c_scm_ArrayBuffer().init___();
+  var i = 0;
+  var top = this$1.size0$6;
+  while ((i < top)) {
+    var arg1 = this$1.array$6.get(i);
+    var x$5 = $as_Lexample_asteroid_GameObject(arg1);
+    if ((x$5.alive$1 !== false)) {
+      b.$$plus$eq__O__scm_ArrayBuffer(arg1)
+    };
+    i = ((1 + i) | 0)
+  };
+  var i$1 = 0;
+  var top$1 = b.size0$6;
+  while ((i$1 < top$1)) {
+    var arg1$1 = b.array$6.get(i$1);
+    var x = $as_Lexample_asteroid_GameObject(arg1$1);
+    this.removeFromStage__Lexample_asteroid_GameObject__V(x);
     i$1 = ((1 + i$1) | 0)
   }
 });
@@ -4952,7 +5021,7 @@ $c_Lexample_asteroid_Asteroid.prototype.init___D__D__D = (function(x, y, scale) 
 });
 $c_Lexample_asteroid_Asteroid.prototype.$break__V = (function() {
   if ((this.scale$3 > 0.25)) {
-    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 2)))
+    this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 4))).add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Asteroid().init___D__D__D(this.position$1.x$1, this.position$1.y$1, (this.scale$3 / 4)))
   };
   this.destroy__V()
 });
@@ -5113,7 +5182,8 @@ function $c_Lexample_asteroid_Ship() {
   $c_Lexample_asteroid_SpriteGameObject.call(this);
   this.x$3 = 0.0;
   this.y$3 = 0.0;
-  this.lastShotTime$3 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
+  this.lastShotTime$3 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.chance$3 = 0
 }
 $c_Lexample_asteroid_Ship.prototype = new $h_Lexample_asteroid_SpriteGameObject();
 $c_Lexample_asteroid_Ship.prototype.constructor = $c_Lexample_asteroid_Ship;
@@ -5168,6 +5238,7 @@ $c_Lexample_asteroid_Ship.prototype.init___D__D = (function(x, y) {
   $c_Lexample_asteroid_SpriteGameObject.prototype.init___T__D__D__D.call(this, "playerShip1_blue.png", x, y, 1.0);
   this.maxSpeed$1 = 2;
   this.lastShotTime$3 = $m_jl_System$().currentTimeMillis__J();
+  this.chance$3 = 0;
   return this
 });
 $c_Lexample_asteroid_Ship.prototype.update__J__V = (function(deltaTime) {
@@ -5182,8 +5253,13 @@ $c_Lexample_asteroid_Ship.prototype.fire__Lexample_asteroid_World__V = (function
   var lo$1 = ((lo - b.lo$2) | 0);
   var hi$1 = ((((-2147483648) ^ lo$1) > ((-2147483648) ^ lo)) ? (((-1) + ((hi - bhi) | 0)) | 0) : ((hi - bhi) | 0));
   if (((hi$1 === 0) ? (((-2147483648) ^ lo$1) > (-2147483548)) : (hi$1 > 0))) {
-    this.lastShotTime$3 = new $c_sjsr_RuntimeLong().init___I__I(lo, hi);
-    world.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Laser().init___D__D__D(this.position$1.x$1, this.position$1.y$1, $uD(this.sprite$2.rotation)))
+    if ((this.chance$3 < $m_Lexample_asteroid_MyGlobals$().chances$1)) {
+      this.chance$3 = ((1 + this.chance$3) | 0);
+      this.lastShotTime$3 = new $c_sjsr_RuntimeLong().init___I__I(lo, hi);
+      world.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(new $c_Lexample_asteroid_Laser().init___D__D__D(this.position$1.x$1, this.position$1.y$1, $uD(this.sprite$2.rotation)))
+    } else {
+      world.destroy__V()
+    }
   }
 });
 $c_Lexample_asteroid_Ship.prototype.hashCode__I = (function() {
