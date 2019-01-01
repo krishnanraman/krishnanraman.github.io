@@ -1264,8 +1264,8 @@ function $h_Lexample_asteroid_MyGlobals$() {
 }
 $h_Lexample_asteroid_MyGlobals$.prototype = $c_Lexample_asteroid_MyGlobals$.prototype;
 $c_Lexample_asteroid_MyGlobals$.prototype.init___ = (function() {
-  this.asteroids$1 = 5;
-  this.chances$1 = 30;
+  this.asteroids$1 = 7;
+  this.chances$1 = 35;
   return this
 });
 var $d_Lexample_asteroid_MyGlobals$ = new $TypeData().initClass({
@@ -5218,7 +5218,7 @@ $c_Lexample_asteroid_Ship.prototype.init___D__D = (function(x, y) {
   return this
 });
 $c_Lexample_asteroid_Ship.prototype.update__J__V = (function(deltaTime) {
-  this.position$1 = new $c_Lpixiscalajs_extensions_Vector2().init___D__D((5 + this.position$1.x$1), this.position$1.y$1);
+  this.position$1 = new $c_Lpixiscalajs_extensions_Vector2().init___D__D((3 + this.position$1.x$1), this.position$1.y$1);
   if ((this.position$1.x$1 < (-20))) {
     this.position$1.x$1 = this.world$1.width$1
   };
