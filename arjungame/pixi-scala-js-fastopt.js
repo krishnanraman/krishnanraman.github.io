@@ -1417,12 +1417,6 @@ $c_Lexample_asteroid_World.prototype.init___Lpixiscalajs_PIXI_SystemRenderer__Le
   this.stage$1 = $this;
   var loop = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$2) {
     return (function() {
-      if (this$2.right$1.isDown$1) {
-        this$2.ship$1.sprite$2.rotation = ($uD(this$2.ship$1.sprite$2.rotation) + (3 * $m_Lpixiscalajs_extensions_Vector2$().DEG$undTO$undRADS$1))
-      };
-      if (this$2.left$1.isDown$1) {
-        this$2.ship$1.sprite$2.rotation = ($uD(this$2.ship$1.sprite$2.rotation) - (3 * $m_Lpixiscalajs_extensions_Vector2$().DEG$undTO$undRADS$1))
-      };
       if (this$2.space$1.isDown$1) {
         this$2.ship$1.fire__Lexample_asteroid_World__V(this$2)
       };
@@ -5225,6 +5219,7 @@ $c_Lexample_asteroid_Ship.prototype.update__J__V = (function(deltaTime) {
   if ((this.position$1.x$1 > (20 + this.world$1.width$1))) {
     this.position$1.x$1 = (-20.0)
   };
+  this.sprite$2.rotation = ($uD(this.sprite$2.rotation) + (2 * $m_Lpixiscalajs_extensions_Vector2$().DEG$undTO$undRADS$1));
   $c_Lexample_asteroid_SpriteGameObject.prototype.update__J__V.call(this, deltaTime)
 });
 $c_Lexample_asteroid_Ship.prototype.fire__Lexample_asteroid_World__V = (function(world) {
