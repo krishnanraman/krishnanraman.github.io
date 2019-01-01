@@ -1154,7 +1154,7 @@ $c_Lexample_asteroid_AsteroidGame.prototype.main__Lorg_scalajs_dom_raw_HTMLCanva
   var this$5 = $m_s_Console$();
   var this$6 = $as_Ljava_io_PrintStream(this$5.outVar$2.v$1);
   this$6.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Creating world\n");
-  var ship = new $c_Lexample_asteroid_Ship().init___D__D(300.0, 300.0);
+  var ship = new $c_Lexample_asteroid_Ship().init___D__D(0.0, 300.0);
   var sun = new $c_Lexample_asteroid_Sun().init___D__D__D(700.0, 100.0, 1.0);
   this.world$1 = new $c_Lexample_asteroid_World().init___Lpixiscalajs_PIXI_SystemRenderer__Lexample_asteroid_Ship(renderer, ship);
   this.world$1.add__Lexample_asteroid_GameObject__Lexample_asteroid_World(ship);
@@ -5232,8 +5232,7 @@ $c_Lexample_asteroid_Ship.prototype.init___D__D = (function(x, y) {
   return this
 });
 $c_Lexample_asteroid_Ship.prototype.update__J__V = (function(deltaTime) {
-  var ev$1 = this.position$1;
-  ev$1.x$1 = (2 + ev$1.x$1);
+  this.position$1 = this.position$1.$$plus__Lpixiscalajs_extensions_Vector2__Lpixiscalajs_extensions_Vector2(new $c_Lpixiscalajs_extensions_Vector2().init___D__D((5 + this.position$1.x$1), this.position$1.y$1));
   if ((this.position$1.x$1 < (-20))) {
     this.position$1.x$1 = this.world$1.width$1
   };
