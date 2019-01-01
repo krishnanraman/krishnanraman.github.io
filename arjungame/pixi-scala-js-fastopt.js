@@ -5232,13 +5232,14 @@ $c_Lexample_asteroid_Ship.prototype.init___D__D = (function(x, y) {
   return this
 });
 $c_Lexample_asteroid_Ship.prototype.update__J__V = (function(deltaTime) {
-  this.position$1 = this.position$1.$$plus__Lpixiscalajs_extensions_Vector2__Lpixiscalajs_extensions_Vector2(new $c_Lpixiscalajs_extensions_Vector2().init___D__D((5 + this.position$1.x$1), this.position$1.y$1));
+  this.position$1 = new $c_Lpixiscalajs_extensions_Vector2().init___D__D((5 + this.position$1.x$1), this.position$1.y$1);
   if ((this.position$1.x$1 < (-20))) {
     this.position$1.x$1 = this.world$1.width$1
   };
   if ((this.position$1.x$1 > (20 + this.world$1.width$1))) {
     this.position$1.x$1 = (-20.0)
-  }
+  };
+  $c_Lexample_asteroid_SpriteGameObject.prototype.update__J__V.call(this, deltaTime)
 });
 $c_Lexample_asteroid_Ship.prototype.fire__Lexample_asteroid_World__V = (function(world) {
   var t = $m_jl_System$().currentTimeMillis__J();
