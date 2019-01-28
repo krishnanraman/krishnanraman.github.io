@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asteroids</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="pixi.js"></script>
+    <script type="text/javascript" src="pixi-scala-js-fastopt.js"></script>
+</head>
+<body style="margin: 0px">
+<style>
+    body { background-color: #000000; }
+    canvas { background-color: #222222; border: 1px solid gray;}
+</style>
+
+<div align="center" style="margin-bottom: 10px;color: ghostwhite;font-size: 36px">A special game for ARJUN</div>
+<div align="center">
+    <canvas id="canvas" style="display: block" width="1600" height="1200"/>
+</div>
+<div align="center" style="margin-top: 10px;color: ghostwhite;font-size: 18px">Use arrows and space</div>
+<script>
+    example.asteroid.AsteroidGame().main(document.getElementById('canvas'));
+</script>
+
+</body>
+</html>
