@@ -1,4 +1,4 @@
-var c = 0;
+var a=0,b=0,c=0,d=0,e=0;
 var correct = 0;
 var incorrect = 0;
 var count = 0;
@@ -35,17 +35,27 @@ function draw(text, x, y) {
   ctx.fillText(text, x,y);
 }
 
-async function answer(ans) {
+function drawline(x1, y1, x2,y2) {
   var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.beginPath();       // Start a new path
+  ctx.moveTo(x1,y1);    // Move the pen to (30, 50)
+  ctx.lineTo(x2,y2);  // Draw a line to (150, 100)
+  ctx.lineWidth = 10;
+  ctx.stroke(); 
+}
+
+
+async function answer(ans) {
+    var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  if (ans == c) {
+if (ans == e) {
     correct += 1;
     draw("Correct!", 10, 100)
     await sleep(2000)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
-    draw("Ans: " + c, 10,200)
+    draw("Ans: " + e, 10,200)
     await sleep(4000)
   }
   count += 1;
@@ -70,10 +80,21 @@ async function answer(ans) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
+ 
   a = rnd(1,9);
-  b = rnd(2,19);
-  c = a*b;
-  draw("" + a + " x " + b + " = ", 10, 100)
+  b = rnd(1,15);
+  c = rnd(1,9);
+  d = rnd(1,15);
+  e = a*d - b*c;
+  drawline(5,1,5,200)
+  if (b > 9 || d > 9)
+    drawline(300,1,300,200)
+  else
+    drawline(220,1,220,200)
+
+  draw("" + a + "  " + b, 10, 100)
+  draw("" + c + "  " + d, 10, 200)
+  draw("=", 400, 150)
   input.value('');
   input.focus();
 }
@@ -82,7 +103,5 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 repeat();
-
 

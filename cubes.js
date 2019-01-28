@@ -13,7 +13,7 @@ var input = new CanvasInput({
   fontFamily: 'Serif',
   fontColor: '#FF0000',
   fontWeight: 'bold',
-  width: 200,
+  width: 250,
   padding: 8,
   borderWidth: 1,
   borderColor: '#000',
@@ -30,6 +30,7 @@ function rnd(min, max) {
 
 function draw(text, x, y) {
   var ctx = document.getElementById('canvas').getContext('2d');
+
   ctx.font = '128px serif';
   ctx.fillStyle = '#0d00ff';
   ctx.fillText(text, x,y);
@@ -38,7 +39,8 @@ function draw(text, x, y) {
 async function answer(ans) {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  if (ans == c) {
+
+if (ans == c) {
     correct += 1;
     draw("Correct!", 10, 100)
     await sleep(2000)
@@ -70,10 +72,9 @@ async function answer(ans) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  a = rnd(1,9);
-  b = rnd(2,19);
-  c = a*b;
-  draw("" + a + " x " + b + " = ", 10, 100)
+  var b = rnd(2,19);
+  c = b*b*b;
+  draw("" + b + " ^ 3  = ", 10, 100)
   input.value('');
   input.focus();
 }
@@ -82,7 +83,5 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 repeat();
-
 

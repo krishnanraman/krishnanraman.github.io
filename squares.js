@@ -36,9 +36,10 @@ function draw(text, x, y) {
 }
 
 async function answer(ans) {
-  var ctx = document.getElementById('canvas').getContext('2d');
+    var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  if (ans == c) {
+  
+if (ans == c) {
     correct += 1;
     draw("Correct!", 10, 100)
     await sleep(2000)
@@ -70,8 +71,8 @@ async function answer(ans) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  a = rnd(1,9);
   b = rnd(2,19);
+  a = b
   c = a*b;
   draw("" + a + " x " + b + " = ", 10, 100)
   input.value('');
@@ -82,7 +83,5 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 repeat();
-
 

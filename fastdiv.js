@@ -5,6 +5,7 @@ var correct = 0;
 var incorrect = 0;
 var count = 0;
 var total = 10;
+var begintime = performance.now();
 
 var input = new CanvasInput({
   canvas: document.getElementById('canvas'),
@@ -31,36 +32,58 @@ function rnd(min, max) {
 
 function draw(text, x, y) {
   var ctx = document.getElementById('canvas').getContext('2d');
-  ctx.clearRect(0,0,800,600);
+
   ctx.font = '128px serif';
   ctx.fillStyle = '#0d00ff';
   ctx.fillText(text, x,y);
 }
 
-function answer(ans) {
+async function answer(ans) {
+    var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.clearRect(0,0,800,600);
   if (ans == a) {
     correct += 1;
+    draw("Correct!", 10, 100)
+    await sleep(2000)
   } else {
     incorrect += 1;
+    draw("Sorry!", 10,100)
+    draw("Ans: " + a, 10,200)
+    await sleep(4000)
   }
+
   count += 1;
 
   if (count == total) {
     input.destroy();
+    var ctx = document.getElementById('canvas').getContext('2d');
+    ctx.clearRect(0,0,800,600);
     var percent = correct*100/total;
-    draw("" + percent + " % ", 10,100)
+    draw("Score: " + percent + " % ", 10,100)
+
+    var endtime = performance.now()
+    var secs = Math.round((endtime - begintime)/1000)
+    draw("Time: " + secs + " sec", 10,200)
+
+
   } else {
     repeat();
   }
 }
 
 function repeat() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.clearRect(0,0,800,600);
   a = rnd(1,9);
   b = rnd(2,19);
   c = a*b;
   draw("" + c + " / " + b + " = ", 10, 100)
   input.value('');
   input.focus();
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 repeat();
