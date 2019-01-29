@@ -70,8 +70,8 @@ async function answer(ans) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  a = rnd(1,19);
-  b = rnd(1,19);
+  a = rnd(1,50);
+  b = rnd(1,50);
   c = a + b;
   draw("" + a + " + " + b + " = ", 10, 100)
   input.value('');
