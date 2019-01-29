@@ -74,7 +74,8 @@ async function answer(xans,yans) {
   //alert(count)
 
   if (count == total) {
-    input.destroy();
+    xinput.destroy();
+    yinput.destroy();
     var ctx = document.getElementById('canvas').getContext('2d');
     ctx.clearRect(0,0,800,600);
     var percent = correct*100/total;
