@@ -59,10 +59,25 @@ async function answer(xans,yans) {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
   
-  if (yans == ' ')
+  if (yans == ' ' || yans.length == 0)
     yans = 1
 
-  if (xans == num && yans == denom) {
+  if (xans == ' ' || xans.length == 0)
+    xans = 0
+
+  if (xans == 0 && num == xans) {
+    correct += 1;
+    draw("Correct!", 10, 100)
+    await sleep(500)
+  } else if (yans == 1 && num == xans) {
+    correct += 1;
+    draw("Correct!", 10, 100)
+    await sleep(500)
+  } else if (xans == num && yans == denom) {
+    correct += 1;
+    draw("Correct!", 10, 100)
+    await sleep(500)
+  } else if (xans/yans - num/denom < 0.0001 ) {
     correct += 1;
     draw("Correct!", 10, 100)
     await sleep(500)
@@ -72,7 +87,9 @@ async function answer(xans,yans) {
     draw(""+ num + "/" + denom, 10,200)
     await sleep(4000)
   }
+
   count += 1;
+
 
   if (count == total) {
     xinput.destroy();
