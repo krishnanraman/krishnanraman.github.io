@@ -7,8 +7,8 @@ var begintime = performance.now();
 
 var input = new CanvasInput({
   canvas: document.getElementById('canvas'),
-  x:500,
-  y:0,
+  x:200,
+  y:200,
   fontSize: 128,
   fontFamily: 'Serif',
   fontColor: '#FF0000',
@@ -36,9 +36,9 @@ function draw(text, x, y) {
 }
 
 async function answer(ans) {
-    var ctx = document.getElementById('canvas').getContext('2d');
+  var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  
+
 if (ans == c) {
     correct += 1;
     draw("Correct!", 10, 100)
@@ -46,7 +46,9 @@ if (ans == c) {
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
-    draw("Ans: " + c, 10,200)
+    draw("" + a + " choose " + b, 10,200)
+    draw("is", 10,300)
+    draw(c, 10,400)
     await sleep(4000)
   }
   count += 1;
@@ -71,10 +73,23 @@ if (ans == c) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  b = rnd(1,30);
-  a = b
-  c = a*b;
-  draw("" + a + " x " + b + " = ", 10, 100)
+  a = rnd(2,20);
+  b = rnd(1,6);
+  if (b > a)
+    b = a - 1
+  
+  var bs = Math.min(b, a - b)
+  var num = 1, denom = 1
+  var ai = a, bi = bs
+  for(i = 0;i<bs;i++) {
+    num *= ai
+    denom *= bi
+    ai -= 1
+    bi -= 1
+  }
+  c = num/denom
+
+  draw("" + a + " choose " + b, 10, 100)
   input.value('');
   input.focus();
 }

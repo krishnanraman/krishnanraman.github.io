@@ -1,4 +1,6 @@
 var c = 0;
+var a = 0;
+var b = 0;
 var correct = 0;
 var incorrect = 0;
 var count = 0;
@@ -30,6 +32,7 @@ function rnd(min, max) {
 
 function draw(text, x, y) {
   var ctx = document.getElementById('canvas').getContext('2d');
+
   ctx.font = '128px serif';
   ctx.fillStyle = '#0d00ff';
   ctx.fillText(text, x,y);
@@ -38,17 +41,17 @@ function draw(text, x, y) {
 async function answer(ans) {
     var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  
-if (ans == c) {
+  if (ans == b) {
     correct += 1;
     draw("Correct!", 10, 100)
-    await sleep(2000)
+    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
-    draw("Ans: " + c, 10,200)
+    draw("Ans: " + b, 10,200)
     await sleep(4000)
   }
+
   count += 1;
 
   if (count == total) {
@@ -71,10 +74,10 @@ if (ans == c) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  b = rnd(1,30);
-  a = b
+  a = rnd(1,9);
+  b = rnd(50,10000);
   c = a*b;
-  draw("" + a + " x " + b + " = ", 10, 100)
+  draw("" + c + " / " + a + " = ", 10, 100)
   input.value('');
   input.focus();
 }
