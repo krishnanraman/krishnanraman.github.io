@@ -52,8 +52,15 @@ if (ans == c) {
     await sleep(4000)
   }
   count += 1;
-
+  report();
   if (count == total) {
+    report();
+  } else {
+    repeat();
+  }
+}
+
+function report() {
     input.destroy();
     var ctx = document.getElementById('canvas').getContext('2d');
     ctx.clearRect(0,0,800,600);
@@ -64,11 +71,22 @@ if (ans == c) {
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200)
 
+    today = "" + new Date() 
 
-  } else {
-    repeat();
-  }
+    var url = "https://api.keyvalue.xyz/a17766c6/myKey/"
+    var res = 
+    url + 
+    "{date:" + today + ", " +
+    "score:" + percent + ", " + 
+    "secs:" + secs + ", " +
+    "game:choose}"
+
+    alert(res)
+
+    xhttp.open("POST", res, true);
+    xhttp.send();
 }
+
 
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
