@@ -56,8 +56,6 @@ function draw(text, x, y) {
 }
 
 async function answer(xans,yans) {
-  alert(xans)
-  alert(yans)
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
   if (yans == ' ' || yans.length == 0)

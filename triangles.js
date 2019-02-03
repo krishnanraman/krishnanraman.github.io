@@ -48,10 +48,10 @@ async function answer(ans) {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
   
-if (Math.abs(ans - c) < 0.1) {
+if (Math.abs(ans - c) < 0.5) {
     correct += 1;
     draw("Correct!", 10, 100)
-    await sleep(2000)
+    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
@@ -80,7 +80,7 @@ if (Math.abs(ans - c) < 0.1) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  b = rnd(1,10);
+  b = rnd(2,15);
 
   var angle = 0
   var aw = 0
