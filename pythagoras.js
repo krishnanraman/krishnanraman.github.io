@@ -80,43 +80,30 @@ if (Math.abs(ans - c) < 0.5) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
+  a = rnd(2,15);
   b = rnd(2,15);
+  if (b == a)
+    b = a + 2
 
-  var angle = 0
-  var aw = 0
-  if (b < 3) {
-    angle = Math.PI/6
-    aw = 30
-  }
-  else if (b < 6) {
-    angle = Math.PI/4
-    aw = 45
-  }
-  else {
-    angle = Math.PI/3
-    aw = 60
-  }
-
-  var base = b
-  var height = 0
-  var hypotenuse = 0
-  var word = "base"
-  if (b < 3) {
-    base = 0
-    height = b
-    word = "height"
-    c = b*b/(2*Math.tan(angle))
-  } else if (b < 6) {
-    base = 0
-    height = 0
-    hypotenuse = b
-    word = "hypotenuse"
-    c = b*b*Math.sin(2*angle)/4.0
+  var hyp = 0, height = 0, base = 0;
+  if (a < 6) {
+    hyp = Math.max(a,b)
+    base = Math.min(a,b)
+    h = Math.sqrt(hyp*hyp - base*base)
+    c = 0.5*base*h
+  } else if (a < 12) {
+    hyp = Math.max(a,b)
+    height = Math.min(a,b)
+    ba = Math.sqrt(hyp*hyp - height * height)
+    c = 0.5*ba*height
   } else {
-    c = b*b*Math.tan(angle)/2.0
+    base = a
+    height = b
+    c = 0.5*a*b
   }
+  
+  
   c = Number.parseFloat(c).toFixed(2)
-
 
   x1 = 10
   y1 = 350
@@ -124,7 +111,7 @@ function repeat() {
   x2 = x1 + w
   y2 = y1
   x3 = x2
-  y3 = y2 - w*Math.tan(angle)
+  y3 = y2 - w*Math.tan(Math.PI/3)
   drawline(x1,y1,x2,y2)
   drawline(x1,y1,x3,y3)
   drawline(x3,y3,x2,y2)
@@ -133,28 +120,17 @@ function repeat() {
   font = '24px serif'
   draw(90, x2-30, y2-10, font, fill)
 
-  if (aw == 30)
-    draw(aw, x1+50, y1 -10, font, fill)
-  else if (aw == 45)
-    draw(aw, x1+30,y1-10, font, fill)
-  else
-    draw(aw, x1+20, y1-10, font, fill)
-
   fill = '#ff00ff'
-  if (word == "base") {
-    draw(b, (x1+x2)/2, y1-10,  font, fill)
-  } else if (word == "height") {
-    draw(b, x2 + 20, (y2+y3)/2,  font, fill)
-  } else {
-    draw(b, (x1+x3)/2 - 20, (y1+y3)/2,  font, fill)
-  }
+  if (base > 0)
+    draw(base, (x1+x2)/2, y1-10,  font, fill)
+  if (height > 0)
+    draw(height, x2 + 20, (y2+y3)/2,  font, fill)
+  if (hyp > 0)
+    draw(hyp, (x1+x3)/2 - 20, (y1+y3)/2,  font, fill)
 
   fill = '#0000ff'
   font = '64px serif'
   draw("Area", 300,200,font, fill)
-
-
-  //draw("Area of " + angle + " triangle with " + word + " = " + b, 10, 100)
   input.value('');
   input.focus();
 }

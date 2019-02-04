@@ -1,4 +1,4 @@
-var c = 0;
+var area = 0;
 var correct = 0;
 var incorrect = 0;
 var count = 0;
@@ -48,14 +48,14 @@ async function answer(ans) {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
   
-if (Math.abs(ans - c) < 0.5) {
+if (Math.abs(ans - area) < 0.5) {
     correct += 1;
     draw("Correct!", 10, 100)
     await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
-    draw("Ans: " + c, 10,200)
+    draw("Ans: " + area, 10,200)
     await sleep(4000)
   }
   count += 1;
@@ -80,43 +80,20 @@ if (Math.abs(ans - c) < 0.5) {
 function repeat() {
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.clearRect(0,0,800,600);
-  b = rnd(2,15);
 
-  var angle = 0
-  var aw = 0
-  if (b < 3) {
-    angle = Math.PI/6
-    aw = 30
-  }
-  else if (b < 6) {
-    angle = Math.PI/4
-    aw = 45
-  }
-  else {
-    angle = Math.PI/3
-    aw = 60
+  var done = false
+  var a=0,b=0,c=0
+  while(!done) {
+    a = rnd(2,15);
+    b = rnd(2,15);
+    c = rnd(2,15);
+    if ((a + b > c) && (b + c > a) && (a + c > b))
+      done = true
   }
 
-  var base = b
-  var height = 0
-  var hypotenuse = 0
-  var word = "base"
-  if (b < 3) {
-    base = 0
-    height = b
-    word = "height"
-    c = b*b/(2*Math.tan(angle))
-  } else if (b < 6) {
-    base = 0
-    height = 0
-    hypotenuse = b
-    word = "hypotenuse"
-    c = b*b*Math.sin(2*angle)/4.0
-  } else {
-    c = b*b*Math.tan(angle)/2.0
-  }
-  c = Number.parseFloat(c).toFixed(2)
-
+  s = (a+b+c)/2.0
+  area = Math.sqrt(s*(s-a)*(s-b)*(s-c))
+  area = Number.parseFloat(area).toFixed(2)
 
   x1 = 10
   y1 = 350
@@ -124,37 +101,23 @@ function repeat() {
   x2 = x1 + w
   y2 = y1
   x3 = x2
-  y3 = y2 - w*Math.tan(angle)
+  y3 = y2 - w*Math.tan(Math.PI/3)
   drawline(x1,y1,x2,y2)
   drawline(x1,y1,x3,y3)
   drawline(x3,y3,x2,y2)
 
   fill = '#0d00ff'
   font = '24px serif'
-  draw(90, x2-30, y2-10, font, fill)
-
-  if (aw == 30)
-    draw(aw, x1+50, y1 -10, font, fill)
-  else if (aw == 45)
-    draw(aw, x1+30,y1-10, font, fill)
-  else
-    draw(aw, x1+20, y1-10, font, fill)
 
   fill = '#ff00ff'
-  if (word == "base") {
-    draw(b, (x1+x2)/2, y1-10,  font, fill)
-  } else if (word == "height") {
-    draw(b, x2 + 20, (y2+y3)/2,  font, fill)
-  } else {
-    draw(b, (x1+x3)/2 - 20, (y1+y3)/2,  font, fill)
-  }
+  draw(a, (x1+x2)/2, y1-10,  font, fill)
+  draw(b, x2 + 20, (y2+y3)/2,  font, fill)
+  draw(c, (x1+x3)/2 - 20, (y1+y3)/2,  font, fill)
 
   fill = '#0000ff'
   font = '64px serif'
   draw("Area", 300,200,font, fill)
 
-
-  //draw("Area of " + angle + " triangle with " + word + " = " + b, 10, 100)
   input.value('');
   input.focus();
 }
