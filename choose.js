@@ -42,7 +42,7 @@ async function answer(ans) {
 if (ans == c) {
     correct += 1;
     draw("Correct!", 10, 100)
-    await sleep(2000)
+    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
@@ -70,21 +70,6 @@ function report() {
     var endtime = performance.now()
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200)
-
-    today = "" + new Date() 
-
-    var url = "https://api.keyvalue.xyz/a17766c6/myKey/"
-    var res = 
-    url + 
-    "{date:" + today + ", " +
-    "score:" + percent + ", " + 
-    "secs:" + secs + ", " +
-    "game:choose}"
-
-    alert(res)
-
-    xhttp.open("POST", res, true);
-    xhttp.send();
 }
 
 
