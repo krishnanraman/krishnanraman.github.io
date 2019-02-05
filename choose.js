@@ -28,9 +28,9 @@ function rnd(min, max) {
   return min + Math.floor(Math.random() * Math.floor(max-min));
 }
 
-function draw(text, x, y) {
+function draw(text, x, y, font) {
   var ctx = document.getElementById('canvas').getContext('2d');
-  ctx.font = '128px serif';
+  ctx.font = font;
   ctx.fillStyle = '#0d00ff';
   ctx.fillText(text, x,y);
 }
@@ -41,18 +41,14 @@ async function answer(ans) {
 
 if (ans == c) {
     correct += 1;
-    draw("Correct!", 10, 100)
+    draw("Correct!", 10, 100,'128px serif')
     await sleep(500)
   } else {
     incorrect += 1;
-    draw("Sorry!", 10,100)
-    draw("" + a + " choose " + b, 10,200)
-    draw("is", 10,300)
-    draw(c, 10,400)
+    draw("Sorry! "+ a + " choose " + b + " = " + c, 10,100,'32px serif')
     await sleep(4000)
   }
   count += 1;
-  report();
   if (count == total) {
     report();
   } else {
@@ -65,11 +61,11 @@ function report() {
     var ctx = document.getElementById('canvas').getContext('2d');
     ctx.clearRect(0,0,800,600);
     var percent = correct*100/total;
-    draw("Score: " + percent + " % ", 10,100)
+    draw("Score: " + percent + " % ", 10,100,'128px serif')
 
     var endtime = performance.now()
     var secs = Math.round((endtime - begintime)/1000)
-    draw("Time: " + secs + " sec", 10,200)
+    draw("Time: " + secs + " sec", 10,200,'128px serif')
 }
 
 
@@ -92,7 +88,7 @@ function repeat() {
   }
   c = num/denom
 
-  draw("" + a + " choose " + b, 10, 100)
+  draw("" + a + " choose " + b, 10, 100,'128px serif')
   input.value('');
   input.focus();
 }
