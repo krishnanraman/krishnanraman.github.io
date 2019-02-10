@@ -43,8 +43,6 @@ async function answer(ans) {
   ctx.clearRect(0,0,800,600);
   if (ans == b) {
     correct += 1;
-    draw("Correct!", 10, 100)
-    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
@@ -65,6 +63,10 @@ async function answer(ans) {
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200)
 
+    var xhr = new XMLHttpRequest();
+    var req = "http://45.56.113.224:8080/score?game=Long-Division&score="+percent
+    xhr.open('GET', req, false);
+    xhr.send();
 
   } else {
     repeat();

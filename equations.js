@@ -61,8 +61,6 @@ async function answer(xans,yans) {
 
   if (xans == x && yans == y) {
     correct += 1;
-    draw("Correct!", 10, 100)
-    await sleep(2000)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
@@ -85,6 +83,10 @@ async function answer(xans,yans) {
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200)
 
+    var xhr = new XMLHttpRequest();
+    var req = "http://45.56.113.224:8080/score?game=Simultaneous-Equations&score="+percent
+    xhr.open('GET', req, false);
+    xhr.send();
 
   } else {
     repeat();

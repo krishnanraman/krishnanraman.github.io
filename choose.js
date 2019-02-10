@@ -41,12 +41,10 @@ async function answer(ans) {
 
 if (ans == c) {
     correct += 1;
-    draw("Correct!", 10, 100,'128px serif')
-    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry! "+ a + " choose " + b + " = " + c, 10,100,'32px serif')
-    await sleep(4000)
+    await sleep(2000)
   }
   count += 1;
   if (count == total) {
@@ -66,6 +64,11 @@ function report() {
     var endtime = performance.now()
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200,'128px serif')
+
+    var xhr = new XMLHttpRequest();
+    var req = "http://45.56.113.224:8080/score?game=Combinatorics&score="+percent
+    xhr.open('GET', req, false);
+    xhr.send();
 }
 
 

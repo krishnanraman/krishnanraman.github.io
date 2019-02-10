@@ -50,13 +50,11 @@ async function answer(ans) {
   
 if (Math.abs(ans - c) < 0.5) {
     correct += 1;
-    draw("Correct!", 10, 100)
-    await sleep(500)
   } else {
     incorrect += 1;
     draw("Sorry!", 10,100)
     draw("Ans: " + c, 10,200)
-    await sleep(4000)
+    await sleep(2000)
   }
   count += 1;
 
@@ -71,6 +69,10 @@ if (Math.abs(ans - c) < 0.5) {
     var secs = Math.round((endtime - begintime)/1000)
     draw("Time: " + secs + " sec", 10,200)
 
+    var xhr = new XMLHttpRequest();
+    var req = "http://45.56.113.224:8080/score?game=Pythagoras&score="+percent
+    xhr.open('GET', req, false);
+    xhr.send();
 
   } else {
     repeat();
