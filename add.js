@@ -60,7 +60,7 @@ async function answer(ans) {
     draw("Time: " + secs + " sec", 10,200)
 
     var xhr = new XMLHttpRequest();
-    var req = "http://45.56.113.224:8080/score?game=Fast-Addition&score="+percent
+    var req = "http://45.56.113.224:8080/score?game=Fast-Addition&score="+percent+"&duration="+secs
     xhr.open('GET', req, false);
     xhr.send();
 

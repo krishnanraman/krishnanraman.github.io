@@ -61,7 +61,7 @@ if (ans == c) {
     draw("Time: " + secs + " sec", 10,200)
 
     var xhr = new XMLHttpRequest();
-    var req = "http://45.56.113.224:8080/score?game=Squares&score="+percent
+    var req = "http://45.56.113.224:8080/score?game=Squares&score="+percent+"&duration="+secs
     xhr.open('GET', req, false);
     xhr.send();
 

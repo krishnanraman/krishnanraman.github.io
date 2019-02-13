@@ -70,7 +70,7 @@ if (Math.abs(ans - area) < 0.5) {
     draw("Time: " + secs + " sec", 10,200)
 
     var xhr = new XMLHttpRequest();
-    var req = "http://45.56.113.224:8080/score?game=Heron&score="+percent
+    var req = "http://45.56.113.224:8080/score?game=Heron&score="+percent+"&duration="+secs
     xhr.open('GET', req, false);
     xhr.send();
 

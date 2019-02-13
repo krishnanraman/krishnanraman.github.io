@@ -66,7 +66,7 @@ function report() {
     draw("Time: " + secs + " sec", 10,200,'128px serif')
 
     var xhr = new XMLHttpRequest();
-    var req = "http://45.56.113.224:8080/score?game=Combinatorics&score="+percent
+    var req = "http://45.56.113.224:8080/score?game=Combinatorics&score="+percent+"&duration="+secs
     xhr.open('GET', req, false);
     xhr.send();
 }
