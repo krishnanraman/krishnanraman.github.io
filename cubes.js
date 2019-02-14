@@ -63,7 +63,6 @@ if (ans == c) {
 
     var xhr = new XMLHttpRequest();
     var req = "http://45.56.113.224:8080/score?game=Cubes&score=".concat(percent).concat("&duration=").concat(secs)
-    alert(req)
     xhr.open('GET', req, false);
     xhr.send();
 
