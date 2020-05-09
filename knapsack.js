@@ -176,10 +176,10 @@ async function doSkeptic() {
 	for(i=0;i<10;i++) {
 		for(j=0;j<10;j++) {
 			var r = Math.random()
+			var idx = 10*i + j
 			if (r > 0.5 && (totalWeightSk + dataWeights[idx]) < maxweight) {
 				var x = (j+1)*hgap + j*pw
 				var y = (i+1)*vgap + i*ph
-				var idx = 10*i + j
 				ctx.beginPath()
 				ctx.fillRect(x,y,pw,ph)
 				totalWeightSk += dataWeights[idx]
