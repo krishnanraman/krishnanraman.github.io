@@ -1,6 +1,8 @@
 // my colors
 var orange='rgba(255,140,0,1)'
-var green= 'rgba(0,0,128,1)'
+var green= 'rgba(0,128,0,1)'
+var greenLight= 'rgba(0,255,0,0.3)'
+var redLight= 'rgba(255,0,0,0.3)'
 var red='rgba(255,0,0,1)';
 var black='rgba(0,0,0,1)';  
 var lightblue = 'rgba(0,0,255,1)'
@@ -172,7 +174,8 @@ async function doSkeptic() {
 	var ph = Math.floor(ymax/12)
 	var hgap = Math.floor((xmax - 10*pw)/11)
 	var vgap = Math.floor((ymax - 10*ph)/11)
-	ctx.fillStyle = green
+	ctx.fillStyle = greenLight
+	var prev = document.getElementById("status").value
 	for(i=0;i<10;i++) {
 		for(j=0;j<10;j++) {
 			var r = Math.random()
@@ -185,7 +188,7 @@ async function doSkeptic() {
 				totalWeightSk += dataWeights[idx]
 				totalEarningSk += dataPrices[idx]
 				ctx.closePath()
-				document.getElementById("skeptic").value = "" + totalEarningSk + "$, " + totalWeightSk + " lbs."
+				document.getElementById("status").value = prev + "\n" + totalEarningSk + " $, " + totalWeightSk + " lbs."
 				await sleep(200);
 			}
 		}	
@@ -204,16 +207,20 @@ async function doMCMC() {
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
 	await sleep(2000)
-	var text = "Gibbs Estimates: " + "Weight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
-	"\nGibbs Estimates: Price ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
-	document.getElementById("status").value = text 
+	var text = "\nGibbs Estimates: " + "\nWeight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
+	"\nPrice ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
+	document.getElementById("status").value += text 
 	await sleep(2000);
-	document.getElementById("skeptic").value = "Statistical Skeptic Burglar starts now..."
+	document.getElementById("status").value += "\nStatistical Skeptic Burglar starts now..."
 	await sleep(2000);
+	
 	doSkeptic()
-	document.getElementById("knapsack").value = "MCMC Burglar starts now..."
+	document.getElementById("status").value += "\nMCMC Burglar starts now..."
 	await sleep(2000);
 	doKnapsack()
+	//document.getElementById("status").value += "\n MCMC Burglar Earnings: " +
+	//+ totalEarningMC + "$" + ", Weight:" + totalWeightMC
+	await sleep(2000);
 	document.getElementById("btn").disabled = false
 }
 
