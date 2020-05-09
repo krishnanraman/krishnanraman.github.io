@@ -1,54 +1,59 @@
+// my colors
+var orange='rgba(255,140,0,1)'
+var green= 'rgba(0,0,128,1)'
+var red='rgba(255,0,0,1)';
+var black='rgba(0,0,0,1)';  
+var lightblue = 'rgba(0,0,255,1)'
+var blue = 'rgba(0,0,128,1)'
+var brown = 'rgba(165,42,42,1)'
+var white = 'rgba(255,255,255,1)'
+var peach = 'rgba(255,230,179,1)'
+var colors = [orange,green,red,blue,black,lightblue,brown]
 
-/*  R code
-data = c(rpois(70,1.0), rpois(30,8.0))
-n = length(data)
-nminus1 = n - 1
-N = 10000
-lambda_init = 5
-lambda1 = lambda_init
-lambda2 = lambda_init
-xsum = cumsum(data)[1:nminus1]
-xtotal = sum(data)
-alpha = 1
-simulations = matrix(0, nrow=N, ncol=4)
-colnames(simulations) <- c("theta", "alpha", "lambda1", "lambda2")
-logp = c()
+var xmax = window.innerWidth-20
+var ymax = window.innerHeight-20
 
-for(i in 1:N) {
-  logp = xsum*log(lambda1)-lambda1*seq(1,nminus1) + (xtotal-xsum)*log(lambda2)-lambda2*seq(nminus1,1)
-  p = exp(logp)/sum(exp(logp))
-  theta = sample(1:nminus1,1,prob=p)
-  lambda1 = rgamma(1,shape=5+xsum[theta],rate=alpha+theta)
-  lambda2 = rgamma(1,shape=5+xtotal-xsum[theta],rate=alpha+n-theta)
-  alpha = rgamma(1,shape=10+2*lambda_init,rate=10+lambda1+lambda2)
-  
-  # populate matrix
-  simulations[i,] = c(theta,alpha, lambda1, lambda2) 
-}
+var canv = document.createElement('canvas')
+canv.width = xmax
+canv.height = ymax
+document.body.appendChild(canv)
+canv.focus(); 
 
-J = 2000
-*/
+var ctx = canv.getContext('2d')
+
+ctx.fillStyle =peach 
+ctx.fillRect(2,2,xmax-2, ymax-2)
+ctx.strokeStyle=blue
+ctx.beginPath()
+ctx.rect(0,0,xmax,ymax)
+ctx.stroke()
+ctx.closePath()
+
 let dataWeights = []
 let dataPrices = []
 var w = 200 // CONTROL FROM textfield maxweight: 70*1 + 30*8
 var n = 100
 var a = 40
 var b = 70
+let resW = []
+let resP = []
 
 dataWeights[n-1] = 0
 dataPrices[n-1] = 0
 
-for(i=0;i<b;i++) {
-	dataWeights[i] = jStat.poisson.sample(1)
-}
-for(i=b;i<n;i++) {
-	dataWeights[i] = jStat.poisson.sample(8)
-}
-for(i=0;i<a;i++) {
-	dataPrices[i] = jStat.poisson.sample(2.5)
-}
-for(i=a;i<n;i++) {
-	dataPrices[i] = jStat.poisson.sample(7.5)
+function doSetup() {
+	for(i=0;i<b;i++) {
+		dataWeights[i] = jStat.poisson.sample(1)
+	}
+	for(i=b;i<n;i++) {
+		dataWeights[i] = jStat.poisson.sample(8)
+	}
+	for(i=0;i<a;i++) {
+		dataPrices[i] = jStat.poisson.sample(2.5)
+	}
+	for(i=a;i<n;i++) {
+		dataPrices[i] = jStat.poisson.sample(7.5)
+	}
 }
 
 function sortWithIndices(toSort) {
@@ -130,8 +135,33 @@ function doGibbs(data) {
 	return [thetaEstimate, lambda1Estimate, lambda2Estimate,alphaEstimate ]
 }
 
-resW = doGibbs(dataWeights)
-document.writeln(resW)
-resP = doGibbs(dataPrices)
-document.writeln(resP)
+function drawGallery() {
+	var pw = 100
+	var ph = 50
+	var hgap = Math.floor((xmax - 10*pw)/11)
+	var vgap = Math.floor((ymax - 10*ph)/11)
+	for(i=0;i<10;i++) {
+		for(j=0;j<10;j++) {
+			var r = colors[Math.floor(Math.random() * colors.length)]
+			ctx.strokeStyle = r
+			var x = (j+1)*hgap + j*pw
+			var y = (i+1)*vgap + i*ph
+			ctx.beginPath()
+			ctx.rect(x,y,pw,ph)
+			ctx.stroke()
+			ctx.closePath()
+		}	
+	}	
+}
+
+function doMCMC() {
+	doSetup()
+	resW = doGibbs(dataWeights)
+	resP = doGibbs(dataPrices)
+	drawGallery()
+}
+
+
+
+
 
