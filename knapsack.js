@@ -1,4 +1,4 @@
-document.getElementById("status").value = "Press button to start..."
+document.getElementById("status").value = "Hit the Run MCMC button..."
 // my colors
 var orange='rgba(255,140,0,1)'
 var green= 'rgba(0,128,0,1)'
@@ -272,7 +272,7 @@ async function doMCMC() {
 	document.getElementById("btn").disabled = true
 	doSetup()
 	drawGallery()
-	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. Running Gibbs Sampler..."
+	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. \nRunning Gibbs Sampler......"
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
 
@@ -288,7 +288,7 @@ async function doMCMC() {
 
 
 	await sleep(2000)
-	var text = "\nGibbs Estimates: " + "\nWeight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
+	var text = "Gibbs Estimates: " + "\nWeight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
 	"\nPrice ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
 	document.getElementById("status").value += text 
 	await sleep(2000);
