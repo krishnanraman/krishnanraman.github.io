@@ -1,3 +1,4 @@
+document.getElementById("status").value = "Press button to start..."
 // my colors
 var orange='rgba(255,140,0,1)'
 var green= 'rgba(0,128,0,1)'
@@ -38,6 +39,16 @@ var totalEarningMC = 0
 
 dataWeights[n-1] = 0
 dataPrices[n-1] = 0
+
+function reset() {
+	totalWeightSk = 0
+	totalEarningSk = 0
+	totalWeightMC = 0
+	totalEarningMC = 0
+	resW = []
+	resP = []
+
+}
 
 function doSetup() {
 	for(i=0;i<b;i++) {
@@ -169,7 +180,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function doSkeptic() {
+function doSkeptic() {
 	var pw = Math.floor(xmax/12)
 	var ph = Math.floor(ymax/12)
 	var hgap = Math.floor((xmax - 10*pw)/11)
@@ -189,21 +200,79 @@ async function doSkeptic() {
 				totalEarningSk += dataPrices[idx]
 				ctx.closePath()
 				document.getElementById("status").value = prev + "\n" + totalEarningSk + " $, " + totalWeightSk + " lbs."
-				await sleep(200);
 			}
 		}	
 	}	
 }
 
-function doKnapsack() {
+async function doKnapsack() {
+	var aEst = resP[0]
+	var alphaEst = resP[1]
+	var betaEst = resP[2]
+	var bEst = resW[0]
+	var sigmaEst = resW[1]
+	var thetaEst = resW[2]
+	
+	ctx.fillStyle = redLight
+	var prev = document.getElementById("status").value
+	var pw = Math.floor(xmax/12)
+	var ph = Math.floor(ymax/12)
+	var hgap = Math.floor((xmax - 10*pw)/11)
+	var vgap = Math.floor((ymax - 10*ph)/11)
 
+ 	if (maxweight > (n-aEst)*thetaEst) {
+ 		var wprime = maxweight - (n-aEst)*thetaEst
+ 		var c = Math.floor(wprime/sigmaEst)
+ 		var aminusc = aEst - c
+ 		// skip aminusc, steal rest
+		for(i=0;i<10;i++) {
+			for(j=0;j<10;j++) {
+				var r = Math.random()
+				var idx = 10*i + j
+				if ((idx > aminusc) && (totalWeightMC + dataWeights[idx]) < maxweight) {
+					totalWeightMC += dataWeights[idx]
+					totalEarningMC += dataPrices[idx]
+					var x = (j+1)*hgap + j*pw
+					var y = (i+1)*vgap + i*ph
+					ctx.beginPath()
+					ctx.fillRect(x+4,y+4,pw - 12,ph - 12)
+					totalWeightMC += dataWeights[idx]
+					totalEarningMC += dataPrices[idx]
+					ctx.closePath()
+					document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
+					await sleep(500);
+				}
+			}	
+		}	
+
+ 	} else {
+ 		// skip a, steal as many as possible in n-a
+ 		for(i=0;i<10;i++) {
+			for(j=0;j<10;j++) {
+				var idx = 10*i + j
+				if ((idx > aEst) && (totalWeightMC + dataWeights[idx]) < maxweight) {
+					var x = (j+1)*hgap + j*pw + 2
+					var y = (i+1)*vgap + i*ph + 2
+					ctx.beginPath()
+					ctx.fillRect(x+4,y+4,pw - 12,ph - 12)
+					totalWeightMC += dataWeights[idx]
+					totalEarningMC += dataPrices[idx]
+					ctx.closePath()
+					document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
+					await sleep(500);
+				}
+			}	
+		}	
+
+ 	}
 }
 
 async function doMCMC() {
+	reset()
 	document.getElementById("btn").disabled = true
 	doSetup()
 	drawGallery()
-	document.getElementById("status").value = "Running Gibbs Sampler..."
+	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. Running Gibbs Sampler..."
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
 	await sleep(2000)
@@ -213,13 +282,10 @@ async function doMCMC() {
 	await sleep(2000);
 	document.getElementById("status").value += "\nStatistical Skeptic Burglar starts now..."
 	await sleep(2000);
-	
 	doSkeptic()
-	document.getElementById("status").value += "\nMCMC Burglar starts now..."
 	await sleep(2000);
+	document.getElementById("status").value += "\nMCMC Burglar starts now..."
 	doKnapsack()
-	//document.getElementById("status").value += "\n MCMC Burglar Earnings: " +
-	//+ totalEarningMC + "$" + ", Weight:" + totalWeightMC
 	await sleep(2000);
 	document.getElementById("btn").disabled = false
 }
