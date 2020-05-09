@@ -14,7 +14,7 @@ var peach = 'rgba(255,230,179,1)'
 var colors = [orange,green,red,blue,black,lightblue,brown]
 
 var xmax = window.innerWidth-20
-var ymax = window.innerHeight-20
+var ymax = window.innerHeight-240
 
 var canv = document.createElement('canvas')
 canv.width = xmax
