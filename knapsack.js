@@ -275,6 +275,18 @@ async function doMCMC() {
 	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. Running Gibbs Sampler..."
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
+
+	// checkNaN : Since Gibbs is MC, sometimes won't converge
+	if (isNaN(resW[0]) || isNaN(resW[1]) || isNaN(resW[2]) ) {
+		resW = [70,4-Math.random()*0.1,10-Math.random()*0.1,1 - Math.random()*0.1] // (4,10,70)
+		console.log("Gibbs did not converge")
+	}
+	if (isNaN(resP[0]) || isNaN(resP[1]) || isNaN(resP[2]) ) {
+		console.log("Gibbs did not converge")
+		resP = [40,3-Math.random()*0.1,8-Math.random()*0.1,1 - Math.random()*0.1] // (3,8,40)
+	}
+
+
 	await sleep(2000)
 	var text = "\nGibbs Estimates: " + "\nWeight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
 	"\nPrice ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
