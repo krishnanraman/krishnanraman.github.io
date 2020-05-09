@@ -21,14 +21,6 @@ canv.focus();
 
 var ctx = canv.getContext('2d')
 
-ctx.fillStyle =peach 
-ctx.fillRect(2,2,xmax-2, ymax-2)
-ctx.strokeStyle=blue
-ctx.beginPath()
-ctx.rect(0,0,xmax,ymax)
-ctx.stroke()
-ctx.closePath()
-
 let dataWeights = []
 let dataPrices = []
 var w = 200 // CONTROL FROM textfield maxweight: 70*1 + 30*8
@@ -43,16 +35,16 @@ dataPrices[n-1] = 0
 
 function doSetup() {
 	for(i=0;i<b;i++) {
-		dataWeights[i] = jStat.poisson.sample(1)
+		dataWeights[i] = jStat.poisson.sample(4)
 	}
 	for(i=b;i<n;i++) {
-		dataWeights[i] = jStat.poisson.sample(8)
+		dataWeights[i] = jStat.poisson.sample(10)
 	}
 	for(i=0;i<a;i++) {
-		dataPrices[i] = jStat.poisson.sample(2.5)
+		dataPrices[i] = jStat.poisson.sample(3)
 	}
 	for(i=a;i<n;i++) {
-		dataPrices[i] = jStat.poisson.sample(7.5)
+		dataPrices[i] = jStat.poisson.sample(8)
 	}
 }
 
@@ -132,16 +124,25 @@ function doGibbs(data) {
 	lambda2Estimate = jStat.mean(lambda2Array.slice(2000,N))
 	alphaEstimate = jStat.mean(alphaArray.slice(2000,N))
 
-	return [thetaEstimate, lambda1Estimate, lambda2Estimate,alphaEstimate ]
+	return [Math.round(thetaEstimate), lambda1Estimate.toFixed(2), lambda2Estimate.toFixed(2),alphaEstimate ]
 }
 
 function drawGallery() {
-	var pw = 100
-	var ph = 50
+	ctx.fillStyle =peach 
+	ctx.fillRect(2,2,xmax-2, ymax-2)
+	ctx.strokeStyle=blue
+	ctx.beginPath()
+	ctx.rect(0,0,xmax,ymax)
+	ctx.stroke()
+	ctx.closePath()
+
+	var pw = Math.floor(xmax/12)
+	var ph = Math.floor(ymax/12)
 	var hgap = Math.floor((xmax - 10*pw)/11)
 	var vgap = Math.floor((ymax - 10*ph)/11)
 	for(i=0;i<10;i++) {
 		for(j=0;j<10;j++) {
+			var idx = 10*i + j
 			var r = colors[Math.floor(Math.random() * colors.length)]
 			ctx.strokeStyle = r
 			var x = (j+1)*hgap + j*pw
@@ -149,16 +150,33 @@ function drawGallery() {
 			ctx.beginPath()
 			ctx.rect(x,y,pw,ph)
 			ctx.stroke()
+			ctx.strokeStyle = black
+			ctx.font = '12px serif';
+			var text = "" + dataWeights[idx] + " lbs, " + dataPrices[idx] + "$" 
+			ctx.strokeText(text, x + pw/4,y + ph/2)
 			ctx.closePath()
 		}	
 	}	
 }
 
-function doMCMC() {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function doMCMC() {
+	document.getElementById("btn").disabled = true
 	doSetup()
+	drawGallery()
+	document.getElementById("status").value = "Running Gibbs Sampler..."
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
-	drawGallery()
+	await sleep(1000)
+	var text = "Gibbs Estimates: " + "Weight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
+	" Price ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
+	document.getElementById("status").value = text 
+	await sleep(1000);
+	document.getElementById("btn").disabled = false
 }
 
 
