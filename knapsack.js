@@ -23,12 +23,16 @@ var ctx = canv.getContext('2d')
 
 let dataWeights = []
 let dataPrices = []
-var w = 200 // CONTROL FROM textfield maxweight: 70*1 + 30*8
+var maxweight = 200 // CONTROL FROM textfield maxweight: 70*1 + 30*8
 var n = 100
 var a = 40
 var b = 70
 let resW = []
 let resP = []
+var totalWeightSk = 0
+var totalEarningSk = 0
+var totalWeightMC = 0
+var totalEarningMC = 0
 
 dataWeights[n-1] = 0
 dataPrices[n-1] = 0
@@ -163,6 +167,34 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function doSkeptic() {
+	var pw = Math.floor(xmax/12)
+	var ph = Math.floor(ymax/12)
+	var hgap = Math.floor((xmax - 10*pw)/11)
+	var vgap = Math.floor((ymax - 10*ph)/11)
+	ctx.fillStyle = green
+	for(i=0;i<10;i++) {
+		for(j=0;j<10;j++) {
+			var r = Math.random()
+			if (r > 0.5 && (totalWeightSk + dataWeights[idx]) < maxweight) {
+				var x = (j+1)*hgap + j*pw
+				var y = (i+1)*vgap + i*ph
+				var idx = 10*i + j
+				ctx.beginPath()
+				ctx.fillRect(x,y,pw,ph)
+				totalWeightSk += dataWeights[idx]
+				totalEarningSk += dataPrices[idx]
+				ctx.closePath()
+				document.getElementById("skeptic").value = "" + totalEarningSk + "$, " + totalWeightSk + " lbs."
+				await sleep(200);
+			}
+		}	
+	}	
+}
+
+function doKnapsack() {
+
+}
 
 async function doMCMC() {
 	document.getElementById("btn").disabled = true
@@ -171,11 +203,17 @@ async function doMCMC() {
 	document.getElementById("status").value = "Running Gibbs Sampler..."
 	resW = doGibbs(dataWeights)
 	resP = doGibbs(dataPrices)
-	await sleep(1000)
+	await sleep(2000)
 	var text = "Gibbs Estimates: " + "Weight ChangePoint " + resW[0] + ",Light ~ Poi(" + resW[1] + " lbs), Heavy ~ Poi(" + resW[2] + " lbs)" +
-	" Price ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
+	"\nGibbs Estimates: Price ChangePoint " + resP[0] + ",Cheap ~ Poi(" + resP[1] + " $), Expensive ~ Poi(" + resP[2] + " $)"
 	document.getElementById("status").value = text 
-	await sleep(1000);
+	await sleep(2000);
+	document.getElementById("skeptic").value = "Statistical Skeptic Burglar starts now..."
+	await sleep(2000);
+	doSkeptic()
+	document.getElementById("knapsack").value = "MCMC Burglar starts now..."
+	await sleep(2000);
+	doKnapsack()
 	document.getElementById("btn").disabled = false
 }
 
