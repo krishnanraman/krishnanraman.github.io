@@ -12,6 +12,7 @@ var brown = 'rgba(165,42,42,1)'
 var white = 'rgba(255,255,255,1)'
 var peach = 'rgba(255,230,179,1)'
 var colors = [orange,green,red,blue,black,lightblue,brown]
+var interactive = true
 
 var xmax = window.innerWidth-20
 var ymax = window.innerHeight-240
@@ -30,12 +31,24 @@ var maxweight = 200 // CONTROL FROM textfield maxweight: 70*1 + 30*8
 var n = 100
 var a = 40
 var b = 70
+var N = 3000
+var burnin = 500
+var totalTimes = 100
 let resW = []
 let resP = []
 var totalWeightSk = 0
 var totalEarningSk = 0
 var totalWeightMC = 0
 var totalEarningMC = 0
+
+var timesEarningMC = []
+var timesWeightMC = []
+var timesEarningSk = []
+var timesWeightSk = []
+timesEarningMC[totalTimes - 1] = 0
+timesWeightMC[totalTimes - 1] = 0
+timesEarningSk[totalTimes - 1] = 0
+timesWeightSk[totalTimes - 1] = 0
 
 dataWeights[n-1] = 0
 dataPrices[n-1] = 0
@@ -86,7 +99,6 @@ function doGibbs(data) {
 	var xsum = jStat.cumsum(data.slice(0,nminus1))
 	var xtotal = jStat.sum( data )
 	var alpha = 1
-	var N = 10000
 	let thetaArray = []
 	let alphaArray = []
 	let lambda1Array = []
@@ -136,10 +148,10 @@ function doGibbs(data) {
 	  	alphaArray[i] = alpha
 	}
 
-	thetaEstimate = jStat.mean(thetaArray.slice(2000,N))
-	lambda1Estimate = jStat.mean(lambda1Array.slice(2000,N))
-	lambda2Estimate = jStat.mean(lambda2Array.slice(2000,N))
-	alphaEstimate = jStat.mean(alphaArray.slice(2000,N))
+	thetaEstimate = jStat.mean(thetaArray.slice(burnin,N))
+	lambda1Estimate = jStat.mean(lambda1Array.slice(burnin,N))
+	lambda2Estimate = jStat.mean(lambda2Array.slice(burnin,N))
+	alphaEstimate = jStat.mean(alphaArray.slice(burnin,N))
 
 	return [Math.round(thetaEstimate), lambda1Estimate.toFixed(2), lambda2Estimate.toFixed(2),alphaEstimate ]
 }
@@ -192,14 +204,16 @@ function doSkeptic() {
 			var r = Math.random()
 			var idx = 10*i + j
 			if (r > 0.5 && (totalWeightSk + dataWeights[idx]) < maxweight) {
-				var x = (j+1)*hgap + j*pw
-				var y = (i+1)*vgap + i*ph
-				ctx.beginPath()
-				ctx.fillRect(x,y,pw,ph)
 				totalWeightSk += dataWeights[idx]
 				totalEarningSk += dataPrices[idx]
-				ctx.closePath()
-				document.getElementById("status").value = prev + "\n" + totalEarningSk + " $, " + totalWeightSk + " lbs."
+				if (interactive) {
+					var x = (j+1)*hgap + j*pw
+					var y = (i+1)*vgap + i*ph
+					ctx.beginPath()
+					ctx.fillRect(x,y,pw,ph)				
+					ctx.closePath()
+					document.getElementById("status").value = prev + "\n" + totalEarningSk + " $, " + totalWeightSk + " lbs."
+				}
 			}
 		}	
 	}	
@@ -232,15 +246,16 @@ async function doKnapsack() {
 				if ((idx > aminusc) && (totalWeightMC + dataWeights[idx]) < maxweight) {
 					totalWeightMC += dataWeights[idx]
 					totalEarningMC += dataPrices[idx]
-					var x = (j+1)*hgap + j*pw
-					var y = (i+1)*vgap + i*ph
-					ctx.beginPath()
-					ctx.fillRect(x+4,y+4,pw - 12,ph - 12)
-					totalWeightMC += dataWeights[idx]
-					totalEarningMC += dataPrices[idx]
-					ctx.closePath()
-					document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
-					await sleep(500);
+
+					if (interactive) {
+						var x = (j+1)*hgap + j*pw
+						var y = (i+1)*vgap + i*ph
+						ctx.beginPath()
+						ctx.fillRect(x+4,y+4,pw - 12,ph - 12)						
+						ctx.closePath()
+						document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
+						await sleep(500);
+					}
 				}
 			}	
 		}	
@@ -251,15 +266,18 @@ async function doKnapsack() {
 			for(j=0;j<10;j++) {
 				var idx = 10*i + j
 				if ((idx > aEst) && (totalWeightMC + dataWeights[idx]) < maxweight) {
-					var x = (j+1)*hgap + j*pw + 2
-					var y = (i+1)*vgap + i*ph + 2
-					ctx.beginPath()
-					ctx.fillRect(x+4,y+4,pw - 12,ph - 12)
+					
 					totalWeightMC += dataWeights[idx]
 					totalEarningMC += dataPrices[idx]
-					ctx.closePath()
-					document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
-					await sleep(500);
+					if (interactive) {
+						var x = (j+1)*hgap + j*pw + 2
+						var y = (i+1)*vgap + i*ph + 2
+						ctx.beginPath()
+						ctx.fillRect(x+4,y+4,pw - 12,ph - 12)
+						ctx.closePath()
+						document.getElementById("status").value = prev + "\n" + totalEarningMC + " $, " + totalWeightMC + " lbs."
+						await sleep(500);
+					}
 				}
 			}	
 		}	
@@ -270,6 +288,7 @@ async function doKnapsack() {
 async function doMCMC() {
 	reset()
 	document.getElementById("btn").disabled = true
+	document.getElementById("btn2").disabled = true
 	doSetup()
 	drawGallery()
 	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. \nRunning Gibbs Sampler......"
@@ -300,6 +319,54 @@ async function doMCMC() {
 	doKnapsack()
 	await sleep(2000);
 	document.getElementById("btn").disabled = false
+	document.getElementById("btn2").disabled = false
+}
+
+async function doMCMC1000() {
+	interactive = false
+	document.getElementById("btn").disabled = true
+	document.getElementById("btn2").disabled = true
+	document.getElementById("status").value = "Running " + totalTimes + " Realizations, please be patient..."
+	await sleep(2000)
+
+	for(times=0;times<totalTimes;times++) {
+		reset()	
+		doSetup()
+		
+		resW = doGibbs(dataWeights)
+		resP = doGibbs(dataPrices)
+
+		// checkNaN : Since Gibbs is MC, sometimes won't converge
+		if (isNaN(resW[0]) || isNaN(resW[1]) || isNaN(resW[2]) ) {
+			resW = [70,4-Math.random()*0.1,10-Math.random()*0.1,1 - Math.random()*0.1] // (4,10,70)
+			console.log("Gibbs did not converge")
+		}
+		if (isNaN(resP[0]) || isNaN(resP[1]) || isNaN(resP[2]) ) {
+			console.log("Gibbs did not converge")
+			resP = [40,3-Math.random()*0.1,8-Math.random()*0.1,1 - Math.random()*0.1] // (3,8,40)
+		}
+
+		doSkeptic()
+		doKnapsack()
+		
+		timesWeightSk[times] = totalWeightSk
+		timesEarningSk[times] = totalEarningSk
+
+		timesEarningMC[times] = totalEarningMC
+		timesWeightMC[times] = totalWeightMC
+		//document.getElementById("status").value += ""+times
+
+	}
+	var text = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs, Realizations: " + totalTimes + "\n" +
+	"\nRandom Algo, Weight: [min, max, mean, total]: [" + jStat.min(timesWeightSk) + ","+jStat.max(timesWeightSk)+"," +jStat.mean(timesWeightSk) +","+jStat.sum(timesWeightSk) +  
+	"]\nMCMC Algo,   Weight: [min, max, mean, total]: [" + jStat.min(timesWeightMC) + ","+jStat.max(timesWeightMC)+"," +jStat.mean(timesWeightMC) +","+jStat.sum(timesWeightMC) +
+	"]\nRandom Algo, Earning: [min, max, mean, total]: [" + jStat.min(timesEarningSk) + ","+jStat.max(timesEarningSk)+"," +jStat.mean(timesEarningSk) +","+jStat.sum(timesEarningSk) +
+	"]\nMCMC Algo:   Earning: [min, max, mean, total]: [" + jStat.min(timesEarningMC) + ","+jStat.max(timesEarningMC)+"," +jStat.mean(timesEarningMC) +","+jStat.sum(timesEarningMC) + "]"
+	document.getElementById("status").value = text
+
+	document.getElementById("btn").disabled = false
+	document.getElementById("btn2").disabled = false
+	interactive = true
 }
 
 
