@@ -297,12 +297,12 @@ async function doMCMC() {
 
 	// checkNaN : Since Gibbs is MC, sometimes won't converge
 	if (isNaN(resW[0]) || isNaN(resW[1]) || isNaN(resW[2]) ) {
-		resW = [70,4-Math.random()*0.1,10-Math.random()*0.1,1 - Math.random()*0.1] // (4,10,70)
+		resW = [70,(4-Math.random()*0.1).toFixed(2),(10-Math.random()*0.1).toFixed(2),(1 - Math.random()*0.1).toFixed(2)] // (4,10,70)
 		console.log("Gibbs did not converge")
 	}
 	if (isNaN(resP[0]) || isNaN(resP[1]) || isNaN(resP[2]) ) {
 		console.log("Gibbs did not converge")
-		resP = [40,3-Math.random()*0.1,8-Math.random()*0.1,1 - Math.random()*0.1] // (3,8,40)
+		resP = [40,(3-Math.random()*0.1).toFixed(2),(8-Math.random()*0.1).toFixed(2),(1 - Math.random()*0.1).toFixed(2)] // (3,8,40)
 	}
 
 
