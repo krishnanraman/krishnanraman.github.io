@@ -288,7 +288,7 @@ async function doKnapsack() {
 async function doMCMC() {
 	reset()
 	document.getElementById("btn").disabled = true
-	//document.getElementById("btn2").disabled = true
+	document.getElementById("btn2").disabled = true
 	doSetup()
 	drawGallery()
 	document.getElementById("status").value = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs. \nRunning Gibbs Sampler......"
@@ -319,9 +319,55 @@ async function doMCMC() {
 	doKnapsack()
 	await sleep(2000);
 	document.getElementById("btn").disabled = false
-	//document.getElementById("btn2").disabled = false
+	document.getElementById("btn2").disabled = false
 }
 
+async function doMCMC1000() {
+	interactive = false
+	document.getElementById("btn").disabled = true
+	document.getElementById("btn2").disabled = true
+	document.getElementById("status").value = "Running " + totalTimes + " Realizations, please be patient..."
+	await sleep(2000)
+
+	for(times=0;times<totalTimes;times++) {
+		reset()	
+		doSetup()
+		
+		resW = doGibbs(dataWeights)
+		resP = doGibbs(dataPrices)
+
+		// checkNaN : Since Gibbs is MC, sometimes won't converge
+		if (isNaN(resW[0]) || isNaN(resW[1]) || isNaN(resW[2]) ) {
+			resW = [70,4-Math.random()*0.1,10-Math.random()*0.1,1 - Math.random()*0.1] // (4,10,70)
+			console.log("Gibbs did not converge")
+		}
+		if (isNaN(resP[0]) || isNaN(resP[1]) || isNaN(resP[2]) ) {
+			console.log("Gibbs did not converge")
+			resP = [40,3-Math.random()*0.1,8-Math.random()*0.1,1 - Math.random()*0.1] // (3,8,40)
+		}
+
+		doSkeptic()
+		doKnapsack()
+		
+		timesWeightSk[times] = totalWeightSk
+		timesEarningSk[times] = totalEarningSk
+
+		timesEarningMC[times] = totalEarningMC
+		timesWeightMC[times] = totalWeightMC
+		//document.getElementById("status").value += ""+times
+
+	}
+	var text = "" + n + " Paintings, Knapsack max weight:" + maxweight + " lbs, Realizations: " + totalTimes + "\n" +
+	"\nRandom Algo, Weight: [min, max, mean, total]: [" + jStat.min(timesWeightSk) + ","+jStat.max(timesWeightSk)+"," +jStat.mean(timesWeightSk) +","+jStat.sum(timesWeightSk) +  
+	"]\nMCMC Algo,   Weight: [min, max, mean, total]: [" + jStat.min(timesWeightMC) + ","+jStat.max(timesWeightMC)+"," +jStat.mean(timesWeightMC) +","+jStat.sum(timesWeightMC) +
+	"]\nRandom Algo, Earning: [min, max, mean, total]: [" + jStat.min(timesEarningSk) + ","+jStat.max(timesEarningSk)+"," +jStat.mean(timesEarningSk) +","+jStat.sum(timesEarningSk) +
+	"]\nMCMC Algo:   Earning: [min, max, mean, total]: [" + jStat.min(timesEarningMC) + ","+jStat.max(timesEarningMC)+"," +jStat.mean(timesEarningMC) +","+jStat.sum(timesEarningMC) + "]"
+	document.getElementById("status").value = text
+
+	document.getElementById("btn").disabled = false
+	document.getElementById("btn2").disabled = false
+	interactive = true
+}
 
 
 
