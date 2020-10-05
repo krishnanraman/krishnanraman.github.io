@@ -1,0 +1,176 @@
+---
+title: "6 sigma, 25 sigma (importance sampling ftw)"
+date: "10/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Aug 2014:
+"HY flowmageddon," said Goldman Sachs' Charles Himmelberg "...largest HY outflow on record – a **6-sigma** event!"
+
+(High-yield bond mutual funds saw outflows total $7.1 billion)
+
+Aug 2007:
+“We  were  seeing  things  that  were  **25-sigma** moves", said David Viniar, CFO of Goldman Sachs.
+
+(Goldman’s flagship GEO  hedge  fund  lost  a quarter of  its  value ytd)
+
+How does one estimate the probability of such a 6-sigma event ?
+The average programmer, thinking back to leetcode on Dice & suchlike, reasons "think of the Gaussian as some special dice with thousands of faces. Toss the dice a million times. Count how many times you see a 6 or more. The fraction of counts is your probability."
+```{r}
+million=1000*1000
+dice = rnorm(million)
+count = sum(dice[dice > 6])
+cat(sprintf("Probability of 1-tailed 6 sigma event: %f", count/million))
+```
+So this doesn't get us anywhere!!!
+
+Now, sampling per-se is not an unsound strategy.
+
+Suppose you'd like to estimate a 1-sigma event:
+```{r}
+count = sum(dice[dice > 1])
+cat(sprintf("Probability of 1-tailed 1 sigma event: %f", count/million))
+```
+24% is the correct probability of a 1-tailed 1-sigma event. (Or 48%, if you care about both tails)
+
+The reason it doesn't work out for rare events is 'cause the event is rare! 
+
+So you'd have to toss your die trillions of times to ever see such a 6-sigma event.
+
+So how else could you estimate the probability of a rare event if sampling fails you ?
+
+A probability is an integral of the density function over the appropriate range.
+
+We can numerically integrate the Gaussian density function from 6 to infinity.
+```{r}
+# Use Numeric Integration
+integrate(function(x) { exp(-x^2/2)/sqrt(2*pi)} , 6, Inf)
+```
+
+Ofcourse, this integral from -infinity to some x is called the CDF(Cumulative Distribution Function) of x.
+
+In most **civilized** PLs, these things are built-in (called pnorm in R)
+
+We care about the right tail (6 to Inf, not -Inf to 6) so a subtraction yields:
+```{r}
+# Use the CDF
+1 - pnorm(6) 
+```
+The desired probability of the 6-sigma event, as we've confirmed twice now, is 9.9e-10....very,very small.
+
+But say you don't have access to CDFs & integrals. 
+
+All you have are samples. 
+
+What then ?
+
+Well, you could sample from *some other* distribution!
+
+Consider proposal distribution q = N(6,1) ie. Gaussian centered at 6.
+
+Integral(p) = Integral(pq/q) = Integral(p/q)*q = Expectation(p/q) under q.
+
+Simply sample from q & compute the ratio p/q whenever samples are greater than 6.
+
+Mean of the above samples is the desired probability.
+
+So what is the ratio p/q ?
+
+p = density of N(0,1) = exp(-x^2/2)/sqrt(2*pi)
+
+q = density of N(6,1) = exp(-(x-6)^2/2)/sqrt(2*pi)
+
+=> p/q = exp((36-12x)/2)
+```{r}
+# 1 line Importance Sampling, with Gaussian proposal
+mean(sapply(rnorm(100000,6,1), function(x) { ifelse(x>6, exp((36-12*x)/2),0) }))
+```
+Once again, we obtain 9.9e-10.
+
+This technique - finding expectation via change of measure, is what mathematicians term **change of measure** (duh).
+
+Statisticians must get fancy, so it goes by the name **Importance Sampling**
+
+(Notice we don't need millions of samples. We've only used 100k above)
+
+Now, you'd have to know the densities of p & q to do the p/q algebra.
+
+Most times, you don't know these things.
+
+No worries!
+
+Densities are built-in as well (called dnorm in R)
+```{r}
+# Since densities are built into the dnorm function, p/q = dnorm(...)/dnorm(...)
+# This is super-useful if you are uncomfortable with algebra. 
+mean(sapply(rnorm(100000,6,1), function(x) { ifelse(x>6, dnorm(x,0,1)/dnorm(x,6,1),0) }))
+```
+You might wonder...this proposal distribution, how did we know we had to pick N(6,1) ?
+
+Wy not N(4,1) ? Or N(5,2) ? Or some other distribution altogether, say a uniform distribution.
+
+After all, every PL has a uniform distribution (its the rand() function)
+
+Consider proposal distribution of Uniform, centered at 6 with width 20, ie. U[-4,16]
+
+p/q = 20*exp(-x^2/2)/sqrt(2*pi)
+```{r}
+# 1 line Importance Sampling, with Uniform proposal
+mean(sapply(runif(100000,-4,16), function(x) { ifelse(x>6, 20*exp(-x^2/2)/sqrt(2*pi),0) }))
+```
+So now you start optimizing.
+
+Note that we don't use samples with x < 6.
+
+So why produce them in the first place ?
+
+Simply start the distribution at 6 & explore the right tail.
+
+Say the proposal q = U[6,16] Density is 1/10. So p/q = 10*p = 10*dnorm
+```{r}
+10*mean(sapply(runif(100000,6,16), dnorm))
+```
+So far, we've been playing with toy distributions like the standard normal.
+
+Now, lets get real.
+
+When the quants at Goldman talk about the 6-sigma & 25-sigma events, they refer to fat-tailed distributions.
+
+Let's pick a typical fat-tailed candidate with finite moments, say a central T with 3 degrees of freedom.
+
+A central T with df 3 has variance 3, so 1 sigma is sqrt(3). A 6 sigma is 10.4
+```{r}
+# 6 sigma via CDF
+cat(sprintf("Probability of 6-sigma event on Student-T(df=3) via CDF: %f\n", 1-pt(10.4, df=3)))
+
+# 6 sigma via Importance Sampling from U[10.4,20.4]
+cat(sprintf("Probability of 6-sigma event on Student-T(df=3) via Importance Sampling: %f\n", 
+            10*mean(sapply(runif(100000,10.4,20.4), dt, df =3))))
+```
+Notice how importance sampling underestimates the true probability. 
+
+We used a candidate proposal distribution of U[10.4, 20.4], but the t-distribution has really fat tails, significant mass well beyond 20.4! 
+
+So let's extend the range ten times, i.e. try U[10.4, 110.4]
+```{r}
+# 6 sigma via Importance Sampling from U[10.4,110.4]
+cat(sprintf("Probability of 6-sigma event on Student-T(df=3) via Importance Sampling: %f\n", 
+            100*mean(sapply(runif(100000,10.4,110.4), dt, df =3))))
+```
+So the likelihood of 6-sigma events in real life is not that small, 0.000949 = 1 in 1053, quite high in fact!
+
+How about a 25-sigma event ?
+```{r}
+# 25 sigma via CDF
+cat(sprintf("Probability of 25-sigma event on Student-T(df=3) via CDF: %f\n", 1-pt(43.3, df=3)))
+
+# 25 sigma via Importance Sampling from U[43.3, 143.3]
+cat(sprintf("Probability of 25-sigma event on Student-T(df=3) via Importance Sampling: %f\n", 
+            100*mean(sapply(runif(100000,43.3,143.3), dt, df =3))))
+```
+Twenty sigma events on a typical fat-tailed distribution have a one in a seventy thousand chance.
+
+Takeaway: Knowing *what* to sample is way more important that knowing *how*.
