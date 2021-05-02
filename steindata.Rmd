@@ -1,0 +1,163 @@
+---
+title: "Stein Estimates"
+author: "Krishnan Raman"
+date: "4/30/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# read returns file 
+returns<- read.csv("~/Desktop/research/faangdaily.csv", sep=",")
+# move returns file into a 253x5 matrix
+# facebook, amazon, apple, netflix, google
+faang <- matrix(0,nrow=253,ncol=5)
+faang[,1] = returns[1:(1+252),3]
+faang[,2] = returns[760:(760+252),3]
+faang[,3] = returns[507:(507+252),3]
+faang[,4] = returns[1013:(1013+252),3]
+faang[,5] = returns[254:(254+252),3]
+# log returns are approx normal
+# log return = log(1 + arithmetic return)
+logfaang<- log(faang+1)
+
+# Split into past (223 days) & future (30 days)
+faangpast = logfaang[1:223,]
+faangfut = logfaang[224:253,]
+
+# Display histogram of Daily log returns
+par(mfrow = c(3,2))
+hist(faangpast[,1],30, main="Facebook", xlab="Log Returns")
+hist(faangpast[,2],30, main="Amazon",xlab="Log Returns")
+hist(faangpast[,3],30, main="Apple",xlab="Log Returns")
+hist(faangpast[,4],30, main="Netflix",xlab="Log Returns")
+hist(faangpast[,5],30, main="Google",xlab="Log Returns")
+```
+```{r}
+# Obtain summary stats
+# Y = vector of sample means of returns
+Y <- matrix(colMeans(faangpast), nrow=5)
+
+# S = sample covariance matrix 
+S <-cov(faangpast)
+corMat<-cor(faangpast)
+
+# Estimator for covar matrix
+#  $\hat \Sigma = \frac{T-1}{T-N-2}S$
+N <- 5 # we have 5 stocks in faangpast
+T = 223 # number of daily returns in faangpast
+sigmaHat = S*((T-1)/(T-N-2))
+sigmaHatInv = solve(sigmaHat)
+ones = matrix(c(1,1,1,1,1),nrow=5)
+onest = matrix(c(1,1,1,1,1),nrow=1)
+
+# Estimator for grand mean
+# $Y_0 = \frac{1'\hat \Sigma^{-1}}{1'\hat \Sigma^{-1}1}Y$
+Y0 = ((onest %*% sigmaHatInv %*% Y)/((onest %*% sigmaHatInv %*% ones)[1,1]))[1,1]
+
+# Estimator for Shrinkage
+# $\hat w = \frac{N+2}{(N+2) + (Y-Y_01)'T\hat \Sigma^{-1}(Y-Y_01)}$
+ygap = Y-(Y0 * ones)
+wHat = (N+2)/(N+2 + (T * (t(ygap) %*% sigmaHatInv %*% ygap)[1,1]))
+
+# Estimator for lambda
+# $\hat \lambda = \frac{\hat wT}{1-\hat w}$
+lambdaHat = wHat*T/(1-wHat)
+
+# JS Estimates
+# $E(r) = (1-\hat w)Y + \hat w 1 Y_0$
+jsMeans = (1 - wHat)*Y + wHat * ones * Y0
+
+#$\hat V(r) = \hat \Sigma \cdot (1 + \frac{1}{T+\hat \lambda}) + \frac{\hat \lambda}{T(T+1+\hat \lambda)}\frac{11'}{1'\Sigma^{-1}1}$
+V = sigmaHat * (1 + (1/(T+lambdaHat))) + (lambdaHat/(T*(T+1+lambdaHat)*(onest %*% sigmaHatInv %*% ones)[1,1])) * (ones %*% onest)
+
+options(digits=3)
+print("Sample Means")
+print(Y)
+print("JS Means")
+print(jsMeans)
+cat("\n\nSample Covariance:\n")
+print(S)
+print("JS CoVar")
+print(V)
+```
+```{r}
+# 5 weights that sum to 1, minimum 5% max 80%
+getWeights = function() {
+w = seq(0.05,0.8,0.05)
+weights = matrix(0,nrow=5000,ncol=5)
+i = 1
+for(a in w) {
+  for(b in w) {
+    for(c in w) {
+      for(d in w) {
+        for(e in w) {
+          if (a+b+c+d+e == 1) {
+            w1 = c(a,b,c,d,e)
+            weights[i,] = w1
+            i = i+1
+            #print(i)
+          }
+        } 
+      } 
+    } 
+  } 
+}
+return(weights[1:(i-1),])
+}
+
+# Compute optimal Markowitz allocation given means & covariances 
+
+getPortfolioMean = function(w, mu) {
+  return((t(w) %*% mu)[1,1])
+}
+
+getPortfolioVariance = function(w, cov) {
+  return((t(w) %*% cov %*% w)[1,1]) 
+}
+
+getMarkowitz = function(mu, cov) {
+  w = getWeights()
+  rows = dim(w)[1]
+  maxSharpe = 0
+  optWeights = 0
+  for(r in 1:rows) {
+    iw = w[r,]
+    #print(iw)
+    mu_p = getPortfolioMean(iw, mu)
+    #print(mu_p)
+    cov_p = getPortfolioVariance(iw, cov)
+    #print(cov_p)
+    sharpe = mu_p/cov_p
+    #print(sharpe)
+    if (sharpe > maxSharpe) {
+      maxSharpe = sharpe
+      optWeights = r
+    }
+    #print(maxSharpe)
+  }
+  return(list(maxSharpe, w[optWeights,]))
+}
+
+sampleMeanAllocation = getMarkowitz(Y,S)
+jamesSteinAllocation = getMarkowitz(jsMeans, V)
+options(digits=3)
+print(paste("Sample Mean Allocation: Sharpe ", round(sampleMeanAllocation[[1]],3), "Allocation:"))
+print(sampleMeanAllocation[[2]])
+print(paste("James Stein Allocation: Sharpe ", round(jamesSteinAllocation[[1]],3), "Allocation:"))
+print(jamesSteinAllocation[[2]])
+```
+```{r}
+getReturns = function(allocation,days) {
+  return(t(colMeans(faangfut[1:days,])*days) %*% allocation)[1,1]
+}
+for(i in c(7,14,21,28)) {
+  print(paste(i, " Days Future Return, SampleMean:",round(getReturns(sampleMeanAllocation[[2]],i),3), "JS:",round(getReturns(jamesSteinAllocation[[2]],i),3)))
+}
+```
+
+
