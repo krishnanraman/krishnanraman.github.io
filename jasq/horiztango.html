@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="facebook-jssdk" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/sdk.js"></script><script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/ga.js"></script><script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app223.us.archive.org';v.server_ms=470;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.jasq.org:80/just-another-scala-quant/horizontal-tango-frequency","20141215011354","https://web.archive.org/","web","/_static/",
+	      "1418606034");
+</script>
+<link rel="stylesheet" type="text/css" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Horizontal Tango Frequency - just another scala quant</title>
+<meta name="description" content="scala scalding math">
+<meta name="keywords" content="Scala, Quant">
+<meta property="og:site_name" content="just another scala quant">
+<meta property="og:title" content="Horizontal Tango Frequency">
+<meta property="og:description" content="TL;DR &nbsp; The number of times the average American has sex in a year, correlated to his/her age, sex and political affiliation, is given by the quadratic polynomial -">
+<meta property="og:url" content="https://web.archive.org/web/20141215011354/http://www.jasq.org/2/post/2014/01/horizontal-tango-frequency.html">
+<meta http-equiv="cache-control" content="no-cache">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://web.archive.org/web/20141215011354/http://www.jasq.org/2/feed">
+
+
+<meta name="google-site-verification" content="VWw1IU7B8b3C97gzMyTTVKfehlzVKRGR8lsiqfWtOgQ"><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/sites.css" type="text/css"><link rel="stylesheet" type="text/css" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/main_style.css" title="wsite-theme-css">
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:10px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:15px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote, #wsite-com-product-tab blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+<script><!--
+var STATIC_BASE = '//web.archive.org/web/20141215011354/http://cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/jquery.min.js"></script>
+<script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/main.js"></script>
+<script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript"><!--
+(function(jQuery){
+function initFlyouts(){initPublishedFlyoutMenus([{"id":"773694477260137346","title":"just another scala quant","url":"index.html","target":""}],"773694477260137346","<li><a href=\"#\" data-membership-required=\"\" >{{title}}<\/a><\/li>",'active',false)}
+if (jQuery) {
+jQuery(document).ready(function() { jQuery(initFlyouts); });
+}else{
+if (Prototype.Browser.IE) window.onload = initFlyouts;
+else document.observe('dom:loaded', initFlyouts);
+}
+})(window._W && _W.jQuery)
+//-->
+</script>
+<link href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/sites_002.css" rel="stylesheet"><script type="text/javascript" async="" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/widgets.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://web.archive.org/web/20141215011354/http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body class="  wsite-theme-light wsite-page-index wsite-blog-post"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20141215011354/http://www.jasq.org:80/just-
+another-scala-quant/horizontal-tango-frequency</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency","20141215011354",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+<div id="wrapper">
+		<div id="contents">
+			<div id="header">
+				<div id="sitename"><span class="wsite-logo"><table style="height:71px"><tbody><tr><td><span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">just another scala quant</span></td></tr></tbody></table></span></div>
+			</div>
+			<div id="navigation"><ul class="wsite-menu-default"><li id="active" style="position: relative;" class="wsite-nav-0"><a href="https://web.archive.org/web/20141215011354/http://www.jasq.org/" style="position: relative;">just another scala quant</a></li></ul></div>
+			<div id="main"><table style="border: 0; width: 100%; table-layout: fixed" id="blogTable" class="wsite-not-footer"><tbody><tr><td valign="top"><div id="773694477260137346-blog" class="blog-body" style="float: left;">
+<div id="wsite-content"><div id="blog-post-669961296654403042" class="blog-post">
+
+	<div class="blog-header">
+		<h2 class="blog-title">
+				<a class="blog-title-link blog-link" href="https://web.archive.org/web/20141215011354/http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency">Horizontal Tango Frequency</a>
+		</h2>
+
+		<p class="blog-date"><span class="date-text">1/29/2014</span></p>
+
+		<!-- 669961296654403042 -->
+
+		<p class="blog-comments">
+					<a href="https://web.archive.org/web/20141215011354/http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency#comments" class="blog-link">
+	3 Comments
+</a>
+
+		</p>
+	</div>
+
+	<div class="blog-separator">&nbsp;</div>
+
+	<div class="blog-content">
+		<div class="paragraph" style="text-align:left;"> <font size="3">TL;DR 
+&nbsp; The number of times the average American has sex in a year, 
+correlated to his/her age, sex and political affiliation, is given by 
+the quadratic polynomial -</font><br> <br> </div>  <div> <div id="774907244154515338" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <table border="0" cellpadding="10" cellspacing="10"> <tbody><tr> <td><b>MALE</b></td>  <td><i>210 * ((Age - 18)/71)<sup>2</sup> - 276* (Age-18)/71 + 128</i>, Goodness of Fit 47%</td> </tr>  <tr> <td><b>Conservative Female</b></td>  <td><i>210 * (Age - 18)/71)<sup>2</sup> - 311*(Age - 18)/71 + 133</i>, Goodness of Fit 62%</td> </tr>  <tr> <td><b>Liberal Female</b></td>  <td><i>210 * (Age - 18)/71)<sup>2</sup> - 290*(Age - 18)/71 + 124</i>, Goodness of Fit 51%</td> </tr> </tbody></table>Or if you prefer not to do the math - <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8703014.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_002.css"><div id="gist8703014" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-txt" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-txt-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-txt-LC1" class="blob-code blob-code-inner js-file-line"> Age	Female,Conservative		Female,Liberal			MALE</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-txt-LC2" class="blob-code blob-code-inner js-file-line"> 18	133				124				128</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-txt-LC3" class="blob-code blob-code-inner js-file-line"> 19	128				119				124</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-txt-LC4" class="blob-code blob-code-inner js-file-line"> 20	124				115				120</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-txt-LC5" class="blob-code blob-code-inner js-file-line"> 21	120				112				116</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-txt-LC6" class="blob-code blob-code-inner js-file-line"> 22	116				108				113</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-txt-LC7" class="blob-code blob-code-inner js-file-line"> 23	112				104				109</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-txt-LC8" class="blob-code blob-code-inner js-file-line"> 24	108				100				106</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-txt-LC9" class="blob-code blob-code-inner js-file-line"> 25	104				 97				102</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-txt-LC10" class="blob-code blob-code-inner js-file-line"> 26	100				 93				 99</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-txt-LC11" class="blob-code blob-code-inner js-file-line"> 27	 96				 90				 96</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-txt-LC12" class="blob-code blob-code-inner js-file-line"> 28	 93				 87				 93</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-txt-LC13" class="blob-code blob-code-inner js-file-line"> 29	 89				 84				 90</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-txt-LC14" class="blob-code blob-code-inner js-file-line"> 30	 86				 80				 87</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-txt-LC15" class="blob-code blob-code-inner js-file-line"> 31	 83				 77				 84</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-txt-LC16" class="blob-code blob-code-inner js-file-line"> 32	 79				 74				 81</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-txt-LC17" class="blob-code blob-code-inner js-file-line"> 33	 76				 72				 79</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gistfile1-txt-LC18" class="blob-code blob-code-inner js-file-line"> 34	 73				 69				 76</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gistfile1-txt-LC19" class="blob-code blob-code-inner js-file-line"> 35	 70				 66				 73</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gistfile1-txt-LC20" class="blob-code blob-code-inner js-file-line"> 36	 67				 63				 71</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gistfile1-txt-LC21" class="blob-code blob-code-inner js-file-line"> 37	 64				 61				 69</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gistfile1-txt-LC22" class="blob-code blob-code-inner js-file-line"> 38	 62				 58				 66</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gistfile1-txt-LC23" class="blob-code blob-code-inner js-file-line"> 39	 59				 56				 64</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gistfile1-txt-LC24" class="blob-code blob-code-inner js-file-line"> 40	 56				 54				 62</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gistfile1-txt-LC25" class="blob-code blob-code-inner js-file-line"> 41	 54				 52				 60</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gistfile1-txt-LC26" class="blob-code blob-code-inner js-file-line"> 42	 51				 49				 58</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gistfile1-txt-LC27" class="blob-code blob-code-inner js-file-line"> 43	 49				 47				 56</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gistfile1-txt-LC28" class="blob-code blob-code-inner js-file-line"> 44	 47				 45				 55</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gistfile1-txt-LC29" class="blob-code blob-code-inner js-file-line"> 45	 45				 44				 53</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-gistfile1-txt-LC30" class="blob-code blob-code-inner js-file-line"> 46	 43				 42				 51</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-gistfile1-txt-LC31" class="blob-code blob-code-inner js-file-line"> 47	 41				 40				 50</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-gistfile1-txt-LC32" class="blob-code blob-code-inner js-file-line"> 48	 39				 38				 48</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-gistfile1-txt-LC33" class="blob-code blob-code-inner js-file-line"> 49	 37				 37				 47</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-gistfile1-txt-LC34" class="blob-code blob-code-inner js-file-line"> 50	 35				 35				 46</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-gistfile1-txt-LC35" class="blob-code blob-code-inner js-file-line"> 51	 33				 34				 45</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-gistfile1-txt-LC36" class="blob-code blob-code-inner js-file-line"> 52	 32				 33				 43</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-gistfile1-txt-LC37" class="blob-code blob-code-inner js-file-line"> 53	 30				 32				 42</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-gistfile1-txt-LC38" class="blob-code blob-code-inner js-file-line"> 54	 29				 30				 42</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-gistfile1-txt-LC39" class="blob-code blob-code-inner js-file-line"> 55	 27				 29				 41</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-gistfile1-txt-LC40" class="blob-code blob-code-inner js-file-line"> 56	 26				 28				 40</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-gistfile1-txt-LC41" class="blob-code blob-code-inner js-file-line"> 57	 25				 28				 39</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-gistfile1-txt-LC42" class="blob-code blob-code-inner js-file-line"> 58	 24				 27				 39</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-gistfile1-txt-LC43" class="blob-code blob-code-inner js-file-line"> 59	 23				 26				 38</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-gistfile1-txt-LC44" class="blob-code blob-code-inner js-file-line"> 60	 22				 25				 38</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-gistfile1-txt-LC45" class="blob-code blob-code-inner js-file-line"> 61	 21				 25				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-gistfile1-txt-LC46" class="blob-code blob-code-inner js-file-line"> 62	 20				 24				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-gistfile1-txt-LC47" class="blob-code blob-code-inner js-file-line"> 63	 20				 24				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-gistfile1-txt-LC48" class="blob-code blob-code-inner js-file-line"> 64	 19				 24				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-gistfile1-txt-LC49" class="blob-code blob-code-inner js-file-line"> 65	 19				 24				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-gistfile1-txt-LC50" class="blob-code blob-code-inner js-file-line"> 66	 18				 23				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-gistfile1-txt-LC51" class="blob-code blob-code-inner js-file-line"> 67	 18				 23				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-gistfile1-txt-LC52" class="blob-code blob-code-inner js-file-line"> 68	 18				 23				 37</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-gistfile1-txt-LC53" class="blob-code blob-code-inner js-file-line"> 69	 17				 24				 38</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-gistfile1-txt-LC54" class="blob-code blob-code-inner js-file-line"> 70	 17				 24				 38</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-gistfile1-txt-LC55" class="blob-code blob-code-inner js-file-line"> 71	 17				 24				 38</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-gistfile1-txt-LC56" class="blob-code blob-code-inner js-file-line"> 72	 17				 24				 39</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-gistfile1-txt-LC57" class="blob-code blob-code-inner js-file-line"> 73	 18				 25				 40</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-gistfile1-txt-LC58" class="blob-code blob-code-inner js-file-line"> 74	 18				 25				 40</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-gistfile1-txt-LC59" class="blob-code blob-code-inner js-file-line"> 75	 18				 26				 41</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-gistfile1-txt-LC60" class="blob-code blob-code-inner js-file-line"> 76	 19				 27				 42</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-gistfile1-txt-LC61" class="blob-code blob-code-inner js-file-line"> 77	 19				 28				 43</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-gistfile1-txt-LC62" class="blob-code blob-code-inner js-file-line"> 78	 20				 28				 44</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-gistfile1-txt-LC63" class="blob-code blob-code-inner js-file-line"> 79	 20				 29				 45</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-gistfile1-txt-LC64" class="blob-code blob-code-inner js-file-line"> 80	 21				 30				 47</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-gistfile1-txt-LC65" class="blob-code blob-code-inner js-file-line"> 81	 22				 32				 48</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-gistfile1-txt-LC66" class="blob-code blob-code-inner js-file-line"> 82	 23				 33				 49</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-gistfile1-txt-LC67" class="blob-code blob-code-inner js-file-line"> 83	 24				 34				 51</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-gistfile1-txt-LC68" class="blob-code blob-code-inner js-file-line"> 84	 25				 35				 52</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-gistfile1-txt-LC69" class="blob-code blob-code-inner js-file-line"> 85	 26				 37				 54</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="file-gistfile1-txt-LC70" class="blob-code blob-code-inner js-file-line"> 86	 27				 38				 56</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="file-gistfile1-txt-LC71" class="blob-code blob-code-inner js-file-line"> 87	 29				 40				 58</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="file-gistfile1-txt-LC72" class="blob-code blob-code-inner js-file-line"> 88	 30				 42				 60</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-txt-L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="file-gistfile1-txt-LC73" class="blob-code blob-code-inner js-file-line"> 89	 32				 44				 62</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8703014/raw/09887b699e8b3d0c9ec5e0a7575be51135bc9d5f/gistfile1.txt" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8703014#file-gistfile1-txt">gistfile1.txt</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-script-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-script-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-script-scala-LC1" class="blob-code blob-code-inner js-file-line">scala<span class="pl-k">&gt;</span> (<span class="pl-c1">18</span> to <span class="pl-c1">89</span>).foreach { <span class="pl-en">Age</span> <span class="pl-k">=&gt;</span> </td>
+      </tr>
+      <tr>
+        <td id="file-script-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-script-scala-LC2" class="blob-code blob-code-inner js-file-line">printf(<span class="pl-s"><span class="pl-pds">"</span>%3d<span class="pl-cce">\t</span>%3d<span class="pl-cce">\t\t\t\t</span>%3d<span class="pl-cce">\t\t\t\t</span>%3d<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, <span class="pl-en">Age</span>, (<span class="pl-c1">210</span> <span class="pl-k">*</span> (((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)<span class="pl-k">*</span>((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)) <span class="pl-k">-</span> (<span class="pl-c1">311</span><span class="pl-k">*</span>(<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>) <span class="pl-k">+</span> <span class="pl-c1">133</span>).toInt, ((<span class="pl-c1">210</span> <span class="pl-k">*</span> ((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)<span class="pl-k">*</span>((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)) <span class="pl-k">-</span> (<span class="pl-c1">290</span><span class="pl-k">*</span>(<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>) <span class="pl-k">+</span> <span class="pl-c1">124</span>).toInt, ((<span class="pl-c1">210</span> <span class="pl-k">*</span> ((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)<span class="pl-k">*</span>((<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>)) <span class="pl-k">-</span> (<span class="pl-c1">276</span><span class="pl-k">*</span>(<span class="pl-en">Age</span> <span class="pl-k">-</span> <span class="pl-c1">18</span>)<span class="pl-k">/</span><span class="pl-c1">71.0</span>) <span class="pl-k">+</span> <span class="pl-c1">128</span>).toInt)</td>
+      </tr>
+      <tr>
+        <td id="file-script-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-script-scala-LC3" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8703014/raw/09887b699e8b3d0c9ec5e0a7575be51135bc9d5f/script.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8703014#file-script-scala">script.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div> <div style="height: 20px; overflow: hidden; width: 100%;"></div> <hr class="styled-hr" style="width:100%;">  <div style="height: 20px; overflow: hidden; width: 100%;"></div> </div>  <div class="paragraph" style="text-align:left;"> <br> <font size="3"><strong><u><a href="https://web.archive.org/web/20141215011354/http://blog.statwing.com/the-statwing-prize-1/">GSS Data Mining with NO TOOLS !!!</a></u></strong></font><br> <font size="3"><br> Imagine if you've been dropped off on a desert island, with the <a href="https://web.archive.org/web/20141215011354/http://blog.statwing.com/the-statwing-prize-1/" target="_blank">GSS Data</a> &amp; no statistical tools!</font><br> <font size="3"><br> That's right -&nbsp;No R! No Matlab! No SAS! No Stata! No Excel!</font><br> <br> <font size="3">Just the dataset &amp; a plain old general purpose programming language.</font><br> <font size="3">(Which language ? Well, pick your favorite - Python, Ruby, C, whatever. I'll be using Scala)</font><br> <br> <font size="3">Now, why would you want to artificially constrain yourself like this ?</font><br> <font size="3">Well, one of my pet peeves is tool-dependence, a.k.a tools-as-a-crutch.</font><br> <br> <font size="3">Whenever I interview a candidate, I start with trivial questions, like</font><br> <font size="3">"What's the standard deviation of {1,3,5,7,9} ?"</font><br> <font size="3">Over 90% of the candidates cannot handle this !!!</font><br> <font size="3">They want a powerful stat tool to solve this trivial problem.</font><br> <br> <font size="3">This
+ is the familiar "meta knowledge" conundrum - the candidate "knows of" 
+standard deviation, they just don't "know" standard deviation! They know
+ of variance, but don't know variance! They've heard of correlations, 
+but don't how how to compute one! Knowing of X while remaining ignorant 
+about what X really is, is a problem that continues to confound the 
+present generation.</font><br> <br> <font size="3">Hence, we shall 
+assume we have no tools whatsoever. We have been dropped into enemy 
+territory and we'll have to build our weapons from scratch. We shall do 
+exactly that!</font><br> <br> <font size="3">Linear Regression ie. 
+Ordinary Least Squares, is one of the simplest &amp; most powerful tools
+ we can resort to, in order to compute correlations.</font><br> <br> <font size="3">So, the mean of a dataset is simply the sum of the elements divided by the size of the datset.</font><br> <br> <br> </div>  <div> <div id="471701476214636769" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700376.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist8700376" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">mean</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> d.sum<span class="pl-k">/</span>d.size</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700376/raw/eec20ead6108bd1fdd6990df8290500062b8ccf2/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700376#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">Now, we simply use this mean function to compute variance, correlation etc!<br> <br>
+ The variance is a measure of how far off each variate is from the mean.
+ We simply subtract off the mean from each element, get rid of the 
+negatives by squaring, &nbsp;and take the mean of this new dataset.</font> </div>  <div> <div id="161647876491271156" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700480.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist8700480" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">variance</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">mu</span> <span class="pl-k">=</span> mean(d)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">    mean(d.map(i <span class="pl-k">=&gt;</span> (i<span class="pl-k">-</span>mu)<span class="pl-k">*</span>(i<span class="pl-k">-</span>mu)))</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-scala-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">stdev</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> math.sqrt(variance(d))</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700480/raw/3411083ad6821b1a7b20f29959502de0e48a7601/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700480#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">The standard deviation is simply the square root of the variance.<br> <br>
+ Scaling: When regressing a variable against another, its best if the 
+two were comparable in magnitude. This is easily achieved by scaling. 
+Find the min &amp; max values the variable can take on, subtract the min
+ and divide by the max. This ensures all values are constrained in the 
+[0-1] range.</font><br> </div>  <div> <div id="473066179214055918" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700505.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_002.css"><div id="gist8700505" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">scale</span>(x<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">scaler</span> <span class="pl-k">=</span> x.max <span class="pl-k">-</span> x.min</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">min</span> <span class="pl-k">=</span> x.min</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">    (x.map { i <span class="pl-k">=&gt;</span> (i<span class="pl-k">-</span>min)<span class="pl-k">/</span>scaler }, min, scaler)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700505/raw/aaed3e38cdbbecf179049c2a8714f1717c057a05/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700505#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">Normalization:
+ Regression is vastly simplified if the dataset has zero mean, unit 
+variance.&nbsp;This is achieved by subtracting off the mean &amp; 
+dividing by the standard deviation of the dataset.</font> </div>  <div> <div id="566840107169168225" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700512.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist8700512" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">normalize</span>(x<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">mu</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.mean(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">sigma</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.stdev(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">    (x.map{ i<span class="pl-k">=&gt;</span> (i <span class="pl-k">-</span> mu)<span class="pl-k">/</span>sigma }, mu, sigma)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700512/raw/63488d80c83a801324bacf92f68071b7a7e7c8d8/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700512#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">Correlation:
+ Given two normalized variables X &amp; Y, we'd like to find how the 
+variables behave in tandem. To measure this behavior, we take the 
+product of the variates &amp; finding the mean of this product dataset.</font> </div>  <div> <div id="509621699295843102" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700514.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_002.css"><div id="gist8700514" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-txt" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-txt-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-txt-LC1" class="blob-code blob-code-inner js-file-line">def corr(x:Data, y:Data) = mean(x.zip(y).map(xy =&gt; xy._1 *  xy._2))</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700514/raw/ecc2f9df4c57f01291bbb4fb0dc460077964cb1d/gistfile1.txt" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700514#file-gistfile1-txt">gistfile1.txt</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">Regression: Given two normalized variables X &amp; Y &amp; their correlation corr, linear regression is simply Y = corr * X<br> <br>
+ And we're done! Well, not quite. We're done with the math. But data 
+analysis isn't just math - its mostly extraction of the data, summary 
+statistics, choosing the dependent &amp; independent variates to build 
+an OLS model, refining the model &amp; so forth.<br> <br> Histogramming 
+is probably the simplest mechanism to look at an individual column. 
+Contrary to popular opinion, you certainly don't need graphics expertise
+ or plotting libraries to display a histogram. Suppose a column has 
+qualitative data - we count the number of categories, number of 
+instances of each category, and draw a scaled bar to represent each 
+category.</font><br> </div>  <div> <div id="562254917759736464" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700534.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_002.css"><div id="gist8700534" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>qualitative<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">sorted</span> <span class="pl-k">=</span> rows</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">        .groupBy(x<span class="pl-k">=&gt;</span>x)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">        .map { xy <span class="pl-k">=&gt;</span> (xy._1, xy._2.size) }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">        .toList</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-scala-LC6" class="blob-code blob-code-inner js-file-line">        .sortBy(x<span class="pl-k">=&gt;</span>x._2)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-scala-LC7" class="blob-code blob-code-inner js-file-line">        .reverse</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-scala-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">py</span> <span class="pl-k">=</span> sorted.head._2</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-scala-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">px</span> <span class="pl-k">=</span> rows.distinct.map(w <span class="pl-k">=&gt;</span> w.length).max</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-scala-LC10" class="blob-code blob-code-inner js-file-line">        sorted.map { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-scala-LC11" class="blob-code blob-code-inner js-file-line">          (i._1, i._2, (i._2 <span class="pl-k">*</span> <span class="pl-c1">60.0</span><span class="pl-k">/</span>py).toInt)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-scala-LC12" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-scala-LC13" class="blob-code blob-code-inner js-file-line">        .foreach { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-scala-LC14" class="blob-code blob-code-inner js-file-line">          printf( <span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span><span class="pl-k">+</span>px<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span>s: %s<span class="pl-cce">\t</span>%d<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, i._1, <span class="pl-en">List</span>.fill[<span class="pl-en">Char</span>](i._3)(<span class="pl-s">'#'</span>).mkString(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>), i._2)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-scala-LC15" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700534/raw/66392bae939d233a3266dcb28984571c6eff28c3/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700534#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile2-txt" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile2-txt-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile2-txt-LC1" class="blob-code blob-code-inner js-file-line">Here are some of the histograms generated by the code above -</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile2-txt-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile2-txt-LC3" class="blob-code blob-code-inner js-file-line">Column: "Gun in Home"</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile2-txt-LC4" class="blob-code blob-code-inner js-file-line">$ scala GSSJob GSS-Data-for-Statwing-Prize.txt histo "Gun in Home" qualitative</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile2-txt-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile2-txt-LC6" class="blob-code blob-code-inner js-file-line"> No: ############################################################ 13607</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile2-txt-LC7" class="blob-code blob-code-inner js-file-line">Yes: ######################################## 9207</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile2-txt-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile2-txt-LC9" class="blob-code blob-code-inner js-file-line">Column: "Sex Frequency"</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile2-txt-LC10" class="blob-code blob-code-inner js-file-line">$ scala GSSJob GSS-Data-for-Statwing-Prize.txt histo "Sex Freq" qualitative</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile2-txt-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile2-txt-LC12" class="blob-code blob-code-inner js-file-line">       Not at All: ############################################################ 4270</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile2-txt-LC13" class="blob-code blob-code-inner js-file-line">     2-3 Per Week: #########################################################  4070</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile2-txt-LC14" class="blob-code blob-code-inner js-file-line">           Weekly: ################################################## 3593</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile2-txt-LC15" class="blob-code blob-code-inner js-file-line">2-3 Times a Month: ###############################################  3361</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile2-txt-LC16" class="blob-code blob-code-inner js-file-line">     Once a Month: ###############################  2217</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile2-txt-LC17" class="blob-code blob-code-inner js-file-line">    Once or Twice: ######################## 1714</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gistfile2-txt-LC18" class="blob-code blob-code-inner js-file-line">      4+ Per Week: ###################  1367</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gistfile2-txt-LC19" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gistfile2-txt-LC20" class="blob-code blob-code-inner js-file-line">Column: "Age"</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gistfile2-txt-LC21" class="blob-code blob-code-inner js-file-line">$ scala GSSJob GSS-Data-for-Statwing-Prize.txt histo "Age" quantitative</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gistfile2-txt-LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gistfile2-txt-LC23" class="blob-code blob-code-inner js-file-line">[18.0 - 25.1]: ################################################  4826</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gistfile2-txt-LC24" class="blob-code blob-code-inner js-file-line">[25.1 - 32.2]: ############################################################ 5979</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gistfile2-txt-LC25" class="blob-code blob-code-inner js-file-line">[32.2 - 39.3]: ###########################################################  5913</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gistfile2-txt-LC26" class="blob-code blob-code-inner js-file-line">[39.3 - 46.4]: #####################################################  5315</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gistfile2-txt-LC27" class="blob-code blob-code-inner js-file-line">[46.4 - 53.5]: ################################################ 4816</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gistfile2-txt-LC28" class="blob-code blob-code-inner js-file-line">[53.5 - 60.6]: #######################################  3929</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gistfile2-txt-LC29" class="blob-code blob-code-inner js-file-line">[60.6 - 67.7]: ################################ 3273</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-gistfile2-txt-LC30" class="blob-code blob-code-inner js-file-line">[67.7 - 74.8]: ########################## 2635</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-gistfile2-txt-LC31" class="blob-code blob-code-inner js-file-line">[74.8 - 81.9]: #################  1773</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile2-txt-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-gistfile2-txt-LC32" class="blob-code blob-code-inner js-file-line">[81.9 - 89.0]: ########## 1075</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700534/raw/66392bae939d233a3266dcb28984571c6eff28c3/gistfile2.txt" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700534#file-gistfile2-txt">gistfile2.txt</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">To
+ build an OLS model, we need choose two quantitative variables. Say we'd
+ like to regress sex frequency against age. Well, "Age" is quantitative,
+ but "Sex Frequency" is not. But we could easily convert the categories 
+in "Sex Frequency" to a number. A simple substitution string, such as</font><br> <br> <font size="2"><em>"Not
+ at All=0&amp;Weekly=52&amp;Once or Twice=2&amp;2-3 Times a 
+Month=36&amp;4+ Per Week=210&amp;2-3 Per Week=156&amp;Once a Month=12"</em></font><br> <br> <font size="3">will
+ replace a "Weekly" entry with 52 (since there are 52 weeks in a year), 
+"2-3 Times a Month" with 36 ( 3 * 12 months/year =36) and so forth.</font><br> <br> <font size="3">Finally, we'd like filters so we can focus on a subset of the data. A simple filter like</font><br> <br> <font size="2"><em>"Sex=Female&amp;Liberalism-Conservatism=Conservative"</em></font><br> <br> <font size="3">is interpreted as - throw away all the rows except the ones where the person is a Female Conservative.</font><br> <br> <font size="3">So now that we have the text-processing &amp; OLS computing pieces ready, what's a good model ?</font><br> <font size="3">Consider</font><br> <font size="3">Sex Frequency = f(Age)</font><br> <font size="3">What sort of a function f would best fit ?</font><br> <br> <font size="3">Certainly
+ the frequency of sex peaks after puberty, and then begins dropping as a
+ person ages. The drop isn't linear - once a person is in his/her 
+30s-40s, gets married,has children etc., various sociological &amp; 
+biological stressors set in, and the frequency drops quite drastically. 
+So a straight line would be a bad model. However, a quadratic can 
+suitably model this relationship.</font><br> <br> <font size="3">Can OLS be used to construct a quadratic model ?</font><br> <font size="3">Certainly!</font><br> <font size="3">We seek -</font><br> <font size="3"><em>Sex Frequency = y = x^2 + a * x + b, with x = Age</em></font><br> <font size="3">To pull this off, we can move the x^2 on the left, and regress (y - x^2) against a * x + b</font><br> <font size="3">Further, once we scale &amp; normalize the data, the "a" is simply the correlation, and the intercept "b"= 0.</font><br> <br> </div>  <div> <div id="165043652324078116" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700991.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_002.css"><div id="gist8700991" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (x<span class="pl-k">:</span><span class="pl-en">Data</span>, y<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> dataxy.toIndexedSeq.unzip</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (scaledx, xmin, xscaler) <span class="pl-k">=</span> scale(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (scaledy, ymin, yscaler) <span class="pl-k">=</span> scale(y)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-scala-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">ysq</span> <span class="pl-k">=</span> scaledx.zip(scaledy).map{ xy <span class="pl-k">=&gt;</span> val(x,y) <span class="pl-k">=</span> xy; y <span class="pl-k">-</span> x<span class="pl-k">*</span>x }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-scala-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-scala-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (normx, mux, sigmax) <span class="pl-k">=</span> normalize(scaledx)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-scala-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (normy, muy, sigmay) <span class="pl-k">=</span> normalize(ysq)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-scala-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">corr</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.corr(normx,normy)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-scala-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-scala-LC12" class="blob-code blob-code-inner js-file-line">    printf(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span> OLS Normalized Poly: <span class="pl-cce">\n</span> mux:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> sigmax:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> xmin:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> xscaler:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> muy:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> sigmay:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> ymin:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> yscaler:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> corr:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> rsq:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> <span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-scala-LC13" class="blob-code blob-code-inner js-file-line">        mux, sigmax, xmin, xscaler,</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-scala-LC14" class="blob-code blob-code-inner js-file-line">        muy, sigmay, ymin, yscaler,</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-scala-LC15" class="blob-code blob-code-inner js-file-line">        corr, corr<span class="pl-k">*</span>corr)</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700991/raw/cf8f5d9c34ac260b49308307b19f3731f43ad952/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700991#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <br> <font size="3">The quadratic OLS model for a "Conservative Female" has the following parameters -</font><br> <br> <font size="2"><em>$
+ scala GSSJob GSS-Data-for-Statwing-Prize.txt job "Age" "Sex Frequency 
+in Last Year" "Not at All=0&amp;Weekly=52&amp;Once or Twice=2&amp;2-3 
+Times a Month=36&amp;4+ Per Week=210&amp;2-3 Per Week=156&amp;Once a 
+Month=12" "Sex=Female&amp;Liberalism-Conservatism=Conservative"</em></font><br> <br> <font size="2"><em>&nbsp;OLS Normalized Poly:<br> &nbsp;mux: 0.413<br> &nbsp;sigmax: &nbsp;0.246<br> &nbsp;xmin: &nbsp;18.000<br> &nbsp;xscaler: 71.000<br> &nbsp;muy: 0.022<br> &nbsp;sigmay: &nbsp;0.463<br> &nbsp;ymin: &nbsp;0.000<br> &nbsp;yscaler: 210.000<br> &nbsp;corr: &nbsp;-0.788<br> &nbsp;rsq: 0.622</em></font><br> <br> <font size="3">The goodness-of-fit is 62.2 %, &nbsp;quite impressive for a sociological dataset.</font><br> <font size="3">Let's now deconstruct the relationship between "Age" and "Sex Frequency", using the parameters above -</font><br> <br> <font size="3">Given an Age x, we first scale its magnitude</font><br> <font size="3">(x-18)/71</font><br> <br> <font size="3">We then normalize the scaled value</font><br> <font size="3">[(x-18)/71 - 0.413]/0.246</font><br> <br> <font size="3">Given a Sex Frequency y, we first scale its magnitude</font><br> <font size="3">(y-0)/210</font><br> <br> <font size="3">We then subtract off the quadratic component of the scaled x</font><br> <font size="3">y/210 - ((x-18)/71)^2</font><br> <br> <font size="3">This quantity is then normalized</font><br> <font size="3">(y/210 - ((x-18)/71)^2) - 0.022)/0.463</font><br> <br> <font size="3">The normalized quantitities are related by the correlation</font><br> <font size="3">(y/210 - ((x-18)/71)^2) - 0.022)/0.463 = -0.788 * [(x-18)/71 - 0.413]/0.246</font><br> <br> <font size="3">A little bit of algebra leads to</font><br> <br> <font size="3"><strong><em>Sex Frequency = 210 * ((Age - 18)/71)^2 - 311 * (Age - 18)/71 &nbsp;+ 133</em></strong></font><br> <br> <font size="3">Voila!</font><br> <br> <font size="3">Similarly, with a 51% goodness of fit, a <strong>"Liberal Female"</strong> has an annual sex frequency given by</font><br> <br> <strong><em><font size="3">Sex Frequency = 210 * ((Age - 18)/71)^2 - 290 * (Age - 18)/71 &nbsp;+ 124</font><br></em></strong><br> <font size="3">For <strong>Males</strong>, the political affiliation doesn't seem to impact the R^2 as much,</font><br> <font size="3">so with a goodness of fit = 47%, we have</font><br> <br> <font size="3"><strong><em>Sex Frequency = 210 * ((Age - 18)/71)^2 - 276 * (Age - 18)/71 &nbsp;+ 128</em></strong></font><br> <br> <font size="3">So
+ we've come very far. With zero tools at our disposal,we've constructed a
+ pretty accurate quadratic model of human age vs annual frequency of 
+sex. Our ancestors computed pi to hundreds of digits and computed 
+logarithm tables by hand, so our accomplishments, while heroic, are 
+certainly very doable and should serve as a model for what can be pulled
+ off with paper, pencil &amp; a bit of math.</font><br> <br> <br> <font size="3">The entire code ( OLS Model + Data Extraction ) is given below -</font> </div>  <div> <div id="341577016410471856" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/8700540.js"> </script><link rel="stylesheet" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd_003.css"><div id="gist8700540" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gssjob-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gssjob-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gssjob-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">object</span> <span class="pl-en">GSSJob</span> <span class="pl-k">extends</span> <span class="pl-e">App</span> { <span class="pl-c"><span class="pl-c">//</span> A Data Mining job sourcing from General Social Survey (GSS) data.</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gssjob-scala-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gssjob-scala-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">in</span> <span class="pl-k">=</span> args(<span class="pl-c1">0</span>) <span class="pl-c"><span class="pl-c">//</span> input file</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gssjob-scala-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">task</span> <span class="pl-k">=</span> args(<span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">//</span> job, histo etc.</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gssjob-scala-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">data</span> <span class="pl-k">=</span> src</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gssjob-scala-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">columnHeader</span> <span class="pl-k">=</span> data.head</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gssjob-scala-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gssjob-scala-LC8" class="blob-code blob-code-inner js-file-line">  task <span class="pl-k">match</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gssjob-scala-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>job<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> job</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gssjob-scala-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>histo<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span> histo</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gssjob-scala-LC11" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gssjob-scala-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gssjob-scala-LC13" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">src</span> <span class="pl-k">=</span> io.<span class="pl-en">Source</span>.fromFile(in).getLines.toStream</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gssjob-scala-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gssjob-scala-LC15" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">colNum</span>(colName<span class="pl-k">:</span><span class="pl-en">String</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gssjob-scala-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">cols</span> <span class="pl-k">=</span> columnHeader.split(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\t</span><span class="pl-pds">"</span></span>).toIndexedSeq</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gssjob-scala-LC17" class="blob-code blob-code-inner js-file-line">    cols.indexOf {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gssjob-scala-LC18" class="blob-code blob-code-inner js-file-line">      cols.filter{ _.contains(colName) }.head</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gssjob-scala-LC19" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gssjob-scala-LC20" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gssjob-scala-LC21" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gssjob-scala-LC22" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">histo</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gssjob-scala-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (colName, colType) <span class="pl-k">=</span> (args(<span class="pl-c1">2</span>), args(<span class="pl-c1">3</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gssjob-scala-LC24" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">col</span> <span class="pl-k">=</span> colNum(colName)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gssjob-scala-LC25" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gssjob-scala-LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">rows</span> <span class="pl-k">=</span> data.tail.flatMap {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gssjob-scala-LC27" class="blob-code blob-code-inner js-file-line">      line<span class="pl-k">:</span><span class="pl-en">String</span> <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gssjob-scala-LC28" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">row</span> <span class="pl-k">=</span> line.split(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\t</span><span class="pl-pds">"</span></span>).toIndexedSeq</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gssjob-scala-LC29" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">xval</span> <span class="pl-k">=</span> row(col)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-gssjob-scala-LC30" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">if</span> (xval.trim.length <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>) <span class="pl-en">Some</span>(xval) <span class="pl-k">else</span> <span class="pl-en">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-gssjob-scala-LC31" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-gssjob-scala-LC32" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-gssjob-scala-LC33" class="blob-code blob-code-inner js-file-line">    colType <span class="pl-k">match</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-gssjob-scala-LC34" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>quantitative<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-gssjob-scala-LC35" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">drows</span> <span class="pl-k">=</span> rows.map(i<span class="pl-k">=&gt;</span> i.toDouble)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-gssjob-scala-LC36" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> (minx,maxx) <span class="pl-k">=</span> (drows.min, drows.max)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-gssjob-scala-LC37" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">range</span> <span class="pl-k">=</span> (maxx<span class="pl-k">-</span>minx)<span class="pl-k">/</span><span class="pl-c1">10.0</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-gssjob-scala-LC38" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">lval</span> <span class="pl-k">=</span> (minx to maxx by range).map(num <span class="pl-k">=&gt;</span> math.round(num<span class="pl-k">*</span><span class="pl-c1">10</span>).toInt<span class="pl-k">/</span><span class="pl-c1">10.0</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-gssjob-scala-LC39" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">rval</span> <span class="pl-k">=</span> lval.tail</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-gssjob-scala-LC40" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">buckets</span> <span class="pl-k">=</span> lval.zip(rval)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-gssjob-scala-LC41" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">empty</span> <span class="pl-k">=</span> <span class="pl-en">Array</span>.fill[<span class="pl-en">Int</span>](<span class="pl-c1">10</span>)(<span class="pl-c1">0</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-gssjob-scala-LC42" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">counters</span> <span class="pl-k">=</span> drows.foldLeft(empty){</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-gssjob-scala-LC43" class="blob-code blob-code-inner js-file-line">          (bucketacc, item) <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-gssjob-scala-LC44" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">val</span> <span class="pl-smi">idx</span> <span class="pl-k">=</span> buckets.map( xy <span class="pl-k">=&gt;</span> xy._1 <span class="pl-k">&lt;=</span> item <span class="pl-k">&amp;&amp;</span> item <span class="pl-k">&lt;=</span> xy._2).indexOf(<span class="pl-c1">true</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-gssjob-scala-LC45" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span>( idx <span class="pl-k">==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) { println(<span class="pl-s"><span class="pl-pds">"</span>Invalid <span class="pl-pds">"</span></span> <span class="pl-k">+</span> item)} <span class="pl-k">else</span> {empty(idx) <span class="pl-k">+</span><span class="pl-k">=</span> <span class="pl-c1">1</span> }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-gssjob-scala-LC46" class="blob-code blob-code-inner js-file-line">            empty</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-gssjob-scala-LC47" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-gssjob-scala-LC48" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">py</span> <span class="pl-k">=</span> counters.max</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-gssjob-scala-LC49" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">sorted</span> <span class="pl-k">=</span> buckets.map( i<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>[<span class="pl-pds">"</span></span><span class="pl-k">+</span>i._1 <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> - <span class="pl-pds">"</span></span><span class="pl-k">+</span> i._2 <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>]<span class="pl-pds">"</span></span>).zip(counters)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-gssjob-scala-LC50" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">px</span> <span class="pl-k">=</span> sorted.map( w<span class="pl-k">=&gt;</span> w._1.length).max</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-gssjob-scala-LC51" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-gssjob-scala-LC52" class="blob-code blob-code-inner js-file-line">        sorted.map { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-gssjob-scala-LC53" class="blob-code blob-code-inner js-file-line">          (i._1, i._2, (i._2 <span class="pl-k">*</span> <span class="pl-c1">60.0</span><span class="pl-k">/</span>py).toInt)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-gssjob-scala-LC54" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-gssjob-scala-LC55" class="blob-code blob-code-inner js-file-line">        .foreach { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-gssjob-scala-LC56" class="blob-code blob-code-inner js-file-line">          printf( <span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span><span class="pl-k">+</span>px<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span>s: %s<span class="pl-cce">\t</span>%d<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, i._1, <span class="pl-en">List</span>.fill[<span class="pl-en">Char</span>](i._3)(<span class="pl-s">'#'</span>).mkString(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>), i._2)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-gssjob-scala-LC57" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-gssjob-scala-LC58" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-gssjob-scala-LC59" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span>qualitative<span class="pl-pds">"</span></span> <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-gssjob-scala-LC60" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">sorted</span> <span class="pl-k">=</span> rows</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-gssjob-scala-LC61" class="blob-code blob-code-inner js-file-line">        .groupBy(x<span class="pl-k">=&gt;</span>x)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-gssjob-scala-LC62" class="blob-code blob-code-inner js-file-line">        .map { xy <span class="pl-k">=&gt;</span> (xy._1, xy._2.size) }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-gssjob-scala-LC63" class="blob-code blob-code-inner js-file-line">        .toList</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-gssjob-scala-LC64" class="blob-code blob-code-inner js-file-line">        .sortBy(x<span class="pl-k">=&gt;</span>x._2)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-gssjob-scala-LC65" class="blob-code blob-code-inner js-file-line">        .reverse</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-gssjob-scala-LC66" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">py</span> <span class="pl-k">=</span> sorted.head._2</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-gssjob-scala-LC67" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">px</span> <span class="pl-k">=</span> rows.distinct.map(w <span class="pl-k">=&gt;</span> w.length).max</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-gssjob-scala-LC68" class="blob-code blob-code-inner js-file-line">        sorted.map { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-gssjob-scala-LC69" class="blob-code blob-code-inner js-file-line">          (i._1, i._2, (i._2 <span class="pl-k">*</span> <span class="pl-c1">60.0</span><span class="pl-k">/</span>py).toInt)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="file-gssjob-scala-LC70" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="file-gssjob-scala-LC71" class="blob-code blob-code-inner js-file-line">        .foreach { i<span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="file-gssjob-scala-LC72" class="blob-code blob-code-inner js-file-line">          printf( <span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span><span class="pl-k">+</span>px<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span>s: %s<span class="pl-cce">\t</span>%d<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, i._1, <span class="pl-en">List</span>.fill[<span class="pl-en">Char</span>](i._3)(<span class="pl-s">'#'</span>).mkString(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>), i._2)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="file-gssjob-scala-LC73" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td id="file-gssjob-scala-LC74" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L75" class="blob-num js-line-number" data-line-number="75"></td>
+        <td id="file-gssjob-scala-LC75" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L76" class="blob-num js-line-number" data-line-number="76"></td>
+        <td id="file-gssjob-scala-LC76" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L77" class="blob-num js-line-number" data-line-number="77"></td>
+        <td id="file-gssjob-scala-LC77" class="blob-code blob-code-inner js-file-line">  <span class="pl-c"><span class="pl-c">//</span> Dictionary to replace strings with numbers</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L78" class="blob-num js-line-number" data-line-number="78"></td>
+        <td id="file-gssjob-scala-LC78" class="blob-code blob-code-inner js-file-line">  <span class="pl-c"><span class="pl-c">//</span> "Age=23&amp;Weight=35" becomes Map( Age-&gt;23, Weight-&gt;35 )</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L79" class="blob-num js-line-number" data-line-number="79"></td>
+        <td id="file-gssjob-scala-LC79" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">buildMap</span>(str<span class="pl-k">:</span><span class="pl-en">String</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L80" class="blob-num js-line-number" data-line-number="80"></td>
+        <td id="file-gssjob-scala-LC80" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">empty</span><span class="pl-k">:</span><span class="pl-en">Map</span>[<span class="pl-en">String</span>, <span class="pl-en">String</span>] <span class="pl-k">=</span> <span class="pl-en">Map</span>()</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L81" class="blob-num js-line-number" data-line-number="81"></td>
+        <td id="file-gssjob-scala-LC81" class="blob-code blob-code-inner js-file-line">    str</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L82" class="blob-num js-line-number" data-line-number="82"></td>
+        <td id="file-gssjob-scala-LC82" class="blob-code blob-code-inner js-file-line">      .split(<span class="pl-s"><span class="pl-pds">"</span>&amp;<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L83" class="blob-num js-line-number" data-line-number="83"></td>
+        <td id="file-gssjob-scala-LC83" class="blob-code blob-code-inner js-file-line">      .foldLeft(empty){ (acc, mapper) <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L84" class="blob-num js-line-number" data-line-number="84"></td>
+        <td id="file-gssjob-scala-LC84" class="blob-code blob-code-inner js-file-line">       <span class="pl-k">val</span> <span class="pl-smi">arr</span> <span class="pl-k">=</span> mapper.split(<span class="pl-s"><span class="pl-pds">"</span>=<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L85" class="blob-num js-line-number" data-line-number="85"></td>
+        <td id="file-gssjob-scala-LC85" class="blob-code blob-code-inner js-file-line">       arr.size <span class="pl-k">match</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L86" class="blob-num js-line-number" data-line-number="86"></td>
+        <td id="file-gssjob-scala-LC86" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">case</span> <span class="pl-c1">2</span> <span class="pl-k">=&gt;</span> acc <span class="pl-k">++</span> <span class="pl-en">Map</span>(arr(<span class="pl-c1">0</span>) <span class="pl-k">-</span><span class="pl-k">&gt;</span> arr(<span class="pl-c1">1</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L87" class="blob-num js-line-number" data-line-number="87"></td>
+        <td id="file-gssjob-scala-LC87" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">case</span> _ <span class="pl-k">=&gt;</span> acc</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L88" class="blob-num js-line-number" data-line-number="88"></td>
+        <td id="file-gssjob-scala-LC88" class="blob-code blob-code-inner js-file-line">       }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L89" class="blob-num js-line-number" data-line-number="89"></td>
+        <td id="file-gssjob-scala-LC89" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L90" class="blob-num js-line-number" data-line-number="90"></td>
+        <td id="file-gssjob-scala-LC90" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L91" class="blob-num js-line-number" data-line-number="91"></td>
+        <td id="file-gssjob-scala-LC91" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L92" class="blob-num js-line-number" data-line-number="92"></td>
+        <td id="file-gssjob-scala-LC92" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">getColumns</span>(<span class="pl-v">row</span>: <span class="pl-en">IndexedSeq</span>[<span class="pl-en">String</span>], xcol<span class="pl-k">:</span><span class="pl-en">Int</span>, ycol<span class="pl-k">:</span><span class="pl-en">Int</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L93" class="blob-num js-line-number" data-line-number="93"></td>
+        <td id="file-gssjob-scala-LC93" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (xval, yval) <span class="pl-k">=</span> (row(xcol), row(ycol))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L94" class="blob-num js-line-number" data-line-number="94"></td>
+        <td id="file-gssjob-scala-LC94" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">valid</span> <span class="pl-k">=</span> <span class="pl-en">List</span>(xval,yval)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L95" class="blob-num js-line-number" data-line-number="95"></td>
+        <td id="file-gssjob-scala-LC95" class="blob-code blob-code-inner js-file-line">      .map{ i<span class="pl-k">=&gt;</span> <span class="pl-en">Option</span>(i).isDefined <span class="pl-k">&amp;&amp;</span> i.trim.length <span class="pl-k">&gt;</span> <span class="pl-c1">0</span> }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L96" class="blob-num js-line-number" data-line-number="96"></td>
+        <td id="file-gssjob-scala-LC96" class="blob-code blob-code-inner js-file-line">      .reduce(_<span class="pl-k">&amp;&amp;</span>_)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L97" class="blob-num js-line-number" data-line-number="97"></td>
+        <td id="file-gssjob-scala-LC97" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> (valid) <span class="pl-en">Some</span>(xval, yval) <span class="pl-k">else</span> <span class="pl-en">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L98" class="blob-num js-line-number" data-line-number="98"></td>
+        <td id="file-gssjob-scala-LC98" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L99" class="blob-num js-line-number" data-line-number="99"></td>
+        <td id="file-gssjob-scala-LC99" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L100" class="blob-num js-line-number" data-line-number="100"></td>
+        <td id="file-gssjob-scala-LC100" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">filterValid</span>(<span class="pl-v">row</span>: <span class="pl-en">IndexedSeq</span>[<span class="pl-en">String</span>], filter<span class="pl-k">:</span><span class="pl-en">Map</span>[<span class="pl-en">String</span>, <span class="pl-en">String</span>], xt<span class="pl-k">:</span>(<span class="pl-en">Int</span>, <span class="pl-en">Double</span>), yt<span class="pl-k">:</span>(<span class="pl-en">Int</span>, <span class="pl-en">Double</span>)) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L101" class="blob-num js-line-number" data-line-number="101"></td>
+        <td id="file-gssjob-scala-LC101" class="blob-code blob-code-inner js-file-line">    (<span class="pl-en">Set</span>(<span class="pl-c1">true</span>) <span class="pl-k">++</span> filter.keys.map{</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L102" class="blob-num js-line-number" data-line-number="102"></td>
+        <td id="file-gssjob-scala-LC102" class="blob-code blob-code-inner js-file-line">      key <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L103" class="blob-num js-line-number" data-line-number="103"></td>
+        <td id="file-gssjob-scala-LC103" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">col</span> <span class="pl-k">=</span> colNum(key)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L104" class="blob-num js-line-number" data-line-number="104"></td>
+        <td id="file-gssjob-scala-LC104" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> (xcol, x) <span class="pl-k">=</span> xt</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L105" class="blob-num js-line-number" data-line-number="105"></td>
+        <td id="file-gssjob-scala-LC105" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> (ycol, y) <span class="pl-k">=</span> yt</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L106" class="blob-num js-line-number" data-line-number="106"></td>
+        <td id="file-gssjob-scala-LC106" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">filterVal</span> <span class="pl-k">=</span> col <span class="pl-k">match</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L107" class="blob-num js-line-number" data-line-number="107"></td>
+        <td id="file-gssjob-scala-LC107" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">case</span> col <span class="pl-k">if</span> col <span class="pl-k">==</span> xcol <span class="pl-k">=&gt;</span> x</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L108" class="blob-num js-line-number" data-line-number="108"></td>
+        <td id="file-gssjob-scala-LC108" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">case</span> col <span class="pl-k">if</span> col <span class="pl-k">==</span> ycol <span class="pl-k">=&gt;</span> y</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L109" class="blob-num js-line-number" data-line-number="109"></td>
+        <td id="file-gssjob-scala-LC109" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">case</span> _ <span class="pl-k">=&gt;</span> row(col)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L110" class="blob-num js-line-number" data-line-number="110"></td>
+        <td id="file-gssjob-scala-LC110" class="blob-code blob-code-inner js-file-line">      }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L111" class="blob-num js-line-number" data-line-number="111"></td>
+        <td id="file-gssjob-scala-LC111" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">criterion</span> <span class="pl-k">=</span> filter(key)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L112" class="blob-num js-line-number" data-line-number="112"></td>
+        <td id="file-gssjob-scala-LC112" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">if</span> (criterion.contains(<span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>)) {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L113" class="blob-num js-line-number" data-line-number="113"></td>
+        <td id="file-gssjob-scala-LC113" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">range</span> <span class="pl-k">=</span> criterion.split(<span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L114" class="blob-num js-line-number" data-line-number="114"></td>
+        <td id="file-gssjob-scala-LC114" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> (a,b) <span class="pl-k">=</span> (range(<span class="pl-c1">0</span>).toInt, range(<span class="pl-c1">1</span>).toInt)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L115" class="blob-num js-line-number" data-line-number="115"></td>
+        <td id="file-gssjob-scala-LC115" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">f</span> <span class="pl-k">=</span> <span class="pl-k">if</span> (filterVal.toString.trim.length <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>) filterVal.toString.toDouble <span class="pl-k">else</span> <span class="pl-k">-</span><span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L116" class="blob-num js-line-number" data-line-number="116"></td>
+        <td id="file-gssjob-scala-LC116" class="blob-code blob-code-inner js-file-line">        (a <span class="pl-k">&lt;=</span> f) <span class="pl-k">&amp;&amp;</span> (f <span class="pl-k">&lt;=</span> b)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L117" class="blob-num js-line-number" data-line-number="117"></td>
+        <td id="file-gssjob-scala-LC117" class="blob-code blob-code-inner js-file-line">      } <span class="pl-k">else</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L118" class="blob-num js-line-number" data-line-number="118"></td>
+        <td id="file-gssjob-scala-LC118" class="blob-code blob-code-inner js-file-line">        filterVal.equals(criterion)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L119" class="blob-num js-line-number" data-line-number="119"></td>
+        <td id="file-gssjob-scala-LC119" class="blob-code blob-code-inner js-file-line">      }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L120" class="blob-num js-line-number" data-line-number="120"></td>
+        <td id="file-gssjob-scala-LC120" class="blob-code blob-code-inner js-file-line">    }).reduce(_<span class="pl-k">&amp;&amp;</span>_)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L121" class="blob-num js-line-number" data-line-number="121"></td>
+        <td id="file-gssjob-scala-LC121" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L122" class="blob-num js-line-number" data-line-number="122"></td>
+        <td id="file-gssjob-scala-LC122" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L123" class="blob-num js-line-number" data-line-number="123"></td>
+        <td id="file-gssjob-scala-LC123" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">scale</span>(x<span class="pl-k">:</span><span class="pl-en">OLS</span>.<span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L124" class="blob-num js-line-number" data-line-number="124"></td>
+        <td id="file-gssjob-scala-LC124" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">scaler</span> <span class="pl-k">=</span> x.max <span class="pl-k">-</span> x.min</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L125" class="blob-num js-line-number" data-line-number="125"></td>
+        <td id="file-gssjob-scala-LC125" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">min</span> <span class="pl-k">=</span> x.min</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L126" class="blob-num js-line-number" data-line-number="126"></td>
+        <td id="file-gssjob-scala-LC126" class="blob-code blob-code-inner js-file-line">    (x.map { i <span class="pl-k">=&gt;</span> (i<span class="pl-k">-</span>min)<span class="pl-k">/</span>scaler }, min, scaler)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L127" class="blob-num js-line-number" data-line-number="127"></td>
+        <td id="file-gssjob-scala-LC127" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L128" class="blob-num js-line-number" data-line-number="128"></td>
+        <td id="file-gssjob-scala-LC128" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L129" class="blob-num js-line-number" data-line-number="129"></td>
+        <td id="file-gssjob-scala-LC129" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">normalize</span>(x<span class="pl-k">:</span><span class="pl-en">OLS</span>.<span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L130" class="blob-num js-line-number" data-line-number="130"></td>
+        <td id="file-gssjob-scala-LC130" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">mu</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.mean(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L131" class="blob-num js-line-number" data-line-number="131"></td>
+        <td id="file-gssjob-scala-LC131" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">sigma</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.stdev(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L132" class="blob-num js-line-number" data-line-number="132"></td>
+        <td id="file-gssjob-scala-LC132" class="blob-code blob-code-inner js-file-line">    (x.map{ i<span class="pl-k">=&gt;</span> (i <span class="pl-k">-</span> mu)<span class="pl-k">/</span>sigma }, mu, sigma)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L133" class="blob-num js-line-number" data-line-number="133"></td>
+        <td id="file-gssjob-scala-LC133" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L134" class="blob-num js-line-number" data-line-number="134"></td>
+        <td id="file-gssjob-scala-LC134" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L135" class="blob-num js-line-number" data-line-number="135"></td>
+        <td id="file-gssjob-scala-LC135" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">job</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L136" class="blob-num js-line-number" data-line-number="136"></td>
+        <td id="file-gssjob-scala-LC136" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">data</span> <span class="pl-k">=</span> src</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L137" class="blob-num js-line-number" data-line-number="137"></td>
+        <td id="file-gssjob-scala-LC137" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (xcol,ycol) <span class="pl-k">=</span> (colNum(args(<span class="pl-c1">2</span>)), colNum(args(<span class="pl-c1">3</span>))) <span class="pl-c"><span class="pl-c">//</span> we only want columns x &amp; y</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L138" class="blob-num js-line-number" data-line-number="138"></td>
+        <td id="file-gssjob-scala-LC138" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">replacer</span> <span class="pl-k">=</span> buildMap(args(<span class="pl-c1">4</span>)) <span class="pl-c"><span class="pl-c">//</span> replace strings with numbers in the data</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L139" class="blob-num js-line-number" data-line-number="139"></td>
+        <td id="file-gssjob-scala-LC139" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">filter</span> <span class="pl-k">=</span> buildMap(args(<span class="pl-c1">5</span>)) <span class="pl-c"><span class="pl-c">//</span> filter criterion based on arbitrary columns</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L140" class="blob-num js-line-number" data-line-number="140"></td>
+        <td id="file-gssjob-scala-LC140" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L141" class="blob-num js-line-number" data-line-number="141"></td>
+        <td id="file-gssjob-scala-LC141" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">dataxy</span> <span class="pl-k">=</span> data</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L142" class="blob-num js-line-number" data-line-number="142"></td>
+        <td id="file-gssjob-scala-LC142" class="blob-code blob-code-inner js-file-line">      .tail <span class="pl-c"><span class="pl-c">//</span> column skip the header</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L143" class="blob-num js-line-number" data-line-number="143"></td>
+        <td id="file-gssjob-scala-LC143" class="blob-code blob-code-inner js-file-line">      .flatMap {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L144" class="blob-num js-line-number" data-line-number="144"></td>
+        <td id="file-gssjob-scala-LC144" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L145" class="blob-num js-line-number" data-line-number="145"></td>
+        <td id="file-gssjob-scala-LC145" class="blob-code blob-code-inner js-file-line">      line<span class="pl-k">:</span><span class="pl-en">String</span> <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L146" class="blob-num js-line-number" data-line-number="146"></td>
+        <td id="file-gssjob-scala-LC146" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">row</span> <span class="pl-k">=</span> line.split(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\t</span><span class="pl-pds">"</span></span>).toIndexedSeq</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L147" class="blob-num js-line-number" data-line-number="147"></td>
+        <td id="file-gssjob-scala-LC147" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">val</span> <span class="pl-smi">colOpt</span> <span class="pl-k">=</span> getColumns(row, xcol, ycol)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L148" class="blob-num js-line-number" data-line-number="148"></td>
+        <td id="file-gssjob-scala-LC148" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> (colOpt.isDefined) {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L149" class="blob-num js-line-number" data-line-number="149"></td>
+        <td id="file-gssjob-scala-LC149" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">val</span> (xval, yval) <span class="pl-k">=</span> colOpt.get</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L150" class="blob-num js-line-number" data-line-number="150"></td>
+        <td id="file-gssjob-scala-LC150" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">val</span> (x,y)<span class="pl-k">=</span> (xval.toDouble, replacer.getOrElse(yval, yval).toDouble)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L151" class="blob-num js-line-number" data-line-number="151"></td>
+        <td id="file-gssjob-scala-LC151" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">if</span> (filterValid(row, filter, (xcol,x), (ycol,y)))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L152" class="blob-num js-line-number" data-line-number="152"></td>
+        <td id="file-gssjob-scala-LC152" class="blob-code blob-code-inner js-file-line">            <span class="pl-en">Some</span>(x,y)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L153" class="blob-num js-line-number" data-line-number="153"></td>
+        <td id="file-gssjob-scala-LC153" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">else</span> <span class="pl-en">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L154" class="blob-num js-line-number" data-line-number="154"></td>
+        <td id="file-gssjob-scala-LC154" class="blob-code blob-code-inner js-file-line">        } <span class="pl-k">else</span> <span class="pl-en">None</span></td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L155" class="blob-num js-line-number" data-line-number="155"></td>
+        <td id="file-gssjob-scala-LC155" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L156" class="blob-num js-line-number" data-line-number="156"></td>
+        <td id="file-gssjob-scala-LC156" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L157" class="blob-num js-line-number" data-line-number="157"></td>
+        <td id="file-gssjob-scala-LC157" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (x<span class="pl-k">:</span><span class="pl-en">OLS</span>.<span class="pl-en">Data</span>, y<span class="pl-k">:</span><span class="pl-en">OLS</span>.<span class="pl-en">Data</span>) <span class="pl-k">=</span> dataxy.toIndexedSeq.unzip</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L158" class="blob-num js-line-number" data-line-number="158"></td>
+        <td id="file-gssjob-scala-LC158" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L159" class="blob-num js-line-number" data-line-number="159"></td>
+        <td id="file-gssjob-scala-LC159" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (scaledx, xmin, xscaler) <span class="pl-k">=</span> scale(x)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L160" class="blob-num js-line-number" data-line-number="160"></td>
+        <td id="file-gssjob-scala-LC160" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (scaledy, ymin, yscaler) <span class="pl-k">=</span> scale(y)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L161" class="blob-num js-line-number" data-line-number="161"></td>
+        <td id="file-gssjob-scala-LC161" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L162" class="blob-num js-line-number" data-line-number="162"></td>
+        <td id="file-gssjob-scala-LC162" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">ysq</span> <span class="pl-k">=</span> scaledx.zip(scaledy).map{ xy <span class="pl-k">=&gt;</span> val(x,y) <span class="pl-k">=</span> xy; y <span class="pl-k">-</span> x<span class="pl-k">*</span>x }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L163" class="blob-num js-line-number" data-line-number="163"></td>
+        <td id="file-gssjob-scala-LC163" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L164" class="blob-num js-line-number" data-line-number="164"></td>
+        <td id="file-gssjob-scala-LC164" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (normx, mux, sigmax) <span class="pl-k">=</span> normalize(scaledx)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L165" class="blob-num js-line-number" data-line-number="165"></td>
+        <td id="file-gssjob-scala-LC165" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> (normy, muy, sigmay) <span class="pl-k">=</span> normalize(ysq)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L166" class="blob-num js-line-number" data-line-number="166"></td>
+        <td id="file-gssjob-scala-LC166" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">corr</span> <span class="pl-k">=</span> <span class="pl-en">OLS</span>.corr(normx,normy)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L167" class="blob-num js-line-number" data-line-number="167"></td>
+        <td id="file-gssjob-scala-LC167" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L168" class="blob-num js-line-number" data-line-number="168"></td>
+        <td id="file-gssjob-scala-LC168" class="blob-code blob-code-inner js-file-line">    printf(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span> OLS Normalized Poly: <span class="pl-cce">\n</span> mux:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> sigmax:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> xmin:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> xscaler:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> muy:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> sigmay:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> ymin:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> yscaler:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> corr:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> rsq:<span class="pl-cce">\t</span>%.3f <span class="pl-cce">\n</span> <span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L169" class="blob-num js-line-number" data-line-number="169"></td>
+        <td id="file-gssjob-scala-LC169" class="blob-code blob-code-inner js-file-line">        mux, sigmax, xmin, xscaler,</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L170" class="blob-num js-line-number" data-line-number="170"></td>
+        <td id="file-gssjob-scala-LC170" class="blob-code blob-code-inner js-file-line">        muy, sigmay, ymin, yscaler,</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L171" class="blob-num js-line-number" data-line-number="171"></td>
+        <td id="file-gssjob-scala-LC171" class="blob-code blob-code-inner js-file-line">        corr, corr<span class="pl-k">*</span>corr)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L172" class="blob-num js-line-number" data-line-number="172"></td>
+        <td id="file-gssjob-scala-LC172" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L173" class="blob-num js-line-number" data-line-number="173"></td>
+        <td id="file-gssjob-scala-LC173" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L174" class="blob-num js-line-number" data-line-number="174"></td>
+        <td id="file-gssjob-scala-LC174" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L175" class="blob-num js-line-number" data-line-number="175"></td>
+        <td id="file-gssjob-scala-LC175" class="blob-code blob-code-inner js-file-line"><span class="pl-k">object</span> <span class="pl-en">OLS</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L176" class="blob-num js-line-number" data-line-number="176"></td>
+        <td id="file-gssjob-scala-LC176" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">type</span> <span class="pl-en">Data</span> <span class="pl-k">=</span> <span class="pl-en">IndexedSeq</span>[<span class="pl-en">Double</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L177" class="blob-num js-line-number" data-line-number="177"></td>
+        <td id="file-gssjob-scala-LC177" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L178" class="blob-num js-line-number" data-line-number="178"></td>
+        <td id="file-gssjob-scala-LC178" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">mean</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> d.sum<span class="pl-k">/</span>d.size</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L179" class="blob-num js-line-number" data-line-number="179"></td>
+        <td id="file-gssjob-scala-LC179" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L180" class="blob-num js-line-number" data-line-number="180"></td>
+        <td id="file-gssjob-scala-LC180" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">variance</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L181" class="blob-num js-line-number" data-line-number="181"></td>
+        <td id="file-gssjob-scala-LC181" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">mu</span> <span class="pl-k">=</span> mean(d)</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L182" class="blob-num js-line-number" data-line-number="182"></td>
+        <td id="file-gssjob-scala-LC182" class="blob-code blob-code-inner js-file-line">    mean(d.map(i <span class="pl-k">=&gt;</span> (i<span class="pl-k">-</span>mu)<span class="pl-k">*</span>(i<span class="pl-k">-</span>mu)))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L183" class="blob-num js-line-number" data-line-number="183"></td>
+        <td id="file-gssjob-scala-LC183" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L184" class="blob-num js-line-number" data-line-number="184"></td>
+        <td id="file-gssjob-scala-LC184" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L185" class="blob-num js-line-number" data-line-number="185"></td>
+        <td id="file-gssjob-scala-LC185" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">stdev</span>(d<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> math.sqrt(variance(d))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L186" class="blob-num js-line-number" data-line-number="186"></td>
+        <td id="file-gssjob-scala-LC186" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L187" class="blob-num js-line-number" data-line-number="187"></td>
+        <td id="file-gssjob-scala-LC187" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">corr</span>(x<span class="pl-k">:</span><span class="pl-en">Data</span>, y<span class="pl-k">:</span><span class="pl-en">Data</span>) <span class="pl-k">=</span> mean(x.zip(y).map(xy <span class="pl-k">=&gt;</span> xy._1 <span class="pl-k">*</span>  xy._2))</td>
+      </tr>
+      <tr>
+        <td id="file-gssjob-scala-L188" class="blob-num js-line-number" data-line-number="188"></td>
+        <td id="file-gssjob-scala-LC188" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700540/raw/96ec2c67dc0ed5bd2da96dae03e358a2098133ca/GSSJob.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20141215011354mp_/https://gist.github.com/krishnanraman/8700540#file-gssjob-scala">GSSJob.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20141215011354mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div> 
+	</div>
+
+
+	<div class="blog-social">
+		<div class="blog-social-item blog-fb-like"><fb:like href="http://www.jasq.org/2/post/2014/01/horizontal-tango-frequency.html" width="90" layout="button_count" action="like" show_faces="false" share="false" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2014%2F01%2Fhorizontal-tango-frequency.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2aa4228e02f326" width="90px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" style="border: medium; visibility: visible; width: 0px; height: 0px;" src="https://web.archive.org/web/20141215011354if_/http://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F7r8gQb8MIqE.js%3Fversion%3D41%23cb%3Df179e60382fc232%26domain%3Dwww.jasq.org%26origin%3Dhttp%253A%252F%252Fwww.jasq.org%252Ff269f91dfd54c58%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2014%2F01%2Fhorizontal-tango-frequency.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" allow="autoplay 'self'; fullscreen 'self'"></iframe></span></fb:like></div><div class="blog-social-item"><a class="twitter-share-button" href="https://web.archive.org/web/20141215011354/http://twitter.com/share?url=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2014%2F01%2Fhorizontal-tango-frequency.html" data-count="horizontal"></a></div><div style="clear:both"></div>
+	</div>
+
+		<div class="blog-comments-bottom">
+			<a href="https://web.archive.org/web/20141215011354/http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency#comments" class="blog-link">
+	3 Comments
+</a>
+
+		</div>
+
+	<div class="blog-post-separator">&nbsp;</div>
+</div>
+<a name="comments" id="comments"></a><br><br><div id="commentArea"><div id="commentText"><div id="comment806762085920595950">
+			<div class="blogCommentWrap even blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141215011354/http://ysloutlet.webgarden.com/">ysl outlet</a> <a href="https://web.archive.org/web/20141215011354/http://ysloutlet.webgarden.com/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">04/22/2014 11:41pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Thanks for the tips, maybe I can use
+ this svelte my noesis marketing and I have been use whatsoever ethnical
+ media in try a interaction and they eff handiwork a big friendliness on
+ me.<br>
+</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141215011354/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=669961296654403042&amp;comment_id=806762085920595950&amp;parent=http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency&amp;is_mobile=&amp;parent_id=806762085920595950&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_806762085920595950', '806762085920595950'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_806762085920595950" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment561558476474375386">
+			<div class="blogCommentWrap odd blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141215011354/http://guccireplica.evenweb.com/">gucci replica</a> <a href="https://web.archive.org/web/20141215011354/http://guccireplica.evenweb.com/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">04/22/2014 11:43pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p><br>
+I have a presentation next week,and I am on the look for such information. </p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141215011354/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=669961296654403042&amp;comment_id=561558476474375386&amp;parent=http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency&amp;is_mobile=&amp;parent_id=561558476474375386&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_561558476474375386', '561558476474375386'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_561558476474375386" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment388527934105457823">
+			<div class="blogCommentWrap even blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141215011354/http://casinogameclub.it/">casinogameclub.it</a> <a href="https://web.archive.org/web/20141215011354/http://casinogameclub.it/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">05/01/2014 10:11pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>casinogameclub.it</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141215011354/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=669961296654403042&amp;comment_id=388527934105457823&amp;parent=http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency&amp;is_mobile=&amp;parent_id=388527934105457823&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_388527934105457823', '388527934105457823'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_388527934105457823" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><!-- lastComment -->
+<div id="lastComment"> </div></div><br>
+
+
+
+<br><br><h2 id="commentReplyTitle">Leave a Reply.</h2>
+<div class="blogCommentReplyWrapper ">
+	<div class="iframeWrapper">
+		<div class="iframeContainer">
+			<iframe src="//web.archive.org/web/20141215011354if_/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=669961296654403042&amp;parent=http://www.jasq.org/just-another-scala-quant/horizontal-tango-frequency&amp;is_mobile=&amp;r=3&amp;is_light=1" frameborder="0" allowtransparency="true" scrolling="no" style="min-height: 410px;" data-ruffle-polyfilled=""></iframe>
+		</div>
+	</div>
+</div>
+<!-- bid-1: 586920016235266723, path: /just-another-scala-quant/horizontal-tango-frequency --></div><!-- bid: 586920016235266723 --></div>
+</div>
+</td><td class="blog-sidebar" valign="top"><div id="773694477260137346-sidebar" class="column-blog"><div class="blog-sidebar-separator"><ul id="773694477260137346-sidebar-list" class="columnlist-blog" style="margin:0; padding: 0;"> <div style="text-align:left;"><div style="height:10px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="wsite-social-item wsite-social-mail" href="https://web.archive.org/web/20141215011354/mailto:dxbydt@jasq.org" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:10px;overflow:hidden"></div></div>
+
+<div><div id="620607291399014751" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">favorite books:
+<li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/Practical-Neural-Network-Recipies-C/dp/0124790402">artificial neural nets</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/0521833787/ref=oh_details_o03_s00_i01">boyd</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/1935182706/ref=oh_details_o03_s00_i01">scala in depth</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/0803931042/ref=wms_ohs_product">pca</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/0486635449/ref=wms_ohs_product">rozanov</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/0471010901/ref=wms_ohs_product">herstein</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/gp/product/0375764917/ref=wms_ohs_product">leduc</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/Linear-Algebra-Cliffs-Quick-Review/dp/0822053314/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1354825352&amp;sr=1-2">leduc</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.amazon.com/Differential-Equations-Cliffs-Quick-Review/dp/0822053209/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1354825352&amp;sr=1-1">leduc</a>
+<br><br>
+scala:
+</li><li><a href="https://web.archive.org/web/20141215011354/http://stackoverflow.com/search?tab=newest&amp;q=scala">SO</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://blog.fogus.me/">Michael Fogus</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://blog.tmorris.net/">Tony Morris</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://apocalisp.wordpress.com/">Runar</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.codecommit.com/">Daniel Spiewak</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://pchiusano.blogspot.com/">Paul Chiusano</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://aperiodic.net/phil/scala/s-99/">Phil Gold</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.markhneedham.com/blog/category/scala/">Mark Needham</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://dcsobral.blogspot.com/">Daniel Sobral</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://pavelfatin.com/scala-for-project-euler/">Pavel Fatin</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://debasishg.blogspot.com/">Debasish Ghosh</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://michid.wordpress.com/">Michid's blog</a>
+<br><br>
+algorithms:
+</li><li><a href="https://web.archive.org/web/20141215011354/http://stackoverflow.com/questions/tagged/algorithm">SO</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://codegolf.stackexchange.com/">Code Golf</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://community.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=alg_index">TopCoder</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://cforcoding.com/">William Shields</a>
+<br><br>
+stack:
+</li><li><a href="https://web.archive.org/web/20141215011354/http://www.scala-lang.org/api/current/index.htm">scaladocs</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://github.com/twitter/calding">Scalding</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://docs.cascading.org/cascading/2.0/javadoc/overview-summary.html">cascading</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://acs.lbl.gov/software/colt/api/index.html">COLT</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://commons.apache.org/math/api-2.2/index.html">Commons Math</a>
+</li><li><a href="https://web.archive.org/web/20141215011354/http://docs.oracle.com/javase/7/docs/api/">jdk</a>
+<br>
+</li></div>
+
+
+
+</div> </ul></div></div></td></tr></tbody></table><hr style="visibility: hidden; clear: both;"></div>
+			<div id="footer">
+				<div id="footer-contents">
+
+
+<link rel="stylesheet" type="text/css" href="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/css.css">
+
+<style>
+	/* @license
+	 * MyFonts Webfont Build ID 2520135, 2013-04-02T23:23:33-0400
+	 * 
+	 * The fonts listed in this notice are subject to the End User License
+	 * Agreement(s) entered into by the website owner. All other parties are 
+	 * explicitly restricted from using the Licensed Webfonts(s).
+	 * 
+	 * You may obtain a valid license at the URLs below.
+	 * 
+	 * Webfont: Proxima Nova S Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold/
+	 * 
+	 * Webfont: Proxima Nova A Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+	 * 
+	 * Webfont: Proxima Nova A Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold/
+	 * 
+	 * Webfont: Proxima Nova S Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+	 * 
+	 * Webfont: Proxima Nova Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+	 * 
+	 * Webfont: Proxima Nova Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+	 * 
+	 * 
+	 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2520135
+	 * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+	 * 
+	 * © 2013 MyFonts Inc
+	*/
+
+	@font-face {
+		font-family: 'ProximaNova';
+		src: url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot');
+		src: url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.woff') format('woff'),
+		     url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'ProximaNova';
+		font-weight: bold;
+		src: url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot');
+		src: url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.woff') format('woff'),
+		     url('//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'thirsty_script_lightregular';
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.eot);
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.eot#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.woff) format('woff'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.ttf) format('truetype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.svg#thirsty_script_lightregular) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'wicons';
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1418324163);
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1418324163#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.woff?buildTime=1418324163) format('woff'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.ttf?buildTime=1418324163) format('truetype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1418324163#wicons) format('svg');
+		font-weight: normal; 
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wicons';
+			src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1418324163#wicons) format('svg');
+		}
+	}
+
+	@font-face {
+		font-family: 'wsocial';
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1418324163);
+		src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1418324163#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.woff?buildTime=1418324163) format('woff'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.ttf?buildTime=1418324163) format('truetype'),
+				 url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1418324163#wsocial) format('svg');
+		font-weight: normal; 
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wsocial';
+			src: url(//web.archive.org/web/20141215011354im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1418324163#wsocial) format('svg');
+		}
+	}
+</style>
+<script type="text/javascript" src="Horizontal%20Tango%20Frequency%20-%20just%20another%20scala%20quant_files/footerSignup.js"></script>
+<script type="text/javascript">
+	var script;
+	if (typeof Weebly == 'undefined') {
+		Weebly = {};
+	}
+	if (!Weebly.jQuery) {
+		script = document.createElement('script');
+		script.onload = function() {
+			Weebly.jQuery = jQuery.noConflict(true);
+			Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1418324163');
+		};
+		script.src = 'https://web.archive.org/web/20141215011354/https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+		document.head.appendChild(script);
+	} else {
+		Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1418324163');
+	}
+</script><div id="weebly-footer-signup-container" class="light" style="height: 58px; left: -82.5px; top: 0px; width: 1085px;">
+	<div class="signup-container-header">
+		<div class="start-free">Create a <a class="link" href="https://web.archive.org/web/20141215011354/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank">free website</a></div>
+		<div class="expand-icon"></div>
+		<div class="powered-by">Powered by <a class="link weebly-icon" href="https://web.archive.org/web/20141215011354/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow"></a></div>
+	</div>
+	<div class="signup-container-content">
+		<h2 class="headline">Start your own free website</h2>
+		<div class="description">A surprisingly easy drag &amp; drop site creator. <a class="thin-underline" href="https://web.archive.org/web/20141215011354/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow">Learn more.</a></div>
+		<iframe id="weebly-footer-signup-iframe" frameborder="0" src="https://web.archive.org/web/20141215011354if_/http://www.weebly.com/footer_signup.php" allowtransparency="true" data-ruffle-polyfilled=""></iframe>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script>
+</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20141215011354/https://ssl' : 'https://web.archive.org/web/20141215011354/http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://web.archive.org/web/20141215011354/https://secure" : "https://web.archive.org/web/20141215011354/http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l0,u10564637.u10564637s568749041175539155"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//web.archive.org/web/20141215011354im_/http://pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l0,u10564637.u10564637s568749041175539155" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				jQuery('#commentArea iframe').css('min-height', '410px');
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20141215011354if_/http://static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f269f91dfd54c58&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20141215011354if_/https://s-static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f269f91dfd54c58&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = '//web.archive.org/web/20141215011354/http://connect.face' + 'book.net/en_US/sdk.js#xfbml=1&version=v2.0';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript">(function() {function j(src, id) {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = src;if(id) {s.id=id};document.getElementsByTagName('head')[0].appendChild(s);}j('//web.archive.org/web/20141215011354/http://platform.twi'+'tter.com/widgets.js');})()</script>
+
+
+<div id="wsite-menus"></div></body></html>
+<!--
+     FILE ARCHIVED ON 01:13:54 Dec 15, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:39:58 Dec 19, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.55
+  exclusion.robots: 0.029
+  exclusion.robots.policy: 0.018
+  esindex: 0.011
+  cdx.remote: 4.898
+  LoadShardBlock: 328.772 (3)
+  PetaboxLoader3.datanode: 114.201 (4)
+  PetaboxLoader3.resolve: 254.068 (3)
+  load_resource: 106.139
+-->

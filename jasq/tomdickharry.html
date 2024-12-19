@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="facebook-jssdk" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/sdk.js"></script><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/ga.js"></script><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app214.us.archive.org';v.server_ms=1455;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.jasq.org:80/just-another-scala-quant/the-mathematician-the-monoid","20141220064727","https://web.archive.org/","web","/_static/",
+	      "1419058047");
+</script>
+<link rel="stylesheet" type="text/css" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Tom, Dick &amp; Harry - just another scala quant</title>
+<meta name="description" content="scala scalding math">
+<meta name="keywords" content="Scala, Quant">
+<meta property="og:site_name" content="just another scala quant">
+<meta property="og:title" content="Tom, Dick &amp; Harry">
+<meta property="og:description" content="One day the bean counter said to the boss - Unless you fire one employee, we are not going to be profitable this year. The boss loudly said: Find the oldest guy who has been at this company for the...">
+<meta property="og:url" content="https://web.archive.org/web/20141220064727/http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html">
+<meta http-equiv="cache-control" content="no-cache">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://web.archive.org/web/20141220064727/http://www.jasq.org/2/feed">
+
+
+<meta name="google-site-verification" content="VWw1IU7B8b3C97gzMyTTVKfehlzVKRGR8lsiqfWtOgQ"><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/sites.css" type="text/css"><link rel="stylesheet" type="text/css" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/main_style.css" title="wsite-theme-css">
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:10px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:15px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote, #wsite-com-product-tab blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+<script><!--
+var STATIC_BASE = '//web.archive.org/web/20141220064727/http://cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/jquery.min.js"></script>
+<script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/main.js"></script>
+<script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript"><!--
+(function(jQuery){
+function initFlyouts(){initPublishedFlyoutMenus([{"id":"773694477260137346","title":"just another scala quant","url":"index.html","target":""}],"773694477260137346","<li><a href=\"#\" data-membership-required=\"\" >{{title}}<\/a><\/li>",'active',false)}
+if (jQuery) {
+jQuery(document).ready(function() { jQuery(initFlyouts); });
+}else{
+if (Prototype.Browser.IE) window.onload = initFlyouts;
+else document.observe('dom:loaded', initFlyouts);
+}
+})(window._W && _W.jQuery)
+//-->
+</script>
+<link href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/sites_002.css" rel="stylesheet"><script type="text/javascript" async="" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/widgets.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://web.archive.org/web/20141220064727/https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body class="  wsite-theme-light wsite-page-index wsite-blog-post" data-twttr-rendered="true"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20141220064727/http://www.jasq.org:80/just-
+another-scala-quant/the-mathematician-the-monoid</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.jasq.org/just-another-scala-quant/the-mathematician-the-monoid","20141220064727",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+<div id="wrapper">
+		<div id="contents">
+			<div id="header">
+				<div id="sitename"><span class="wsite-logo"><table style="height:71px"><tbody><tr><td><span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">just another scala quant</span></td></tr></tbody></table></span></div>
+			</div>
+			<div id="navigation"><ul class="wsite-menu-default"><li id="active" style="position: relative;" class="wsite-nav-0"><a href="https://web.archive.org/web/20141220064727/http://www.jasq.org/" style="position: relative;">just another scala quant</a></li></ul></div>
+			<div id="main"><table style="border: 0; width: 100%; table-layout: fixed" id="blogTable" class="wsite-not-footer"><tbody><tr><td valign="top"><div id="773694477260137346-blog" class="blog-body" style="float: left;">
+<div id="wsite-content"><div id="blog-post-924922220820570504" class="blog-post">
+
+	<div class="blog-header">
+		<h2 class="blog-title">
+				<a class="blog-title-link blog-link" href="https://web.archive.org/web/20141220064727/http://www.jasq.org/just-another-scala-quant/the-mathematician-the-monoid">Tom, Dick &amp; Harry</a>
+		</h2>
+
+		<p class="blog-date"><span class="date-text">1/14/2013</span></p>
+
+		<!-- 924922220820570504 -->
+
+		<p class="blog-comments">
+					<a href="https://web.archive.org/web/20141220064727/http://www.jasq.org/just-another-scala-quant/the-mathematician-the-monoid#comments" class="blog-link">
+	8 Comments
+</a>
+
+		</p>
+	</div>
+
+	<div class="blog-separator">&nbsp;</div>
+
+	<div class="blog-content">
+		<div class="paragraph" style="text-align:left;">One day the bean counter said to the boss - Unless you fire one employee, we are not going to be profitable this year.<br><br>The
+ boss loudly said: Find the oldest guy who has been at this company for 
+the longest time and is still not making six figures. We'll fire him!<br><br>Impeccable
+ management logic here: The guy has been with the company for the 
+longest time. The guy is the oldest. He is still not making six figures.
+ Obviously a sure loser. Fire this loser and save money!<br><br>Three programmers Tom, Dick &amp; Harry overheard their boss and got to work immediately.<br><br>The employee database obviously looks like this:<br><br></div>  <div><div id="150439127284243299" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/4535154.js"></script><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e_002.css"><div id="gist4535154" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-scala-L1" rel="file-gistfile1-scala-L1">1</span>
+            <span class="line-number" id="file-gistfile1-scala-L2" rel="file-gistfile1-scala-L2">2</span>
+            <span class="line-number" id="file-gistfile1-scala-L3" rel="file-gistfile1-scala-L3">3</span>
+            <span class="line-number" id="file-gistfile1-scala-L4" rel="file-gistfile1-scala-L4">4</span>
+            <span class="line-number" id="file-gistfile1-scala-L5" rel="file-gistfile1-scala-L5">5</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-scala-LC1"><span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">Employee</span>(age<span class="pl-k">:</span><span class="pl-st">Int</span>, tenure<span class="pl-k">:</span><span class="pl-st">Int</span>, salary<span class="pl-k">:</span><span class="pl-st">Int</span>, name<span class="pl-k">:</span><span class="pl-st">String</span>)
+</div><div class="line" id="file-gistfile1-scala-LC2"> 
+</div><div class="line" id="file-gistfile1-scala-LC3"><span class="pl-k">def</span> <span class="pl-en">rnd</span>(min<span class="pl-k">:</span><span class="pl-st">Int</span>,max<span class="pl-k">:</span><span class="pl-st">Int</span>) <span class="pl-k">=</span> math.round(min<span class="pl-k">+</span>math.random<span class="pl-k">*</span>(max<span class="pl-k">-</span>min)).toInt 
+</div><div class="line" id="file-gistfile1-scala-LC4"> 
+</div><div class="line" id="file-gistfile1-scala-LC5"><span class="pl-k">val</span> <span class="pl-en">empDB</span> <span class="pl-k">=</span> <span class="pl-k">for</span>(employees<span class="pl-k">&lt;</span><span class="pl-k">-</span><span class="pl-c1">1</span> to <span class="pl-c1">10000</span>) <span class="pl-k">yield</span> <span class="pl-en">Employee</span>( rnd(<span class="pl-c1">25</span>,<span class="pl-c1">35</span>),rnd(<span class="pl-c1">1</span>,<span class="pl-c1">6</span>),rnd(<span class="pl-c1">85000</span>,<span class="pl-c1">150000</span>),<span class="pl-s1"><span class="pl-pds">"</span>emp<span class="pl-pds">"</span></span><span class="pl-k">+</span>employees)
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535154/raw/gistfile1.scala" style="float:right">view raw</a>
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535154#file-gistfile1-scala">gistfile1.scala</a>
+            hosted with ❤ by <a href="https://web.archive.org/web/20141220064727mp_/https://github.com">GitHub</a>
+          </div>
+        </div>
+</div>
+</div>    </div>  <div class="paragraph" style="text-align:left;"><br>So we see there are 10,000 employees at this company.<br>They are between 25 &amp; 35 years old.<br>They have been with the company anywhere from 1 to 6 years.<br>They make between $85,000 to $150,000.<br><br>Tom was a PHP/JS programmer. He worked on rapidly prototyped web-apps and didn't give a rat's ass about efficiency.<br>Tom
+ reasoned: This is just a nested sort. Let me first sort on the tenure. 
+That will tell me who has been with the company for the longest time. 
+Then I'll sort on age. That tells me who the oldest bloke is. Then I'll 
+sort on salary. That tells me who is making the least money. That should
+ be it!<br><br>In Scala, Tom's code would look like:<br><br></div>  <div><div id="634499692612056151" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/4535169.js"></script><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e_002.css"><div id="gist4535169" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-scala-L1" rel="file-gistfile1-scala-L1">1</span>
+            <span class="line-number" id="file-gistfile1-scala-L2" rel="file-gistfile1-scala-L2">2</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-scala-LC1">scala<span class="pl-k">&gt;</span> empDB.sortBy(e<span class="pl-k">=&gt;</span>(e.tenure,e.age,<span class="pl-k">-</span>e.salary)).reverse.head
+</div><div class="line" id="file-gistfile1-scala-LC2">res0<span class="pl-k">:</span> <span class="pl-en">Employee</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">35</span>,<span class="pl-c1">6</span>,<span class="pl-c1">85079</span>,emp7435)
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535169/raw/gistfile1.scala" style="float:right">view raw</a>
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535169#file-gistfile1-scala">gistfile1.scala</a>
+            hosted with ❤ by <a href="https://web.archive.org/web/20141220064727mp_/https://github.com">GitHub</a>
+          </div>
+        </div>
+</div>
+</div>    </div>  <div class="paragraph" style="text-align:left;"><br>Dick was a back-end systems programmer. He thought deep and hard about algorithms &amp; Big O performance and such.<br>&nbsp;So
+ Dick said - there's no need to sort anything. We just want the oldest 
+guy with the longest tenure who makes the least salary. That just an 
+O(n) problem, NOT an O(nlog(n)) problem. We just need the min tuple.<br><br>In Scala, Dick's code looks like this -<br><br></div>  <div><div id="761985278828199327" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/4535171.js"></script><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e_003.css"><div id="gist4535171" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-scala-L1" rel="file-gistfile1-scala-L1">1</span>
+            <span class="line-number" id="file-gistfile1-scala-L2" rel="file-gistfile1-scala-L2">2</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-scala-LC1">scala<span class="pl-k">&gt;</span> empDB.minBy(e<span class="pl-k">=&gt;</span>(<span class="pl-k">-</span>e.tenure,<span class="pl-k">-</span>e.age,e.salary))
+</div><div class="line" id="file-gistfile1-scala-LC2">res1<span class="pl-k">:</span> <span class="pl-en">Employee</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">35</span>,<span class="pl-c1">6</span>,<span class="pl-c1">85079</span>,emp7435)
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535171/raw/gistfile1.scala" style="float:right">view raw</a>
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535171#file-gistfile1-scala">gistfile1.scala</a>
+            hosted with ❤ by <a href="https://web.archive.org/web/20141220064727mp_/https://github.com">GitHub</a>
+          </div>
+        </div>
+</div>
+</div>    </div>  <div class="paragraph" style="text-align:left;"><br>Harry was a math major who went about looking for mathematical abstractions in the simplest of code.<br>Harry took the day off and thought long &amp; hard about this problem while lounging in the bathtub.<br>Suddenly, it occured to Harry - Hey, this is a monoid!<br>Naked Harry happily danced the mathematician's Eureka Dance, and set about coding.<br><br>In Scala, Harry's code looks like:<br><br></div>  <div><div id="657522256119054541" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/4535192.js"></script><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist4535192" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-scala-L1" rel="file-gistfile1-scala-L1">1</span>
+            <span class="line-number" id="file-gistfile1-scala-L2" rel="file-gistfile1-scala-L2">2</span>
+            <span class="line-number" id="file-gistfile1-scala-L3" rel="file-gistfile1-scala-L3">3</span>
+            <span class="line-number" id="file-gistfile1-scala-L4" rel="file-gistfile1-scala-L4">4</span>
+            <span class="line-number" id="file-gistfile1-scala-L5" rel="file-gistfile1-scala-L5">5</span>
+            <span class="line-number" id="file-gistfile1-scala-L6" rel="file-gistfile1-scala-L6">6</span>
+            <span class="line-number" id="file-gistfile1-scala-L7" rel="file-gistfile1-scala-L7">7</span>
+            <span class="line-number" id="file-gistfile1-scala-L8" rel="file-gistfile1-scala-L8">8</span>
+            <span class="line-number" id="file-gistfile1-scala-L9" rel="file-gistfile1-scala-L9">9</span>
+            <span class="line-number" id="file-gistfile1-scala-L10" rel="file-gistfile1-scala-L10">10</span>
+            <span class="line-number" id="file-gistfile1-scala-L11" rel="file-gistfile1-scala-L11">11</span>
+            <span class="line-number" id="file-gistfile1-scala-L12" rel="file-gistfile1-scala-L12">12</span>
+            <span class="line-number" id="file-gistfile1-scala-L13" rel="file-gistfile1-scala-L13">13</span>
+            <span class="line-number" id="file-gistfile1-scala-L14" rel="file-gistfile1-scala-L14">14</span>
+            <span class="line-number" id="file-gistfile1-scala-L15" rel="file-gistfile1-scala-L15">15</span>
+            <span class="line-number" id="file-gistfile1-scala-L16" rel="file-gistfile1-scala-L16">16</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-scala-LC1"><span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">Monoid</span>(e<span class="pl-k">:</span><span class="pl-en">Set</span>[<span class="pl-en">Employee</span>]) {     
+</div><div class="line" id="file-gistfile1-scala-LC2">  <span class="pl-k">def</span> <span class="pl-en">plus</span>(a<span class="pl-k">:</span><span class="pl-en">Employee</span>,b<span class="pl-k">:</span><span class="pl-en">Employee</span>)<span class="pl-k">=</span> {
+</div><div class="line" id="file-gistfile1-scala-LC3">  <span class="pl-k">if</span>(a.age <span class="pl-k">&gt;</span> b.age) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC4">  <span class="pl-k">if</span>(b.age <span class="pl-k">&gt;</span> a.age) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC5">  <span class="pl-k">if</span>(a.tenure <span class="pl-k">&gt;</span> b.tenure) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC6">  <span class="pl-k">if</span>(b.tenure <span class="pl-k">&gt;</span> a.tenure) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC7">  <span class="pl-k">if</span> (a.salary <span class="pl-k">&gt;</span> b.salary) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC8">  <span class="pl-k">if</span>(b.salary <span class="pl-k">&gt;</span> a.salary) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC9">  <span class="pl-k">if</span>( math.random <span class="pl-k">&gt;</span> <span class="pl-c1">0.5</span>) a <span class="pl-k">else</span> b 
+</div><div class="line" id="file-gistfile1-scala-LC10">}
+</div><div class="line" id="file-gistfile1-scala-LC11">  <span class="pl-k">val</span> <span class="pl-en">identity</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-s1"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>)
+</div><div class="line" id="file-gistfile1-scala-LC12">  <span class="pl-k">val</span> <span class="pl-en">theUnluckyOne</span> <span class="pl-k">=</span> e.foldLeft(identity)((a,b)<span class="pl-k">=&gt;</span>plus(a,b))
+</div><div class="line" id="file-gistfile1-scala-LC13">}
+</div><div class="line" id="file-gistfile1-scala-LC14"> 
+</div><div class="line" id="file-gistfile1-scala-LC15">scala<span class="pl-k">&gt;</span> <span class="pl-en">Monoid</span>(empDB.toSet).theUnluckyOne
+</div><div class="line" id="file-gistfile1-scala-LC16">res2<span class="pl-k">:</span> <span class="pl-en">Employee</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">35</span>,<span class="pl-c1">6</span>,<span class="pl-c1">85079</span>,emp7435)
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535192/raw/gistfile1.scala" style="float:right">view raw</a>
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535192#file-gistfile1-scala">gistfile1.scala</a>
+            hosted with ❤ by <a href="https://web.archive.org/web/20141220064727mp_/https://github.com">GitHub</a>
+          </div>
+        </div>
+</div>
+</div>    </div>  <div class="paragraph" style="text-align:left;"><br>In scalaz, it would look like this:<br><br></div>  <div><div id="366402277188368162" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/4535898.js"></script><link rel="stylesheet" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"><div id="gist4535898" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-scala-L1" rel="file-gistfile1-scala-L1">1</span>
+            <span class="line-number" id="file-gistfile1-scala-L2" rel="file-gistfile1-scala-L2">2</span>
+            <span class="line-number" id="file-gistfile1-scala-L3" rel="file-gistfile1-scala-L3">3</span>
+            <span class="line-number" id="file-gistfile1-scala-L4" rel="file-gistfile1-scala-L4">4</span>
+            <span class="line-number" id="file-gistfile1-scala-L5" rel="file-gistfile1-scala-L5">5</span>
+            <span class="line-number" id="file-gistfile1-scala-L6" rel="file-gistfile1-scala-L6">6</span>
+            <span class="line-number" id="file-gistfile1-scala-L7" rel="file-gistfile1-scala-L7">7</span>
+            <span class="line-number" id="file-gistfile1-scala-L8" rel="file-gistfile1-scala-L8">8</span>
+            <span class="line-number" id="file-gistfile1-scala-L9" rel="file-gistfile1-scala-L9">9</span>
+            <span class="line-number" id="file-gistfile1-scala-L10" rel="file-gistfile1-scala-L10">10</span>
+            <span class="line-number" id="file-gistfile1-scala-L11" rel="file-gistfile1-scala-L11">11</span>
+            <span class="line-number" id="file-gistfile1-scala-L12" rel="file-gistfile1-scala-L12">12</span>
+            <span class="line-number" id="file-gistfile1-scala-L13" rel="file-gistfile1-scala-L13">13</span>
+            <span class="line-number" id="file-gistfile1-scala-L14" rel="file-gistfile1-scala-L14">14</span>
+            <span class="line-number" id="file-gistfile1-scala-L15" rel="file-gistfile1-scala-L15">15</span>
+            <span class="line-number" id="file-gistfile1-scala-L16" rel="file-gistfile1-scala-L16">16</span>
+            <span class="line-number" id="file-gistfile1-scala-L17" rel="file-gistfile1-scala-L17">17</span>
+            <span class="line-number" id="file-gistfile1-scala-L18" rel="file-gistfile1-scala-L18">18</span>
+            <span class="line-number" id="file-gistfile1-scala-L19" rel="file-gistfile1-scala-L19">19</span>
+            <span class="line-number" id="file-gistfile1-scala-L20" rel="file-gistfile1-scala-L20">20</span>
+            <span class="line-number" id="file-gistfile1-scala-L21" rel="file-gistfile1-scala-L21">21</span>
+            <span class="line-number" id="file-gistfile1-scala-L22" rel="file-gistfile1-scala-L22">22</span>
+            <span class="line-number" id="file-gistfile1-scala-L23" rel="file-gistfile1-scala-L23">23</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-scala-LC1"><span class="pl-k">import</span> <span class="pl-v">scalaz.</span><span class="pl-v">Monoid</span>
+</div><div class="line" id="file-gistfile1-scala-LC2">&nbsp;
+</div><div class="line" id="file-gistfile1-scala-LC3"><span class="pl-k">case</span> <span class="pl-k">class</span> <span class="pl-en">EmpMonoid</span>(e<span class="pl-k">:</span><span class="pl-en">Set</span>[<span class="pl-en">Employee</span>]) <span class="pl-k">extends</span> <span class="pl-e">Monoid</span>[<span class="pl-en">Employee</span>] {
+</div><div class="line" id="file-gistfile1-scala-LC4">  
+</div><div class="line" id="file-gistfile1-scala-LC5">  <span class="pl-s">override</span> <span class="pl-k">val</span> <span class="pl-en">zero</span><span class="pl-k">:</span><span class="pl-en">Employee</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-s1"><span class="pl-pds">"</span>emp0<span class="pl-pds">"</span></span>)
+</div><div class="line" id="file-gistfile1-scala-LC6">  
+</div><div class="line" id="file-gistfile1-scala-LC7">  <span class="pl-s">override</span> <span class="pl-k">def</span> <span class="pl-en">append</span>(a<span class="pl-k">:</span><span class="pl-en">Employee</span>, <span class="pl-v">b</span>: <span class="pl-k">=&gt;</span><span class="pl-en">Employee</span>)<span class="pl-k">:</span><span class="pl-en">Employee</span> <span class="pl-k">=</span> {
+</div><div class="line" id="file-gistfile1-scala-LC8">  <span class="pl-k">if</span>(a.age <span class="pl-k">&gt;</span> b.age) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC9">  <span class="pl-k">if</span>(b.age <span class="pl-k">&gt;</span> a.age) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC10">  <span class="pl-k">if</span>(a.tenure <span class="pl-k">&gt;</span> b.tenure) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC11">  <span class="pl-k">if</span>(b.tenure <span class="pl-k">&gt;</span> a.tenure) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC12">  <span class="pl-k">if</span> (a.salary <span class="pl-k">&gt;</span> b.salary) b <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC13">  <span class="pl-k">if</span>(b.salary <span class="pl-k">&gt;</span> a.salary) a <span class="pl-k">else</span> 
+</div><div class="line" id="file-gistfile1-scala-LC14">  <span class="pl-k">if</span>( math.random <span class="pl-k">&gt;</span> <span class="pl-c1">0.5</span>) a <span class="pl-k">else</span> b 
+</div><div class="line" id="file-gistfile1-scala-LC15"> }
+</div><div class="line" id="file-gistfile1-scala-LC16"> 
+</div><div class="line" id="file-gistfile1-scala-LC17"> <span class="pl-k">val</span> <span class="pl-en">theUnluckyOne</span><span class="pl-k">:</span><span class="pl-en">Employee</span> <span class="pl-k">=</span>  e.foldLeft(zero)((a<span class="pl-k">:</span><span class="pl-en">Employee</span>, b<span class="pl-k">:</span><span class="pl-en">Employee</span>)<span class="pl-k">=&gt;</span>append(a,b))
+</div><div class="line" id="file-gistfile1-scala-LC18">}
+</div><div class="line" id="file-gistfile1-scala-LC19">&nbsp;
+</div><div class="line" id="file-gistfile1-scala-LC20">scala<span class="pl-k">&gt;</span> <span class="pl-en">EmpMonoid</span>( empDB.toSet).theUnluckyOne
+</div><div class="line" id="file-gistfile1-scala-LC21">res12<span class="pl-k">:</span> <span class="pl-en">Employee</span> <span class="pl-k">=</span> <span class="pl-en">Employee</span>(<span class="pl-c1">35</span>,<span class="pl-c1">6</span>,<span class="pl-c1">85079</span>,emp7435)
+</div><div class="line" id="file-gistfile1-scala-LC22">&nbsp;
+</div><div class="line" id="file-gistfile1-scala-LC23">&nbsp;
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535898/raw/gistfile1.scala" style="float:right">view raw</a>
+            <a href="https://web.archive.org/web/20141220064727mp_/https://gist.github.com/krishnanraman/4535898#file-gistfile1-scala">gistfile1.scala</a>
+            hosted with ❤ by <a href="https://web.archive.org/web/20141220064727mp_/https://github.com">GitHub</a>
+          </div>
+        </div>
+</div>
+</div>    </div>  <div class="paragraph" style="text-align:left;"><br><br>The next day, Tom, Dick &amp; Harry met with the boss.<br>They
+ happily announced - "We've found the unlucky bastard! He is employee 
+number 7435. He has been with the company for 6 years. He is 35 years 
+old. He makes $ 85,079. &nbsp;Fire him and we'll be profitable again!"<br><br>The boss was very impressed. But he wanted to know how they came up with this solution.<br><br>Tom said - This is just a nested sorting problem.<br><br>Dick said - There is no need to sort at all! Its just a min-tuple problem. Takes O(n) to find the right answer.<br><br>Harry said - You are both trivially right. The most important insight is that this is a monoid!<br><br>"But what is a monoid ?" the boss asked.<br><br>"Well, you have a set with an associative plus and an identity. That's a monoid!", announced Harry.<br><br>Nobody
+ understood anything, so Harry said - "Think of the employee database as
+ a set of employees. I claim two employees can be added!"<br><br>"What do you mean ? How do you add an employee to another employee ?" they asked.<br><br>"Well",
+ Harry said, "If you are asked to add two employees, return the guy who 
+is older. But if both of them are the same age, then return the guy who 
+has been with the company &nbsp;the longest. But if both guys have been 
+working for us for the same number of years, then return the guy with 
+the lowest salary. But if they both earn the same as well, then just 
+randomly pick one over the other"<br><br>"And how does all that work ?", they asked.<br><br>"Well,
+ lets define an identity employee. If you add something to this 
+identity, you get back the thing you added. So we create a dummy 
+employee who has been with us for 0 years, so that everybody else has 
+been here longer than the identity. Then the addition works out".<br><br>"OK. I still don't see how all this works", said the boss.<br><br>"Well,
+ if we seed a catamorphism with the identity employee and aggregate over
+ the set, we collapse to the unlucky employee 7435, who has been here 
+the longest, is the oldest &amp; makes the least money", Harry 
+triumphantly announced.<br><br>Everybody stared at Harry, absolutely speechless.<br><br><br>Long story short: &nbsp;Harry was immediately fired. Dick was made the CTO and Tom was appointed Dick's secretary.&nbsp;<br><br>Bonus Problem: What happened to employee number 7435 ?<br>Solution at the very end of this post.<br>-<br>-<br>-<br>-<br><br><br>-<br>-<br><br>-<br>-<br><br>-<br>-<br><br>-<br>-<br><br>-<br>-<br><br>-<br>-<br>-<br><br>-<br>-<br>-<br>-<br>-<br>-<br>-<br><br>-<br>-<br>-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span style="line-height: 1.5;">Solution:
+ Employee number 7435 was the boss! You can't fire the boss!! He took 
+the least amount of salary home for tax avoidance purposes. The bulk of 
+his earnings came from equity.</span></div>
+	</div>
+
+
+	<div class="blog-social">
+		<div class="blog-social-item blog-fb-like"><fb:like href="http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html" width="90" layout="button_count" action="like" show_faces="false" share="false" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F01%2Fthe-mathematician-the-monoid.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f37183afef24df6" width="90px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" style="border: medium; visibility: visible; width: 0px; height: 0px;" src="https://web.archive.org/web/20141220064727if_/http://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F7r8gQb8MIqE.js%3Fversion%3D41%23cb%3Df30779b6d1278aa%26domain%3Dwww.jasq.org%26origin%3Dhttp%253A%252F%252Fwww.jasq.org%252Ff28c17e118eecb%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F01%2Fthe-mathematician-the-monoid.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" allow="autoplay 'self'; fullscreen 'self'"></iframe></span></fb:like></div><div class="blog-social-item"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="https://web.archive.org/web/20141220064727if_/http://platform.twitter.com/widgets/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en.html#_=1419058065370&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.jasq.org%2Fjust-another-scala-quant%2Fthe-mathematician-the-monoid&amp;size=m&amp;text=Tom%2C%20Dick%20%26%20Harry%20-%20just%20another%20scala%20quant&amp;url=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F01%2Fthe-mathematician-the-monoid.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 106px; height: 20px;"></iframe></div><div style="clear:both"></div>
+	</div>
+
+		<div class="blog-comments-bottom">
+			<a href="https://web.archive.org/web/20141220064727/http://www.jasq.org/just-another-scala-quant/the-mathematician-the-monoid#comments" class="blog-link">
+	8 Comments
+</a>
+
+		</div>
+
+	<div class="blog-post-separator">&nbsp;</div>
+</div>
+<a name="comments" id="comments"></a><br><br><div id="commentArea"><div id="commentText"><div id="comment784658909529197913">
+			<div class="blogCommentWrap even blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><span class="name">Dan</span>  </div> <div class="blogCommentDate">02/06/2013 6:40pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>They should all be fired!<br>
+<br>
+None of their solutions takes into account that everyone who is 35 could be making over 100k.<br>
+<br>
+They need to filter out employees making 100k before doing a sort.</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=784658909529197913&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=784658909529197913&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_784658909529197913', '784658909529197913'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_784658909529197913" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment762749561664237079">
+			<div class="blogCommentWrap odd blogCommentLevel1">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><span class="name">Ivan Castellanos</span>  </div> <div class="blogCommentDate">02/06/2013 7:58pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Worst yet, the properties should be 
+given equal weight; with those implementation someone with 35 years and a
+ 99K salary with one day at the job would be selected over a 34 year old
+ man with 5K salary and 6 years at the job. Not smart.<br>
+<br>
+In (somewhat efficient) Javascript it should be something like this:<br>
+<br>
+    var n_tenure = max_tenure - min_tenure;<br>
+    var n_salary = max_salary - min_salary;<br>
+    var n_age = max_age - min_age;<br>
+    <br>
+    var unluckyOne = empDB.reduce(function (p, emp, i) {<br>
+        var a = 1 - (emp.tenure - min_tenure) / n_tenure;<br>
+        var b = (emp.salary - min_salary) / n_salary;<br>
+        var c = 1 - (emp.age - min_age) / n_age;<br>
+        var val = a + b + c;<br>
+        var result = val &lt; p.val ? {val: val, id: emp.id} : p;<br>
+        if (i === empDB.length - 1) result = emp;<br>
+        return result;<br>
+    }, {});</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=762749561664237079&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=762749561664237079&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_762749561664237079', '762749561664237079'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_762749561664237079" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment994413660515019608">
+			<div class="blogCommentWrap even blogCommentLevel2">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><span class="name">Ivan Castellanos</span>  </div> <div class="blogCommentDate">02/06/2013 8:14pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Some mistakes of mine; the min 
+salary is 85K and the min tenure is 1 year and everyone earning more 
+than 100K should be filtered but I think my overall point is still valid<br>
+<br>
+OT: This comment system really needs a "edit" option</p></div> 
+			<div class="blogCommentOptions">  <div class="clear"></div>   </div>
+			</div>
+		</div><div id="comment922169761147060655">
+			<div class="blogCommentWrap odd blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141220064727/http://jeremykun.com/">Jeremy Kun</a> <a href="https://web.archive.org/web/20141220064727/http://jeremykun.com/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">02/06/2013 6:43pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Funny story! Although, I should 
+object that the minBy solution is truly identical to the monoid 
+solution: they both do a left fold over the database and apply the same 
+rule. So if Harry gets fired it should be for being a bad communicator 
+and wasting company resources bathing, not for his optimal and clear 
+solution and his obvious preference for functional programming. :)</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=922169761147060655&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=922169761147060655&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_922169761147060655', '922169761147060655'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_922169761147060655" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment623740122929757007">
+			<div class="blogCommentWrap even blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141220064727/http://ahmetalpbalkan.com/">ahmet alp balkan</a> <a href="https://web.archive.org/web/20141220064727/http://ahmetalpbalkan.com/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">02/06/2013 7:26pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Haha that was a nice post! :) This is the first time I heard about monoids, so thank you.</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=623740122929757007&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=623740122929757007&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_623740122929757007', '623740122929757007'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_623740122929757007" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment417394799938876705">
+			<div class="blogCommentWrap odd blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141220064727/http://github.com/darkrho">Rolando</a> <a href="https://web.archive.org/web/20141220064727/http://github.com/darkrho" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">02/06/2013 7:29pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Strictly speaking, Harry didn't 
+define plus as a well-defined function because if you have an employee 
+Bob and other John where both of them have same age, tenure and salary, 
+the addition rule will return sometimes Bob and sometimes John.<br>
+<br>
+I would define an equivalence relation over the employees set by:<br>
+<br>
+   a ~ b  &lt;=&gt;  a and b have same age, tenure and salary.<br>
+<br>
+Then, this equivalence relation partitions the employees set in a set of
+ disjoint subsets (let's call it P), and, this set has less or equal 
+elements than the employees set.<br>
+<br>
+Finally we define the plus function (without the random stuff) over the 
+set P of equivalence classes where we only take one employee of each 
+disjoint subset.<br>
+<br>
+Now you can talk about a Monoid. I'm sure that's why his coworkers had a
+ blank face when Harry claim that it was a Monoid with that not 
+well-defined function.</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=417394799938876705&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=417394799938876705&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_417394799938876705', '417394799938876705'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_417394799938876705" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment618317879196733166">
+			<div class="blogCommentWrap even blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><span class="name">Jacul</span>  </div> <div class="blogCommentDate">02/07/2013 7:43am</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>The boss should have employee number 1, it's always ordered as I can remember.(Steve Jobs has 0)</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=618317879196733166&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=618317879196733166&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_618317879196733166', '618317879196733166'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_618317879196733166" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><div id="comment612169405864967577">
+			<div class="blogCommentWrap odd blogCommentLevel0">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						
+			<div class="blogCommentAuthor"><a class="name" rel="nofollow" href="https://web.archive.org/web/20141220064727/http://www.pascontracting.com/">Adidas&nbsp;Jeremy&nbsp;Scott&nbsp;Pas&nbsp;Cher</a> <a href="https://web.archive.org/web/20141220064727/http://www.pascontracting.com/" class="link" rel="nofollow">link</a> </div> <div class="blogCommentDate">01/10/2014 7:18pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText"><p>Chaussures Adidas Jeremy Scott Pas Cher,Acheter Jeremy Scott Chaussures France Boutique En Ligne<br>
+</p></div> 
+			<div class="blogCommentOptions"> 
+			<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20141220064727/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;comment_id=612169405864967577&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;parent_id=612169405864967577&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_612169405864967577', '612169405864967577'); return false;" title="Reply to this comment" style="display: block">
+				<span>Reply</span>
+			</span> <div class="clear"></div>   
+			<div id="blogCommentReplyWrapper_612169405864967577" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+				<div class="iframeWrapper"><div class="iframeContainer"></div></div>
+			</div></div>
+			</div>
+		</div><!-- lastComment -->
+<div id="lastComment"> </div></div><br>
+
+
+
+<br><br><h2 id="commentReplyTitle">Leave a Reply.</h2>
+<div class="blogCommentReplyWrapper ">
+	<div class="iframeWrapper">
+		<div class="iframeContainer">
+			<iframe src="//web.archive.org/web/20141220064727if_/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=924922220820570504&amp;parent=http://www.jasq.org/2/post/2013/01/the-mathematician-the-monoid.html&amp;is_mobile=&amp;r=3&amp;is_light=1" frameborder="0" allowtransparency="true" scrolling="no" style="min-height: 410px;" data-ruffle-polyfilled=""></iframe>
+		</div>
+	</div>
+</div>
+<!-- bid-1: 586920016235266723, path: /just-another-scala-quant/the-mathematician-the-monoid --></div><!-- bid: 586920016235266723 --></div>
+</div>
+</td><td class="blog-sidebar" valign="top"><div id="773694477260137346-sidebar" class="column-blog"><div class="blog-sidebar-separator"><ul id="773694477260137346-sidebar-list" class="columnlist-blog" style="margin:0; padding: 0;"> <div style="text-align:left;"><div style="height:10px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="wsite-social-item wsite-social-mail" href="https://web.archive.org/web/20141220064727/mailto:dxbydt@jasq.org" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:10px;overflow:hidden"></div></div>
+
+<div><div id="620607291399014751" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">favorite books:
+<li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/Practical-Neural-Network-Recipies-C/dp/0124790402">artificial neural nets</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/0521833787/ref=oh_details_o03_s00_i01">boyd</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/1935182706/ref=oh_details_o03_s00_i01">scala in depth</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/0803931042/ref=wms_ohs_product">pca</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/0486635449/ref=wms_ohs_product">rozanov</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/0471010901/ref=wms_ohs_product">herstein</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/gp/product/0375764917/ref=wms_ohs_product">leduc</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/Linear-Algebra-Cliffs-Quick-Review/dp/0822053314/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1354825352&amp;sr=1-2">leduc</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.amazon.com/Differential-Equations-Cliffs-Quick-Review/dp/0822053209/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1354825352&amp;sr=1-1">leduc</a>
+<br><br>
+scala:
+</li><li><a href="https://web.archive.org/web/20141220064727/http://stackoverflow.com/search?tab=newest&amp;q=scala">SO</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://blog.fogus.me/">Michael Fogus</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://blog.tmorris.net/">Tony Morris</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://apocalisp.wordpress.com/">Runar</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.codecommit.com/">Daniel Spiewak</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://pchiusano.blogspot.com/">Paul Chiusano</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://aperiodic.net/phil/scala/s-99/">Phil Gold</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.markhneedham.com/blog/category/scala/">Mark Needham</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://dcsobral.blogspot.com/">Daniel Sobral</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://pavelfatin.com/scala-for-project-euler/">Pavel Fatin</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://debasishg.blogspot.com/">Debasish Ghosh</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://michid.wordpress.com/">Michid's blog</a>
+<br><br>
+algorithms:
+</li><li><a href="https://web.archive.org/web/20141220064727/http://stackoverflow.com/questions/tagged/algorithm">SO</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://codegolf.stackexchange.com/">Code Golf</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://community.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=alg_index">TopCoder</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://cforcoding.com/">William Shields</a>
+<br><br>
+stack:
+</li><li><a href="https://web.archive.org/web/20141220064727/http://www.scala-lang.org/api/current/index.htm">scaladocs</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://github.com/twitter/calding">Scalding</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://docs.cascading.org/cascading/2.0/javadoc/overview-summary.html">cascading</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://acs.lbl.gov/software/colt/api/index.html">COLT</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://commons.apache.org/math/api-2.2/index.html">Commons Math</a>
+</li><li><a href="https://web.archive.org/web/20141220064727/http://docs.oracle.com/javase/7/docs/api/">jdk</a>
+<br>
+</li></div>
+
+
+
+</div> </ul></div></div></td></tr></tbody></table><hr style="visibility: hidden; clear: both;"></div>
+			<div id="footer">
+				<div id="footer-contents">
+
+
+<link rel="stylesheet" type="text/css" href="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/css.css">
+
+<style>
+	/* @license
+	 * MyFonts Webfont Build ID 2520135, 2013-04-02T23:23:33-0400
+	 * 
+	 * The fonts listed in this notice are subject to the End User License
+	 * Agreement(s) entered into by the website owner. All other parties are 
+	 * explicitly restricted from using the Licensed Webfonts(s).
+	 * 
+	 * You may obtain a valid license at the URLs below.
+	 * 
+	 * Webfont: Proxima Nova S Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold/
+	 * 
+	 * Webfont: Proxima Nova A Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+	 * 
+	 * Webfont: Proxima Nova A Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold/
+	 * 
+	 * Webfont: Proxima Nova S Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+	 * 
+	 * Webfont: Proxima Nova Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+	 * 
+	 * Webfont: Proxima Nova Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+	 * 
+	 * 
+	 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2520135
+	 * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+	 * 
+	 * © 2013 MyFonts Inc
+	*/
+
+	@font-face {
+		font-family: 'ProximaNova';
+		src: url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot');
+		src: url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.woff') format('woff'),
+		     url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'ProximaNova';
+		font-weight: bold;
+		src: url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot');
+		src: url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.woff') format('woff'),
+		     url('//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'thirsty_script_lightregular';
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.eot);
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.eot#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.woff) format('woff'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.ttf) format('truetype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/ThirstyScriptLight/ThirstyScriptLight-webfont.svg#thirsty_script_lightregular) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'wicons';
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1418952426);
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1418952426#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.woff?buildTime=1418952426) format('woff'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.ttf?buildTime=1418952426) format('truetype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1418952426#wicons) format('svg');
+		font-weight: normal; 
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wicons';
+			src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1418952426#wicons) format('svg');
+		}
+	}
+
+	@font-face {
+		font-family: 'wsocial';
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1418952426);
+		src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1418952426#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.woff?buildTime=1418952426) format('woff'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.ttf?buildTime=1418952426) format('truetype'),
+				 url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1418952426#wsocial) format('svg');
+		font-weight: normal; 
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wsocial';
+			src: url(//web.archive.org/web/20141220064727im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1418952426#wsocial) format('svg');
+		}
+	}
+</style>
+<script type="text/javascript" src="Tom,%20Dick%20&amp;%20Harry%20-%20just%20another%20scala%20quant_files/footerSignup.js"></script>
+<script type="text/javascript">
+	var script;
+	if (typeof Weebly == 'undefined') {
+		Weebly = {};
+	}
+	if (!Weebly.jQuery) {
+		script = document.createElement('script');
+		script.onload = function() {
+			Weebly.jQuery = jQuery.noConflict(true);
+			Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1418952426');
+		};
+		script.src = 'https://web.archive.org/web/20141220064727/https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+		document.head.appendChild(script);
+	} else {
+		Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1418952426');
+	}
+</script><div id="weebly-footer-signup-container" class="light" style="height: 58px; left: -82.5px; top: 0.100098px; width: 1085px;">
+	<div class="signup-container-header">
+		<div class="start-free">Create a <a class="link" href="https://web.archive.org/web/20141220064727/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank">free website</a></div>
+		<div class="expand-icon"></div>
+		<div class="powered-by">Powered by <a class="link weebly-icon" href="https://web.archive.org/web/20141220064727/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow"></a></div>
+	</div>
+	<div class="signup-container-content">
+		<h2 class="headline">Start your own free website</h2>
+		<div class="description">A surprisingly easy drag &amp; drop site creator. <a class="thin-underline" href="https://web.archive.org/web/20141220064727/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow">Learn more.</a></div>
+		<iframe id="weebly-footer-signup-iframe" frameborder="0" src="https://web.archive.org/web/20141220064727if_/http://www.weebly.com/footer_signup.php" allowtransparency="true" data-ruffle-polyfilled=""></iframe>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script>
+</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20141220064727/https://ssl' : 'https://web.archive.org/web/20141220064727/http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://web.archive.org/web/20141220064727/https://secure" : "https://web.archive.org/web/20141220064727/http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l0,u10564637.u10564637s568749041175539155"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//web.archive.org/web/20141220064727im_/http://pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l0,u10564637.u10564637s568749041175539155" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				jQuery('#commentArea iframe').css('min-height', '410px');
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20141220064727if_/http://static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f28c17e118eecb&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20141220064727if_/https://s-static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f28c17e118eecb&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = '//web.archive.org/web/20141220064727/http://connect.face' + 'book.net/en_US/sdk.js#xfbml=1&version=v2.0';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript">(function() {function j(src, id) {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = src;if(id) {s.id=id};document.getElementsByTagName('head')[0].appendChild(s);}j('//web.archive.org/web/20141220064727/http://platform.twi'+'tter.com/widgets.js');})()</script>
+
+
+<div id="wsite-menus"></div></body></html>
+<!--
+     FILE ARCHIVED ON 06:47:27 Dec 20, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:40:02 Dec 19, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.284
+  exclusion.robots: 0.028
+  exclusion.robots.policy: 0.018
+  esindex: 0.01
+  cdx.remote: 39.877
+  LoadShardBlock: 1133.448 (3)
+  PetaboxLoader3.datanode: 126.155 (4)
+  PetaboxLoader3.resolve: 330.163 (2)
+  load_resource: 243.954
+-->

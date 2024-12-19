@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="facebook-jssdk" src="sifting_files/sdk.js"></script><script src="sifting_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="sifting_files/ga.js"></script><script src="sifting_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app218.us.archive.org';v.server_ms=508;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="sifting_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="sifting_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="sifting_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.jasq.org:80/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market","20160202221508","https://web.archive.org/","web","/_static/",
+	      "1454451308");
+</script>
+<link rel="stylesheet" type="text/css" href="sifting_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="sifting_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<link href="sifting_files/sites_002.css" rel="stylesheet"><script type="text/javascript" async="" src="sifting_files/widgets.js"></script><script type="text/javascript" charset="utf-8" async="" src="sifting_files/button.b059c0eb61ea902a882e5c5b3c66a17a.js"></script></head><body class="  wsite-theme-light  wsite-page-index wsite-blog-post"><div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20160202221508/http://www.jasq.org:80/just-
+another-scala-quant/sifting-through-data-scientists-the-perils-of-
+hiring-in-a-frothy-market</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market","20160202221508",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ <htmlxmlns="http: www.w3.org="" 1999="" xhtml"="" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+	
+		<title>just another scala quant - just another scala quant</title><meta property="og:site_name" content="just another scala quant">
+<meta property="og:title" content="Sifting through Data Scientists - The perils of hiring in a frothy market">
+<meta property="og:description" content="One of my friends at a leading tech company was tasked with hiring a bunch of data scientists.&nbsp; Curiously, so was I. So we exchanged notes. His job posting says - --- We don't care about your...">
+<meta property="og:image" content="https://web.archive.org/web/20160202221508im_/http://www.jasq.org/uploads/1/0/5/6/10564637/4783675_orig.png">
+<meta property="og:url" content="https://web.archive.org/web/20160202221508/http://www.jasq.org/2/post/2015/05/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market.html">
+<meta http-equiv="cache-control" content="no-cache">
+
+
+<meta name="keywords" content="Scala, Quant">
+
+		<meta name="google-site-verification" content="VWw1IU7B8b3C97gzMyTTVKfehlzVKRGR8lsiqfWtOgQ">
+		<link rel="stylesheet" type="text/css" href="sifting_files/sites.css">
+<link rel="stylesheet" type="text/css" href="sifting_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="sifting_files/main_style.css" title="wsite-theme-css">
+
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:10px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:15px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+		<script><!--
+var STATIC_BASE = '//web.archive.org/web/20160202221508/http://cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="sifting_files/jquery.min.js"></script>
+
+<script src="sifting_files/main.js"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script type="text/javascript" src="sifting_files/ftl.js"></script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript"><!--
+	
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"773694477260137346","title":"just another scala quant","url":"index.html","target":""}],
+				"773694477260137346",
+				'',
+				'active',
+				false,
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-item-wrap\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-item\"\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		
+	
+	<div id="wrapper">
+		<div id="contents">
+			<div id="header">
+				<div id="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">just another scala quant</span>
+	</span>
+	
+
+</span></div>
+			</div>
+			<div id="navigation"><ul class="wsite-menu-default">
+		<li id="active" class="wsite-menu-item-wrap  wsite-nav-1" style="position: relative;">
+			<a href="https://web.archive.org/web/20160202221508/http://www.jasq.org/" class="wsite-menu-item" style="position: relative;">
+				just another scala quant
+			</a>
+			
+		</li>
+</ul>
+</div>
+			<div id="main"><div class="wsite-elements wsite-not-footer">
+<table id="blogTable" class="wsite-not-footer" style="border: 0; width: 100%; table-layout: fixed">
+	<tbody><tr>
+		<td valign="top">
+				<div id="773694477260137346-blog" class="blog-body" style="float: left;"> 
+					<div id="wsite-content">	<div id="blog-post-130313732364474067" class="blog-post">
+	
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="https://web.archive.org/web/20160202221508/http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market">Sifting through Data Scientists - The perils of hiring in a frothy market</a>
+
+			</h2>
+			<p class="blog-date">
+					<span class="date-text">
+		5/12/2015
+	</span>
+
+			</p>
+			<p class="blog-comments">
+					<a href="https://web.archive.org/web/20160202221508/http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market#comments" class="blog-link">
+		4 Comments
+	</a>
+
+			</p>
+		</div>
+	
+		<div class="blog-separator">&nbsp;</div>
+	
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:left;">One of my friends at a leading tech company was tasked with hiring a bunch of data scientists.&nbsp;<br>Curiously, so was I.<br>So we exchanged notes.<br><br>His job posting says -<br>---<br>We don't care about your education<br>We don't care about your experience.<br>We don't care about the technologies you already know.<br>What we care about:&nbsp;<br>You need to be an expert in coding.&nbsp;<br>---<br><br>My job posting was infact the polar opposite:<br>---<br>Must have a PhD in CS(Machine Learning)/Applied Statistics/Applied Math, or other STEM discipline.<br>Comfortable with statistical data analysis.<br>What we DON'T care about:&nbsp;<br>Your programming expertise.<br>---<br><br>Study the two posts carefully.<br>To
+ tack on a cultural angle, one of them is this true blue All-American, 
+"a programmer can do&nbsp;anything they set their mind to" approach.<br>The other is a European/Commonwealth approach - "programming can wait,&nbsp;first show me some credentials in Statistics."<br><br>Both of us sifted through a bunch of resumes.<br>But only one of us had a high SIFT risk.<br>Guess who ?<br><br>Dr.
+ David Lowe, a Professor in Computer Vision, published one of the most 
+popular algorithms&nbsp;in the field in 1999. His algorithm, <a href="https://web.archive.org/web/20160202221508/http://www.cs.ubc.ca/~lowe/papers/iccv99.pdf" target="_blank" title="">SIFT</a>,
+ &nbsp;aka Scale Invariant Feature Transform, essentially&nbsp;extracts 
+feature descriptions of an image. These feature descriptors are scale 
+invariant -&nbsp;they don't change if the image is distorted by affine 
+transforms. So if the next image was a&nbsp;copy of the previous one, 
+but rotated by 30 degrees and sheared and twice as small and then&nbsp;<br>reflected
+ in a mirror, the feature descriptors would still work.They'd be able to
+ tag it accurately as the same image they've previously identified.<br><br>If there's one piece of insight I'd like you to take away from this fluff piece,it is - <a href="https://web.archive.org/web/20160202221508/http://www.cs.ubc.ca/~lowe/papers/iccv99.pdf" target="_blank" title="">study SIFT!&nbsp;</a><br><br>It's a wonderful algorithm and you'll be doing yourself a huge favor trying to understand its innards.<br>Feature transforms are crucial not just to CV, but to ML, data science and even data scientists!<br><br>Think about a bunch of red and blue points evenly spaced out on the circumference of a circle.<br>So you have a red point, then a blue, then red, then blue &amp; so on, evenly laid out along the circle.<br>Can a linear classifier separate them ?<br>It should be obvious that the answer is no.&nbsp;<br>There's simply no way to draw a straight line&nbsp;separating the reds from the blues.&nbsp;<br>But what if we came up with a clever feature transform ?<br><br>Lets make a toy version of this problem - say there were only a dozen points - so 6 red &amp; 6&nbsp;blue points.<br>If
+ you have trouble visualizing this, just doodle a bunch of dots on a 
+napkin &amp;&nbsp;you should be convinced.To lay them out evenly on a 
+circle would mean you'd have a 60 degree&nbsp;separation between two 
+consecutive reds.&nbsp;But you'd have a 30 degree separation between a 
+red and blue.<br>This tiny bit of insight is enough to ensure a clean separation.<br></div>  <div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center"> <a> <img src="sifting_files/4783675_orig.png" alt="Picture" style="width:auto;max-width:100%"> </a> <div style="display:block;font-size:90%"></div> </div></div>  <div class="paragraph" style="text-align:left;">Simply map each point ie. its cartesian. (x,y) coordinate, to its polar co-ordinates (r,theta)<br>Then take the angle theta, and obtain the quotient when divided by 60.<br>Boom! All red points get mapped to the line y=0, and the blue ones to the line y = 30.<br>Clearly a line separates the above two parallel lines, so a linear classifier suffices.<br><br>So what we've done is a straightforward feature transform.<br>Given an (x,y), we apply the transform f(x,y) = arctan(y/x) % 60<br>The result of this feature transform is then used by our linear classifier, and life is good.<br><br>Feature
+ transforms apply across the board - not just to images in computer 
+vision or feature&nbsp;vectors in ML. The other day, I ran into my 
+former real estate agent while I was shopping for vegetables.We were 
+chatting about this and that, and I was telling him how excited I 
+&nbsp;was about my&nbsp;company's flexible work from home policy, so I 
+can spend more time with my family.&nbsp;Instantly he said, well, if you
+ are going to be working from home more often, you will need&nbsp;an 
+office space - I can show you a larger house in this new subdivision 
+with dedicated home offices!<br>You see what happened there ?<br>Feature transform!<br>I
+ am not in the market for buying a home. I was just making smalltalk, 
+but my real estate agent&nbsp;picked up on a few features, transformed 
+them into the real estate space, and suddenly made himself&nbsp;a much 
+more valuable commodity, hawking a new house out of the blue!<br><br>So that's SIFT risk.<br><strong>When you hire a person who is skilled in X, to do job Y, you are setting yourself up for SIFT risk.<br>The
+ person will feature transform your y in the Y space into a little x in 
+the X space, so he can then&nbsp;become valuable working on x!</strong><br>This happens all the time, and is actually quite subtle.<br>It isn't insidious or out of malice - just plain human nature.<br><br>I once worked with a junior data scientist who insisted on visualizing decision trees.<br>Now, decision trees have good explanatory power, and yes, they can be visualized.<br>But, and this is a big but, almost nobody builds decision trees so they can visualize them.<br>That's
+ because, unlike textbook examples where the decision tree is shallow 
+and has a handful of nodes,&nbsp;real-life decision trees tend to be 
+deeply nested with say 300 nodes and a depth of 15.&nbsp;At that point, 
+it is so messy it becomes quite useless to draw it out.<br>The tree is 
+very useful - that's why you trained it. But it isn't very useful to 
+actually draw the&nbsp;tree. Its sufficient to simply use the tree for 
+its accurate predictive power. There's no need to&nbsp;visualize it. So 
+why was this junior data scientist so keen on drawing the tree ?<br><br>After a bit of questioning, it became quite obvious.<br>Before he "became" a data scientist, he was a front-end javascript developer!<br>You
+ know - the guys who build web apps - who use D3 &amp; React and Angular
+ and JQuery - one of those&nbsp;guys. So what was happening here was a 
+classic case of feature transform.&nbsp;He had taken a data science 
+problem - constructing a decision tree, and decided that if 
+visualizing&nbsp;the tree was the actual problem, he could move the 
+problem from the data science space to a javascript&nbsp;space! Then 
+he'd be free to mess around with D3 and jquery, drawing edges and nodes 
+with different colors&nbsp;on an HTML5 canvas! None of this would have 
+any benefit to the actual machine learning problem, but he&nbsp;would be
+ able to keep himself busy for a month or two doing what he loved best -
+ dabbling with javascript,&nbsp;instead of figuring out the statistical 
+decision tree properties like gini and entropy and 
+information&nbsp;gain, which was all rather new and foreign to him.<br><br>Now,
+ I don't blame the guy. He was new to data science, and he was quite 
+eager. But the material is rather&nbsp;dense and theoretical, so he 
+subconsciously figured, hey if I just did this little feature transform 
+here,&nbsp;the decision tree problem becomes a javascript problem, and 
+javascript I can handle!&nbsp;<br><br><strong>When we don't know 
+something, we anchor steadfastly to what we do know, and we try 
+desperately to relate it&nbsp;to our current problem, so we can add 
+value instead of helplessly spinning our wheels.</strong><br><br>I know 
+this data scientist who almost drove a fledgling startup into the ground
+ by convincing the CEO to invest&nbsp;in big-data infrastructure. When 
+they brought him on board, he told them the company would need to 
+provision&nbsp;compute clusters for the incoming petabytes and exabytes 
+of data to be competitive with internet giants in&nbsp;the Valley. The 
+company took him at his word and spent few millions on a spanking new 
+Hadoop cluster with two&nbsp;dozen nodes and gigantic data capacity. 
+When I looked at the actual data they had, it was clear to me that 
+a&nbsp;<a href="https://web.archive.org/web/20160202221508/http://outlet.us.dell.com/ARBOnlineSales/Online/InventorySearch.aspx?c=us&amp;cs=28&amp;l=en&amp;s=dfb&amp;brandid=2803&amp;fid=9961" target="_blank" title="">used dual Xeon with a terabyte of disk and 128GB RAM</a>,
+ that retails for about $3K, ie.less than a MacPro these&nbsp;days, was 
+more than sufficient to run Spark mllib in local mode and give them the 
+results they wanted.&nbsp;Instead, they over-extended themselves, 
+planning for a future that never came. Guess what that person did 
+before&nbsp;he "became" a data scientist ? Yes, he was a systems guy who
+ specialized in hardware and racks and cisco network&nbsp;switches and 
+the like. He had taken a data science problem of assembling a simple 
+compute server to run machine&nbsp;learning problems, and feature 
+transformed it into the space he understood best - that of exorbitant 
+rack mounted hardware!<br><br>It is not that hard to spot feature transforms.<br>Whenever
+ data science is on the table, generally the topics of discussion should
+ involve ML/applied stats - your&nbsp;decision trees, your ensembles, 
+your logistic regression, your matrix factorization, your eigen vectors,
+ things&nbsp;of that nature.I once witnessed a heated discussion on 
+whether Avro files was the appropriate format or Parquet !&nbsp;This is 
+feature transform at work - instead of solving the data science problem 
+at hand, the "programmers",&nbsp;because that is what they are, have 
+transformed your problem into a space they understand best - that of 
+programming&nbsp;and file formats. Another good indication is being 
+religious about ETL tools. If you see constant conflict on 
+whether&nbsp;to use Pig or Spark or Scalding or Redshift or Phoenix or 
+whatnot, these are all symptoms of feature transform.<br>ETL is a 
+complete non-issue as far as the machine learning algorithm is 
+concerned, yet I see companies investing&nbsp;massively on the so-called
+ data pipeline, and finally using something really silly like naive 
+bayes on the&nbsp;end result...akin to buying a million dollar purse to 
+store a few crumpled one dollar bills.<br><br>There are companies out 
+there which put their data scientists through a release cycle - so your 
+data scientist&nbsp;now has to show up at scrum and do story points and 
+epics and check in his code and be conversant with git rebase&nbsp;and 
+other exotic git incantations to be considered a valuable team player! 
+Once again - a feature transform.&nbsp;Data science is exploratory and 
+messy by definition - that's simply what it is. To tidy that up and 
+insist of&nbsp;transforming data science into product engineering, with 
+git repos and agile cycles, that makes it into a&nbsp;whole new 
+toothless beast. Furthermore, these same companies insist that data 
+scientists write code with&nbsp;meaningful variable names and 
+self-explanatory function names and so on. So no more grad(x), or 
+min(nabla z).&nbsp;<br>Instead, you have to spell it all out 
+-minimizeByGradientDescent( targetFunction:Double, 
+firstDerivative:Double, xIntercept:Double) !&nbsp;<br>Otherwise how do you expect to check it in and get two ship-its and productionize your data insights ?!<br><br>Now
+ that you've seen a whole bunch of SIFT at work, I hope you recognize 
+SIFT risk for what it is - a real hazard&nbsp;that prevents data 
+scientists from being productive at doing data science, instead turning 
+them loose on some&nbsp;tangentially related domain so they can project a
+ facade of being productive.<br><br><strong>Be wary of SIFT risk.</strong></div>
+
+		</div>
+	
+	
+			<div class="blog-social  ">
+		<div class="blog-social-item blog-fb-like"><fb:like href="http://www.jasq.org/2/post/2015/05/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: absolute; visibility: hidden; width: 0px; height: 0px;" allow="autoplay 'self'; fullscreen 'self'" title="Twitter Tweet Button" src="https://web.archive.org/web/20160202221508if_/http://platform.twitter.com/widgets/tweet_button.baa54ded21a982344c4ced326592f3de.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.jasq.org%2Fjust-another-scala-quant%2Fsifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;size=m&amp;text=Sifting%20through%20Data%20Scientists%20-%20The%20perils%20of%20hiring%20in%20a%20frothy%20market%20-%20just%20another%20scala%20quant&amp;time=1454451318981&amp;type=share&amp;url=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2015%2F05%2Fsifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market.html" data-url="http://www.jasq.org/2/post/2015/05/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market.html"></iframe></div>
+		<div style="clear:both"></div>
+	</div>
+
+	
+		<div class="blog-comments-bottom">
+				<a href="https://web.archive.org/web/20160202221508/http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market#comments" class="blog-link">
+		4 Comments
+	</a>
+
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>
+
+
+    <a name="comments" id="comments"></a>
+<div id="commentArea">
+	<div class="blog-comment-area">
+		
+
+		<div id="890198058810432464">
+			<div class="blogCommentWrap even blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<span class="name">Srdjan</span>
+						</div>
+						<div class="blogCommentDate">5/19/2015 18:31:49</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							I cannot tell you how much I enjoy your posts. Looking forward to
+ one that will tell the backstory of one of your recent tweets - on 
+people forgoing not just the basics (linear algebra), but the "meat" 
+(machine learning), hoping to just land a paycheck.<br>
+<br>
+But pleeeease change your font a little bit!
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+							 
+									<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20160202221508/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=130313732364474067&amp;comment_id=890198058810432464&amp;parent=http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;is_mobile=&amp;parent_id=890198058810432464&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_890198058810432464', '890198058810432464'); return false;" title="Reply to this comment">
+										<span>Reply</span>
+									</span>
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_890198058810432464" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="867613513489212515">
+			<div class="blogCommentWrap odd blogCommentLevel1
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<a class="name" rel="nofollow" href="https://web.archive.org/web/20160202221508/http://uys.io/">Juan Uys</a>
+							<a href="https://web.archive.org/web/20160202221508/http://uys.io/" class="link" rel="nofollow">link</a>
+						</div>
+						<div class="blogCommentDate">5/19/2015 23:35:21</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							&gt; But pleeeease change your font a little bit!<br>
+<br>
+Haha, yes - I just zoomed to 175%<br>
+<br>
+Anyhoo, what a brilliant post. I monitor myself on a daily basis to not let my biases and mindset get in the way of my results.
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+							 
+									<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20160202221508/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=130313732364474067&amp;comment_id=867613513489212515&amp;parent=http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;is_mobile=&amp;parent_id=867613513489212515&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_867613513489212515', '867613513489212515'); return false;" title="Reply to this comment">
+										<span>Reply</span>
+									</span>
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_867613513489212515" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="849278652860307157">
+			<div class="blogCommentWrap odd blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<span class="name">gj</span>
+						</div>
+						<div class="blogCommentDate">6/2/2015 14:48:27</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							I actually applied for that first job listing... simply because some parts of it were hilarious: <br>
+<br>
+*Participate in meal conversations with your team members about really important topics, such as: <br>
+Should the cuteness of panda bears be a factor in their survivability? <br>
+Is love a decision tree or a regression model? <br>
+How far ahead would society be today if we had 12 fingers instead of 10? <br>
+<br>
+
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+							 
+									<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20160202221508/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=130313732364474067&amp;comment_id=849278652860307157&amp;parent=http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;is_mobile=&amp;parent_id=849278652860307157&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_849278652860307157', '849278652860307157'); return false;" title="Reply to this comment">
+										<span>Reply</span>
+									</span>
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_849278652860307157" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="294166510272070858">
+			<div class="blogCommentWrap even blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<span class="name">emcenrue</span>
+						</div>
+						<div class="blogCommentDate">11/23/2015 21:47:10</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							fascinating analysis! I look forward to future posts by you
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+							 
+									<span href="#" class="blog-button reply-comment" onclick="blogCommentDisplayForm('//web.archive.org/web/20160202221508/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=130313732364474067&amp;comment_id=294166510272070858&amp;parent=http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;is_mobile=&amp;parent_id=294166510272070858&amp;r=3&amp;is_light=1', 'blogCommentReplyWrapper_294166510272070858', '294166510272070858'); return false;" title="Reply to this comment">
+										<span>Reply</span>
+									</span>
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_294166510272070858" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="commentText">
+			<!-- lastComment -->
+		<div id="lastComment"> </div>
+		</div>
+		<br>
+		
+		
+			<br><br>
+			<h2 id="commentReplyTitle">Leave a Reply.</h2>
+			<div class="blogCommentReplyWrapper ">
+				<div class="iframeWrapper">
+					<div class="iframeContainer">
+						<iframe src="//web.archive.org/web/20160202221508if_/http://www.weebly.com/editor/apps/showCommentForm-v2.php?user_id=10564637&amp;blog_id=586920016235266723&amp;post_id=130313732364474067&amp;parent=http://www.jasq.org/just-another-scala-quant/sifting-through-data-scientists-the-perils-of-hiring-in-a-frothy-market&amp;is_mobile=&amp;r=3&amp;is_light=1" frameborder="0" allowtransparency="true" scrolling="no" style="min-height: 460px;" data-ruffle-polyfilled=""></iframe>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	<!-- bid-1: , path:  -->
+</div>
+ 
+<!-- bid: $blog_id --></div>
+				</div>
+		</td>
+			<td class="blog-sidebar" valign="top">
+				<div id="773694477260137346-sidebar" class="column-blog">
+						<div class="blog-sidebar-separator">
+							<ul id="773694477260137346-sidebar-list" class="columnlist-blog" style="margin:0; padding: 0;">
+								<div style="text-align:right;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="wsite-social-item wsite-social-mail" href="https://web.archive.org/web/20160202221508/mailto:dxbydt@jasq.org" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-twitter" href="https://web.archive.org/web/20160202221508/https://twitter.com/dxbydt_jasq" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-rss" href="https://web.archive.org/web/20160202221508/http://www.jasq.org/2/feed" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div>
+							</ul>
+						</div>
+				</div>
+			</td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+			<div id="footer">
+				<div id="footer-contents">
+
+<link rel="stylesheet" type="text/css" href="sifting_files/css.css">
+
+<style>
+	/* @license
+	 * MyFonts Webfont Build ID 2520135, 2013-04-02T23:23:33-0400
+	 *
+	 * The fonts listed in this notice are subject to the End User License
+	 * Agreement(s) entered into by the website owner. All other parties are
+	 * explicitly restricted from using the Licensed Webfonts(s).
+	 *
+	 * You may obtain a valid license at the URLs below.
+	 *
+	 * Webfont: Proxima Nova S Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold/
+	 *
+	 * Webfont: Proxima Nova A Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+	 *
+	 * Webfont: Proxima Nova A Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold/
+	 *
+	 * Webfont: Proxima Nova S Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+	 *
+	 * Webfont: Proxima Nova Light by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+	 *
+	 * Webfont: Proxima Nova Semibold by Mark Simonson
+	 * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+	 *
+	 *
+	 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2520135
+	 * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+	 *
+	 * © 2013 MyFonts Inc
+	*/
+
+	@font-face {
+		font-family: 'ProximaNova';
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot');
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.woff') format('woff'),
+		     url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Light/267447_4_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'ProximaNova';
+		font-weight: bold;
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot');
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot#iefix') format('embedded-opentype'),
+		     url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.woff') format('woff'),
+		     url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'ProximaNova-Semibold';
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot');
+		src: url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.eot#iefix') format('embedded-opentype'),
+		url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.woff') format('woff'),
+		url('//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/Proxima-Semibold/267447_5_0.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'wicons';
+		src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1454440019);
+		src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.eot?buildTime=1454440019#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.woff?buildTime=1454440019) format('woff'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.ttf?buildTime=1454440019) format('truetype'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1454440019#wicons) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wicons';
+			src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wIcons/wicons.svg?buildTime=1454440019#wicons) format('svg');
+		}
+	}
+
+	@font-face {
+		font-family: 'wsocial';
+		src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1454440019);
+		src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.eot?buildTime=1454440019#iefix) format('embedded-opentype'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.woff?buildTime=1454440019) format('woff'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.ttf?buildTime=1454440019) format('truetype'),
+				 url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1454440019#wsocial) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	/* Hack to smooth out font rendering on Chrome for Windows */
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: 'wsocial';
+			src: url(//web.archive.org/web/20160202221508im_/http://cdn2.editmysite.com/fonts/wSocial/wsocial.svg?buildTime=1454440019#wsocial) format('svg');
+		}
+	}
+</style>
+
+<script type="text/javascript" src="sifting_files/footerSignup.js"></script>
+<script type="text/javascript">
+	var script;
+	if (typeof Weebly == 'undefined') {
+		Weebly = {};
+	}
+	if (!Weebly.jQuery) {
+		script = document.createElement('script');
+		script.onload = function() {
+			Weebly.jQuery = jQuery.noConflict(true);
+			Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1454440019');
+		};
+		script.src = 'https://web.archive.org/web/20160202221508/https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
+		document.head.appendChild(script);
+	} else {
+		Weebly.footer.setupContainer(Weebly.jQuery, 'cdn2.editmysite.com', '1454440019');
+	}
+</script><div id="weebly-footer-signup-container" class="light" style="height: 58px; left: -82.5px; top: 0px; width: 1085px;">
+	<div class="signup-container-header">
+		<div class="start-free">Create a <a class="link" href="https://web.archive.org/web/20160202221508/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank">free website</a></div>
+		<div class="expand-icon"></div>
+		<div class="powered-by"><span>Powered by</span> <a class="link weebly-icon" href="https://web.archive.org/web/20160202221508/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow"></a></div>
+
+		<div class="short-text">
+			<span>Create your own free website</span><span class="go-icon"></span>
+		</div>
+	</div>
+	<div class="signup-container-content">
+		<h2 class="headline">Start your own free website</h2>
+		<div class="description">A surprisingly easy drag &amp; drop site creator. <a class="thin-underline" href="https://web.archive.org/web/20160202221508/http://www.weebly.com/?utm_source=internal&amp;utm_medium=footer&amp;utm_campaign=3" target="_blank" rel="nofollow">Learn more.</a></div>
+		<iframe id="weebly-footer-signup-iframe" frameborder="0" src="https://web.archive.org/web/20160202221508if_/http://www.weebly.com/footer_signup.php" allowtransparency="true" data-ruffle-polyfilled=""></iframe>
+	</div>
+</div>
+
+<script type="text/javascript">
+//<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script></div>
+			</div>
+		</div>
+	</div>
+
+		<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20160202221508/https://ssl' : 'https://web.archive.org/web/20160202221508/http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://web.archive.org/web/20160202221508/https://secure" : "https://web.archive.org/web/20160202221508/http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l0,u10564637.u10564637s568749041175539155"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//web.archive.org/web/20160202221508im_/http://pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l0,u10564637.u10564637s568749041175539155" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				var $commentFrame = jQuery('#commentArea iframe');
+				if ($commentFrame.length > 0) {
+					var frameHeight = jQuery($commentFrame[0].contentWindow.document).height() + 50;
+					$commentFrame.css('min-height', frameHeight + 'px');
+				}
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+<div id="eu-cookie" class="notification" style="display: none;">
+	<span id="eu-cookie-content"></span>
+	<span id="eu-cookie-close">✕</span>
+</div>
+
+<script type="text/javascript">
+	(function($) {
+		var cookie_location = '';
+
+		// this cookie_content should already be pre-encoded from CookieSettingView.js
+		var cookie_content = '' || _W.tl('By using this site you consent to the use of cookies. Cookies can be managed in your browser or device settings.');
+
+		if (!_W.getCookie('568749041175539155_cookie_policy') || (_W.getCookie('568749041175539155_cookie_policy') !== cookie_content)){
+			if (cookie_location === 'top' || cookie_location === 'bottom'){
+				$('#eu-cookie-content').text(decodeURIComponent(cookie_content));
+				(cookie_location === 'top') ? animateFromTop() : animateFromBottom();
+				$('#eu-cookie').show();
+			}
+		}
+
+		$('#eu-cookie-close').click(function(){
+			_W.setCookie('568749041175539155_cookie_policy', cookie_content, 100000);
+			$('#eu-cookie').hide();
+		});
+
+		function animateFromTop(){
+			$('#eu-cookie').css({
+				'top': '0px',
+				'animation': 'reveal-top 1 2s'
+			});
+		}
+
+		function animateFromBottom(){
+			$('#eu-cookie').css({
+				'bottom': '0px',
+				'animation': 'reveal-bottom 1 2s'
+			});
+		}
+	})(window._W && _W.jQuery);
+
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20160202221508if_/http://staticxx.facebook.com/connect/xd_arbiter.php?version=42#channel=f55e64b6e32258&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20160202221508if_/https://staticxx.facebook.com/connect/xd_arbiter.php?version=42#channel=f55e64b6e32258&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe></div></div></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId : '190291501407',
+			xfbml : true,
+			version : 'v2.2'
+		});
+
+        // Set Facebook comment plugin's colorscheme based off of theme
+		var comments = document.getElementsByClassName('facebook-comment-widget'),
+			scheme = document.body.className.match('wsite-theme-light');
+
+		for (var i = 0; i < comments.length; i++) {
+			comments[i].setAttribute('colorscheme', scheme ? 'light' : 'dark');
+		}
+
+		var fbCommentCounts;
+
+		FB.Event.subscribe('xfbml.render', function(){
+			fbCommentCounts = jQuery('.fb_comments_count');
+			for (var i = 0; i < fbCommentCounts.length; i++) {
+				var commentText = (jQuery(fbCommentCounts[i]).text() == '1' ? "Comment" : "Comments");
+				jQuery(fbCommentCounts[i]).parent().siblings('.fb_comment_count_label').text(commentText);
+			}
+		});
+
+		var comment_callback = function(res) {
+			FB.XFBML.parse(); // Refresh comment counters on page
+		}
+
+		FB.Event.subscribe('comment.create', comment_callback);
+		FB.Event.subscribe('comment.remove', comment_callback);
+
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//web.archive.org/web/20160202221508/http://connect.facebook.net/"+_W.userLocale+"/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="text/javascript">
+	(function() {
+		function j(src, id) {
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = src;
+			if(id) {s.id=id};
+			document.getElementsByTagName('head')[0].appendChild(s);
+		}
+		j('//web.archive.org/web/20160202221508/http://platform.twi'+'tter.com/widgets.js');
+	})()
+</script>
+		
+	
+
+
+</htmlxmlns="http:><div id="wsite-menus"></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium;" allow="autoplay 'self'; fullscreen 'self'"></iframe></body></html>
+<!--
+     FILE ARCHIVED ON 22:15:08 Feb 02, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:44:18 Dec 19, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.812
+  exclusion.robots: 0.034
+  exclusion.robots.policy: 0.02
+  esindex: 0.013
+  cdx.remote: 78.905
+  LoadShardBlock: 307.904 (3)
+  PetaboxLoader3.datanode: 235.872 (4)
+  PetaboxLoader3.resolve: 142.806 (3)
+  load_resource: 86.247
+-->

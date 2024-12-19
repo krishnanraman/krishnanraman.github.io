@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="facebook-jssdk" src="jtictactoe_files/sdk.js"></script><script src="jtictactoe_files/quant.js" async="" type="text/javascript"></script><script async="" src="jtictactoe_files/snowday262.js"></script><script type="text/javascript" async="" src="jtictactoe_files/ga.js"></script><script async="" src="jtictactoe_files/snowday261.js"></script><script src="jtictactoe_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app211.us.archive.org';v.server_ms=618;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="jtictactoe_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="jtictactoe_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="jtictactoe_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.jasq.org/just-another-scala-quant/a-million-games-of-tic-tac-toe","20170615222712","https://web.archive.org/","web","/_static/",
+	      "1497565632");
+</script>
+<link rel="stylesheet" type="text/css" href="jtictactoe_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="jtictactoe_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+		<title>just another scala quant - just another scala quant</title><meta property="og:site_name" content="just another scala quant">
+<meta property="og:title" content="A million games of Tic Tac Toe">
+<meta property="og:description" content="Suppose two million bots pair up and play one million random games of Tic Tac Toe! Two questions - 1. How many of those 1 million games end in 5 moves ? 2. How many unique 5-move games exist ? If...">
+<meta property="og:url" content="https://web.archive.org/web/20170615222712/http://www.jasq.org/2/post/2013/12/a-million-games-of-tic-tac-toe.html">
+<meta http-equiv="cache-control" content="no-cache">
+
+
+<meta name="keywords" content="Scala, Quant">
+
+		<meta name="google-site-verification" content="VWw1IU7B8b3C97gzMyTTVKfehlzVKRGR8lsiqfWtOgQ">
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="jtictactoe_files/sites.css">
+<link rel="stylesheet" type="text/css" href="jtictactoe_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="jtictactoe_files/main_style.css" title="wsite-theme-css">
+
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:10px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:15px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+		<script><!--
+var STATIC_BASE = '//web.archive.org/web/20170615222712/http://cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="jtictactoe_files/jquery.min.js"></script>
+
+<script type="text/javascript" src="jtictactoe_files/stl.js"></script>
+<script src="jtictactoe_files/main.js"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="jtictactoe_files/stl_002.js"></script><script> _W.themePlugins = [];</script><script type="text/javascript"><!--
+	
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"773694477260137346","title":"just another scala quant","url":"index.html","target":""}],
+				"773694477260137346",
+				'',
+				'active',
+				false,
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		
+		
+	<script type="text/javascript" async="" src="jtictactoe_files/widgets.js"></script><script type="text/javascript" charset="utf-8" async="" src="jtictactoe_files/button.b731e6c82269f70f6fc53634e044a4c6.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://web.archive.org/web/20170615222712/http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+	<body class="wsite-theme-light  wsite-page-index wsite-blog-post"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20170615222712/http://www.jasq.org/just-
+another-scala-quant/a-million-games-of-tic-tac-toe</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.jasq.org/just-another-scala-quant/a-million-games-of-tic-tac-toe","20170615222712",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ <div id="wrapper">
+		<div id="contents">
+			<div id="header">
+				<div id="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">just another scala quant</span>
+	</span>
+	
+
+</span></div>
+			</div>
+			<div id="navigation"><ul class="wsite-menu-default">
+		<li id="active" class="wsite-menu-item-wrap   wsite-nav-1" style="position: relative;">
+			<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/" class="wsite-menu-item" style="position: relative;">
+				just another scala quant
+			</a>
+			
+		</li>
+</ul>
+</div>
+			<div id="main"><div class="wsite-elements wsite-not-footer">
+<table id="blogTable" class="wsite-not-footer" style="border: 0; width: 100%; table-layout: fixed">
+	<tbody><tr>
+	    <td valign="top">
+	        	<div id="773694477260137346-blog" class="blog-body" style="float: left;"> 
+		<div id="wsite-content">	<div id="blog-post-285123138373512076" class="blog-post">
+	
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/a-million-games-of-tic-tac-toe">A million games of Tic Tac Toe</a>
+
+			</h2>
+			<p class="blog-date">
+					<span class="date-text">
+		12/4/2013
+	</span>
+
+			</p>
+			<p class="blog-comments">
+				
+			</p>
+		</div>
+	
+		<div class="blog-separator">&nbsp;</div>
+	
+		<div class="blog-content">
+				<div> <div id="225734339248653934" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="jtictactoe_files/7796928.js"> </script> </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3">Suppose two million bots pair up and play one million random games of Tic Tac Toe!<br> <br> Two questions -<br> <strong>1. How many of those 1 million games end in 5 moves ?<br> 2. How many unique 5-move games exist ?<br></strong><br> If you'd like to take a stab at it, here are the solutions -<br> A1. If you play 1 million games, approximately <strong>95238</strong> games end in 5 moves. ( ie. <strong>9.5%</strong>)<br> A2. There are exactly <strong>2880</strong> 5-moves games.<br> <br> Give it a good hour.<br> If you are still wrestling with this problem, you would likely fall into one of two buckets -<br> a. Have trouble with the math<br> b. Have trouble with the programming<br> (Hopefully you don't fall into both buckets, in which case, my apologies)<br> <br> Let's approach this problem from both the math &amp; programming standpoint (proving Math==Programming, yet again :)<br> <br> First, let's recall the basics of Tic Tac Toe -<br> A TicTacToe board is a 3 x 3 matrix, with 9 slots<br> There are typically 2 players, o and x<br> The players alternate.<br> <br> A player wins a game if he has 3 of his chips in a straight line.<br> There are 8 possible straight lines you could draw in a 3 x 3 matrix.<br> Hence, there are exactly 8 winning positions - 3 horizontal, 3 vertical, 2 diagonal (convince yourself)<br> <br> A game can be won in exactly 5, 6, 7, 8 or 9 moves. (Think about it. Its not hard, but its not immediately obvious)<br> Otherwise the game ends in a draw.<br> <br>
+ By a "random game of TicTacToe", we mean the bots aren't deliberately 
+trying to win/lose. They don't have a strategy. They just pick a vacant 
+slot at random and move.<br> <br> And that's really all there is to TicTacToe!<br> <br> So, the programming aspect -<br> We'll use Scala to code up the game itself, and then use Scalding for the hard part (the computations)<br> <br> Insight #1. A TicTacToe board can be uniquely represented by a string.<br> <br> Look at a typical board<br> <br> x | x | o<br> _________<br> o | o | _<br> _________<br> _ | _ | x<br> <br> So it looks like player 'x' has played thrice, 'o' has played thrice, and there are 3 vacant slots.<br> Reading this board from left to right, top to bottom, we have the 9 character string "xxooo___x"<br> <br> Insight #2. Two games are identical if they have the exact same moves in the exact same order (duh!).<br> Since each board is a string with 9 characters, let's say a player wins the game in 5 moves.<br> 9 characters per move, 5 moves =&gt; a long string with 45 characters.<br> So two games are identical if their corresponding 45-character strings are identical.<br> <br> Insight #3. Since the players alternate, there are only 2 possible sequence of players (duh!)<br> Toss a coin.<br> If heads, 'x' plays first. If tails, 'o'.<br> Since there can be atmost 9 moves, the sequence either looks like "xoxoxoxox" or "oxoxoxoxo"<br> <br> Insight #4. Every game is done in 9 moves or less (double duh!)<br> So start with the 9-character string "_________" ( aka the empty board )<br> Look at the player sequence. Say its "xoxoxoxox"<br> <br> So pick off the first entry.<br> Its 'x'<br> Modify the string "_________" with 'x', at some random slot.<br> So maybe you get &nbsp;"__x______"<br> <br> So pick off the second entry.<br> Its 'o'<br> Modify the string "__x______" with 'o', at some random slot.<br> So maybe you get &nbsp;"__x_o____"<br> <br> So pick off the third entry.<br> Its 'x'<br> Modify the string "__x_o____" with 'x', at some random slot.<br> So maybe you get &nbsp;"__x_ox___"<br> <br> And keep going.... until you can't pick off any more entries.<br> You are going to end up with 9 strings.<br> <br> Any functional programmer should instantly recognize that I've simply described a catamorphism.<br> Any OO/procedural programmer should ...I don't know, do something else with their life :)<br> <br> Insight #5. Since there are exactly 8 ways to win a game, there are 16 possible strings that describe a winning entry.<br> Line up three entries in the topmost row. That's (0,1,2), a winning configuration.<br> So for example, if there's an 'x' in positions (0,1,2), that means 'x' has won the game<br> ie. the string "xxx******" ( with '*' denoting an 'x' or a 'o' or a '_') means 'x' won.<br> ie. the string "ooo******" means 'o' won.<br> The other 7 configurations are (3,4,5), (6,7,8), (0,3,6),(1,4,7), (2,5,8), (0,4,8), (2,4,6)<br> Each configuration =&gt; 2 winning strings. 8 conf =&gt; 16 strings.<br> <br> Insight #6. If no winning configuration satisfies the 9 strings, that simply means the game ended in a draw.<br> <br> Here's my TicTacToe Scala implementation - lets crack open the repl &amp; give it a shot...</font><br> </div>  <div> <div id="351007578617015163" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="jtictactoe_files/7797371.js"> </script><link rel="stylesheet" href="jtictactoe_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist7797371" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">object</span> <span class="pl-en">TicTacToe</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">type</span> <span class="pl-en">C</span> <span class="pl-k">=</span> <span class="pl-en">Char</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">type</span> <span class="pl-en">Board</span> <span class="pl-k">=</span> <span class="pl-en">Seq</span>[<span class="pl-en">C</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">type</span> <span class="pl-en">Boards</span> <span class="pl-k">=</span> <span class="pl-en">Seq</span>[<span class="pl-en">Board</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-scala-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">empty</span> <span class="pl-k">=</span> <span class="pl-en">Seq</span>.fill[<span class="pl-en">C</span>](<span class="pl-c1">9</span>)(<span class="pl-s">'_'</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-scala-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">rnd</span> <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-scala-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">x</span> <span class="pl-k">=</span> util.<span class="pl-en">Random</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-scala-LC9" class="blob-code blob-code-inner js-file-line">    x.setSeed(<span class="pl-c1">123456</span>) <span class="pl-c"><span class="pl-c">//</span> want the same sequence of pseudorandom numbers</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-scala-LC10" class="blob-code blob-code-inner js-file-line">    x</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-scala-LC11" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-scala-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-scala-LC13" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">printBoard</span>(board<span class="pl-k">:</span><span class="pl-en">Board</span>) <span class="pl-k">=</span> <span class="pl-en">Seq</span>(<span class="pl-c1">0</span>,<span class="pl-c1">3</span>,<span class="pl-c1">6</span>).map(i <span class="pl-k">=&gt;</span> <span class="pl-en">Seq</span>(i,i<span class="pl-k">+</span><span class="pl-c1">1</span>,i<span class="pl-k">+</span><span class="pl-c1">2</span>).map(board(_)).mkString(<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>)<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>).mkString</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-scala-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-scala-LC15" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">winner</span>(board<span class="pl-k">:</span><span class="pl-en">Board</span>) <span class="pl-k">=</span> <span class="pl-en">Seq</span>((<span class="pl-c1">0</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2</span>),(<span class="pl-c1">3</span>,<span class="pl-c1">4</span>,<span class="pl-c1">5</span>), (<span class="pl-c1">6</span>,<span class="pl-c1">7</span>,<span class="pl-c1">8</span>), (<span class="pl-c1">0</span>,<span class="pl-c1">3</span>,<span class="pl-c1">6</span>),(<span class="pl-c1">1</span>,<span class="pl-c1">4</span>,<span class="pl-c1">7</span>), (<span class="pl-c1">2</span>,<span class="pl-c1">5</span>,<span class="pl-c1">8</span>), (<span class="pl-c1">0</span>,<span class="pl-c1">4</span>,<span class="pl-c1">8</span>), (<span class="pl-c1">2</span>,<span class="pl-c1">4</span>,<span class="pl-c1">6</span>))</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-scala-LC16" class="blob-code blob-code-inner js-file-line">    .map{ i <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-scala-LC17" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> <span class="pl-smi">tics</span> <span class="pl-k">=</span> <span class="pl-en">Seq</span>(i._1,i._2,i._3).map(board(_))</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gistfile1-scala-LC18" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">if</span> (tics.count(_<span class="pl-k">==</span><span class="pl-s">'x'</span>)<span class="pl-k">==</span><span class="pl-c1">3</span>) <span class="pl-s">'x'</span> <span class="pl-k">else</span> <span class="pl-k">if</span> (tics.count(_<span class="pl-k">==</span><span class="pl-s">'o'</span>)<span class="pl-k">==</span><span class="pl-c1">3</span>) <span class="pl-s">'o'</span> <span class="pl-k">else</span> <span class="pl-s">'_'</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gistfile1-scala-LC19" class="blob-code blob-code-inner js-file-line">  }.filterNot(_<span class="pl-k">==</span><span class="pl-s">'_'</span>).headOption</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gistfile1-scala-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gistfile1-scala-LC21" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">play</span>(player<span class="pl-k">:</span><span class="pl-en">C</span>, board<span class="pl-k">:</span><span class="pl-en">Board</span>)<span class="pl-k">:</span><span class="pl-en">Board</span> <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gistfile1-scala-LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">pos</span> <span class="pl-k">=</span> rnd.nextInt(<span class="pl-c1">9</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gistfile1-scala-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span> (board(pos) <span class="pl-k">==</span> <span class="pl-s">'_'</span>) board.updated(pos,player) <span class="pl-k">else</span> play(player, board)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gistfile1-scala-LC24" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gistfile1-scala-LC25" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gistfile1-scala-LC26" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">def</span> <span class="pl-en">playGame</span>(show<span class="pl-k">:</span><span class="pl-en">Boolean</span>)<span class="pl-k">:</span>(<span class="pl-en">String</span>,<span class="pl-en">Int</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gistfile1-scala-LC27" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gistfile1-scala-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">players</span> <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gistfile1-scala-LC29" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">val</span> (first, second) <span class="pl-k">=</span> <span class="pl-k">if</span> (rnd.nextDouble <span class="pl-k">&lt;</span> <span class="pl-c1">0.5</span>) (<span class="pl-s">'x'</span>,<span class="pl-s">'o'</span>) <span class="pl-k">else</span> (<span class="pl-s">'o'</span>, <span class="pl-s">'x'</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-gistfile1-scala-LC30" class="blob-code blob-code-inner js-file-line">      <span class="pl-en">Seq</span>.tabulate[<span class="pl-en">C</span>](<span class="pl-c1">9</span>)(i<span class="pl-k">=&gt;</span> <span class="pl-k">if</span> (i<span class="pl-k">%</span><span class="pl-c1">2</span><span class="pl-k">==</span><span class="pl-c1">0</span>) first <span class="pl-k">else</span> second)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-gistfile1-scala-LC31" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-gistfile1-scala-LC32" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-gistfile1-scala-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">allMoves</span> <span class="pl-k">=</span> players.foldLeft(<span class="pl-en">Seq</span>(empty))((board,player)<span class="pl-k">=&gt;</span> <span class="pl-en">Seq</span>(play(player,board.head)) <span class="pl-k">++</span> board).reverse</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-gistfile1-scala-LC34" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">whoWon</span> <span class="pl-k">=</span> allMoves.indexWhere(winner(_).isDefined)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-gistfile1-scala-LC35" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">game</span> <span class="pl-k">=</span> <span class="pl-k">if</span>(whoWon <span class="pl-k">==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) allMoves <span class="pl-k">else</span> allMoves.slice(<span class="pl-c1">0</span>, <span class="pl-c1">1</span> <span class="pl-k">+</span> whoWon)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-gistfile1-scala-LC36" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">gameStr</span> <span class="pl-k">=</span> game.map(_.mkString).mkString(<span class="pl-s"><span class="pl-pds">"</span>~<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-gistfile1-scala-LC37" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">val</span> <span class="pl-smi">numMovesToWin</span> <span class="pl-k">=</span> <span class="pl-k">if</span>( whoWon <span class="pl-k">!=</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) { game.size <span class="pl-k">-</span> <span class="pl-c1">1</span> <span class="pl-c"><span class="pl-c">/*</span> since first move is a blank board <span class="pl-c">*/</span></span> } <span class="pl-k">else</span> <span class="pl-k">-</span><span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-gistfile1-scala-LC38" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">if</span>( show) {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-gistfile1-scala-LC39" class="blob-code blob-code-inner js-file-line">      game.zipWithIndex.foreach{ i<span class="pl-k">=&gt;</span> val(board,move)<span class="pl-k">=</span>i; println(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span>Move:<span class="pl-pds">"</span></span><span class="pl-k">+</span>move); print(printBoard(board)) }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-gistfile1-scala-LC40" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">if</span>( whoWon <span class="pl-k">!=</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) println(<span class="pl-s"><span class="pl-pds">"</span>We have a winner! <span class="pl-pds">"</span></span> <span class="pl-k">+</span> winner(allMoves(whoWon)).get <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> wins in <span class="pl-pds">"</span></span> <span class="pl-k">+</span> numMovesToWin <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> moves!<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-gistfile1-scala-LC41" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-gistfile1-scala-LC42" class="blob-code blob-code-inner js-file-line">    (gameStr, numMovesToWin )</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-gistfile1-scala-LC43" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-gistfile1-scala-LC44" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170615222712mp_/https://gist.github.com/krishnanraman/7797371/raw/96a8ca87c84d32cd5e63893f16983b69072b47d2/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170615222712mp_/https://gist.github.com/krishnanraman/7797371#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170615222712mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div> <div id="533938458643607793" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="jtictactoe_files/feca0bf6e38c4366d753.js"> </script> </div> </div>  <div class="paragraph" style="text-align:left;"> <font size="3"><em><strong>scala&gt; TicTacToe.playGame(true)<br> <br> Move:0<br> _ _ _<br> _ _ _<br> _ _ _<br> <br> Move:1<br> _ x _<br> _ _ _<br> _ _ _<br> <br> Move:2<br> _ x _<br> _ _ _<br> _ o _<br> <br> Move:3<br> _ x _<br> _ x _<br> _ o _<br> <br> Move:4<br> _ x _<br> _ x _<br> o o _<br> <br> Move:5<br> _ x _<br> x x _<br> o o _<br> <br> Move:6<br> _ x _<br> x x _<br> o o o<br> We have a winner! o wins in 6 moves!<br> res1: (String, Int) = (_________~_x_______~_x_____o_~_x__x__o_~_x__x_oo_~_x_xx_oo_~_x_xx_ooo,6)<br> <br> scala&gt;</strong></em><br> <br>
+ So invoking the game TicTacToe.playGame(show=true) in the show mode 
+displays the actual moves of the game, and tells you who won, and in how
+ many moves. (You would obviously want to turn show off if you are 
+running 1 million of these games :)<br> The playGame(..) function returns a tuple - the string of all the moves, and how many moves it took to win.<br> (If the game ended in a draw, we return -1 for the latter)<br> Think of this tuple as a "row" with 2 "columns".<br> <br> Now for the hard part.<br> Since each game returns a row with 2 columns,<br> 1 million games will result in a table with 1 million rows with 2 columns.<br> Now we are into database territory.<br> Run a group-by on the number of columns &amp; count, you'd know how many games finished in 5 moves.<br> <br>
+ So we need a language/dialect that does what select statements &amp; 
+stored-procs do ie. the grouping,counting etc. for a table with millions
+ of rows.<br> <br> Scalding FTW!<br> Scalding is a Scala DSL for Hadoop extensively used at Twitter &amp; elsewhere (LinkedIn, Netflix, Ebay etc.)<br> However, the working definition we'll adopt here is<br> "Scalding == dialect to write stored-procedures in Scala"<br> <br>
+ Let's write a completely general Scalding Job that lets us run the 
+TicTacToe program any number of times ( million, billion, whatever), and
+ groups by the number of moves it takes to win ( 5,6,7,8,9 or a draw; 
+which we shall term -1)<br> <br> I claim the following (long) 1-liner does this!!!<br> <br>
+ IterableSource(1 to n, 'times).read.mapTo('times -&gt; ('game, 
+'nummoves)) { x:Int =&gt; TicTacToe.playGame(show) }.groupBy('nummoves) {
+ _.size }.write(Tsv("tictactoe" + n))<br> <br> Essentially, the iterable source is a source that iterates over the range 1 to n, for a user input n.<br> The read method transforms the source into a Pipe.<br> A Pipe is a Scala object that has stored-proc-like capabilities, such as grouping(groupBy) &amp; aggregation (size)<br> A Pipe also lets us run multiple mapper operations in parallel via mapTo.<br> So we simply map the numbers 1 through n to the TicTacToe game, thus playing n games in parallel.<br> Each play results in 1 row, so we generate a giant table with million rows, 2 columns.<br> We then group by the second column &amp; aggregate, &amp; write the results to a flatfile.<br> <br> That's the essence of the Scalding code.<br> <br> The same code in plain Scala will most likely<br> a. won't be as clear in intent, as it is in Scalding<br> b. run out of memory once you exceed say 10 million rows ie. won't scale.<br> <br> Playing a million games of TicTacToe in Scalding boils down to -</font><br> </div>  <div> <div id="587051302125260752" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"> <script src="jtictactoe_files/7797369.js"> </script><link rel="stylesheet" href="jtictactoe_files/gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist7797369" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-scala" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-scala ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-gistfile1-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-en">com</span>.<span class="pl-en">twitter</span>.<span class="pl-en">scalding</span>.<span class="pl-en">_</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-scala-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-scala-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-en">TicTacToe</span>(args<span class="pl-k">:</span><span class="pl-en">Args</span>) <span class="pl-k">extends</span> <span class="pl-e">Job</span>(args) {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-scala-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">n</span> <span class="pl-k">=</span> args(<span class="pl-s"><span class="pl-pds">"</span>n<span class="pl-pds">"</span></span>).toInt</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-scala-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">show</span> <span class="pl-k">=</span> args(<span class="pl-s"><span class="pl-pds">"</span>show<span class="pl-pds">"</span></span>).toBoolean</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-scala-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-scala-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">val</span> <span class="pl-smi">gamesAndMoves</span> <span class="pl-k">=</span> <span class="pl-en">IterableSource</span>(<span class="pl-c1">1</span> to n, <span class="pl-c1">'times</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-scala-LC8" class="blob-code blob-code-inner js-file-line">  .read</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-scala-LC9" class="blob-code blob-code-inner js-file-line">  .mapTo(<span class="pl-c1">'times</span> <span class="pl-k">-</span><span class="pl-k">&gt;</span> (<span class="pl-c1">'game</span>, <span class="pl-c1">'nummoves</span>)) { x<span class="pl-k">:</span><span class="pl-en">Int</span> <span class="pl-k">=&gt;</span> <span class="pl-en">TicTacToe</span>.playGame(show) }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-scala-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-scala-LC11" class="blob-code blob-code-inner js-file-line">  gamesAndMoves.groupBy(<span class="pl-c1">'nummoves</span>) { _.size }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-scala-LC12" class="blob-code blob-code-inner js-file-line">  .groupAll {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-scala-LC13" class="blob-code blob-code-inner js-file-line">    _.sortedReverseTake[(<span class="pl-en">Int</span>, <span class="pl-en">Int</span>)]((<span class="pl-c1">'size</span>, <span class="pl-c1">'nummoves</span>) <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">'top</span>, <span class="pl-c1">10</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-scala-LC14" class="blob-code blob-code-inner js-file-line">  }.map(<span class="pl-c1">'top</span> <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">'top</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-scala-LC15" class="blob-code blob-code-inner js-file-line">    x<span class="pl-k">:</span><span class="pl-en">List</span>[(<span class="pl-en">Int</span>, <span class="pl-en">Int</span>)] <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-scala-LC16" class="blob-code blob-code-inner js-file-line">    (<span class="pl-s"><span class="pl-pds">"</span>%5s<span class="pl-cce">\t</span>%5s<span class="pl-pds">"</span></span>.format(<span class="pl-s"><span class="pl-pds">"</span>Count<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Game<span class="pl-pds">"</span></span>) <span class="pl-k">::</span> x.map( i <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>%5d<span class="pl-cce">\t</span>%5d<span class="pl-pds">"</span></span>.format( i._1, i._2 ))).mkString(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-scala-LC17" class="blob-code blob-code-inner js-file-line">  }.write(<span class="pl-en">Tsv</span>(<span class="pl-s"><span class="pl-pds">"</span>tictactoe<span class="pl-pds">"</span></span> <span class="pl-k">+</span> n))</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gistfile1-scala-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gistfile1-scala-LC19" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">for</span>( moves <span class="pl-k">&lt;</span><span class="pl-k">-</span> <span class="pl-en">Seq</span>(<span class="pl-c1">5</span>,<span class="pl-c1">6</span>,<span class="pl-c1">7</span>,<span class="pl-c1">8</span>,<span class="pl-c1">9</span>,<span class="pl-k">-</span><span class="pl-c1">1</span>)) {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gistfile1-scala-LC20" class="blob-code blob-code-inner js-file-line">    gamesAndMoves.filter(<span class="pl-c1">'nummoves</span>){ x<span class="pl-k">:</span><span class="pl-en">Int</span> <span class="pl-k">=&gt;</span> x <span class="pl-k">==</span> moves }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gistfile1-scala-LC21" class="blob-code blob-code-inner js-file-line">    .groupBy(<span class="pl-c1">'game</span>) { _.size }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gistfile1-scala-LC22" class="blob-code blob-code-inner js-file-line">    .groupAll {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gistfile1-scala-LC23" class="blob-code blob-code-inner js-file-line">      _.sortedReverseTake[(<span class="pl-en">Int</span>, <span class="pl-en">String</span>)]((<span class="pl-c1">'size</span>, <span class="pl-c1">'game</span>) <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">'top</span>, <span class="pl-c1">10000</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gistfile1-scala-LC24" class="blob-code blob-code-inner js-file-line">    }.map(<span class="pl-c1">'top</span> <span class="pl-k">-</span><span class="pl-k">&gt;</span> <span class="pl-c1">'top</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gistfile1-scala-LC25" class="blob-code blob-code-inner js-file-line">      x<span class="pl-k">:</span><span class="pl-en">List</span>[(<span class="pl-en">Int</span>, <span class="pl-en">String</span>)] <span class="pl-k">=&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gistfile1-scala-LC26" class="blob-code blob-code-inner js-file-line">      (<span class="pl-s"><span class="pl-pds">"</span>%5s<span class="pl-cce">\t</span>%s<span class="pl-pds">"</span></span>.format(<span class="pl-s"><span class="pl-pds">"</span>Count<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Game<span class="pl-pds">"</span></span>) <span class="pl-k">::</span> x.map( i <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>%5d<span class="pl-cce">\t</span>%s<span class="pl-pds">"</span></span>.format( i._1, i._2 ))).mkString(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gistfile1-scala-LC27" class="blob-code blob-code-inner js-file-line">    }.write(<span class="pl-en">Tsv</span>(<span class="pl-s"><span class="pl-pds">"</span>tictactoe<span class="pl-pds">"</span></span><span class="pl-k">+</span>moves <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>moves<span class="pl-pds">"</span></span> <span class="pl-k">+</span> n))</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gistfile1-scala-LC28" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-scala-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gistfile1-scala-LC29" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170615222712mp_/https://gist.github.com/krishnanraman/7797369/raw/f761aab7c050de566f28c6f0b8989074888851cf/gistfile1.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170615222712mp_/https://gist.github.com/krishnanraman/7797369#file-gistfile1-scala">gistfile1.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170615222712mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+ </div> </div>  <div class="paragraph" style="text-align:left;"> <br> <font size="3">Let's run this on a laptop (fine for upto a few hundred million runs, btw. You don't need a Hadoop cluster to run Scalding)<br> $scald.rb --hdfs-local TicTacToe.scala --n 1000000 --show false<br> <br> This takes about 2 minutes, and once we're done, we get<br> <em>$ more tictactoe1000000/part-00000<br> Count &nbsp; &nbsp;Game<br> 264068 &nbsp; &nbsp; &nbsp;7<br> 225460 &nbsp; &nbsp; &nbsp;9<br> 200363 &nbsp; &nbsp; &nbsp;8<br> 126894 &nbsp; &nbsp; -1<br> 95401 &nbsp; &nbsp; &nbsp; 5<br> 87814 &nbsp; &nbsp; &nbsp; 6</em><br> <br> So of the 1 million games, 95401 games ended in exactly 5 moves.<br> That answers the first question.<br> <br> We could rephrase the first question thusly - What are the chances a typical game takes exactly 5 moves ?<br> That's obviously<br> 95401/1000000 = 0.095 = about 9.5%<br> <br> Let's now examine this problem from a probability standpoint.<br> <br> Claim: 0.095 = 2/21 &nbsp;(!!!!)<br> <br> So here we go-<br> <br> Proof:<br> Say a game ends in 5 moves.<br> Say x is the first player.<br> Then x MUST win. (Think about it)<br> There must be 3 x's &amp; 2 o's, to complete the game in 5 moves.<br> Put 3 xxx in a line - there's 8 ways you could do that ( 3 horizontal, 3 vertical &amp; 2 diagonal)<br> Once the x's are lined up, there are 6 empty slots.<br> Two of these slots are taken up by the loser o.<br> The remaining 4 are empty.<br> So, in how many ways can you fill up 6 slots with 2 o and 4 _ ?<br> 6! / (4! * 2!) = 15<br> So how many way could you possibly win ? 15 * 8 = 120<br> Now, how many possible boards exist after 5 moves ?<br> Well, a board has 9 slots. Fill 3 x's, 2 o's, 4 _'s.<br> You could do that in 9!/(3! * 2! * 4!) = 9*4*7*5 = 1260<br> <br> The probability of winning in exactly 5 moves = 120/1260 = 2/21 = 0.095.<br> Voila!<br> <br> Let's compute the unique number of 5-move games programatically.<br> Since we've already griuped the unique 5-move strings, we simply count the number of such records.<br> <strong>$ wc -l tictactoe5moves1000000/part-00000<br> 2880 tictactoe5moves1000000/part-00000</strong><br> <br> So there's 2880 unique 5-move games.<br> <br> Let's now do the math (quite hard)<br> Proof:<br> Say you have a winning string in your 5th move.<br> ie. say, you have "xxxoo____" in your 5th move.<br> Then, there could be 3 possible 4th move strings - "_xxoo___", "x_xoo___", "xx_oo___"<br> x does need an empty slot to move into, after all.<br> So,<br> For each of the 5th move strings, there can be 3 possible 4th move strings.<br> For each of the 4th move strings, there can be 2 possible 3rd move strings.<br> For each of the 3rd move strings, there can be 2 possible 2nd move strings.<br> For each of the 2rd move strings, there can be 1 possible 1st move strings.<br> <br> 3 * 2 * 2 = 12<br> So, given a &nbsp;winning string, you can arrive at that string in 12 unique ways.<br> <br> But how many winning strings are there ?<br> Well, x can win in 8 ways. So can o. So that's 8+8 = 16<br> A winning string looks like "www******"<br> Where w is the winner (x or o)<br> The * then denotes the loser l (o or x), and the blank tiles.<br> So, in how many ways can you fill up 6 slots with 2 l and 4 _ ?<br> 6! / (4! * 2!) = 15<br> 16*15 = 240<br> <br> Ergo, you can have 12 * 240 = 2880 unique 5-move games!<br> <br> Bonus: If you've read so far, you might as well solve for 6 moves.<br> So, How many of those 1 million games end in 6 moves ?<br> Well, from our Scalding code above, we know its 87814.<br> ie. the probability of winning the game in 6 moves is 87814/1000000 = 0.088 = about 8.8%<br> <br> Claim: 0.088 = 37/420.&nbsp;<br> The chances of winning a game of TicTacToe in 6 moves is&nbsp;<strong>37/420.</strong><br> Prove it!&nbsp;<br> This one's much harder. It kept me up for the better part of the night.</font><br> </div> 
+
+		</div>
+	
+	
+			<div class="blog-social  ">
+		<div class="blog-social-item blog-fb-like"><fb:like href="http://www.jasq.org/2/post/2013/12/a-million-games-of-tic-tac-toe.html" width="90" layout="button_count" action="like" show_faces="false" share="false" class=" fb_iframe_widget" fb-xfbml-state="parsed" fb-iframe-plugin-query="action=like&amp;app_id=190291501407&amp;container_width=0&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F12%2Fa-million-games-of-tic-tac-toe.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f17ba8a14163196" width="90px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" style="border: medium; visibility: hidden;" src="https://web.archive.org/web/20170615222712if_/https://www.facebook.com/v2.2/plugins/like.php?action=like&amp;app_id=190291501407&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F0F7S7QWJ0Ac.js%3Fversion%3D42%23cb%3Df2c14a60801af84%26domain%3Dwww.jasq.org%26origin%3Dhttp%253A%252F%252Fwww.jasq.org%252Ff12b521a446839e%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F12%2Fa-million-games-of-tic-tac-toe.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false&amp;width=90" allow="autoplay 'self'; fullscreen 'self'"></iframe></span></fb:like></div><div class="blog-social-item"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: absolute; visibility: hidden; width: 0px; height: 0px;" allow="autoplay 'self'; fullscreen 'self'" title="Twitter Tweet Button" src="https://web.archive.org/web/20170615222712if_/http://platform.twitter.com/widgets/tweet_button.7bf2b0e802ada47dae9548b7a1739fed.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.jasq.org%3A80%2Fjust-another-scala-quant%2Fa-million-games-of-tic-tac-toe&amp;size=m&amp;text=A%20million%20games%20of%20Tic%20Tac%20Toe%20-%20just%20another%20scala%20quant&amp;time=1497565648975&amp;type=share&amp;url=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2013%2F12%2Fa-million-games-of-tic-tac-toe.html" data-url="http://www.jasq.org/2/post/2013/12/a-million-games-of-tic-tac-toe.html"></iframe></div>
+		<div style="clear:both"></div>
+	</div>
+
+	
+		<div class="blog-comments-bottom">
+			
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>
+
+
+    <a name="comments" id="comments"></a>
+<div id="commentArea">
+	<div class="blog-comment-area">
+		
+
+		<div id="552944653239486717">
+			<div class="blogCommentWrap even blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<a class="name" rel="nofollow noopener noreferrer" href="https://web.archive.org/web/20170615222712/http://www.wrjc2011.co.uk/">replica watches</a>
+							<a href="https://web.archive.org/web/20170615222712/http://www.wrjc2011.co.uk/" class="link" rel="nofollow noopener noreferrer">link</a>
+						</div>
+						<div class="blogCommentDate">4/22/2014 04:45:31 pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							Great stuff from you. Ive read your stuff before and you just too awesome.
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_552944653239486717" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="385372095828235834">
+			<div class="blogCommentWrap odd blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<a class="name" rel="nofollow noopener noreferrer" href="https://web.archive.org/web/20170615222712/http://www.web-farm.co.uk/">rolex replica</a>
+							<a href="https://web.archive.org/web/20170615222712/http://www.web-farm.co.uk/" class="link" rel="nofollow noopener noreferrer">link</a>
+						</div>
+						<div class="blogCommentDate">4/22/2014 04:45:59 pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							I love what you got here, love what you saying and the way you say it.
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_385372095828235834" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="238924604149113075">
+			<div class="blogCommentWrap even blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<a class="name" rel="nofollow noopener noreferrer" href="https://web.archive.org/web/20170615222712/http://easy-essay.org/book_report/">Research</a>
+							<a href="https://web.archive.org/web/20170615222712/http://easy-essay.org/book_report/" class="link" rel="nofollow noopener noreferrer">link</a>
+						</div>
+						<div class="blogCommentDate">2/25/2015 01:11:37 am</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							This is too difficult for me. maybe someone want help, get to our site.
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_238924604149113075" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="commentText">
+			<!-- lastComment -->
+		<div id="lastComment"> </div>
+		</div>
+		<br>
+			<div class="blog-notice-comments-closed">Comments are closed.</div>
+		
+		
+
+	</div>
+	<!-- bid-1: , path:  -->
+</div>
+ 
+<!-- bid: $blog_id --></div>
+	</div>
+
+	    </td>
+	        <td class="blog-sidebar" valign="top">
+	            <div id="773694477260137346-sidebar" class="column-blog">
+	<div class="blog-sidebar-separator">
+		<ul id="773694477260137346-sidebar-list" class="columnlist-blog" style="margin:0; padding: 0;">
+			<div style="text-align:right;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="wsite-social-item wsite-social-mail" href="https://web.archive.org/web/20170615222712/mailto:dxbydt@jasq.org" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-twitter" href="https://web.archive.org/web/20170615222712/https://twitter.com/dxbydt_jasq" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-rss" href="https://web.archive.org/web/20170615222712/http://www.jasq.org/2/feed" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div>
+
+<h2 class="blog-archives-title" style="text-align:left;">Archives</h2>
+<p class="blog-archive-list">
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/04-2016" class="blog-link">April 2016</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/03-2016" class="blog-link">March 2016</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/12-2015" class="blog-link">December 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/06-2015" class="blog-link">June 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/05-2015" class="blog-link">May 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/08-2014" class="blog-link">August 2014</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/01-2014" class="blog-link">January 2014</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/12-2013" class="blog-link">December 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/09-2013" class="blog-link">September 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/01-2013" class="blog-link">January 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/12-2012" class="blog-link">December 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/08-2012" class="blog-link">August 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/06-2012" class="blog-link">June 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170615222712/http://www.jasq.org/just-another-scala-quant/archives/05-2012" class="blog-link">May 2012</a>
+		<br>
+</p>
+		</ul>
+	</div>
+</div>
+
+	        </td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+			<div id="footer">
+				<div id="footer-contents">
+
+<script type="text/javascript" src="jtictactoe_files/footerSignup.js"></script>
+<script type="text/javascript">
+	Weebly.footer.setupContainer('cdn2.editmysite.com', '1497564658', 'www.weebly.com');
+</script><div id="weebly-footer-signup-container" class="light" style="height: 62px; left: -82.5px; top: 0px; width: 1085px;">
+	<div class="signup-container-header trigger-signup">
+		<button class="start-free">Create a free website</button>
+		<div class="powered-by">
+			Powered by <span class="link weebly-icon"></span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+//<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script></div>
+			</div>
+		</div>
+	</div>
+
+		<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20170615222712/https://ssl' : 'https://web.archive.org/web/20170615222712/http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wGA = '_gaq';
+
+</script>
+
+<script type="text/javascript" async="1">
+	;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+			p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+			};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+			n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,'script','//web.archive.org/web/20170615222712/http://cdn2.editmysite.com/js/wsnbn/snowday262.js','snowday'));
+
+	var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+	var snPlObR = function(arr) {
+		var s = '';
+		for (var i = 0 ; i < arr.length ; i++){
+			s = s + String.fromCharCode(arr[i]);
+		}
+		return s;
+	};
+	var s = snPlObR(r);
+
+	var regEx = new RegExp(s);
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wSP = 'snowday';
+	_W.Analytics.user_id = '10564637';
+	_W.Analytics.site_id = '568749041175539155';
+
+
+	(function(app_id, ec_hostname, discover_root_domain) {
+		var track = window[_W.Analytics.trackers.wSP];
+		if (!track) return;
+		track('newTracker', app_id, ec_hostname, {
+			appId: app_id,
+			post: true,
+			platform: 'web',
+			discoverRootDomain: discover_root_domain,
+			cookieName: '_snow_',
+			contexts: {
+				webPage: true,
+				performanceTiming: true,
+				gaCookies: true
+			},
+			crossDomainLinker: function (linkElement) {
+				return regEx.test(linkElement.href);
+			}
+		});
+		track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id);
+		track('crossDomainLinker', function (linkElement) {
+			return regEx.test(linkElement.href);
+		});
+	})(
+		'_wn',
+		'ec.editmysite.com',
+		true
+	);
+</script>
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = "https://web.archive.org/web/20170615222712/https://secure.quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l0,u10564637.u10564637s568749041175539155"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//web.archive.org/web/20170615222712im_/http://pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l0,u10564637.u10564637s568749041175539155" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				var $commentFrame = jQuery('#commentArea iframe');
+				if ($commentFrame.length > 0) {
+					var frameHeight = jQuery($commentFrame[0].contentWindow.document).height() + 50;
+					$commentFrame.css('min-height', frameHeight + 'px');
+				}
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+<div id="eu-cookie" class="notification" style="display: none;">
+	<span id="eu-cookie-content"></span>
+	<span id="eu-cookie-close">✕</span>
+</div>
+
+<script type="text/javascript">
+	(function($) {
+		window.cookie_location = '';
+		// this cookie_content should already be pre-encoded from CookieSettingView.js
+		window.cookie_content = '' || _W.stl('templates.publish.virtual-includes.footerCode_1');
+		window.cookie_policy_key = '568749041175539155_cookie_policy';
+		window.cookie_content_hash = '';
+
+		if (!_W.getCookie(window.cookie_policy_key) || _W.getCookie(window.cookie_policy_key) !== window.cookie_content_hash){
+			if (window.cookie_location === 'top' || window.cookie_location === 'bottom'){
+				$('#eu-cookie-content').text(decodeURIComponent(window.cookie_content));
+				(window.cookie_location === 'top') ? animateFromTop() : animateFromBottom();
+				$('#eu-cookie').show();
+			}
+		}
+
+		$('#eu-cookie-close').click(function(){
+			_W.setCookie(window.cookie_policy_key, window.cookie_content_hash, 100000);
+			$('#eu-cookie').hide();
+		});
+
+		function animateFromTop(){
+			$('#eu-cookie').css({
+				'top': '0px',
+				'animation': 'reveal-top 1 2s'
+			});
+		}
+
+		function animateFromBottom(){
+			$('#eu-cookie').css({
+				'bottom': '0px',
+				'animation': 'reveal-bottom 1 2s'
+			});
+		}
+	})(window._W && _W.jQuery);
+</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20170615222712if_/http://staticxx.facebook.com/connect/xd_arbiter/r/0F7S7QWJ0Ac.js?version=42#channel=f12b521a446839e&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20170615222712if_/https://staticxx.facebook.com/connect/xd_arbiter/r/0F7S7QWJ0Ac.js?version=42#channel=f12b521a446839e&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId : '190291501407',
+			xfbml : true,
+			version : 'v2.2'
+		});
+
+        // Set Facebook comment plugin's colorscheme based off of theme
+		var comments = document.getElementsByClassName('facebook-comment-widget'),
+			scheme = document.body.className.match('wsite-theme-light');
+
+		for (var i = 0; i < comments.length; i++) {
+			comments[i].setAttribute('colorscheme', scheme ? 'light' : 'dark');
+		}
+
+		var fbCommentCounts;
+
+		FB.Event.subscribe('xfbml.render', function(){
+			fbCommentCounts = jQuery('.fb_comments_count');
+			for (var i = 0; i < fbCommentCounts.length; i++) {
+				var commentText = (jQuery(fbCommentCounts[i]).text() == '1' ? "Comment" : "Comments");
+				jQuery(fbCommentCounts[i]).parent().siblings('.fb_comment_count_label').text(commentText);
+			}
+		});
+
+		var comment_callback = function(res) {
+			FB.XFBML.parse(); // Refresh comment counters on page
+		}
+
+		FB.Event.subscribe('comment.create', comment_callback);
+		FB.Event.subscribe('comment.remove', comment_callback);
+
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//web.archive.org/web/20170615222712/http://connect.facebook.net/"+_W.facebookLocale+"/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="text/javascript">
+	(function() {
+		function j(src, id) {
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = src;
+			if(id) {s.id=id};
+			document.getElementsByTagName('head')[0].appendChild(s);
+		}
+		j('//web.archive.org/web/20170615222712/http://platform.twi'+'tter.com/widgets.js');
+	})()
+</script>
+	
+
+
+<div id="wsite-menus"></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium;" allow="autoplay 'self'; fullscreen 'self'" title="Twitter analytics iframe"></iframe></body></html>
+<!--
+     FILE ARCHIVED ON 22:27:12 Jun 15, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:44:52 Dec 19, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.775
+  exclusion.robots: 0.06
+  exclusion.robots.policy: 0.036
+  esindex: 0.02
+  cdx.remote: 20.635
+  LoadShardBlock: 282.911 (3)
+  PetaboxLoader3.datanode: 179.045 (4)
+  PetaboxLoader3.resolve: 320.385 (2)
+  load_resource: 283.618
+-->

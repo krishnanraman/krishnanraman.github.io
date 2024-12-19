@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="facebook-jssdk" src="pl_files/sdk.js"></script><script src="pl_files/quant.js" async="" type="text/javascript"></script><script async="" src="pl_files/snowday262.js"></script><script type="text/javascript" async="" src="pl_files/ga.js"></script><script async="" src="pl_files/snowday261.js"></script><script src="pl_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app224.us.archive.org';v.server_ms=349;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="pl_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="pl_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="pl_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.jasq.org/just-another-scala-quant/how-not-to-compute-pi","20170624163237","https://web.archive.org/","web","/_static/",
+	      "1498321957");
+</script>
+<link rel="stylesheet" type="text/css" href="pl_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="pl_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+		<title>just another scala quant - just another scala quant</title><meta property="og:site_name" content="just another scala quant">
+<meta property="og:title" content="How NOT to compute Pi">
+<meta property="og:description" content="just another scala quant">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/833799580.png">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/715433416.png">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/222071973.jpg">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/850530958.GIF">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/5532306_orig.png">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/4678250_orig.png">
+<meta property="og:image" content="https://web.archive.org/web/20170624163237im_/http://www.jasq.org/uploads/1/0/5/6/10564637/280095_orig.png">
+<meta property="og:url" content="https://web.archive.org/web/20170624163237/http://www.jasq.org/2/post/2016/03/how-not-to-compute-pi.html">
+<meta http-equiv="cache-control" content="no-cache">
+
+
+<meta name="keywords" content="Scala, Quant">
+
+		<meta name="google-site-verification" content="VWw1IU7B8b3C97gzMyTTVKfehlzVKRGR8lsiqfWtOgQ">
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="pl_files/sites.css">
+<link rel="stylesheet" type="text/css" href="pl_files/fancybox.css">
+<link rel="stylesheet" type="text/css" href="pl_files/main_style.css" title="wsite-theme-css">
+
+<style type="text/css">
+.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:10px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:16px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:15px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline {}
+.wsite-headline-paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+</style>
+
+		<script><!--
+var STATIC_BASE = '//web.archive.org/web/20170624163237/http://cdn1.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+//-->
+</script>
+<script src="pl_files/jquery.min.js"></script>
+
+<script type="text/javascript" src="pl_files/stl.js"></script>
+<script src="pl_files/main.js"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="pl_files/stl_002.js"></script><script> _W.themePlugins = [];</script><script type="text/javascript"><!--
+	
+	
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+				[{"id":"773694477260137346","title":"just another scala quant","url":"index.html","target":""}],
+				"773694477260137346",
+				'',
+				'active',
+				false,
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+//-->
+</script>
+		
+		
+	<script type="text/javascript" async="" src="pl_files/widgets.js"></script><script type="text/javascript" charset="utf-8" async="" src="pl_files/button.b731e6c82269f70f6fc53634e044a4c6.js"></script></head>
+	<body class="wsite-theme-light  wsite-page-index wsite-blog-post"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20170624163237/http://www.jasq.org/just-
+another-scala-quant/how-not-to-compute-pi</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.jasq.org/just-another-scala-quant/how-not-to-compute-pi","20170624163237",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ <div id="wrapper">
+		<div id="contents">
+			<div id="header">
+				<div id="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">just another scala quant</span>
+	</span>
+	
+
+</span></div>
+			</div>
+			<div id="navigation"><ul class="wsite-menu-default">
+		<li id="active" class="wsite-menu-item-wrap  wsite-nav-1" style="position: relative;">
+			<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/" class="wsite-menu-item" style="position: relative;">
+				just another scala quant
+			</a>
+			
+		</li>
+</ul>
+</div>
+			<div id="main"><div class="wsite-elements wsite-not-footer">
+<table id="blogTable" class="wsite-not-footer" style="border: 0; width: 100%; table-layout: fixed">
+	<tbody><tr>
+	    <td valign="top">
+	        	<div id="773694477260137346-blog" class="blog-body" style="float: left;"> 
+		<div id="wsite-content">	<div id="blog-post-612098843259743486" class="blog-post">
+	
+	
+		<div class="blog-header">
+			<h2 class="blog-title">
+					<a class="blog-title-link blog-link" href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/how-not-to-compute-pi">How NOT to compute Pi</a>
+
+			</h2>
+			<p class="blog-date">
+					<span class="date-text">
+		3/14/2016
+	</span>
+
+			</p>
+			<p class="blog-comments">
+				
+			</p>
+		</div>
+	
+		<div class="blog-separator">&nbsp;</div>
+	
+		<div class="blog-content">
+				<div class="paragraph" style="text-align:left;">
+<font size="4">Dick measuring contests of yore were computationally 
+intensive, now that I recall on this Pi Day. Growing up as a snotty, 
+disrespectful middle-schooler with attitude was no different then, 
+except that in 1980s India, I had no TV, no Refrigerator, no Computer 
+and certainly no Internet. My weapons of choice were primarily math. I 
+stole my dad's Calculus text and memorized several esoteric equations 
+which were certainly not age-appropriate, but there was no one to stop 
+me. I deployed these equations much like missiles, to enlarge my domain 
+of control and crush my enemies i.e. classmates who were disadvantaged 
+by their inability to handle said equations.&nbsp;<br>
+<br>
+My favorite equation was the&nbsp;<a target="_blank" href="https://web.archive.org/web/20170624163237/https://en.wikipedia.org/wiki/Gregory%27s_series">Gregory's Series</a>, a Taylor expansion for the arctangent.&nbsp;</font>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a><img src="pl_files/833799580.png" alt="Picture" style="width:100%;max-width:408px"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<font size="4"><br>
+​Sub in 1 for the x, you instantly get the well-known Leibniz Formula:</font>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a><img src="pl_files/715433416.png" alt="Picture" style="width:100%;max-width:298px"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<font size="4"><br>
+Somewhere in the mid-80s, the tide began to turn.<br>
+My poor dad saved up enough to buy a Black and White Television.</font>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a><img src="pl_files/222071973.jpg" alt="Picture" style="width:100%;max-width:455px"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<font size="4">Soon, his office loaned him an</font> <a href="https://web.archive.org/web/20170624163237/https://en.wikipedia.org/wiki/Intel_80286"><font size="4">80286</font></a>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a><img src="pl_files/850530958.GIF" alt="Picture" style="width:100%;max-width:368px"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<br>
+<font size="4">This was huge! I got a physical copy of <a href="https://web.archive.org/web/20170624163237/http://chiclassiccomp.org/docs/content/computing/Microsoft/Microsoft_Basic_8086Xenix_Reference.pdf">QBASIC LRM</a>&nbsp;and
+ quickly figured out that GOTO 10 means loop. Now I could code up my 
+evil math wizardry and amaze all and sundry! The first equation I coded 
+up was Leibniz. I am an AARP member as on date, so can't recollect 
+QBasic syntax from two decades ago. However, the cool kids these days 
+grok Scala, so here's Leibniz in Scala, using the map &amp; reduce 
+functions.<br>
+​</font>
+</div>
+
+<div>
+<div id="983103019972984480" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
+<script src="pl_files/a16c16fc3fc11cbfe43d.js">
+</script><link rel="stylesheet" href="pl_files/gist-embed-b03925b9c18fa42b22f168e7d17a7ca70ca50a4126cbf_002.css"><div id="gist32709836" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-leibniz-scala" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-scala">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-leibniz-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-leibniz-scala-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80</span></td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-leibniz-scala-LC2" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">def</span> <span class="pl-en">leibniz</span>(k<span class="pl-k">:</span><span class="pl-k">Int</span>) <span class="pl-k">=</span> <span class="pl-c1">4</span> <span class="pl-k">*</span> </td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-leibniz-scala-LC3" class="blob-code blob-code-inner js-file-line">		(<span class="pl-c1">0</span> to k) <span class="pl-c">// 0,1,2,...</span></td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-leibniz-scala-LC4" class="blob-code blob-code-inner js-file-line">		.map{ n<span class="pl-k">=&gt;</span> </td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-leibniz-scala-LC5" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">val</span> <span class="pl-en">denom</span> <span class="pl-k">=</span> (<span class="pl-c1">2</span><span class="pl-k">*</span>n<span class="pl-k">+</span><span class="pl-c1">1</span>) <span class="pl-c">// 1,3,5,...</span></td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-leibniz-scala-LC6" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">if</span> (n <span class="pl-k">%</span> <span class="pl-c1">2</span> <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>) <span class="pl-k">-</span><span class="pl-c1">1.0</span><span class="pl-k">/</span>denom <span class="pl-k">else</span> <span class="pl-c1">1.0</span><span class="pl-k">/</span>denom  <span class="pl-c">// 1/1, -1/3, 1/5, ...</span></td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-leibniz-scala-LC7" class="blob-code blob-code-inner js-file-line">		}</td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-leibniz-scala-LC8" class="blob-code blob-code-inner js-file-line">		.reduceLeft {_<span class="pl-k">+</span>_} <span class="pl-c">// sum the fractions</span></td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-leibniz-scala-LC9" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-leibniz-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-leibniz-scala-LC10" class="blob-code blob-code-inner js-file-line">	printf(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span>Leibniz 10 terms: %.10f<span class="pl-pds">"</span></span>, leibniz(<span class="pl-c1">10</span>))</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/a16c16fc3fc11cbfe43d/raw/cabd42d54538b6afd936f192383ea51bb2115080/leibniz.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/a16c16fc3fc11cbfe43d#file-leibniz-scala">leibniz.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170624163237mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<br>
+<font size="4">Leibniz 10 terms: 3.2323158<br>
+This gives you a rather poor approximation, since the convergence is <a href="https://web.archive.org/web/20170624163237/https://en.wikipedia.org/wiki/Rate_of_convergence">sublinear</a>.<br>
+<br>
+​Soon, I learnt about computing the area under a curve using an approximation called <a href="https://web.archive.org/web/20170624163237/https://en.wikipedia.org/wiki/Simpson%27s_rule">Simpson's Rule</a>.
+ In the Scala snippet below, simpson(..) is asked to compute the area of
+ a "first class function" f in the interval [a,b]. Simpson says, take 
+one sixth the interval times the sum of the function at the corners and 
+four times the midpoint.<br>
+<br>
+A candidate function is one-fourth of the circle with radius 2, under the interval [0,2].&nbsp;</font><br>
+<br>
+<br>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:left">
+<a href="https://web.archive.org/web/20170624163237/https://www.desmos.com/calculator/lj1h1x4ei9"><img src="pl_files/5532306_orig.png" alt="Picture" style="width:auto;max-width:100%"></a>
+
+<div style="display:block;font-size:90%">
+Area of one-quarter of circle with radius 2 = Pi
+</div>
+</div>
+</div>
+
+<div>
+<div id="972341940922181839" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
+<script src="pl_files/e99330530978a3f62262.js">
+</script><link rel="stylesheet" href="pl_files/gist-embed-b03925b9c18fa42b22f168e7d17a7ca70ca50a4126cbf_003.css"><div id="gist32709582" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-simpson-scala" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-scala">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-simpson-scala-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-simpson-scala-LC1" class="blob-code blob-code-inner js-file-line">	<span class="pl-c">// https://en.wikipedia.org/wiki/Simpson%27s_rule</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-simpson-scala-LC2" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">def</span> <span class="pl-en">simpson</span>(f<span class="pl-k">:</span><span class="pl-k">Double</span><span class="pl-k">=&gt;</span><span class="pl-k">Double</span>, a<span class="pl-k">:</span><span class="pl-k">Double</span>, b<span class="pl-k">:</span><span class="pl-k">Double</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-simpson-scala-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-simpson-scala-LC4" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">def</span> <span class="pl-en">base</span>(f<span class="pl-k">:</span><span class="pl-k">Double</span><span class="pl-k">=&gt;</span><span class="pl-k">Double</span>, a<span class="pl-k">:</span><span class="pl-k">Double</span>, b<span class="pl-k">:</span><span class="pl-k">Double</span>) <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-simpson-scala-LC5" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">val</span> <span class="pl-en">oneSixthInterval</span> <span class="pl-k">=</span> (b<span class="pl-k">-</span>a)<span class="pl-k">/</span><span class="pl-c1">6.0</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-simpson-scala-LC6" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">val</span> <span class="pl-en">corners</span> <span class="pl-k">=</span> f(a) <span class="pl-k">+</span> f(b)</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-simpson-scala-LC7" class="blob-code blob-code-inner js-file-line">			<span class="pl-k">val</span> <span class="pl-en">fourTimesMid</span> <span class="pl-k">=</span> <span class="pl-c1">4</span><span class="pl-k">*</span>f((a<span class="pl-k">+</span>b)<span class="pl-k">/</span><span class="pl-c1">2</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-simpson-scala-LC8" class="blob-code blob-code-inner js-file-line">			oneSixthInterval <span class="pl-k">*</span> (corners <span class="pl-k">+</span> fourTimesMid)</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-simpson-scala-LC9" class="blob-code blob-code-inner js-file-line">		}</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-simpson-scala-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-simpson-scala-LC11" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">val</span> <span class="pl-en">subinterval</span> <span class="pl-k">=</span> (b<span class="pl-k">-</span>a)<span class="pl-k">/</span><span class="pl-c1">10.0</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-simpson-scala-LC12" class="blob-code blob-code-inner js-file-line">		</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-simpson-scala-LC13" class="blob-code blob-code-inner js-file-line">		(a until b by subinterval) <span class="pl-c">//iterate over subintervals</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-simpson-scala-LC14" class="blob-code blob-code-inner js-file-line">		.map{ x<span class="pl-k">=&gt;</span> base(f, x, x<span class="pl-k">+</span>subinterval )} <span class="pl-c">// simpson on each subinterval</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-simpson-scala-LC15" class="blob-code blob-code-inner js-file-line">		.reduceLeft {_<span class="pl-k">+</span>_} <span class="pl-c">// sum simpsons</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-scala-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-simpson-scala-LC16" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/e99330530978a3f62262/raw/1cbe1955ae3d345fba5553a4655278b199d1af84/simpson.scala" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/e99330530978a3f62262#file-simpson-scala">simpson.scala</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170624163237mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<br>
+<em><font size="2"><strong>printf("\nSimpson on quarter circle with radius two: %.10f", simpson( x=&gt; math.sqrt(4-x*x), 0, 2))</strong></font></em><br>
+<font size="3">yields&nbsp;</font><br>
+<em><font size="2"><strong>Simpson on quarter circle with radius two: 3.1364470653</strong></font></em><br>
+<br>
+<font size="4">We've certainly improved upon the Leibniz<br>
+But we could do much better if we picked a better circle.<br>
+<br>
+How about one eighth of a circle with a radius sqrt(8) ? That's Pi as well.&nbsp;<br>
+Looking at this circle below, we find an isosceles triangle with a 
+height and base of two. Such a triangle obviously has an area 1/2 * 2 * 2
+ = 2.<br>
+Now, one-eighth of the circle is the portion of the circle right above the purple line.<br>
+So that's Pi.<br>
+<br>
+Now, pay attention.<br>
+If you were to find the area of this curve in the [0,2] interval, the 
+triangle contributes 2, and the one-eighth circle contributes Pi. So, 
+2+Pi<br>
+<br>
+But Pi and 2+Pi look exactly the same to the right of the decimal point!<br>
+<br>
+So subtracting off two should give us Pi!<br>
+Note the subtraction below.</font><br>
+<br>
+<em><font size="2"><strong>printf("\nSimpson on one-eighth circle with radius sqrt(8): %.10f", simpson( x=&gt; math.sqrt(8-x*x), 0, 2) - 2)</strong></font></em><br>
+<font size="3">yields&nbsp;</font><br>
+<em><font size="2"><strong>Simpson on one-eighth circle with radius sqrt(8): 3.1415918322</strong></font></em><br>
+<br>
+<font size="3">a much better approximation of Pi given how few computations we actually incur.</font><br>
+<br>
+<br>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:left">
+<a href="https://web.archive.org/web/20170624163237/https://www.desmos.com/calculator/gvmvnemusg"><img src="pl_files/4678250_orig.png" alt="Picture" style="width:auto;max-width:100%"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<font size="4"><br>
+​But we have one more ace up our sleeve!<br>
+​Remember the Leibniz expansion ?<br>
+Well, rather than run that Taylor series over 10 terms, what if, we feed
+ the actual arctangent function behind Leibniz to our 10-subinterval 
+Simpson ?<br>
+So, here's how that function looks, in the [0,1] interval:<br>
+​</font><br>
+</div>
+
+<div>
+<div class="wsite-image wsite-image-border-none" style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a href="https://web.archive.org/web/20170624163237/https://www.desmos.com/calculator/7ctzrpsdtf"><img src="pl_files/280095_orig.png" alt="Picture" style="width:auto;max-width:100%"></a>
+
+<div style="display:block;font-size:90%"></div>
+</div>
+</div>
+
+<div class="paragraph" style="text-align:left;">
+<em><font size="3"><strong>printf("\nSimpson on arctangent: %.10f", 4*simpson( x=&gt; 1.0/(1+x*x), 0, 1))</strong></font></em><br>
+<font size="4">yields</font><br>
+<em><strong><font size="3">Simpson on arctangent: 3.1415926530</font></strong></em><br>
+<br>
+<font size="4">our best approximation so far, for very little work on our part!<br>
+<br>
+Note: If Scala is not your style, here's the same code in C++ (0x)</font><br>
+​
+</div>
+
+<div>
+<div id="231148205565096706" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
+<script src="pl_files/45b13b586ed6a08ca7bd.js">
+</script><link rel="stylesheet" href="pl_files/gist-embed-b03925b9c18fa42b22f168e7d17a7ca70ca50a4126cbfca9f.css"><div id="gist32955359" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-results-txt" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-text">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-results-txt-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-results-txt-LC1" class="blob-code blob-code-inner js-file-line">$ g++ -std=c++0x simpson.cpp -o foo</td>
+      </tr>
+      <tr>
+        <td id="file-results-txt-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-results-txt-LC2" class="blob-code blob-code-inner js-file-line">$ ./foo</td>
+      </tr>
+      <tr>
+        <td id="file-results-txt-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-results-txt-LC3" class="blob-code blob-code-inner js-file-line">simpson one-fourth circle of radius two, [0,2]: 3.1364470642572026549</td>
+      </tr>
+      <tr>
+        <td id="file-results-txt-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-results-txt-LC4" class="blob-code blob-code-inner js-file-line">simpson one-eighth circle of radius sqrt 8, [0,2]: 3.1415918322225664383</td>
+      </tr>
+      <tr>
+        <td id="file-results-txt-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-results-txt-LC5" class="blob-code blob-code-inner js-file-line">simpson four times arctan [0,1]: 3.1415926529697850711</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/45b13b586ed6a08ca7bd/raw/94900873392b85fd246bf469786e456c84eb00be/results.txt" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/45b13b586ed6a08ca7bd#file-results-txt">results.txt</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170624163237mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-simpson-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-simpson-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-simpson-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-simpson-cpp-LC2" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-simpson-cpp-LC3" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>functional<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-simpson-cpp-LC4" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>math.h<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-simpson-cpp-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-simpson-cpp-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-simpson-cpp-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// compute area of curve over interval using simpson's rule</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-simpson-cpp-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">double</span> <span class="pl-en">simpsonBase</span>(function&lt;<span class="pl-k">double</span>(<span class="pl-k">double</span>)&gt; func, double a, double b) {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-simpson-cpp-LC9" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> corners = <span class="pl-c1">func</span>(a) + <span class="pl-c1">func</span>(b);</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-simpson-cpp-LC10" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> fourTimesMidpoint = <span class="pl-c1">4</span> * <span class="pl-c1">func</span>((a+b)/<span class="pl-c1">2.0</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-simpson-cpp-LC11" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> oneSixthWidth = (b-a)/<span class="pl-c1">6.0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-simpson-cpp-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> oneSixthWidth * (corners + fourTimesMidpoint);</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-simpson-cpp-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-simpson-cpp-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-simpson-cpp-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// divvy up base into n subintervals, invoke simpsonBase over each, sum.</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-simpson-cpp-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-k">double</span> <span class="pl-en">simpson</span>(function&lt;<span class="pl-k">double</span>(<span class="pl-k">double</span>)&gt; func, double a, double b) {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-simpson-cpp-LC17" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> n = <span class="pl-c1">10.0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-simpson-cpp-LC18" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> subInterval = (b-a)/n;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-simpson-cpp-LC19" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">auto</span> area = <span class="pl-c1">0.0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-simpson-cpp-LC20" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">for</span>(<span class="pl-k">int</span> i=<span class="pl-c1">0</span>;i &lt; n;i++) {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-simpson-cpp-LC21" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">auto</span> begin = a + i*subInterval;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-simpson-cpp-LC22" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">auto</span> end = begin + subInterval;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-simpson-cpp-LC23" class="blob-code blob-code-inner js-file-line">		area += <span class="pl-c1">simpsonBase</span>( func, begin, end);</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-simpson-cpp-LC24" class="blob-code blob-code-inner js-file-line">		<span class="pl-c">//cout &lt;&lt; begin &lt;&lt; '\t' &lt;&lt; end &lt;&lt; '\t' &lt;&lt; area &lt;&lt; endl;</span></td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-simpson-cpp-LC25" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-simpson-cpp-LC26" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">return</span> area;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-simpson-cpp-LC27" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-simpson-cpp-LC28" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-simpson-cpp-LC29" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-simpson-cpp-LC30" class="blob-code blob-code-inner js-file-line">	cout.<span class="pl-c1">precision</span>(<span class="pl-c1">20</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-simpson-cpp-LC31" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">auto</span> arctan = [](<span class="pl-k">double</span> x) { <span class="pl-k">return</span> <span class="pl-c1">1.0</span>/(<span class="pl-c1">1.0</span>+x*x); };</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-simpson-cpp-LC32" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">auto</span> circle1 = [](<span class="pl-k">double</span> x) { <span class="pl-k">return</span> <span class="pl-c1">sqrt</span>(<span class="pl-c1">4.0</span>-x*x); };</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-simpson-cpp-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">auto</span> circle2 = [](<span class="pl-k">double</span> x) { <span class="pl-k">return</span> <span class="pl-c1">sqrt</span>(<span class="pl-c1">8.0</span>-x*x); };</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-simpson-cpp-LC34" class="blob-code blob-code-inner js-file-line">    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>simpson one-fourth circle of radius two, [0,2]: <span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">simpson</span>(circle1, <span class="pl-c1">0.0</span>,<span class="pl-c1">2.0</span>) &lt;&lt; <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-simpson-cpp-LC35" class="blob-code blob-code-inner js-file-line">    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>simpson one-eighth circle of radius sqrt 8, [0,2]: <span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">simpson</span>(circle2, <span class="pl-c1">0.0</span>,<span class="pl-c1">2.0</span>) - <span class="pl-c1">2.0</span>&lt;&lt; <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-simpson-cpp-LC36" class="blob-code blob-code-inner js-file-line">    cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>simpson four times arctan [0,1]: <span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">4</span> * <span class="pl-c1">simpson</span>(arctan, <span class="pl-c1">0.0</span>,<span class="pl-c1">1.0</span>) &lt;&lt; <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-simpson-cpp-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-simpson-cpp-LC37" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/45b13b586ed6a08ca7bd/raw/94900873392b85fd246bf469786e456c84eb00be/simpson.cpp" style="float:right">view raw</a>
+        <a href="https://web.archive.org/web/20170624163237mp_/https://gist.github.com/krishnanraman/45b13b586ed6a08ca7bd#file-simpson-cpp">simpson.cpp</a>
+        hosted with ❤ by <a href="https://web.archive.org/web/20170624163237mp_/https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+		</div>
+	
+	
+			<div class="blog-social  ">
+		<div class="blog-social-item blog-fb-like"><fb:like href="http://www.jasq.org/2/post/2016/03/how-not-to-compute-pi.html" width="90" layout="button_count" action="like" show_faces="false" share="false"></fb:like></div><div class="blog-social-item"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: absolute; visibility: hidden; width: 0px; height: 0px;" allow="autoplay 'self'; fullscreen 'self'" title="Twitter Tweet Button" src="https://web.archive.org/web/20170624163237if_/http://platform.twitter.com/widgets/tweet_button.7bf2b0e802ada47dae9548b7a1739fed.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.jasq.org%2Fjust-another-scala-quant%2Fhow-not-to-compute-pi&amp;size=m&amp;text=How%20NOT%20to%20compute%20Pi%20-%20just%20another%20scala%20quant&amp;time=1498321969484&amp;type=share&amp;url=http%3A%2F%2Fwww.jasq.org%2F2%2Fpost%2F2016%2F03%2Fhow-not-to-compute-pi.html" data-url="http://www.jasq.org/2/post/2016/03/how-not-to-compute-pi.html"></iframe></div>
+		<div style="clear:both"></div>
+	</div>
+
+	
+		<div class="blog-comments-bottom">
+			
+		</div>
+	
+		<div class="blog-post-separator"></div>
+	</div>
+
+
+    <a name="comments" id="comments"></a>
+<div id="commentArea">
+	<div class="blog-comment-area">
+		
+
+		<div id="824615671239289401">
+			<div class="blogCommentWrap even blogCommentLevel0
+				
+				">
+				<div class="blogCommentHeading">
+					<div class="blogCommentHeadingInner">
+						<div class="blogCommentAuthor">
+							<span class="name">Sukraat</span>
+						</div>
+						<div class="blogCommentDate">3/24/2016 12:25:42 pm</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="blogCommentText">
+					<p>
+							I have been reading your blog for the past one year and really 
+enjoy it. It's wonderful to know that you're from India as well. Did you
+ go to IIT?
+					</p>
+				</div>
+				<div class="blogCommentOptions">
+					<div class="clear"></div>
+						<div id="blogCommentReplyWrapper_824615671239289401" class="blogCommentReplyWrapper blogCommentSubreplyWrapper " style="display: none;">
+							<div class="iframeWrapper">
+								<div class="iframeContainer"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="commentText">
+			<!-- lastComment -->
+		<div id="lastComment"> </div>
+		</div>
+		<br>
+			<div class="blog-notice-comments-closed">Comments are closed.</div>
+		
+		
+
+	</div>
+	<!-- bid-1: , path:  -->
+</div>
+ 
+<!-- bid: $blog_id --></div>
+	</div>
+
+	    </td>
+	        <td class="blog-sidebar" valign="top">
+	            <div id="773694477260137346-sidebar" class="column-blog">
+	<div class="blog-sidebar-separator">
+		<ul id="773694477260137346-sidebar-list" class="columnlist-blog" style="margin:0; padding: 0;">
+			<div style="text-align:right;"><div style="height:0px;overflow:hidden"></div>
+<span class="wsite-social wsite-social-default"><a class="wsite-social-item wsite-social-mail" href="https://web.archive.org/web/20170624163237/mailto:dxbydt@jasq.org" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-twitter" href="https://web.archive.org/web/20170624163237/https://twitter.com/dxbydt_jasq" target="_blank"><span class="wsite-social-item-inner"></span></a><a class="wsite-social-item wsite-social-rss" href="https://web.archive.org/web/20170624163237/http://www.jasq.org/2/feed" target="_blank"><span class="wsite-social-item-inner"></span></a></span>
+<div style="height:0px;overflow:hidden"></div></div>
+
+<h2 class="blog-archives-title" style="text-align:left;">Archives</h2>
+<p class="blog-archive-list">
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/04-2016" class="blog-link">April 2016</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/03-2016" class="blog-link">March 2016</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/12-2015" class="blog-link">December 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/06-2015" class="blog-link">June 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/05-2015" class="blog-link">May 2015</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/08-2014" class="blog-link">August 2014</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/01-2014" class="blog-link">January 2014</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/12-2013" class="blog-link">December 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/09-2013" class="blog-link">September 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/01-2013" class="blog-link">January 2013</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/12-2012" class="blog-link">December 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/08-2012" class="blog-link">August 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/06-2012" class="blog-link">June 2012</a>
+		<br>
+		<a href="https://web.archive.org/web/20170624163237/http://www.jasq.org/just-another-scala-quant/archives/05-2012" class="blog-link">May 2012</a>
+		<br>
+</p>
+		</ul>
+	</div>
+</div>
+
+	        </td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+			<div id="footer">
+				<div id="footer-contents">
+
+<script type="text/javascript" src="pl_files/footerSignup.js"></script>
+<script type="text/javascript">
+	Weebly.footer.setupContainer('cdn2.editmysite.com', '1498169384', 'www.weebly.com');
+</script><div id="weebly-footer-signup-container" class="light" style="height: 62px; left: -82.5px; top: 0px; width: 1085px;">
+	<div class="signup-container-header trigger-signup">
+		<button class="start-free">Create a free website</button>
+		<div class="powered-by">
+			Powered by <span class="link weebly-icon"></span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+//<!--
+
+if (document.cookie.match(/(^|;)\s*is_mobile=1/)) {
+	var windowHref = window.location.href || '';
+	if (windowHref.indexOf('?') > -1) {
+		windowHref += '&';
+	} else {
+		windowHref += '?';
+	}
+	document.write(
+		"&nbsp;&nbsp;&nbsp;&nbsp;" +
+		"<a class='wsite-view-link-mobile' href='" + windowHref + "view=mobile'>Mobile Site</a>"
+	);
+}
+
+//-->
+</script></div>
+			</div>
+		</div>
+	</div>
+
+		<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20170624163237/https://ssl' : 'https://web.archive.org/web/20170624163237/http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wGA = '_gaq';
+
+</script>
+
+<script type="text/javascript" async="1">
+	;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+			p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+			};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+			n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,'script','//web.archive.org/web/20170624163237/http://cdn2.editmysite.com/js/wsnbn/snowday262.js','snowday'));
+
+	var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+	var snPlObR = function(arr) {
+		var s = '';
+		for (var i = 0 ; i < arr.length ; i++){
+			s = s + String.fromCharCode(arr[i]);
+		}
+		return s;
+	};
+	var s = snPlObR(r);
+
+	var regEx = new RegExp(s);
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wSP = 'snowday';
+	_W.Analytics.user_id = '10564637';
+	_W.Analytics.site_id = '568749041175539155';
+
+
+	(function(app_id, ec_hostname, discover_root_domain) {
+		var track = window[_W.Analytics.trackers.wSP];
+		if (!track) return;
+		track('newTracker', app_id, ec_hostname, {
+			appId: app_id,
+			post: true,
+			platform: 'web',
+			discoverRootDomain: discover_root_domain,
+			cookieName: '_snow_',
+			contexts: {
+				webPage: true,
+				performanceTiming: true,
+				gaCookies: true
+			},
+			crossDomainLinker: function (linkElement) {
+				return regEx.test(linkElement.href);
+			}
+		});
+		track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id);
+		track('crossDomainLinker', function (linkElement) {
+			return regEx.test(linkElement.href);
+		});
+	})(
+		'_wn',
+		'ec.editmysite.com',
+		true
+	);
+</script>
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = "https://web.archive.org/web/20170624163237/https://secure.quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-0dYLvhSGGqUWo",
+labels:"l0,u10564637.u10564637s568749041175539155"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//web.archive.org/web/20170624163237im_/http://pixel.quantserve.com/pixel/p-0dYLvhSGGqUWo.gif?labels=l0,u10564637.u10564637s568749041175539155" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+<script>
+
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				var $commentFrame = jQuery('#commentArea iframe');
+				if ($commentFrame.length > 0) {
+					var frameHeight = jQuery($commentFrame[0].contentWindow.document).height() + 50;
+					$commentFrame.css('min-height', frameHeight + 'px');
+				}
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+
+</script>
+<div id="eu-cookie" class="notification" style="display: none;">
+	<span id="eu-cookie-content"></span>
+	<span id="eu-cookie-close">✕</span>
+</div>
+
+<script type="text/javascript">
+	(function($) {
+		window.cookie_location = '';
+		// this cookie_content should already be pre-encoded from CookieSettingView.js
+		window.cookie_content = '' || _W.stl('templates.publish.virtual-includes.footerCode_1');
+		window.cookie_policy_key = '568749041175539155_cookie_policy';
+		window.cookie_content_hash = '';
+
+		if (!_W.getCookie(window.cookie_policy_key) || _W.getCookie(window.cookie_policy_key) !== window.cookie_content_hash){
+			if (window.cookie_location === 'top' || window.cookie_location === 'bottom'){
+				$('#eu-cookie-content').text(decodeURIComponent(window.cookie_content));
+				(window.cookie_location === 'top') ? animateFromTop() : animateFromBottom();
+				$('#eu-cookie').show();
+			}
+		}
+
+		$('#eu-cookie-close').click(function(){
+			_W.setCookie(window.cookie_policy_key, window.cookie_content_hash, 100000);
+			$('#eu-cookie').hide();
+		});
+
+		function animateFromTop(){
+			$('#eu-cookie').css({
+				'top': '0px',
+				'animation': 'reveal-top 1 2s'
+			});
+		}
+
+		function animateFromBottom(){
+			$('#eu-cookie').css({
+				'bottom': '0px',
+				'animation': 'reveal-bottom 1 2s'
+			});
+		}
+	})(window._W && _W.jQuery);
+</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20170624163237if_/http://staticxx.facebook.com/connect/xd_arbiter/r/XBwzv5Yrm_1.js?version=42#channel=f17d9a715b3ba0c&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium;" src="https://web.archive.org/web/20170624163237if_/https://staticxx.facebook.com/connect/xd_arbiter/r/XBwzv5Yrm_1.js?version=42#channel=f17d9a715b3ba0c&amp;origin=http%3A%2F%2Fwww.jasq.org" allow="autoplay 'self'; fullscreen 'self'"></iframe></div></div></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId : '190291501407',
+			xfbml : true,
+			version : 'v2.2'
+		});
+
+        // Set Facebook comment plugin's colorscheme based off of theme
+		var comments = document.getElementsByClassName('facebook-comment-widget'),
+			scheme = document.body.className.match('wsite-theme-light');
+
+		for (var i = 0; i < comments.length; i++) {
+			comments[i].setAttribute('colorscheme', scheme ? 'light' : 'dark');
+		}
+
+		var fbCommentCounts;
+
+		FB.Event.subscribe('xfbml.render', function(){
+			fbCommentCounts = jQuery('.fb_comments_count');
+			for (var i = 0; i < fbCommentCounts.length; i++) {
+				var commentText = (jQuery(fbCommentCounts[i]).text() == '1' ? "Comment" : "Comments");
+				jQuery(fbCommentCounts[i]).parent().siblings('.fb_comment_count_label').text(commentText);
+			}
+		});
+
+		var comment_callback = function(res) {
+			FB.XFBML.parse(); // Refresh comment counters on page
+		}
+
+		FB.Event.subscribe('comment.create', comment_callback);
+		FB.Event.subscribe('comment.remove', comment_callback);
+
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//web.archive.org/web/20170624163237/http://connect.facebook.net/"+_W.facebookLocale+"/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="text/javascript">
+	(function() {
+		function j(src, id) {
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = src;
+			if(id) {s.id=id};
+			document.getElementsByTagName('head')[0].appendChild(s);
+		}
+		j('//web.archive.org/web/20170624163237/http://platform.twi'+'tter.com/widgets.js');
+	})()
+</script>
+	
+
+
+<div id="wsite-menus"></div></body></html>
+<!--
+     FILE ARCHIVED ON 16:32:37 Jun 24, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:45:24 Dec 19, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.615
+  exclusion.robots: 0.033
+  exclusion.robots.policy: 0.02
+  esindex: 0.015
+  cdx.remote: 10.318
+  LoadShardBlock: 57.512 (3)
+  PetaboxLoader3.datanode: 118.201 (4)
+  load_resource: 250.384
+  PetaboxLoader3.resolve: 146.519
+-->
